@@ -8,6 +8,7 @@ public class HandleMagnetise : MonoBehaviour
 
     public bool Magnetised = false;
     public int MagnetStrength = 1;
+     public AudioSource correct_feedback;
     
     // magnets can stick to one other magnet with a higher magnet strength
     // initially connected to nothing. 
@@ -43,6 +44,7 @@ public class HandleMagnetise : MonoBehaviour
 
                         // if it does, update the join so that the magnet is attracted to the newer more magnetising magnet.
                         attach(otherMagnet.gameObject);
+                        correct_feedback.Play();
                     }
                 }
             }
