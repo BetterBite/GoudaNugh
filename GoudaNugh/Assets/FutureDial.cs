@@ -12,6 +12,7 @@ public class FutureDial : NetworkBehaviour
     public GameObject other;
     private bool otherIsLocked;
     public GameObject door;
+    public GameObject figurine;
     // Start is called before the first frame update
     public override void OnNetworkSpawn()
     {
@@ -25,6 +26,7 @@ public class FutureDial : NetworkBehaviour
         if (!isLocked)
         {
             door.SetActive(false);
+            figurine.SetActive(true);
         }
     }
 
