@@ -8,7 +8,7 @@ public class FutureObject : MonoBehaviour
 {
     private bool hasMoved = false;
     public XRGrabInteractable grabInteractable;
-    private InstanceManager InstanceManager;
+    private readonly InstanceManager InstanceManager = InstanceManager.instance;
 
     public bool HasMoved {
         get {
@@ -22,7 +22,6 @@ public class FutureObject : MonoBehaviour
 
     public void Awake() {
         hasMoved = false;
-        InstanceManager = GetComponent<InstanceManager>();
         grabInteractable = GetComponent<XRGrabInteractable>();        
         grabInteractable.selectEntered.AddListener(OnSelectEntered);
     }

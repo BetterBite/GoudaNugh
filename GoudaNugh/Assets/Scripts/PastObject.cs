@@ -8,7 +8,7 @@ public class PastObject : MonoBehaviour
 {
     public XRGrabInteractable grabInteractable;
     private NetworkObject networkObject;
-    private InstanceManager InstanceManager;
+    private readonly InstanceManager InstanceManager = InstanceManager.instance;
 
     private void Awake() {
         grabInteractable = GetComponent<XRGrabInteractable>();
