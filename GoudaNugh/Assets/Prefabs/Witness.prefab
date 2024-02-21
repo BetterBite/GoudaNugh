@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 6390889430641396766}
   - component: {fileID: 5839323177229154805}
   - component: {fileID: 4346418225547035339}
+  - component: {fileID: 5560661112419132495}
   m_Layer: 0
   m_Name: Witness
   m_TagString: Untagged
@@ -449,6 +450,20 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5560661112419132495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748849842386857898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec953080b87448418003de1915291e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  audioClips: []
 --- !u!1 &8997050176912112874
 GameObject:
   m_ObjectHideFlags: 0
