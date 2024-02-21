@@ -5,7 +5,6 @@ using Unity.Netcode;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Relay;
-using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using Unity.Netcode.Transports.UTP;
 
