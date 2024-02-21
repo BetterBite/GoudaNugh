@@ -27,7 +27,7 @@ public class PastObject : MonoBehaviour
 
     // Update NetworkObject transform on select exit
     // This only works assuming that the transform of the network object represents the transform of the future object, assuming it wasn't moved
-    // Turns out transform coords are relative to the parent so no need to calculate offset
+    // Only works with a one room representation
     private void OnSelectExited(SelectExitEventArgs args) {
         networkObject.transform.position = transform.position;
         networkObject.transform.rotation = transform.rotation;
