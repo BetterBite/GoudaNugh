@@ -22,7 +22,7 @@ public class FutureObject : MonoBehaviour
 
     public void Awake() {
         hasMoved = false;
-        InstanceManager = GetComponent<InstanceManager>();
+        InstanceManager = InstanceManager.instance;
         grabInteractable = GetComponent<XRGrabInteractable>();        
         grabInteractable.selectEntered.AddListener(OnSelectEntered);
     }

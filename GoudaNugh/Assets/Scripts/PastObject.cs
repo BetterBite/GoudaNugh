@@ -11,6 +11,7 @@ public class PastObject : MonoBehaviour
     private InstanceManager InstanceManager;
 
     private void Awake() {
+        InstanceManager = InstanceManager.instance;
         grabInteractable = GetComponent<XRGrabInteractable>();
         networkObject = InstanceManager.GetNetworkObjectByTag(gameObject.tag);
 
