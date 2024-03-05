@@ -8,7 +8,7 @@ public class FutureObject : MonoBehaviour
 {
     private bool hasMoved = false;
     public XRGrabInteractable grabInteractable;
-    private readonly InstanceManager InstanceManager = InstanceManager.instance;
+    private readonly InteractibleManager InstanceManager = InteractibleManager.instance;
 
     public bool HasMoved {
         get {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class InstanceManager : NetworkBehaviour {
+public class InteractibleManager : NetworkBehaviour {
     // TODO - Switch away from using tags as they have to predefined, try lookup by name when Spawning is implemented?
-    public static InstanceManager instance { get; private set; }
+    public static InteractibleManager instance { get; private set; }
 
     public void Awake() {
         if (instance != null && instance != this) {
@@ -67,7 +67,6 @@ public class InstanceManager : NetworkBehaviour {
 
     public void LogMovement(string tag) {
         LogMovementClientRPC(tag);
-
     }
 
     // rpcs here

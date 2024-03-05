@@ -8,7 +8,7 @@ public class PastObject : MonoBehaviour
 {
     public XRGrabInteractable grabInteractable;
     private NetworkObject networkObject;
-    private readonly InstanceManager InstanceManager = InstanceManager.instance;
+    private readonly InteractibleManager InstanceManager = InteractibleManager.instance;
 
     private void Awake() {
         grabInteractable = GetComponent<XRGrabInteractable>();
@@ -19,7 +19,7 @@ public class PastObject : MonoBehaviour
         } else {
             // Quick hack to transfer ownership to the local client just incase the players are mixed up
             // Also future proof
-            InstanceManager.instance.TransferOwnerToClient(networkObject, NetworkManager.Singleton.LocalClientId);
+            InteractibleManager.instance.TransferOwnerToClient(networkObject, NetworkManager.Singleton.LocalClientId);
         }
         grabInteractable.selectExited.AddListener(OnSelectExited);
         // TODO - Have PastObject register itself with InstanceManager and have InstanceManager find related FutureObject and NetworkObject at start
