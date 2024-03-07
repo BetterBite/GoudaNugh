@@ -48,7 +48,7 @@ public class InteractibleManager : NetworkBehaviour {
         return null;
     }
 
-    // Before RPC call functions here
+    // Functions that are called before any RPC calls. Only add one if there needs to be some precondition that only InteractibleManager can check for
     public void TransferOwnerToClient(NetworkObject networkObject, ulong clientID) {
         if (IsServer) {
             TransferOwnerServerRPC(networkObject.NetworkObjectId, clientID);
@@ -64,7 +64,12 @@ public class InteractibleManager : NetworkBehaviour {
         LogMovementClientRPC(tag);
     }
 
-    // rpcs here
+    /* 
+    RPC Calls here. Make sure each has an attribute specifying to whom it is sent to
+    See this Unity doc for all valid attributes https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.8/api/Unity.Netcode.SendTo.html
+    
+    Hint : To send an RPC call to be executed on the other player's machine, use SendTo.NotMe and check within the function if you are not the server
+     */
 
     [Rpc(SendTo.ClientsAndHost)]
     public void UpdateFutureObjectClientRPC(string tag) {
