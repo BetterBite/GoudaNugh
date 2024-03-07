@@ -8,14 +8,9 @@ public class InteractibleManager : NetworkBehaviour {
     public static InteractibleManager instance { get; private set; }
 
     public void Awake() {
-        if (instance != null && instance != this) {
-            Destroy(this.gameObject);
-        } else {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
-
 
     public NetworkObject GetNetworkObjectByTag(string tag) {
         NetworkObject[] networkObjects = GetComponentsInChildren<NetworkObject>();
