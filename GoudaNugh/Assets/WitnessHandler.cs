@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using UnityEngine.UI;
+using TMPro;
 using Oculus.VoiceSDK.Utilities;
 using Meta.Voice;
 using Meta.WitAi;
@@ -11,6 +14,7 @@ public class WitnessHandler : MonoBehaviour
     // audioClips contains all the possible voice clips said by witness
     public AudioClip[] audioClips;
     public Oculus.Voice.AppVoiceExperience appVoiceExperience;
+    public TextMeshProUGUI subtitle;
 
     private Canvas listeningIcon;
 
@@ -37,5 +41,11 @@ public class WitnessHandler : MonoBehaviour
 
     public static void LogTranscription(string[] text) {
         Debug.Log(string.Join(" ", text));
+    }
+
+    public void SetSubtitle(string text) {
+        Debug.Log("Logging transcription:" + text);
+
+        subtitle.text = text;
     }
 }
