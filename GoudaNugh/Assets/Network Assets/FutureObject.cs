@@ -10,16 +10,6 @@ public class FutureObject : MonoBehaviour
     public XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InstanceManager = InteractibleManager.instance;
 
-    public bool HasMoved {
-        get {
-            return hasMoved;
-        }
-    }
-
-    public void SetHasMoved(bool value) {
-        hasMoved = value;
-    }
-
     public void Awake() {
         hasMoved = false;
         grabInteractable = GetComponent<XRGrabInteractable>();        
