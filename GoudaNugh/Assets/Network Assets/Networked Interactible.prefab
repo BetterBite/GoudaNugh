@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7088846516469613304}
   - component: {fileID: -1824216196034702558}
   - component: {fileID: 4468349041371253026}
+  - component: {fileID: -8887054093630349360}
   m_Layer: 0
   m_Name: Networked Interactible
   m_TagString: Untagged
@@ -85,3 +86,15 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &-8887054093630349360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2792550728249277304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fed1a89f8387db48bb81f392abb327a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
