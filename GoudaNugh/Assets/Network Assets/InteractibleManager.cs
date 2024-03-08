@@ -9,11 +9,12 @@ public class InteractibleManager : NetworkBehaviour {
     private List<WholeObject> WholeObjects { get; } = new List<WholeObject>();
 
 
+    // Struct that represents the entire object, including the past, network, and future instances
     internal class WholeObject {
         private PastObject pastObject;
         private NetworkObject networkObject;
         private FutureObject futureObject;
-        private uint objectID;
+        private uint objectID { get; set; }
 
 
     }
