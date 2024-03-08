@@ -39,13 +39,13 @@ public class WitnessHandler : MonoBehaviour
         }
     }
 
-    public static void LogTranscription(string[] text) {
-        Debug.Log(string.Join(" ", text));
-    }
-
     public void SetSubtitle(string text) {
         Debug.Log("Logging transcription:" + text);
 
         subtitle.text = text;
+    }
+
+    public void HandleIntents(string[] values) {
+        Debug.Log("WIT output:"+ string.Join(", ", values));
     }
 }
