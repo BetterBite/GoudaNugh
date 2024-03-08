@@ -19,7 +19,7 @@ public class PastObject : MonoBehaviour
         } else {
             // Quick hack to transfer ownership to the local client just incase the players are mixed up
             // Also future proof
-            InteractibleManager.instance.TransferOwnerToClient(networkObject, NetworkManager.Singleton.LocalClientId);
+            InteractibleManager.instance.TransferOwnerServerRPC(networkObject.NetworkObjectId, NetworkManager.Singleton.LocalClientId);
         }
         grabInteractable.selectExited.AddListener(OnSelectExited);
         // TODO - Have PastObject register itself with InstanceManager and have InstanceManager find related FutureObject and NetworkObject at start
