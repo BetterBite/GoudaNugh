@@ -48,7 +48,7 @@ public class InteractibleManager : NetworkBehaviour {
         instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
-
+    /* DEPRECATED
     public NetworkObject GetNetworkObjectByTag(string tag) {
         NetworkObject[] networkObjects = GetComponentsInChildren<NetworkObject>();
         foreach (NetworkObject networkObject in networkObjects) {
@@ -60,7 +60,6 @@ public class InteractibleManager : NetworkBehaviour {
         return null;
     }
 
-    /* DEPRECATED
     // This sucks. Genuinely. But it's the only way to find the future object with the tag for now
     public GameObject FindFutureObjectWithTag(string tag) {
         GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag(tag);
@@ -99,6 +98,7 @@ public class InteractibleManager : NetworkBehaviour {
     See this Unity doc for all valid attributes https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.8/api/Unity.Netcode.SendTo.html
     
     Hint : To send an RPC call to be executed on the other player's machine, use SendTo.NotMe and check within the function if you are not the server
+    See immediate example below (UpdateFutureObjectClientRPC)
      */
 
     [Rpc(SendTo.NotMe)]

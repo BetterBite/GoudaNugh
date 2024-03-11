@@ -5,6 +5,12 @@ using Unity.Netcode;
 
 public class Variables : NetworkBehaviour
 {
+    // Prefabs for the past and future objects, make sure to set these in the inspector
+    [SerializeField]
+    private GameObject pastObjectPrefab;
+    [SerializeField]
+    private GameObject futureObjectPrefab;
+
     // NetworkVariables for the gameObject
     [SerializeField]
     private NetworkVariable<bool> _hasMoved = new NetworkVariable<bool>(false);

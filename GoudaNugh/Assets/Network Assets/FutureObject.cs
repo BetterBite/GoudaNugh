@@ -22,7 +22,7 @@ public class FutureObject : MonoBehaviour
 
     public void OnSelectEntered(SelectEnterEventArgs args) {
         if (!hasMoved) {
-            InstanceManager.LogMovementServerRPC(gameObject.tag);
+            InstanceManager.LogMovementServerRPC(objectID);
             hasMoved = true;
         }
     }
