@@ -7,6 +7,7 @@ using Unity.Services.Core;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using Unity.Netcode.Transports.UTP;
+using UnityEngine.SceneManagement;
 
 public class NetworkConnect : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class NetworkConnect : MonoBehaviour
 
     public async void Create()
     {
+
+        // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
+        SceneManager.LoadScene("BetaSceneMain");
+
+
         Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnection);
         string newJoinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
@@ -37,19 +43,28 @@ public class NetworkConnect : MonoBehaviour
              allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData);
 
         NetworkManager.Singleton.StartHost();
+
         rig.position = p1Pos.position;
+
     }
 
     public async void Join()
     {
+
+        // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
+        SceneManager.LoadScene("BetaSceneMain");
+
+
         JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
 
         transport.SetClientRelayData(allocation.RelayServer.IpV4, (ushort)allocation.RelayServer.Port,
            allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData, allocation.HostConnectionData);
 
         NetworkManager.Singleton.StartClient();
+
         rig.position = p2Pos.position;
 
+        
     }
 }
 
