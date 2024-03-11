@@ -6,6 +6,7 @@ using Unity.Netcode;
 public class Variables : NetworkBehaviour
 {
     // NetworkVariables for the gameObject
+    [SerializeField]
     private NetworkVariable<bool> _hasMoved = new NetworkVariable<bool>(false);
     
     // VS generated encapsulation for _hasMoved, copy paste this for any other NetworkVariable you add

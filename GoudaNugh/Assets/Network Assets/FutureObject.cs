@@ -6,6 +6,10 @@ using Unity.Netcode;
 
 public class FutureObject : MonoBehaviour
 {
+    // Same as network object ID
+    [SerializeField]
+    private uint objectID;
+
     private bool hasMoved = false;
     public XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InstanceManager = InteractibleManager.instance;
@@ -18,7 +22,7 @@ public class FutureObject : MonoBehaviour
 
     public void OnSelectEntered(SelectEnterEventArgs args) {
         if (!hasMoved) {
-            InstanceManager.LogMovementClientRPC(gameObject.tag);
+            InstanceManager.LogMovementServerRPC(gameObject.tag);
             hasMoved = true;
         }
     }
