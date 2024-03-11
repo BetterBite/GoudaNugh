@@ -13,6 +13,8 @@ public class NetworkPlayer : NetworkBehaviour
 
     public Renderer[] meshToDisable;
 
+    public bool isPast;
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
@@ -22,6 +24,17 @@ public class NetworkPlayer : NetworkBehaviour
             {
                 item.enabled = false;
             }
+        }
+
+        if (IsHost)
+        {
+            isPast = true;
+            Debug.Log("isPast: true");
+        }
+        else
+        {
+            isPast = false;
+            Debug.Log("isPast: false");
         }
     }
     

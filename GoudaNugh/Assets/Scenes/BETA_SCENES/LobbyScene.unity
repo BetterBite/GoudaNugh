@@ -2206,6 +2206,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 450706859}
     m_Modifications:
+    - target: {fileID: 452838699094375599, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
+      propertyPath: m_text
+      value: CREATE AS PAST DETECTIVE
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249580059941529892, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
+      propertyPath: m_text
+      value: 'JOIN AS FUTURE DETECTIVE '
+      objectReference: {fileID: 0}
     - target: {fileID: 4413007966011910819, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
       propertyPath: m_Name
       value: OnWallUI (1)
