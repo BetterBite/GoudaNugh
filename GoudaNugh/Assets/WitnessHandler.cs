@@ -26,15 +26,17 @@ public class WitnessHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider) {
         // start recording
-        appVoiceExperience.Activate();
-        listeningIcon.enabled = true;
+        if (collider.gameObject.GetComponent<Camera>()!=null){
+            appVoiceExperience.Activate();
+            listeningIcon.enabled = true;
+        }
     }
     private void OnTriggerExit(Collider collider) {
         appVoiceExperience.Deactivate();
         listeningIcon.enabled = false;
     }
     private void OnTriggerStay(Collider collider) {
-        if (!appVoiceExperience.Active) {
+        if (collider.gameObject.GetComponent<Camera>()!=null && !appVoiceExperience.Active) {
             appVoiceExperience.Activate();
         }
     }
