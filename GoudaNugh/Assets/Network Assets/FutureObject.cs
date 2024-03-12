@@ -6,30 +6,23 @@ using Unity.Netcode;
 
 public class FutureObject : MonoBehaviour
 {
+    // Same as network object ID
+    [SerializeField]
+    private uint objectID;
+
     private bool hasMoved = false;
     public XRGrabInteractable grabInteractable;
-    private InstanceManager InstanceManager;
-
-    public bool HasMoved {
-        get {
-            return hasMoved;
-        }
-    }
-
-    public void SetHasMoved(bool value) {
-        hasMoved = value;
-    }
+    private readonly InteractibleManager InstanceManager = InteractibleManager.instance;
 
     public void Awake() {
         hasMoved = false;
-        InstanceManager = GetComponent<InstanceManager>();
         grabInteractable = GetComponent<XRGrabInteractable>();        
         grabInteractable.selectEntered.AddListener(OnSelectEntered);
     }
 
     public void OnSelectEntered(SelectEnterEventArgs args) {
         if (!hasMoved) {
-            InstanceManager.LogMovement(gameObject.tag);
+            InstanceManager.LogMovementServerRPC(objectID);
             hasMoved = true;
         }
     }
