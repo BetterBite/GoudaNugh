@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 130772296690500561}
   - component: {fileID: 5708437874721020018}
   - component: {fileID: 2789169984192050923}
+  - component: {fileID: 5702014875233756699}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book01
   m_TagString: Untagged
@@ -441,7 +442,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -466,6 +467,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00038688886, y: 0.0016306234, z: 0.002374182}
   m_Center: {x: -0.0000002796656, y: 0.00081530795, z: 0.0011871059}
+--- !u!64 &5702014875233756699
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108618823467125696}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3791526662705610464, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &114881721325787992
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +629,7 @@ Transform:
   m_GameObject: {fileID: 130826441691279126}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00034194888, y: -0.00034544998, z: -0.000046222616, w: 0.9999999}
-  m_LocalPosition: {x: 0.40583348, y: -0.0000009536743, z: 17.097078}
+  m_LocalPosition: {x: -7.357036, y: -0.0000009536743, z: 2.4704065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -714,6 +737,7 @@ GameObject:
   - component: {fileID: 2398777034186000303}
   - component: {fileID: 7742007260619861844}
   - component: {fileID: 8027548223054919636}
+  - component: {fileID: 3325819443713341578}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book19
   m_TagString: Untagged
@@ -804,10 +828,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00019202394, y: 0.001630623, z: 0.0023741813}
   m_Center: {x: 0.000000056618706, y: 0.0008152994, z: 0.0011870886}
+--- !u!64 &3325819443713341578
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162292388606217366}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6714976476829683630, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &169632701529485460
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +866,8 @@ GameObject:
   - component: {fileID: 1971023874905409545}
   - component: {fileID: 2944181853825751460}
   - component: {fileID: 7186147662223784370}
+  - component: {fileID: 7562890039150340280}
+  - component: {fileID: 2509530152099873976}
   m_Layer: 0
   m_Name: Top Floor 1
   m_TagString: Untagged
@@ -909,10 +957,59 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.010000001, y: 0.01, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &7562890039150340280
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169632701529485460}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2509530152099873976
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169632701529485460}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1457500833053766963, guid: 964344a74dd9b4b539ed136cd5ab5814, type: 3}
 --- !u!1 &190343899499319851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,6 +1369,7 @@ GameObject:
   - component: {fileID: 719121398023711782}
   - component: {fileID: 6850657326579958955}
   - component: {fileID: 619517800971301380}
+  - component: {fileID: 2458358739031032987}
   m_Layer: 0
   m_Name: wine_bottles_01_alsace
   m_TagString: Untagged
@@ -1370,7 +1468,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1391,10 +1489,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00072064315, y: 0.00072058645, z: 0.0033136723}
   m_Center: {x: -0.0000000071377335, y: 0.0000000014194388, z: 0.0016568324}
+--- !u!64 &2458358739031032987
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229455322752994438}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4236692711498669813, guid: fd51316c20864408e8965e45d9d2659d, type: 3}
 --- !u!1 &229971957912631933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,6 +1526,7 @@ GameObject:
   - component: {fileID: 9039950983847289086}
   - component: {fileID: 3124259199499575784}
   - component: {fileID: 6967706852725612559}
+  - component: {fileID: 1597922863759557631}
   m_Layer: 0
   m_Name: Cabinet
   m_TagString: Untagged
@@ -1459,7 +1580,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1480,10 +1601,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &1597922863759557631
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229971957912631933}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &253983213149053979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,6 +1673,7 @@ GameObject:
   - component: {fileID: 1150708713013355172}
   - component: {fileID: 3882069944932241033}
   - component: {fileID: 5968116038902580187}
+  - component: {fileID: 7129540286943392514}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book05
   m_TagString: Untagged
@@ -1626,7 +1770,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1647,10 +1791,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00019152492, y: 0.0016306231, z: 0.0023741822}
   m_Center: {x: 0.0000000833614, y: 0.000815319, z: 0.0011870874}
+--- !u!64 &7129540286943392514
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275440864308543391}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3454820031046999979, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &278445819345744852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,6 +1862,7 @@ GameObject:
   - component: {fileID: 6144808752439959264}
   - component: {fileID: 8761037528404612209}
   - component: {fileID: 8217052392704710386}
+  - component: {fileID: 3381892639152026106}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book13
   m_TagString: Untagged
@@ -1792,7 +1959,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1813,10 +1980,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00036551317, y: 0.001630623, z: 0.0023741815}
   m_Center: {x: -0.00000026294498, y: 0.00081530266, z: 0.0011870889}
+--- !u!64 &3381892639152026106
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301411734508622665}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -264918674245685689, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &304288974609446642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5264,6 +5453,7 @@ GameObject:
   - component: {fileID: 2172929827200767130}
   - component: {fileID: 6235815296801643277}
   - component: {fileID: 8328738979527558743}
+  - component: {fileID: 3575095858430201796}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book02
   m_TagString: Untagged
@@ -5360,7 +5550,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -5385,6 +5575,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0002843076, y: 0.0016306239, z: 0.0023741822}
   m_Center: {x: 0.00000054016357, y: 0.00081530825, z: 0.0011870911}
+--- !u!64 &3575095858430201796
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628374980056501404}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3413121383193214065, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &632353946580966134
 GameObject:
   m_ObjectHideFlags: 0
@@ -5564,6 +5776,7 @@ GameObject:
   - component: {fileID: 6710195411097305603}
   - component: {fileID: 5272811138150856437}
   - component: {fileID: 5150028746299123303}
+  - component: {fileID: 2163951658347138716}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book11
   m_TagString: Untagged
@@ -5660,7 +5873,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -5685,6 +5898,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00017935071, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000007733608, y: 0.0008153151, z: 0.0011870911}
+--- !u!64 &2163951658347138716
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643645584788118684}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7710946037921196938, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &645812238960862459
 GameObject:
   m_ObjectHideFlags: 0
@@ -5698,6 +5933,7 @@ GameObject:
   - component: {fileID: 1991208563826440570}
   - component: {fileID: 7485835876843621480}
   - component: {fileID: 8637282831948137827}
+  - component: {fileID: 7564014544707245196}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book18
   m_TagString: Untagged
@@ -5794,7 +6030,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -5819,6 +6055,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0002181542, y: 0.0016306228, z: 0.002374181}
   m_Center: {x: -0.000000046748106, y: 0.00081531605, z: 0.0011870908}
+--- !u!64 &7564014544707245196
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645812238960862459}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9179586440736475388, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &654570724255799912
 GameObject:
   m_ObjectHideFlags: 0
@@ -6819,6 +7077,7 @@ GameObject:
   - component: {fileID: 3820844901225944924}
   - component: {fileID: 5875223691086649}
   - component: {fileID: 3776323990206010455}
+  - component: {fileID: 2562032292415391926}
   m_Layer: 0
   m_Name: Shelves 2
   m_TagString: Untagged
@@ -6914,7 +7173,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -6935,10 +7194,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0051111565, y: 0.0036709497, z: 0.011250722}
   m_Center: {x: 0.0000005052427, y: -0.0018354749, z: 0.0056157266}
+--- !u!64 &2562032292415391926
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876749119646845413}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8383722595761260690, guid: ada6d18d694d442beb01a56d5baa6fa0, type: 3}
 --- !u!1 &876904077525559720
 GameObject:
   m_ObjectHideFlags: 0
@@ -7616,6 +7897,7 @@ GameObject:
   - component: {fileID: 7510959532228865965}
   - component: {fileID: 1524788503935244505}
   - component: {fileID: 449122567346730550}
+  - component: {fileID: 2401309497476193346}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book04
   m_TagString: Untagged
@@ -7712,7 +7994,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -7737,6 +8019,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00024622006, y: 0.0016306237, z: 0.0023741827}
   m_Center: {x: -0.000000088153406, y: 0.00081531, z: 0.0011870904}
+--- !u!64 &2401309497476193346
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997671408293404808}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4657381922202882904, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &998048716016124288
 GameObject:
   m_ObjectHideFlags: 0
@@ -9438,6 +9742,7 @@ GameObject:
   - component: {fileID: 6806723224557437603}
   - component: {fileID: 2541304930838455453}
   - component: {fileID: 6788789890145718151}
+  - component: {fileID: 4427651332188031245}
   m_Layer: 0
   m_Name: wine_bottles_01_burgundy
   m_TagString: Untagged
@@ -9536,7 +9841,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -9557,10 +9862,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0008014672, y: 0.0008014672, z: 0.0030603257}
   m_Center: {x: -1.8511566e-11, y: 0.000000007550079, z: 0.0015318069}
+--- !u!64 &4427651332188031245
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256979902159585466}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1197008849588506724, guid: fd51316c20864408e8965e45d9d2659d, type: 3}
 --- !u!1 &1258589375095373695
 GameObject:
   m_ObjectHideFlags: 0
@@ -9939,6 +10266,7 @@ GameObject:
   - component: {fileID: 895479177454239045}
   - component: {fileID: 7881728359183759341}
   - component: {fileID: 883335564748747186}
+  - component: {fileID: 4365994379970100907}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book09
   m_TagString: Untagged
@@ -10035,7 +10363,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -10060,6 +10388,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00021613076, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000012251978, y: 0.00081531605, z: 0.0011870911}
+--- !u!64 &4365994379970100907
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378972255325938223}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6505858555967942627, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &1380469902505506207
 GameObject:
   m_ObjectHideFlags: 0
@@ -11320,6 +11670,7 @@ GameObject:
   - component: {fileID: 1216343226604470871}
   - component: {fileID: 7499465360962909581}
   - component: {fileID: 1845179623594974271}
+  - component: {fileID: 2904474763849624866}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book06
   m_TagString: Untagged
@@ -11416,7 +11767,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -11437,10 +11788,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00018395527, y: 0.0016306237, z: 0.0023741822}
   m_Center: {x: 0.0000002722632, y: 0.0008153184, z: 0.0011870874}
+--- !u!64 &2904474763849624866
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692675462594833051}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4784360253786411462, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &1705475793045379318
 GameObject:
   m_ObjectHideFlags: 0
@@ -12832,6 +13205,7 @@ GameObject:
   - component: {fileID: 1253600129332428899}
   - component: {fileID: 1711714111448762797}
   - component: {fileID: 5391527190244142320}
+  - component: {fileID: 5961846115313664769}
   m_Layer: 0
   m_Name: vintage_wooden_drawer_01_1k
   m_TagString: Untagged
@@ -12884,7 +13258,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -12905,10 +13279,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &5961846115313664769
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886583834083728089}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1888613176909065694
 GameObject:
   m_ObjectHideFlags: 0
@@ -15207,6 +15603,7 @@ GameObject:
   - component: {fileID: 1351967316631850447}
   - component: {fileID: 6410906148974041795}
   - component: {fileID: 1275991868895066230}
+  - component: {fileID: 3850217932886024095}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book07
   m_TagString: Untagged
@@ -15303,7 +15700,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -15328,6 +15725,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00024037699, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000008646013, y: 0.00081531605, z: 0.0011870911}
+--- !u!64 &3850217932886024095
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239362963440713878}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3070281227047194372, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &2244968891067248739
 GameObject:
   m_ObjectHideFlags: 0
@@ -15341,6 +15760,7 @@ GameObject:
   - component: {fileID: 815590788910498890}
   - component: {fileID: 1086411312702367605}
   - component: {fileID: 6079705982480036608}
+  - component: {fileID: 2143531508673789020}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book17
   m_TagString: Untagged
@@ -15437,7 +15857,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -15458,10 +15878,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00035646118, y: 0.0016306228, z: 0.002374181}
   m_Center: {x: -0.000000017928038, y: 0.0008153142, z: 0.0011870908}
+--- !u!64 &2143531508673789020
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244968891067248739}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1192260631663923013, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &2249570100522366536
 GameObject:
   m_ObjectHideFlags: 0
@@ -16668,6 +17110,7 @@ GameObject:
   - component: {fileID: 1452614350409559715}
   - component: {fileID: 1042475869719908603}
   - component: {fileID: 7418532696551439285}
+  - component: {fileID: 4949058847688841041}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book08
   m_TagString: Untagged
@@ -16764,7 +17207,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -16789,6 +17232,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00021613076, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.000000095940706, y: 0.0008153142, z: 0.0011870911}
+--- !u!64 &4949058847688841041
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2588249784689190918}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1429125195704427940, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &2593672617351855220
 GameObject:
   m_ObjectHideFlags: 0
@@ -17147,6 +17612,7 @@ GameObject:
   - component: {fileID: 139937333301520388}
   - component: {fileID: 2567455433548410763}
   - component: {fileID: 7412301319908458608}
+  - component: {fileID: 7603286507431308925}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book12
   m_TagString: Untagged
@@ -17243,7 +17709,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -17268,6 +17734,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00022752184, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000016847837, y: 0.0008153086, z: 0.0011870916}
+--- !u!64 &7603286507431308925
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2643301815233455442}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6096770733497807163, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &2651024110540383131
 GameObject:
   m_ObjectHideFlags: 0
@@ -18667,6 +19155,7 @@ GameObject:
   - component: {fileID: 2195702432469962707}
   - component: {fileID: 8052614755114185221}
   - component: {fileID: 1795457792951313391}
+  - component: {fileID: 6869375734673725151}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book16
   m_TagString: Untagged
@@ -18763,7 +19252,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -18784,10 +19273,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00024674545, y: 0.001630623, z: 0.0023741813}
   m_Center: {x: -0.0000002462976, y: 0.00081530266, z: 0.0011870867}
+--- !u!64 &6869375734673725151
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2904080060276966164}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 625465545162825416, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &2910258704218742192
 GameObject:
   m_ObjectHideFlags: 0
@@ -18967,6 +19478,7 @@ GameObject:
   - component: {fileID: 6813203404459367671}
   - component: {fileID: 6625589545928656325}
   - component: {fileID: 2512339287031882784}
+  - component: {fileID: 6684398738058634140}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book20
   m_TagString: Untagged
@@ -19063,7 +19575,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -19088,6 +19600,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00023786335, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: -0.00000006562564, y: 0.00081530766, z: 0.0011870904}
+--- !u!64 &6684398738058634140
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2930233366199887130}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8175944922580968875, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &2934157053824863949
 GameObject:
   m_ObjectHideFlags: 0
@@ -19297,6 +19831,7 @@ GameObject:
   - component: {fileID: 5426471419119649323}
   - component: {fileID: 3828651639958872095}
   - component: {fileID: 8982903763131369495}
+  - component: {fileID: 3643097235161914012}
   m_Layer: 0
   m_Name: Wine Barrel
   m_TagString: Untagged
@@ -19346,7 +19881,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -19367,10 +19902,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &3643097235161914012
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2947966652426831358}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &2948953777447412206
 GameObject:
   m_ObjectHideFlags: 0
@@ -19729,6 +20286,7 @@ GameObject:
   - component: {fileID: 7617778493367635722}
   - component: {fileID: 528280259285783370}
   - component: {fileID: 3742961665309768903}
+  - component: {fileID: 8078112750953194151}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book15
   m_TagString: Untagged
@@ -19825,7 +20383,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -19846,10 +20404,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00035306872, y: 0.001630623, z: 0.0023741815}
   m_Center: {x: -0.00000009389538, y: 0.0008153092, z: 0.0011870889}
+--- !u!64 &8078112750953194151
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2991365937700325182}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 358602929675968254, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &2993931557382943249
 GameObject:
   m_ObjectHideFlags: 0
@@ -20309,6 +20889,7 @@ GameObject:
   - component: {fileID: 3300721953016663139}
   - component: {fileID: 3285999296489440664}
   - component: {fileID: 1483741267222430075}
+  - component: {fileID: 7041809752535975504}
   m_Layer: 0
   m_Name: Wine Champagne
   m_TagString: Untagged
@@ -20407,7 +20988,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -20428,10 +21009,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00080585125, y: 0.00080562924, z: 0.0031552596}
   m_Center: {x: -5.0704545e-11, y: -0.000000103582735, z: 0.0015776298}
+--- !u!64 &7041809752535975504
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034575668910879720}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4771809863870588810, guid: fd51316c20864408e8965e45d9d2659d, type: 3}
 --- !u!1 &3047356817379992504
 GameObject:
   m_ObjectHideFlags: 0
@@ -21560,6 +22163,7 @@ GameObject:
   - component: {fileID: 5023636895116052498}
   - component: {fileID: 1317830672270462485}
   - component: {fileID: 2918505334734101424}
+  - component: {fileID: 7214011364316355683}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book17
   m_TagString: Untagged
@@ -21656,7 +22260,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -21677,10 +22281,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00035646115, y: 0.001630623, z: 0.0023741813}
   m_Center: {x: -0.00000001792711, y: 0.00081531244, z: 0.0011870886}
+--- !u!64 &7214011364316355683
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3165654986808832253}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1192260631663923013, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &3186677540316979626
 GameObject:
   m_ObjectHideFlags: 0
@@ -21891,6 +22517,7 @@ GameObject:
   - component: {fileID: 449303070872766053}
   - component: {fileID: 7371841678884305161}
   - component: {fileID: 7186192814215999387}
+  - component: {fileID: 2112405097917139994}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book10
   m_TagString: Untagged
@@ -21987,7 +22614,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -22012,6 +22639,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00021605905, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000017327686, y: 0.0008153151, z: 0.0011870916}
+--- !u!64 &2112405097917139994
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200399102658293530}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -693466214467522989, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &3201209296294780523
 GameObject:
   m_ObjectHideFlags: 0
@@ -22306,6 +22955,7 @@ GameObject:
   - component: {fileID: 429173994461840169}
   - component: {fileID: 4322805377261543040}
   - component: {fileID: 1895785575194795462}
+  - component: {fileID: 6503601081734335589}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book03
   m_TagString: Untagged
@@ -22402,7 +23052,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -22423,10 +23073,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00022797135, y: 0.0016306234, z: 0.0023741818}
   m_Center: {x: -0.00000008362309, y: 0.00081530004, z: 0.0011870909}
+--- !u!64 &6503601081734335589
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240960964908125214}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2361191254773553599, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &3243246450367814562
 GameObject:
   m_ObjectHideFlags: 0
@@ -22689,6 +23361,7 @@ GameObject:
   - component: {fileID: 6658924427342230389}
   - component: {fileID: 7046836215399201925}
   - component: {fileID: 2815833932183227542}
+  - component: {fileID: 1734639113138587552}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book15
   m_TagString: Untagged
@@ -22785,7 +23458,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -22806,10 +23479,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00035306875, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: -0.000000093896304, y: 0.0008153151, z: 0.0011870911}
+--- !u!64 &1734639113138587552
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287890604432581460}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 358602929675968254, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &3301654220122080649
 GameObject:
   m_ObjectHideFlags: 0
@@ -23072,6 +23767,7 @@ GameObject:
   - component: {fileID: 5112299212634912116}
   - component: {fileID: 240186455154556570}
   - component: {fileID: 2750757369776870377}
+  - component: {fileID: 8519238659136526878}
   m_Layer: 0
   m_Name: wine_bottles_01_champagne
   m_TagString: Untagged
@@ -23170,7 +23866,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -23191,10 +23887,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0008058518, y: 0.0008056299, z: 0.0031552606}
   m_Center: {x: -4.903798e-11, y: -0.00000011132254, z: 0.0015776339}
+--- !u!64 &8519238659136526878
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3324835336497332173}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4771809863870588810, guid: fd51316c20864408e8965e45d9d2659d, type: 3}
 --- !u!1 &3326901371748022822
 GameObject:
   m_ObjectHideFlags: 0
@@ -24696,6 +25414,7 @@ GameObject:
   - component: {fileID: 8690025811153095093}
   - component: {fileID: 3002787186943911991}
   - component: {fileID: 2922718317013424724}
+  - component: {fileID: 8899812432038877748}
   m_Layer: 0
   m_Name: wine_bottles_01_alsace (1)
   m_TagString: Untagged
@@ -24794,7 +25513,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -24815,10 +25534,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00072064355, y: 0.00072058674, z: 0.0033136723}
   m_Center: {x: 0.000000007863077, y: -0.00000004321204, z: 0.0016568361}
+--- !u!64 &8899812432038877748
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636255103382777620}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4236692711498669813, guid: fd51316c20864408e8965e45d9d2659d, type: 3}
 --- !u!1 &3647570169350375355
 GameObject:
   m_ObjectHideFlags: 0
@@ -26669,6 +27410,7 @@ GameObject:
   - component: {fileID: 4434865526368328654}
   - component: {fileID: 672580779795444500}
   - component: {fileID: 7663244209783262639}
+  - component: {fileID: 4719047980273703623}
   m_Layer: 0
   m_Name: Sofa
   m_TagString: Untagged
@@ -26716,7 +27458,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -26737,10 +27479,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &4719047980273703623
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3945186394745274740}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &3947461203562240982
 GameObject:
   m_ObjectHideFlags: 0
@@ -27098,6 +27862,7 @@ GameObject:
   - component: {fileID: 5401791859344972591}
   - component: {fileID: 8065698161436234942}
   - component: {fileID: 1375434426648078098}
+  - component: {fileID: 3693442237001041243}
   m_Layer: 0
   m_Name: Frying Pan
   m_TagString: Untagged
@@ -27193,7 +27958,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -27214,10 +27979,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.001912704, y: 0.004496646, z: 0.0005250943}
   m_Center: {x: -0.000005072629, y: 0.0012735368, z: 0.00026255695}
+--- !u!64 &3693442237001041243
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4013699676235086124}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2210549139825725238, guid: f1bfad19fdc1c4619b0f20353cda6d1a, type: 3}
 --- !u!1 &4042377458721463885
 GameObject:
   m_ObjectHideFlags: 0
@@ -28415,7 +29202,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6505858555967942627, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!54 &2978115003199375188
@@ -28441,7 +29228,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -29583,6 +30370,7 @@ GameObject:
   - component: {fileID: 5111829243304435731}
   - component: {fileID: 6598127484165225572}
   - component: {fileID: 2262621389785735809}
+  - component: {fileID: 5568773166257894781}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book14
   m_TagString: Untagged
@@ -29679,7 +30467,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -29700,10 +30488,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00032634163, y: 0.001630623, z: 0.0023741815}
   m_Center: {x: -0.00000034821193, y: 0.00081530266, z: 0.0011870889}
+--- !u!64 &5568773166257894781
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4319919393509497683}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6006895184634709721, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &4320667517318995373
 GameObject:
   m_ObjectHideFlags: 0
@@ -29717,6 +30527,7 @@ GameObject:
   - component: {fileID: 2764499657315135287}
   - component: {fileID: 5239938548028630020}
   - component: {fileID: 698153757797956581}
+  - component: {fileID: 537177811863393453}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book06
   m_TagString: Untagged
@@ -29813,7 +30624,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -29834,10 +30645,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00018395526, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000027224442, y: 0.0008153151, z: 0.0011870906}
+--- !u!64 &537177811863393453
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4320667517318995373}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4784360253786411462, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &4320801631066022735
 GameObject:
   m_ObjectHideFlags: 0
@@ -30131,6 +30964,7 @@ GameObject:
   - component: {fileID: 1988334042683735946}
   - component: {fileID: 8492637800801346265}
   - component: {fileID: 6049070775448550674}
+  - component: {fileID: 1417003436151812582}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book20
   m_TagString: Untagged
@@ -30227,7 +31061,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -30248,10 +31082,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00023786334, y: 0.0016306228, z: 0.002374181}
   m_Center: {x: -0.00000005072078, y: 0.0008153151, z: 0.0011870908}
+--- !u!64 &1417003436151812582
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371322749693939244}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8175944922580968875, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &4383909475292407405
 GameObject:
   m_ObjectHideFlags: 0
@@ -31263,6 +32119,7 @@ GameObject:
   - component: {fileID: 5140577130584653645}
   - component: {fileID: 5292425651472341102}
   - component: {fileID: 5070985920340162121}
+  - component: {fileID: 1849536007596494892}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book04
   m_TagString: Untagged
@@ -31359,7 +32216,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -31380,10 +32237,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0002462201, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: -0.00000007325441, y: 0.0008153142, z: 0.0011870911}
+--- !u!64 &1849536007596494892
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4570856730483950187}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4657381922202882904, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &4590640425794552278
 GameObject:
   m_ObjectHideFlags: 0
@@ -32871,6 +33750,7 @@ GameObject:
   - component: {fileID: 7468850961003061911}
   - component: {fileID: 8940992108480862689}
   - component: {fileID: 6365867609312691227}
+  - component: {fileID: 9122121168392324722}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book12
   m_TagString: Untagged
@@ -32967,7 +33847,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -32988,10 +33868,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00022752183, y: 0.001630623, z: 0.0023741815}
   m_Center: {x: 0.00000015357811, y: 0.0008153106, z: 0.0011870908}
+--- !u!64 &9122121168392324722
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4826025764259246017}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6096770733497807163, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &4842834389017834858
 GameObject:
   m_ObjectHideFlags: 0
@@ -33795,6 +34697,7 @@ GameObject:
   - component: {fileID: 8250349523137160240}
   - component: {fileID: 6411369159257941442}
   - component: {fileID: 1313749841457548761}
+  - component: {fileID: 4284858597525496960}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book08
   m_TagString: Untagged
@@ -33891,7 +34794,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -33912,10 +34815,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00021613075, y: 0.001630623, z: 0.0023741815}
   m_Center: {x: 0.000000081040454, y: 0.0008153036, z: 0.0011870908}
+--- !u!64 &4284858597525496960
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025128043082801813}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1429125195704427940, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &5043910022959431831
 GameObject:
   m_ObjectHideFlags: 0
@@ -34546,6 +35471,7 @@ GameObject:
   - component: {fileID: 4941698962146231191}
   - component: {fileID: 2469800079747948789}
   - component: {fileID: 2517592852215217909}
+  - component: {fileID: 3794867598832734606}
   m_Layer: 0
   m_Name: Pot
   m_TagString: Untagged
@@ -34641,7 +35567,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -34662,10 +35588,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0036666912, y: 0.003022905, z: 0.0010854643}
   m_Center: {x: -1.34743605e-11, y: -0.0000004845962, z: 0.00054091995}
+--- !u!64 &3794867598832734606
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5182603739300235509}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8309488524068480694, guid: 9446016fe88e54418b63177763ae8550, type: 3}
 --- !u!1 &5198945484220980713
 GameObject:
   m_ObjectHideFlags: 0
@@ -35034,6 +35982,8 @@ GameObject:
   - component: {fileID: 6431205232496096440}
   - component: {fileID: 7904738221666479901}
   - component: {fileID: 432458959805383253}
+  - component: {fileID: 6589524792276923036}
+  - component: {fileID: 9044633301513636701}
   m_Layer: 0
   m_Name: Top Floor 2
   m_TagString: Untagged
@@ -35123,10 +36073,59 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.01, y: 0.01, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &6589524792276923036
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259780271624772270}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6636929939652189025, guid: 964344a74dd9b4b539ed136cd5ab5814, type: 3}
+--- !u!54 &9044633301513636701
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259780271624772270}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5266138686922597085
 GameObject:
   m_ObjectHideFlags: 0
@@ -35421,6 +36420,7 @@ GameObject:
   - component: {fileID: 6947830334766550262}
   - component: {fileID: 8061807320159585274}
   - component: {fileID: 2723459753612889618}
+  - component: {fileID: 395013203670931297}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book10
   m_TagString: Untagged
@@ -35517,7 +36517,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -35538,10 +36538,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00021605904, y: 0.001630623, z: 0.0023741815}
   m_Center: {x: 0.00000016582719, y: 0.0008153031, z: 0.0011870889}
+--- !u!64 &395013203670931297
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5349575027773777289}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -693466214467522989, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &5350118551868823170
 GameObject:
   m_ObjectHideFlags: 0
@@ -35670,6 +36692,7 @@ GameObject:
   - component: {fileID: 7179621103199275450}
   - component: {fileID: 5598707919912730677}
   - component: {fileID: 7201620001714777095}
+  - component: {fileID: 1572563635660672788}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book03
   m_TagString: Untagged
@@ -35766,7 +36789,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -35791,6 +36814,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0002279715, y: 0.0016306238, z: 0.002374182}
   m_Center: {x: -0.00000008555802, y: 0.000815311, z: 0.001187091}
+--- !u!64 &1572563635660672788
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5381147278665647757}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2361191254773553599, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &5388224897906295916
 GameObject:
   m_ObjectHideFlags: 0
@@ -37094,6 +38139,7 @@ GameObject:
   - component: {fileID: 2585087077861081729}
   - component: {fileID: 3020870575534820809}
   - component: {fileID: 2597471219824807215}
+  - component: {fileID: 7611884818725894375}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book17
   m_TagString: Untagged
@@ -37190,7 +38236,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -37215,6 +38261,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00035646118, y: 0.0016306228, z: 0.002374181}
   m_Center: {x: -0.000000017928038, y: 0.0008153151, z: 0.0011870908}
+--- !u!64 &7611884818725894375
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600562947207445102}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1192260631663923013, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &5602892744713893903
 GameObject:
   m_ObjectHideFlags: 0
@@ -37425,6 +38493,7 @@ GameObject:
   - component: {fileID: 8660188546322777408}
   - component: {fileID: 5924152041772706871}
   - component: {fileID: 594647312848401597}
+  - component: {fileID: 8623148670514387486}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book16
   m_TagString: Untagged
@@ -37521,7 +38590,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -37546,6 +38615,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00024674548, y: 0.0016306228, z: 0.002374181}
   m_Center: {x: -0.00000024629853, y: 0.0008153086, z: 0.0011870912}
+--- !u!64 &8623148670514387486
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5628027624505084295}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 625465545162825416, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &5657708743895260330
 GameObject:
   m_ObjectHideFlags: 0
@@ -37788,6 +38879,7 @@ GameObject:
   - component: {fileID: 4096802615871198820}
   - component: {fileID: 7706796024002919284}
   - component: {fileID: 5274437341350609374}
+  - component: {fileID: 411461437180938884}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book20
   m_TagString: Untagged
@@ -37884,7 +38976,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -37905,10 +38997,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00023786332, y: 0.001630623, z: 0.0023741813}
   m_Center: {x: -0.00000005071985, y: 0.00081530405, z: 0.0011870886}
+--- !u!64 &411461437180938884
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691951362187456393}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8175944922580968875, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &5717598515419115869
 GameObject:
   m_ObjectHideFlags: 0
@@ -38005,6 +39119,7 @@ GameObject:
   - component: {fileID: 1144003426634778009}
   - component: {fileID: 8715349963521236436}
   - component: {fileID: 1991995732467031452}
+  - component: {fileID: 8339446573226182087}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book15
   m_TagString: Untagged
@@ -38101,7 +39216,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -38126,6 +39241,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00035306875, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: -0.000000093896304, y: 0.00081531605, z: 0.0011870911}
+--- !u!64 &8339446573226182087
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752485799613975981}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 358602929675968254, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &5760271485275446028
 GameObject:
   m_ObjectHideFlags: 0
@@ -39547,6 +40684,7 @@ GameObject:
   - component: {fileID: 2451515336179901324}
   - component: {fileID: 1935397679886559399}
   - component: {fileID: 1119450560310425240}
+  - component: {fileID: 7331113753326559402}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book19
   m_TagString: Untagged
@@ -39643,7 +40781,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -39664,10 +40802,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00019202396, y: 0.0016306228, z: 0.002374181}
   m_Center: {x: 0.00000007151895, y: 0.0008153142, z: 0.0011870908}
+--- !u!64 &7331113753326559402
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947389205006358448}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6714976476829683630, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &5951165859249329758
 GameObject:
   m_ObjectHideFlags: 0
@@ -39745,6 +40905,7 @@ GameObject:
   - component: {fileID: 8927766622490717429}
   - component: {fileID: 86355676877389975}
   - component: {fileID: 3074842263422793628}
+  - component: {fileID: 7569813956936151967}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book08
   m_TagString: Untagged
@@ -39841,7 +41002,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -39862,10 +41023,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00021613076, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.000000081039545, y: 0.0008153142, z: 0.0011870911}
+--- !u!64 &7569813956936151967
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961371562008423093}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1429125195704427940, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &5974349211100530478
 GameObject:
   m_ObjectHideFlags: 0
@@ -39879,6 +41062,7 @@ GameObject:
   - component: {fileID: 9014452689057985323}
   - component: {fileID: 554018476902542935}
   - component: {fileID: 6037750232654739626}
+  - component: {fileID: 3858830822153910997}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book11
   m_TagString: Untagged
@@ -39975,7 +41159,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -39996,10 +41180,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00017935071, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.000000092237244, y: 0.0008153142, z: 0.0011870906}
+--- !u!64 &3858830822153910997
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5974349211100530478}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7710946037921196938, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &5985436559025405683
 GameObject:
   m_ObjectHideFlags: 0
@@ -40254,6 +41460,7 @@ GameObject:
   - component: {fileID: 2196821043167387983}
   - component: {fileID: 61801302599222655}
   - component: {fileID: 214151838623412293}
+  - component: {fileID: 9101424289810757525}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book16
   m_TagString: Untagged
@@ -40350,7 +41557,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -40371,10 +41578,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00024674548, y: 0.0016306228, z: 0.002374181}
   m_Center: {x: -0.00000024629853, y: 0.0008153142, z: 0.0011870908}
+--- !u!64 &9101424289810757525
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028560927910940396}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 625465545162825416, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &6038199147785666866
 GameObject:
   m_ObjectHideFlags: 0
@@ -41370,6 +42599,7 @@ GameObject:
   - component: {fileID: 5590800694206118071}
   - component: {fileID: 4027208883880409638}
   - component: {fileID: 4002051656170310880}
+  - component: {fileID: 4564600819537292270}
   m_Layer: 0
   m_Name: wine_bottles_01_bordeaux
   m_TagString: Untagged
@@ -41468,7 +42698,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -41489,10 +42719,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0007453018, y: 0.00074530154, z: 0.0029803922}
   m_Center: {x: 1.2738234e-10, y: -9.277074e-10, z: 0.0014916196}
+--- !u!64 &4564600819537292270
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229679158599992572}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3134507691543753287, guid: fd51316c20864408e8965e45d9d2659d, type: 3}
 --- !u!1 &6244531789465416981
 GameObject:
   m_ObjectHideFlags: 0
@@ -41786,6 +43038,7 @@ GameObject:
   - component: {fileID: 4728631822589791784}
   - component: {fileID: 7225107533653442176}
   - component: {fileID: 3538658569796235764}
+  - component: {fileID: 8419305288252995551}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book01
   m_TagString: Untagged
@@ -41882,7 +43135,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -41903,10 +43156,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00038688857, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: -0.0000002646485, y: 0.0008153142, z: 0.0011870916}
+--- !u!64 &8419305288252995551
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6310075676520976390}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3791526662705610464, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &6323029006167851199
 GameObject:
   m_ObjectHideFlags: 0
@@ -42714,6 +43989,7 @@ GameObject:
   - component: {fileID: 303613127194522899}
   - component: {fileID: 1231693432534560951}
   - component: {fileID: 5405432503859773354}
+  - component: {fileID: 167541866924825959}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book10
   m_TagString: Untagged
@@ -42810,7 +44086,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -42831,10 +44107,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00021605905, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000018817802, y: 0.0008153151, z: 0.0011870911}
+--- !u!64 &167541866924825959
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6480195544431349388}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -693466214467522989, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &6483328709695448504
 GameObject:
   m_ObjectHideFlags: 0
@@ -43079,6 +44377,7 @@ GameObject:
   - component: {fileID: 9134245400854636692}
   - component: {fileID: 1769929326423004554}
   - component: {fileID: 377101477370116911}
+  - component: {fileID: 6423231063998538086}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book14
   m_TagString: Untagged
@@ -43175,7 +44474,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -43196,10 +44495,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00032634166, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: -0.0000003333117, y: 0.0008153142, z: 0.0011870911}
+--- !u!64 &6423231063998538086
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6510689073656510918}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6006895184634709721, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &6513411486294730042
 GameObject:
   m_ObjectHideFlags: 0
@@ -44649,6 +45970,7 @@ GameObject:
   - component: {fileID: 2352926017220373120}
   - component: {fileID: 5362754278539019132}
   - component: {fileID: 3838995323307528496}
+  - component: {fileID: 4656014391421286211}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book14
   m_TagString: Untagged
@@ -44745,7 +46067,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -44770,6 +46092,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00032634166, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: -0.00000034821286, y: 0.0008153151, z: 0.0011870911}
+--- !u!64 &4656014391421286211
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747790747926843840}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6006895184634709721, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &6749427764094462929
 GameObject:
   m_ObjectHideFlags: 0
@@ -45229,6 +46573,9 @@ GameObject:
   - component: {fileID: 7765834895744496390}
   - component: {fileID: 5754035224060603101}
   - component: {fileID: 4171023534663692182}
+  - component: {fileID: 8813774897455055638}
+  - component: {fileID: 4593194241142751258}
+  - component: {fileID: 7714542174785792440}
   m_Layer: 0
   m_Name: Bottom Floor
   m_TagString: Untagged
@@ -45318,10 +46665,81 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.010000001, y: 0.01, z: 0.01}
   m_Center: {x: 0, y: 0, z: 2.2737368e-13}
+--- !u!54 &8813774897455055638
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812777207122373332}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4593194241142751258
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812777207122373332}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7054459996269670180, guid: 964344a74dd9b4b539ed136cd5ab5814, type: 3}
+--- !u!64 &7714542174785792440
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812777207122373332}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7054459996269670180, guid: 964344a74dd9b4b539ed136cd5ab5814, type: 3}
 --- !u!1 &6826987422612739796
 GameObject:
   m_ObjectHideFlags: 0
@@ -46198,6 +47616,7 @@ GameObject:
   - component: {fileID: 825057843312431255}
   - component: {fileID: 3816095881016724376}
   - component: {fileID: 7257869134436405836}
+  - component: {fileID: 5986543416856611053}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book18
   m_TagString: Untagged
@@ -46294,7 +47713,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -46315,10 +47734,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0002181542, y: 0.0016306228, z: 0.002374181}
   m_Center: {x: -0.000000031846945, y: 0.0008153151, z: 0.0011870908}
+--- !u!64 &5986543416856611053
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7035905324927330833}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9179586440736475388, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &7044593614365307740
 GameObject:
   m_ObjectHideFlags: 0
@@ -46755,6 +48196,7 @@ GameObject:
   - component: {fileID: 3679765402038670451}
   - component: {fileID: 7551233768319837708}
   - component: {fileID: 5055331580362728821}
+  - component: {fileID: 5324660605615115218}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book13
   m_TagString: Untagged
@@ -46851,7 +48293,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -46876,6 +48318,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0003655132, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: -0.00000024059418, y: 0.0008153151, z: 0.0011870911}
+--- !u!64 &5324660605615115218
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095786542272731610}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -264918674245685689, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &7109981287811827152
 GameObject:
   m_ObjectHideFlags: 0
@@ -46988,6 +48452,7 @@ GameObject:
   - component: {fileID: 8277139612554682558}
   - component: {fileID: 32468580517430436}
   - component: {fileID: 7295279865927139783}
+  - component: {fileID: 1999198027197897971}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book13
   m_TagString: Untagged
@@ -47084,7 +48549,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -47105,10 +48570,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0003655132, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: -0.00000025549534, y: 0.0008153142, z: 0.0011870906}
+--- !u!64 &1999198027197897971
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151052276305376265}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -264918674245685689, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &7158204208205949685
 GameObject:
   m_ObjectHideFlags: 0
@@ -47670,6 +49157,7 @@ GameObject:
   - component: {fileID: 947650063814976967}
   - component: {fileID: 4976484549957282501}
   - component: {fileID: 7639147980356718791}
+  - component: {fileID: 8228956474029437361}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book19
   m_TagString: Untagged
@@ -47766,7 +49254,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -47791,6 +49279,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00019202396, y: 0.0016306228, z: 0.002374181}
   m_Center: {x: 0.000000056617786, y: 0.0008153151, z: 0.0011870908}
+--- !u!64 &8228956474029437361
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7212246740168279557}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6714976476829683630, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &7224092260478859454
 GameObject:
   m_ObjectHideFlags: 0
@@ -48593,6 +50103,7 @@ GameObject:
   - component: {fileID: 7615511488915515447}
   - component: {fileID: 1894445905684261713}
   - component: {fileID: 437192536471327258}
+  - component: {fileID: 7779026717245730064}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book05
   m_TagString: Untagged
@@ -48689,7 +50200,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -48714,6 +50225,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00019152477, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000006841576, y: 0.0008153151, z: 0.0011870911}
+--- !u!64 &7779026717245730064
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7315262112946730252}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3454820031046999979, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &7333479326927239135
 GameObject:
   m_ObjectHideFlags: 0
@@ -49861,6 +51394,7 @@ GameObject:
   - component: {fileID: 7459931951909013826}
   - component: {fileID: 3277984751362733510}
   - component: {fileID: 8615668205215708669}
+  - component: {fileID: 2071790973401014420}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book01
   m_TagString: Untagged
@@ -49957,7 +51491,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -49978,10 +51512,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0003868889, y: 0.0016306232, z: 0.0023741815}
   m_Center: {x: -0.0000002813798, y: 0.00081530766, z: 0.0011870831}
+--- !u!64 &2071790973401014420
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482304296730575187}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3791526662705610464, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &7505699890944355408
 GameObject:
   m_ObjectHideFlags: 0
@@ -50162,6 +51718,7 @@ GameObject:
   - component: {fileID: 4568675794368215619}
   - component: {fileID: 5207842171347253292}
   - component: {fileID: 2897892770188027178}
+  - component: {fileID: 2715270243739743783}
   m_Layer: 0
   m_Name: Shelves 1
   m_TagString: Untagged
@@ -50257,7 +51814,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -50278,10 +51835,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0051111565, y: 0.0036709497, z: 0.011250721}
   m_Center: {x: 0.0000005054623, y: -0.0018354746, z: 0.0056157317}
+--- !u!64 &2715270243739743783
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7528757578660648648}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8383722595761260690, guid: ada6d18d694d442beb01a56d5baa6fa0, type: 3}
 --- !u!1 &7528842105004474514
 GameObject:
   m_ObjectHideFlags: 0
@@ -50527,6 +52106,7 @@ GameObject:
   - component: {fileID: 2551814104020107741}
   - component: {fileID: 4800895527156218382}
   - component: {fileID: 3167222191393473174}
+  - component: {fileID: 1623188326034805624}
   m_Layer: 0
   m_Name: Basket
   m_TagString: Untagged
@@ -50622,7 +52202,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -50643,10 +52223,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.003832243, y: 0.0029501526, z: 0.0011742299}
   m_Center: {x: 0.0000026938742, y: 0.000004339654, z: 0.0005779482}
+--- !u!64 &1623188326034805624
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549485811508578882}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3907791287621387223, guid: 8154a4fd05c454662b8380d843e0555a, type: 3}
 --- !u!1 &7553939304511957494
 GameObject:
   m_ObjectHideFlags: 0
@@ -51671,6 +53273,7 @@ GameObject:
   - component: {fileID: 1039154785770104126}
   - component: {fileID: 677122863733373997}
   - component: {fileID: 8978796361965660514}
+  - component: {fileID: 4344962818577314672}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book04
   m_TagString: Untagged
@@ -51767,7 +53370,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -51788,10 +53391,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0002462204, y: 0.0016306237, z: 0.0023741825}
   m_Center: {x: -0.000000077890064, y: 0.0008153286, z: 0.0011870838}
+--- !u!64 &4344962818577314672
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7750669669354760731}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4657381922202882904, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &7757241361562055045
 GameObject:
   m_ObjectHideFlags: 0
@@ -52761,6 +54386,7 @@ GameObject:
   - component: {fileID: 4990953218831729551}
   - component: {fileID: 9183528491426069317}
   - component: {fileID: 4956588043451615468}
+  - component: {fileID: 2026073348802056042}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book03
   m_TagString: Untagged
@@ -52857,7 +54483,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -52878,10 +54504,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00022797125, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: -0.000000070620516, y: 0.00081531325, z: 0.0011870911}
+--- !u!64 &2026073348802056042
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873498831439481765}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2361191254773553599, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &7882756953427152551
 GameObject:
   m_ObjectHideFlags: 0
@@ -53138,6 +54786,7 @@ GameObject:
   - component: {fileID: 9076346993004753897}
   - component: {fileID: 9074768307435966271}
   - component: {fileID: 6536392546449514561}
+  - component: {fileID: 4575483516300330906}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book18
   m_TagString: Untagged
@@ -53234,7 +54883,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -53255,10 +54904,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00021815418, y: 0.001630623, z: 0.0023741813}
   m_Center: {x: -0.000000039296598, y: 0.0008153101, z: 0.0011870886}
+--- !u!64 &4575483516300330906
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7971928710136737384}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9179586440736475388, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &7978452316429211151
 GameObject:
   m_ObjectHideFlags: 0
@@ -53272,6 +54943,7 @@ GameObject:
   - component: {fileID: 4271944688116025488}
   - component: {fileID: 4857819411549094587}
   - component: {fileID: 2487822000304337134}
+  - component: {fileID: 3045725831030626946}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book11
   m_TagString: Untagged
@@ -53389,10 +55061,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0001793507, y: 0.001630623, z: 0.0023741815}
   m_Center: {x: 0.00000008478757, y: 0.0008153106, z: 0.0011870889}
+--- !u!64 &3045725831030626946
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7978452316429211151}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7710946037921196938, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &7993679999211518455
 GameObject:
   m_ObjectHideFlags: 0
@@ -53489,6 +55183,7 @@ GameObject:
   - component: {fileID: 8678528882536324617}
   - component: {fileID: 4476084012613238068}
   - component: {fileID: 8540833720123596646}
+  - component: {fileID: 277634403093009371}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book02
   m_TagString: Untagged
@@ -53585,7 +55280,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -53606,10 +55301,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00028430735, y: 0.0016306234, z: 0.0023741818}
   m_Center: {x: 0.0000005443355, y: 0.00081533403, z: 0.0011870853}
+--- !u!64 &277634403093009371
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7993880082536875535}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3413121383193214065, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &7993961505003540734
 GameObject:
   m_ObjectHideFlags: 0
@@ -54789,6 +56506,7 @@ GameObject:
   - component: {fileID: 3262076172836523548}
   - component: {fileID: 487749813662892673}
   - component: {fileID: 4905058068267614869}
+  - component: {fileID: 8075231832790560038}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book05
   m_TagString: Untagged
@@ -54885,7 +56603,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -54906,10 +56624,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00019152477, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000006841576, y: 0.0008153142, z: 0.0011870911}
+--- !u!64 &8075231832790560038
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8108882615527940166}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3454820031046999979, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &8138277685423669856
 GameObject:
   m_ObjectHideFlags: 0
@@ -55089,6 +56829,7 @@ GameObject:
   - component: {fileID: 8554246212513614020}
   - component: {fileID: 3030520266166597842}
   - component: {fileID: 8099427620542319422}
+  - component: {fileID: 3138248181241372712}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book06
   m_TagString: Untagged
@@ -55185,7 +56926,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -55210,6 +56951,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00018395526, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000025734326, y: 0.0008153151, z: 0.0011870911}
+--- !u!64 &3138248181241372712
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8154347111485317128}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4784360253786411462, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &8163267494036594747
 GameObject:
   m_ObjectHideFlags: 0
@@ -56437,6 +58200,7 @@ GameObject:
   - component: {fileID: 8652979369953320490}
   - component: {fileID: 1738983299692053821}
   - component: {fileID: 3191926931002530593}
+  - component: {fileID: 4169231901690566009}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -56486,7 +58250,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -56511,6 +58275,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &4169231901690566009
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313185628194440336}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &8314604651472160628
 GameObject:
   m_ObjectHideFlags: 0
@@ -57105,6 +58891,7 @@ GameObject:
   - component: {fileID: 5617410722282617813}
   - component: {fileID: 51068304486165752}
   - component: {fileID: 1983941482840776325}
+  - component: {fileID: 6786582026765131916}
   m_Layer: 0
   m_Name: Jug
   m_TagString: Untagged
@@ -57200,7 +58987,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -57221,10 +59008,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.002753217, y: 0.0016752626, z: 0.0021131346}
   m_Center: {x: 0.00014664527, y: 2.0741785e-12, z: 0.0010589792}
+--- !u!64 &6786582026765131916
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8421586608620423979}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8034837622226913951, guid: 5ccc338ee6c404932bc3e6dc05da0c29, type: 3}
 --- !u!1 &8422404688261872076
 GameObject:
   m_ObjectHideFlags: 0
@@ -57417,6 +59226,7 @@ GameObject:
   - component: {fileID: 7654705062711113686}
   - component: {fileID: 2854407199436034536}
   - component: {fileID: 7806153869611615869}
+  - component: {fileID: 4909781073476472835}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book09
   m_TagString: Untagged
@@ -57513,7 +59323,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -57534,10 +59344,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00021613075, y: 0.001630623, z: 0.0023741815}
   m_Center: {x: 0.00000012997127, y: 0.00081531104, z: 0.0011870889}
+--- !u!64 &4909781073476472835
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8463547749852178620}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6505858555967942627, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &8465894303861836731
 GameObject:
   m_ObjectHideFlags: 0
@@ -58071,7 +59903,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2371968371450264783, guid: 8e27fa7bdf0d54bcfb5db232ca789705, type: 3}
 --- !u!54 &4990310524237470913
@@ -58097,7 +59929,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -58220,6 +60052,7 @@ GameObject:
   - component: {fileID: 8893407807440560641}
   - component: {fileID: 5746165165262195033}
   - component: {fileID: 6500780016008152354}
+  - component: {fileID: 7286626818427397238}
   m_Layer: 0
   m_Name: Alsace Wine
   m_TagString: Untagged
@@ -58318,7 +60151,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -58339,10 +60172,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.0007206431, y: 0.00072058674, z: 0.0033136732}
   m_Center: {x: -5.2114824e-10, y: -0.000000028229419, z: 0.0016568402}
+--- !u!64 &7286626818427397238
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8604136689960006575}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4236692711498669813, guid: fd51316c20864408e8965e45d9d2659d, type: 3}
 --- !u!1 &8617933953432300834
 GameObject:
   m_ObjectHideFlags: 0
@@ -58533,6 +60388,7 @@ GameObject:
   - component: {fileID: 5536763974057099316}
   - component: {fileID: 2870580399254939152}
   - component: {fileID: 1927627425180447433}
+  - component: {fileID: 5068029945647666899}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book07
   m_TagString: Untagged
@@ -58629,7 +60485,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -58650,10 +60506,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00024037699, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000008646013, y: 0.0008153142, z: 0.0011870906}
+--- !u!64 &5068029945647666899
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648481169598288747}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3070281227047194372, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &8662873253280515574
 GameObject:
   m_ObjectHideFlags: 0
@@ -59254,6 +61132,7 @@ GameObject:
   - component: {fileID: 8400549484394383196}
   - component: {fileID: 704772903351162100}
   - component: {fileID: 2394891226786174022}
+  - component: {fileID: 6157946996998346085}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book07
   m_TagString: Untagged
@@ -59350,7 +61229,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -59371,10 +61250,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00024037698, y: 0.0016306234, z: 0.0023741818}
   m_Center: {x: 0.00000007902041, y: 0.0008152996, z: 0.0011870927}
+--- !u!64 &6157946996998346085
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8738189320552204805}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3070281227047194372, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &8762121927302878228
 GameObject:
   m_ObjectHideFlags: 0
@@ -60075,6 +61976,7 @@ GameObject:
   - component: {fileID: 2951677542688434776}
   - component: {fileID: 207822948251448956}
   - component: {fileID: 3778852436958308047}
+  - component: {fileID: 2588392201587971612}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book02
   m_TagString: Untagged
@@ -60171,7 +62073,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -60192,10 +62094,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00028430723, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000054066174, y: 0.00081531325, z: 0.0011870911}
+--- !u!64 &2588392201587971612
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8873370906323815832}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3413121383193214065, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &8876607464802853063
 GameObject:
   m_ObjectHideFlags: 0
@@ -61844,6 +63768,7 @@ GameObject:
   - component: {fileID: 2420917922199878633}
   - component: {fileID: 3535161867772305245}
   - component: {fileID: 3971184017643558836}
+  - component: {fileID: 708404648464962174}
   m_Layer: 0
   m_Name: book_encyclopedia_set_01_book12
   m_TagString: Untagged
@@ -61940,7 +63865,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -61961,10 +63886,32 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.00022752184, y: 0.0016306228, z: 0.0023741813}
   m_Center: {x: 0.00000016847837, y: 0.0008153151, z: 0.0011870911}
+--- !u!64 &708404648464962174
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063947379256556260}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6096770733497807163, guid: f3dd47c4431fb4cdfa47a1f6f5f098cd, type: 3}
 --- !u!1 &9071642364147260821
 GameObject:
   m_ObjectHideFlags: 0
