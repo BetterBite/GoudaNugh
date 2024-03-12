@@ -146,15 +146,8 @@ public class InteractibleManager : NetworkBehaviour {
         //check if you are past player, if not, dont do anything
         //check what object it is, and spawn depending on what you get
         /*
-         public NetworkObject FindNetworkObject(ulong networkObjectId)
-        {
-            NetworkObject networkObject;
-            if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(networkObjectId, out networkObject)) {
-                return networkObject;
-            } else {
-                return null;
-            }
-        }
+        find the network object by id, helper function exists
+        instantiate the past object with the right transform and we win
         InteractableManager.TransferOwnerServerRPC(networkObject.NetworkObjectId, NetworkManager.Singleton.LocalClientId);
         */
     }
