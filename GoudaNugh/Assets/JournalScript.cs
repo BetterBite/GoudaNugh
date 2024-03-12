@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
 
 public class JournalScript : MonoBehaviour
 {
-    public GameObject Evidence;
+    public GameObject[] Evidence;
     public GameObject NotedEv;
-    public JournalEvidence journalEvidence;
+    private JournalEvidence journalEvidence;
     public int PageNum;
+    public TMP_Text Txt;
     //XRGeneralGrabTransformer GenGrabTrans;
     // Start is called before the first frame update
     public void EvidenceFound()
@@ -18,16 +21,33 @@ public class JournalScript : MonoBehaviour
     }
     public void ForwardPage()
     {
+
+        if (PageNum < Evidence.Length);
         PageNum = PageNum + 1;
         LoadPage();
 
     }
+    public void BackPage()
+    {
+        if (PageNum > 1){
+        PageNum = PageNum - 1;
+        LoadPage();
+        }
+
+    }
     void LoadPage()
     {
-        journalEvidence = Evidence.GetComponent<JournalEvidence>();
+        for (int i = 0; i < Evidence.Length; i++){
+        journalEvidence = Evidence[i].GetComponent<JournalEvidence>();
         if (journalEvidence.Page == PageNum){
-            Evidence.SetActive(true);
+            Evidence[i].SetActive(true);
         }
+        else
+        {
+            Evidence[i].SetActive(false);
+        }
+        }
+        Txt.text = PageNum.ToString();
     }
     void Start()
     {
