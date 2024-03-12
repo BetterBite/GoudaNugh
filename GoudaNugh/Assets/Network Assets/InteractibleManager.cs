@@ -51,6 +51,7 @@ public class InteractibleManager : NetworkBehaviour {
         SceneManager.sceneLoaded += OnSceneLoad;
     }
 
+    // I love "if's as guards"
     private void OnSceneLoad(Scene scene, LoadSceneMode mode) {
         if (SceneManager.GetActiveScene().name == "BetaSceneMain") {
             var networkManager = NetworkManager.Singleton;
@@ -58,7 +59,22 @@ public class InteractibleManager : NetworkBehaviour {
                 Debug.LogError("NetworkManager is blerry missing!");
                 return;
             }
-            // Do something
+            // Read https://docs-multiplayer.unity3d.com/netcode/current/basics/object-spawning/
+            foreach (GameObject Object in ObjectsToSpawn) {
+                var instance = Instantiate(Object);
+                var networkInstance = instance.GetComponent<NetworkObject>();
+                if (networkInstance == null) {
+                    Debug.LogError("NetworkObject is blerry missing from " + Object.name);
+                    return;
+                }
+                networkInstance.Spawn();
+                var PastObject = networkInstance.GetComponent<Variables>().PastObjectPrefab;
+                var FutureObject = networkInstance.GetComponent<Variables>().FutureObjectPrefab;
+
+                InstantiatePastObject(PastObject);
+                InstantiateFutureObject(FutureObject);
+
+            }
         }
     }
     /* DEPRECATED
@@ -115,6 +131,16 @@ public class InteractibleManager : NetworkBehaviour {
 
     You DO NOT need to use RPC calls if you are dealing with NetworkVariables unless you don't own the object, in which case you need to use an RPC call to update the variable
      */
+
+    [Rpc(SendTo.ClientsAndHost)]
+    public void InstantiatePastObject(GameObject prefab) {
+        //check if you are past player, if not, dont do anything
+        //check what object it is, and spawn depending on what you get
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    public void InstantiateFutureObject(GameObject prefab) {
+    }
 
     [Rpc(SendTo.NotMe)]
     public void UpdateFutureObjectClientRPC(ulong objectID) {

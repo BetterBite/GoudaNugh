@@ -12,6 +12,9 @@ public class Variables : NetworkBehaviour
     [SerializeField]
     private readonly GameObject futureObjectPrefab;
 
+    public GameObject PastObjectPrefab => pastObjectPrefab;
+    public GameObject FutureObjectPrefab => futureObjectPrefab;
+
     // NetworkVariables for the gameObject
     [SerializeField]
     private NetworkVariable<bool> _hasMoved = new NetworkVariable<bool>(false);
