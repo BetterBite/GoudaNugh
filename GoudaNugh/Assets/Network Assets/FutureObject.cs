@@ -12,7 +12,7 @@ public class FutureObject : MonoBehaviour
 
     private bool hasMoved = false;
     public XRGrabInteractable grabInteractable;
-    private readonly InteractibleManager InstanceManager = InteractibleManager.instance;
+    private readonly InteractibleManager InstanceManager = InteractibleManager.Instance;
 
     public void Awake() {
         hasMoved = false;

@@ -12,7 +12,7 @@ public class PastObject : MonoBehaviour
     // Cached reference to the network object
     private NetworkObject networkObject;
     private XRGrabInteractable grabInteractable;
-    private readonly InteractibleManager InteractableManager = InteractibleManager.instance;
+    private readonly InteractibleManager InteractableManager = InteractibleManager.Instance;
 
     // Note: objectID field is not yet initialized (probably) when Awakening so networkObjectID is used to transfer ownership
     private void Awake() {

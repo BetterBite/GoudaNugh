@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.SceneManagement;
 
 public class InteractibleManager : NetworkBehaviour {
-    public static InteractibleManager instance { get; private set; }
+    public static InteractibleManager Instance { get; private set; }
+    public List<GameObject> ObjectsToSpawn;
     private List<WholeObject> WholeObjects { get; } = new List<WholeObject>();
 
     // Struct that represents the entire object, including the past, network, and future instances
@@ -44,8 +46,20 @@ public class InteractibleManager : NetworkBehaviour {
     }
 
     public void Awake() {
-        instance = this;
+        Instance = this;
         DontDestroyOnLoad(this.gameObject);
+        SceneManager.sceneLoaded += OnSceneLoad;
+    }
+
+    private void OnSceneLoad(Scene scene, LoadSceneMode mode) {
+        if (SceneManager.GetActiveScene().name == "BetaSceneMain") {
+            var networkManager = NetworkManager.Singleton;
+            if (networkManager == null) {
+                Debug.LogError("NetworkManager is blerry missing!");
+                return;
+            }
+            // Do something
+        }
     }
     /* DEPRECATED
     public NetworkObject GetNetworkObjectByTag(string tag) {
@@ -98,6 +112,8 @@ public class InteractibleManager : NetworkBehaviour {
     
     Hint : To send an RPC call to be executed on the other player's machine, use SendTo.NotMe and check within the function if you are not the server
     See immediate example below (UpdateFutureObjectClientRPC)
+
+    You DO NOT need to use RPC calls if you are dealing with NetworkVariables unless you don't own the object, in which case you need to use an RPC call to update the variable
      */
 
     [Rpc(SendTo.NotMe)]
