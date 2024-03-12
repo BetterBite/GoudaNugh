@@ -183,7 +183,25 @@ MonoBehaviour:
     floatingPointComparisonTolerance: 0.00009999999747378752
     allowConfidenceOverlap: 0
     confidenceRanges: []
-  - path: entities.name:name[0].value
+  - path: entities.name:name[0].name
+    witValueReference: {fileID: 0}
+    contentRequired: 1
+    matchMethod: 0
+    comparisonMethod: 0
+    matchValue: 
+    floatingPointComparisonTolerance: 0.00009999999747378752
+    allowConfidenceOverlap: 0
+    confidenceRanges: []
+  - path: entities.alibi:alibi[0].name
+    witValueReference: {fileID: 0}
+    contentRequired: 1
+    matchMethod: 0
+    comparisonMethod: 0
+    matchValue: 
+    floatingPointComparisonTolerance: 0.00009999999747378752
+    allowConfidenceOverlap: 0
+    confidenceRanges: []
+  - path: entities.victim:victim[0].name
     witValueReference: {fileID: 0}
     contentRequired: 1
     matchMethod: 0
@@ -481,6 +499,42 @@ MonoBehaviour:
     floatingPointComparisonTolerance: 0.00009999999747378752
     allowConfidenceOverlap: 0
     confidenceRanges: []
+  - path: entities.figurine:figurine[0].name
+    witValueReference: {fileID: 0}
+    contentRequired: 1
+    matchMethod: 0
+    comparisonMethod: 0
+    matchValue: 
+    floatingPointComparisonTolerance: 0.00009999999747378752
+    allowConfidenceOverlap: 0
+    confidenceRanges: []
+  - path: entities.clock:clock[0].name
+    witValueReference: {fileID: 0}
+    contentRequired: 1
+    matchMethod: 0
+    comparisonMethod: 0
+    matchValue: 
+    floatingPointComparisonTolerance: 0.00009999999747378752
+    allowConfidenceOverlap: 0
+    confidenceRanges: []
+  - path: entities.globe:globe[0].name
+    witValueReference: {fileID: 0}
+    contentRequired: 1
+    matchMethod: 0
+    comparisonMethod: 0
+    matchValue: 
+    floatingPointComparisonTolerance: 0.00009999999747378752
+    allowConfidenceOverlap: 0
+    confidenceRanges: []
+  - path: entities.telescope:telescope[0].name
+    witValueReference: {fileID: 0}
+    contentRequired: 1
+    matchMethod: 0
+    comparisonMethod: 0
+    matchValue: 
+    floatingPointComparisonTolerance: 0.00009999999747378752
+    allowConfidenceOverlap: 0
+    confidenceRanges: []
   formattedValueEvents: []
   onMultiValueEvent:
     m_PersistentCalls:
@@ -617,7 +671,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -778,7 +832,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78740ecb189170e4fa84efe007612f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 77b28733e0efb6942836b0c82840b9a7, type: 3}
+  - {fileID: 8300000, guid: 89754f627f44a3345a3300fb556f888a, type: 3}
+  - {fileID: 8300000, guid: 2eadf87f0ab5daf49b468855b329b123, type: 3}
+  - {fileID: 8300000, guid: 246f5043eac89d048be38883db630986, type: 3}
+  - {fileID: 8300000, guid: a68bebe1d0817b246a8a04cc011e55e3, type: 3}
+  - {fileID: 8300000, guid: c5600bd90da3df84fb9b7267fc4a87c7, type: 3}
+  - {fileID: 8300000, guid: 1ef59fae1639cc84499b14aad5f148ed, type: 3}
+  audioSource: {fileID: 8495249530389259442}
   appVoiceExperience: {fileID: 1742734769149628041}
   subtitle: {fileID: 420144266010308507}
 --- !u!1 &8690565504386668367
