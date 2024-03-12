@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3942376107623274225}
   - component: {fileID: 3799419192038600801}
-  - component: {fileID: 8747075510356960214}
+  - component: {fileID: -2948238806231725986}
   m_Layer: 0
   m_Name: Network Safe
   m_TagString: Untagged
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 767851179
+  GlobalObjectIdHash: 132744790
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &8747075510356960214
+--- !u!114 &-2948238806231725986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,10 +63,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5267676995413979843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fed1a89f8387db48bb81f392abb327a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bf64b1264367314ca5833f4305014e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pastObjectPrefab: {fileID: 0}
-  futureObjectPrefab: {fileID: 0}
+  pastObjectPrefab: {fileID: 5140760705421580048, guid: 33770fd139c19ad4bb2dc8600a0e0730, type: 3}
+  futureObjectPrefab: {fileID: 5140760705421580048, guid: b1a15b9cab2e07f4c885c9cde6ee6912, type: 3}
   _hasMoved:
     m_InternalValue: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PastTelescope : MonoBehaviour
+public class PastSafe : PastObject
 {
     // Start is called before the first frame update
     void Start()
