@@ -15,7 +15,18 @@ public class Variables : NetworkBehaviour
     // NetworkVariables for the gameObject
     [SerializeField]
     private NetworkVariable<bool> _hasMoved = new NetworkVariable<bool>(false);
-    
+
+    // Check if the prefabs are set. Important!
+    public void Awake() {
+        if (pastObjectPrefab == null) {
+            Debug.LogError("PastObject prefab not set for this GameObject!");
+        }
+        if (futureObjectPrefab == null) {
+            Debug.LogError("FutureObject prefab not set for this GameObject!");
+        }
+    }
+
+
     // VS generated encapsulation for _hasMoved, copy paste this for any other NetworkVariable you add
     public NetworkVariable<bool> HasMoved { get => _hasMoved; set => _hasMoved = value; }
 
