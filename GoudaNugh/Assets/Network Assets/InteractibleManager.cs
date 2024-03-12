@@ -7,7 +7,6 @@ public class InteractibleManager : NetworkBehaviour {
     public static InteractibleManager instance { get; private set; }
     private List<WholeObject> WholeObjects { get; } = new List<WholeObject>();
 
-
     // Struct that represents the entire object, including the past, network, and future instances
     public class WholeObject {
         // I hate how public is not public in the Java sense if you create a private setter, this feels wrong
