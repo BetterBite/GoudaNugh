@@ -71,7 +71,7 @@ public class InteractibleManager : NetworkBehaviour {
                 var PastObject = networkInstance.GetComponent<Variables>().PastObjectPrefab;
                 var FutureObject = networkInstance.GetComponent<Variables>().FutureObjectPrefab;
 
-                InstantiatePastObject(PastObject);
+                InstantiatePastObject(PastObject, networkInstance.NetworkObjectId);
                 InstantiateFutureObject(FutureObject);
 
             }
@@ -122,6 +122,15 @@ public class InteractibleManager : NetworkBehaviour {
         }
     }
 
+    public NetworkObject FindNetworkObject(ulong networkObjectId) {
+        NetworkObject networkObject;
+        if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(networkObjectId, out networkObject)) {
+            return networkObject;
+        } else {
+            return null;
+        }
+    }
+
     /* 
     RPC Calls here. Make sure each has an attribute specifying to whom it is sent to
     See this Unity doc for all valid attributes https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.8/api/Unity.Netcode.SendTo.html
@@ -133,9 +142,21 @@ public class InteractibleManager : NetworkBehaviour {
      */
 
     [Rpc(SendTo.ClientsAndHost)]
-    public void InstantiatePastObject(GameObject prefab) {
+    public void InstantiatePastObject(GameObject prefab, ulong networkobjectid) {
         //check if you are past player, if not, dont do anything
         //check what object it is, and spawn depending on what you get
+        /*
+         public NetworkObject FindNetworkObject(ulong networkObjectId)
+        {
+            NetworkObject networkObject;
+            if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(networkObjectId, out networkObject)) {
+                return networkObject;
+            } else {
+                return null;
+            }
+        }
+        InteractableManager.TransferOwnerServerRPC(networkObject.NetworkObjectId, NetworkManager.Singleton.LocalClientId);
+        */
     }
 
     [Rpc(SendTo.ClientsAndHost)]
@@ -157,12 +178,7 @@ public class InteractibleManager : NetworkBehaviour {
 
     [Rpc(SendTo.Server)]
     public void TransferOwnerServerRPC(ulong networkObjectId, ulong clientID) {
-        NetworkObject networkObject = GetWholeObjectByID(networkObjectId).networkObject;
-        if (networkObject != null) {
-            networkObject.ChangeOwnership(clientID);
-        } else {
-            Debug.LogError("Network object does not exist on the server! Fatal blunder!");
-        }
+        FindNetworkObject(networkObjectId).ChangeOwnership(clientID);
     }
 
     [Rpc(SendTo.Server)]

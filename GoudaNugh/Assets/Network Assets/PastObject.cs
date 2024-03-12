@@ -17,13 +17,6 @@ public class PastObject : MonoBehaviour
     // Note: objectID field is not yet initialized (probably) when Awakening so networkObjectID is used to transfer ownership
     private void Awake() {
         grabInteractable = GetComponent<XRGrabInteractable>();
-        networkObject = InteractableManager.GetWholeObjectByID(objectID).networkObject;
-
-        if (networkObject = null) {
-            Debug.LogError("NetworkObject not found for this object");
-        } else {
-            InteractableManager.TransferOwnerServerRPC(networkObject.NetworkObjectId, NetworkManager.Singleton.LocalClientId);
-        }
         grabInteractable.selectExited.AddListener(OnSelectExited);
         // TODO - Have PastObject register itself with InstanceManager and have InstanceManager find related FutureObject and NetworkObject at start
     }
