@@ -18,7 +18,6 @@ public class PastObject : MonoBehaviour
     private void Awake() {
         grabInteractable = GetComponent<XRGrabInteractable>();
         grabInteractable.selectExited.AddListener(OnSelectExited);
-        // TODO - Have PastObject register itself with InstanceManager and have InstanceManager find related FutureObject and NetworkObject at start
     }
 
     // Update NetworkObject transform on select exit
