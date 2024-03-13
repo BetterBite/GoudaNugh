@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1194097358}
     m_Modifications:
+    - target: {fileID: 1709054106694956441, guid: 0c8df3352d11d014a960d291b15d4af0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 667368193}
     - target: {fileID: 3320461257246067275, guid: 0c8df3352d11d014a960d291b15d4af0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6233,6 +6237,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4680190454906194359, guid: 40b22b544ce15804981fc6daa3c8f649, type: 3}
   m_PrefabInstance: {fileID: 244689253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &667368193 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9182066397026557804, guid: 0c8df3352d11d014a960d291b15d4af0, type: 3}
+  m_PrefabInstance: {fileID: 35188493}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &669726227
 GameObject:
