@@ -2,51 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class InteractibleManager : NetworkBehaviour {
-    public static InteractibleManager instance { get; private set; }
-    private List<WholeObject> WholeObjects { get; } = new List<WholeObject>();
-
-
-    // Struct that represents the entire object, including the past, network, and future instances
-    public class WholeObject {
-        // I hate how public is not public in the Java sense if you create a private setter, this feels wrong
-        // In any case, the properties below are only accessible with the get, and you cannot change them
-        public PastObject pastObject { get; private set; }
-        public NetworkObject networkObject { get; private set; }
-        public FutureObject futureObject { get; private set; }
-        public ulong objectID { get; private set; }
-
-        // Uses the network object ID to set the object ID of the whole object
-        public WholeObject(PastObject pastObject, NetworkObject networkObject, FutureObject futureObject) {
-            this.pastObject = pastObject;
-            this.networkObject = networkObject;
-            this.futureObject = futureObject;
-            this.objectID = networkObject.NetworkObjectId;
-        }
-    }
-
-    // Create a whole object and add it to the list (Also returns it!)
-    public WholeObject AddWholeObject(PastObject pastObject, NetworkObject networkObject, FutureObject futureObject) {
-        WholeObject wholeObject = new WholeObject(pastObject, networkObject, futureObject);
-        WholeObjects.Add(wholeObject);
-        return wholeObject;
-    }
-
-    // Get WholeObject by ID from list (the calling class can use the getters to access the properties)
-    public WholeObject GetWholeObjectByID(ulong objectID) {
-        foreach (WholeObject wholeObject in WholeObjects) {
-            if (wholeObject.objectID == objectID) {
-                return wholeObject;
-            }
-        }
-        Debug.LogError("Unable to find WholeObject with ID " + objectID);
-        return null;
-    }
+    public static InteractibleManager Instance { get; private set; }
+    public List<GameObject> ObjectsToSpawn;
 
     public void Awake() {
-        instance = this;
+        Instance = this;
         DontDestroyOnLoad(this.gameObject);
+        SceneManager.sceneLoaded += OnSceneLoad;
+    }
+
+    // I love "if's as guards"
+    private void OnSceneLoad(Scene scene, LoadSceneMode mode) {
+        if (SceneManager.GetActiveScene().name == "BetaSceneMain") {
+            var networkManager = NetworkManager.Singleton;
+            if (networkManager == null) {
+                Debug.LogError("NetworkManager is blerry missing!");
+                return;
+            }
+            // Read https://docs-multiplayer.unity3d.com/netcode/current/basics/object-spawning/
+            foreach (GameObject NetworkObject in ObjectsToSpawn) {
+                var instance = Instantiate(NetworkObject);
+                var networkInstance = instance.GetComponent<NetworkObject>();
+                if (networkInstance == null) {
+                    Debug.LogError("NetworkObject is blerry missing for " + NetworkObject.name);
+                    return;
+                }
+                networkInstance.Spawn();
+                InstantiatePastObjectRPC(networkInstance.NetworkObjectId);
+                InstantiateFutureObjectRPC(networkInstance.NetworkObjectId);
+
+            }
+        }
     }
     /* DEPRECATED
     public NetworkObject GetNetworkObjectByTag(string tag) {
@@ -86,10 +76,13 @@ public class InteractibleManager : NetworkBehaviour {
     }
     */
 
-    // Functions that are called before any RPC calls. Only add one if there needs to be some precondition that only InteractibleManager can check for
-    public void UpdateFutureObject(ulong objectID) {
-        if (GetWholeObjectByID(objectID).networkObject.GetComponent<Variables>().HasMoved.Value) {
-            UpdateFutureObjectClientRPC(objectID);
+    // Given an ID, find the network object from that ID
+    public NetworkObject FindNetworkObject(ulong networkObjectId) {
+        NetworkObject networkObject;
+        if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(networkObjectId, out networkObject)) {
+            return networkObject;
+        } else {
+            return null;
         }
     }
 
@@ -99,36 +92,69 @@ public class InteractibleManager : NetworkBehaviour {
     
     Hint : To send an RPC call to be executed on the other player's machine, use SendTo.NotMe and check within the function if you are not the server
     See immediate example below (UpdateFutureObjectClientRPC)
+
+    You DO NOT need to use RPC calls if you are dealing with NetworkVariables unless you don't own the object, in which case you need to use an RPC call to update the variable
      */
 
-    [Rpc(SendTo.NotMe)]
-    public void UpdateFutureObjectClientRPC(ulong objectID) {
-        if (!IsServer) {
-            WholeObject wholeObject = GetWholeObjectByID(objectID);
-            if (wholeObject.networkObject != null && wholeObject.futureObject != null) { // This will error for the past player in future implementations since it should not exist
-                wholeObject.futureObject.transform.position = wholeObject.networkObject.transform.position;
-                wholeObject.futureObject.transform.rotation = wholeObject.networkObject.transform.rotation;
+    // atm assume host is past player, client is future player
+    [Rpc(SendTo.ClientsAndHost)]
+    public void InstantiatePastObjectRPC(ulong networkobjectid) {
+        // TODO - Add transforms to all Instantiate calls 
+        if (IsServer) { //Check if you are the past player here
+            NetworkObject networkObject = FindNetworkObject(networkobjectid);
+            Variables variables = networkObject.gameObject.GetComponent<Variables>();
+            if (variables is TelescopeVariables) {
+                TelescopeVariables telescopeVariables = (TelescopeVariables)variables;
+                GameObject Object = Instantiate(telescopeVariables.PastObjectPrefab);
+                PastTelescope pastTelescope = Object.GetComponent<PastTelescope>();
+                pastTelescope.networkObject = networkObject;
+            } else if (variables is RadioVariables) {
+                RadioVariables radioVariables = (RadioVariables)variables;
+                GameObject Object = Instantiate(radioVariables.PastObjectPrefab);
+                PastRadio pastRadio = Object.GetComponent<PastRadio>();
+                pastRadio.networkObject = networkObject;
+            } else if (variables is SafeVariables) {
+                SafeVariables safeVariables = (SafeVariables)variables;
+                GameObject Object = Instantiate(safeVariables.PastObjectPrefab);
+                PastSafe pastSafe = Object.GetComponent<PastSafe>();
+                pastSafe.networkObject = networkObject;
             } else {
-                Debug.LogError("NetworkObject or FutureObject not found for object with id" + objectID);
+                Debug.LogError("Could not identify the type of object, real type is " + variables.GetType());
             }
+            TransferOwnerServerRPC(networkobjectid, NetworkManager.Singleton.LocalClientId);
+        }
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    public void InstantiateFutureObjectRPC(ulong networkobjectid) {
+        // TODO - Add transforms to all Instantiate calls 
+        if (!IsServer) { //Check if you are the future player here
+            NetworkObject networkObject = FindNetworkObject(networkobjectid);
+            Variables variables = networkObject.gameObject.GetComponent<Variables>();
+            if (variables is TelescopeVariables) {
+                TelescopeVariables telescopeVariables = (TelescopeVariables)variables;
+                GameObject Object = Instantiate(telescopeVariables.FutureObjectPrefab);
+                FutureTelescope futureTelescope = Object.GetComponent<FutureTelescope>();
+                futureTelescope.networkObject = networkObject;
+            } else if (variables is RadioVariables) {
+                RadioVariables radioVariables = (RadioVariables)variables;
+                GameObject Object = Instantiate(radioVariables.FutureObjectPrefab);
+                FutureRadio futureRadio = Object.GetComponent<FutureRadio>();
+                futureRadio.networkObject = networkObject;
+            } else if (variables is SafeVariables) {
+                SafeVariables safeVariables = (SafeVariables)variables;
+                GameObject Object = Instantiate(safeVariables.FutureObjectPrefab);
+                FutureSafe futureSafe = Object.GetComponent<FutureSafe>();
+                futureSafe.networkObject = networkObject;
+            } else {
+                Debug.LogError("Could not identify the type of object, real type is " + variables.GetType());
+            }
+            TransferOwnerServerRPC(networkobjectid, NetworkManager.Singleton.LocalClientId);
         }
     }
 
     [Rpc(SendTo.Server)]
     public void TransferOwnerServerRPC(ulong networkObjectId, ulong clientID) {
-        NetworkObject networkObject = GetWholeObjectByID(networkObjectId).networkObject;
-        if (networkObject != null) {
-            networkObject.ChangeOwnership(clientID);
-        } else {
-            Debug.LogError("Network object does not exist on the server! Fatal blunder!");
-        }
-    }
-
-    [Rpc(SendTo.Server)]
-    public void LogMovementServerRPC(ulong objectId) {
-        NetworkObject networkObject = GetWholeObjectByID(objectId).networkObject;
-        if (networkObject != null) {
-            networkObject.GetComponent<Variables>().HasMoved.Value = true;
-        }
+        FindNetworkObject(networkObjectId).ChangeOwnership(clientID);
     }
 }
