@@ -8066,6 +8066,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3909156968060383364, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4605878202121083456, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_Name
       value: Final XR Rig
@@ -9191,7 +9195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11190,12 +11194,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1582872326}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9cd6daef768cef94b8947ea762209439, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -16219,16 +16223,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 1194097358}
     m_Modifications:
     - target: {fileID: 7217927598782439678, guid: 0cef5ee173fb17c45afd82030fff5638, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.4054
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217927598782439678, guid: 0cef5ee173fb17c45afd82030fff5638, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4054
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217927598782439678, guid: 0cef5ee173fb17c45afd82030fff5638, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.4054
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217927598782439678, guid: 0cef5ee173fb17c45afd82030fff5638, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.698065
+      value: 0.7109
       objectReference: {fileID: 0}
     - target: {fileID: 7217927598782439678, guid: 0cef5ee173fb17c45afd82030fff5638, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.92388314
+      value: 0.901
       objectReference: {fileID: 0}
     - target: {fileID: 7217927598782439678, guid: 0cef5ee173fb17c45afd82030fff5638, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.26180515
+      value: 0.26172
       objectReference: {fileID: 0}
     - target: {fileID: 7217927598782439678, guid: 0cef5ee173fb17c45afd82030fff5638, type: 3}
       propertyPath: m_LocalRotation.w
