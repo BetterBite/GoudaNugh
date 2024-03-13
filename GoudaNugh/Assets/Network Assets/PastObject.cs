@@ -10,7 +10,7 @@ public class PastObject : MonoBehaviour
     [SerializeField]
     private ulong objectID;
     // Cached reference to the network object
-    private NetworkObject networkObject;
+    public NetworkObject networkObject;
     private XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InteractableManager = InteractibleManager.Instance;
 
