@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AttachableCheck : MonoBehaviour
 {
+    [SerializeField] private UnityEvent onAttach; 
     public GameObject iwantthis;
     public GameObject ghost;
     public GameObject solid;
@@ -52,6 +54,7 @@ public class AttachableCheck : MonoBehaviour
         }
 
         Debug.Log("Attachable detected");
+        onAttach.Invoke();
 
     }
 

@@ -217,7 +217,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7525825653714653769}
-  m_Mesh: {fileID: -7929139438592967118, guid: a7dc170f8a25e834ba05b215039e4a88, type: 3}
+  m_Mesh: {fileID: -7929139438592967118, guid: 6fcbe86228bf5f242b7ef86d3686a498, type: 3}
 --- !u!23 &7300160434312326898
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c3a0b8156c9c89246aef364033c2a9e3, type: 2}
+  - {fileID: 2100000, guid: 72a1bdf1d0fac5d4aa2b0b9db20944e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -290,10 +290,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7525825653714653769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6804bf343ad6f34cb6a1ef6a135aa15, type: 3}
+  m_Script: {fileID: 11500000, guid: 7855e8b0e743eff4dae2811137caf841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upstairs: {fileID: 0}
+  upstairs: {fileID: 5302513026933309212}
   player: {fileID: 0}
   blockScreen: {fileID: 3882012668558540427}
   camera: {fileID: 0}
@@ -319,10 +319,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &5742329098326117839
 MonoBehaviour:
@@ -529,7 +529,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7569682504085177143}
-  m_Mesh: {fileID: -7929139438592967118, guid: a7dc170f8a25e834ba05b215039e4a88, type: 3}
+  m_Mesh: {fileID: -7929139438592967118, guid: 6fcbe86228bf5f242b7ef86d3686a498, type: 3}
 --- !u!23 &4654656536155960817
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -550,7 +550,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c3a0b8156c9c89246aef364033c2a9e3, type: 2}
+  - {fileID: 2100000, guid: 72a1bdf1d0fac5d4aa2b0b9db20944e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -602,10 +602,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7569682504085177143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6804bf343ad6f34cb6a1ef6a135aa15, type: 3}
+  m_Script: {fileID: 11500000, guid: 7855e8b0e743eff4dae2811137caf841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upstairs: {fileID: 0}
+  upstairs: {fileID: 9182066397026557804}
   player: {fileID: 0}
   blockScreen: {fileID: 3882012668558540427}
   camera: {fileID: 0}
