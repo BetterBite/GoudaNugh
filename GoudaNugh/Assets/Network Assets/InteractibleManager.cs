@@ -99,6 +99,7 @@ public class InteractibleManager : NetworkBehaviour {
     // atm assume host is past player, client is future player
     [Rpc(SendTo.ClientsAndHost)]
     public void InstantiatePastObjectRPC(ulong networkobjectid) {
+        // TODO - Add transforms to all Instantiate calls 
         if (IsServer) { //Check if you are the past player here
             NetworkObject networkObject = FindNetworkObject(networkobjectid);
             Variables variables = networkObject.gameObject.GetComponent<Variables>();
@@ -126,6 +127,7 @@ public class InteractibleManager : NetworkBehaviour {
 
     [Rpc(SendTo.ClientsAndHost)]
     public void InstantiateFutureObjectRPC(ulong networkobjectid) {
+        // TODO - Add transforms to all Instantiate calls 
         if (!IsServer) { //Check if you are the future player here
             NetworkObject networkObject = FindNetworkObject(networkobjectid);
             Variables variables = networkObject.gameObject.GetComponent<Variables>();

@@ -11,6 +11,7 @@ public class FutureObject : MonoBehaviour
     private uint objectID;
 
     public NetworkObject networkObject;
+    [SerializeField]
     private bool hasMoved = false;
     public XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InstanceManager = InteractibleManager.Instance;
