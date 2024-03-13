@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class Variables : NetworkBehaviour
+public abstract class Variables : NetworkBehaviour
 {
     // Prefabs for the past and future objects, make sure to set these in the inspector
     [SerializeField]
