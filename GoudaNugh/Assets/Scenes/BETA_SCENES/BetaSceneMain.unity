@@ -7877,11 +7877,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1413357330345051476, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.043
+      value: -0.338
       objectReference: {fileID: 0}
     - target: {fileID: 1413357330345051476, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.277
+      value: 0.372
       objectReference: {fileID: 0}
     - target: {fileID: 1413357330345051476, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7945,6 +7945,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8212373262783087998, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1777940824}
+    - targetCorrespondingSourceObject: {fileID: 8212373262783087998, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1777940830}
   m_SourcePrefab: {fileID: 100100000, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
 --- !u!4 &921294576 stripped
 Transform:
@@ -11537,6 +11540,27 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 8212373262783087992, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
   m_PrefabInstance: {fileID: 921294575}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &1777940830
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777940818}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1780331284
 PrefabInstance:
   m_ObjectHideFlags: 0
