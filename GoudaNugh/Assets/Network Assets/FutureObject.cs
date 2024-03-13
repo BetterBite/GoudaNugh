@@ -10,6 +10,7 @@ public class FutureObject : MonoBehaviour
     [SerializeField]
     private uint objectID;
 
+    public NetworkObject networkObject;
     private bool hasMoved = false;
     public XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InstanceManager = InteractibleManager.Instance;
@@ -22,8 +23,9 @@ public class FutureObject : MonoBehaviour
 
     public void OnSelectEntered(SelectEnterEventArgs args) {
         if (!hasMoved) {
-            InstanceManager.LogMovementServerRPC(objectID);
+            Debug.Log("Future object has been moved");
             hasMoved = true;
+
         }
     }
 }

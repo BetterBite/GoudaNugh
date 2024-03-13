@@ -12,6 +12,7 @@ public class Variables : NetworkBehaviour
     [SerializeField]
     private readonly GameObject futureObjectPrefab;
 
+    // Getters for the prefabs
     public GameObject PastObjectPrefab => pastObjectPrefab;
     public GameObject FutureObjectPrefab => futureObjectPrefab;
 

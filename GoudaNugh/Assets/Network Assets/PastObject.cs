@@ -27,6 +27,5 @@ public class PastObject : MonoBehaviour
     private void OnSelectExited(SelectExitEventArgs args) {
         networkObject.transform.position = transform.position;
         networkObject.transform.rotation = transform.rotation;
-        InteractableManager.UpdateFutureObject(objectID);
     }
 }
