@@ -4,7 +4,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class PastObject : MonoBehaviour
+public abstract class PastObject : MonoBehaviour
 {
     // Same as network object ID
     [SerializeField]

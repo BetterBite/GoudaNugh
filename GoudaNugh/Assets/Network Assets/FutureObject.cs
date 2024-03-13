@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Unity.Netcode;
 
-public class FutureObject : MonoBehaviour
+public abstract class FutureObject : MonoBehaviour
 {
     // Same as network object ID
     [SerializeField]
