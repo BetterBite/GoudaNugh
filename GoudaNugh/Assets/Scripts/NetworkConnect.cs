@@ -18,6 +18,7 @@ public class NetworkConnect : MonoBehaviour
     public Transform p1Pos;
     public Transform p2Pos;
     public Transform rig;
+    public LobbyUIHandler uiHandler;
 
     private async void Awake()
     {
@@ -31,7 +32,11 @@ public class NetworkConnect : MonoBehaviour
     {
 
         // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
-        SceneManager.LoadScene("BetaSceneMain");
+
+        // we don't want to load scene on create.
+        // SceneManager.LoadScene("BetaSceneMain");
+        uiHandler.SetIsHost(true);
+        uiHandler.SetState(1);
 
 
         Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnection);
@@ -44,7 +49,11 @@ public class NetworkConnect : MonoBehaviour
 
         NetworkManager.Singleton.StartHost();
 
-        rig.position = p1Pos.position;
+        // display Start Game button
+        uiHandler.SetState(2);
+
+        // We don't want to move the player on create.
+        // rig.position = p1Pos.position;
 
     }
 
@@ -52,8 +61,10 @@ public class NetworkConnect : MonoBehaviour
     {
 
         // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
-        SceneManager.LoadScene("BetaSceneMain");
-
+        // We don't want to load scene on join
+        // SceneManager.LoadScene("BetaSceneMain");
+        uiHandler.SetIsHost(false);
+        uiHandler.SetState(1);
 
         JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
 
@@ -62,9 +73,21 @@ public class NetworkConnect : MonoBehaviour
 
         NetworkManager.Singleton.StartClient();
 
-        rig.position = p2Pos.position;
+        // show "Waiting for Host to Start game"
+        uiHandler.SetState(2);
+
+        // We don't want to move player on join
+        // rig.position = p2Pos.position;
 
         
+    }
+
+    public async void Start() 
+    {
+        // TODO: Implement starting the game
+        // This method is called by the Host when clicking the "Start Game" button in the lobby.
+
+        // SceneManager.LoadScene("BetaSceneMain");
     }
 }
 
