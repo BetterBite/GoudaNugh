@@ -64,6 +64,8 @@ public class NetworkConnect : MonoBehaviour
 
         rig.position = p2Pos.position;
 
+        InteractibleManager.Instance.OnSceneLoad2();
+
         
     }
 }

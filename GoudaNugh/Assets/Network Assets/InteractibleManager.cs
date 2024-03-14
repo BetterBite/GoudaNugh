@@ -12,12 +12,12 @@ public class InteractibleManager : NetworkBehaviour {
     public void Awake() {
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
-        SceneManager.sceneLoaded += OnSceneLoad;
+        //SceneManager.sceneLoaded += OnSceneLoad;
     }
 
     // I love "if's as guards"
-    private void OnSceneLoad(Scene scene, LoadSceneMode mode) {
-        if (SceneManager.GetActiveScene().name == "BetaSceneNetworkTest") {
+    public void OnSceneLoad2() {
+        //if (SceneManager.GetActiveScene().name == "BetaSceneNetworkTest") {
             var networkManager = NetworkManager.Singleton;
             if (networkManager == null) {
                 Debug.LogError("NetworkManager is blerry missing!");
@@ -36,7 +36,7 @@ public class InteractibleManager : NetworkBehaviour {
                 InstantiateFutureObjectRPC(networkInstance.NetworkObjectId);
 
             }
-        }
+       // }
     }
     /* DEPRECATED
     public NetworkObject GetNetworkObjectByTag(string tag) {
