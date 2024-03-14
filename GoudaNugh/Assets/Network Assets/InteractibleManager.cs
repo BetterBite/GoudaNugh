@@ -17,7 +17,7 @@ public class InteractibleManager : NetworkBehaviour {
 
     // I love "if's as guards"
     private void OnSceneLoad(Scene scene, LoadSceneMode mode) {
-        if (SceneManager.GetActiveScene().name == "BetaSceneMain") {
+        if (SceneManager.GetActiveScene().name == "BetaSceneNetworkTest") {
             var networkManager = NetworkManager.Singleton;
             if (networkManager == null) {
                 Debug.LogError("NetworkManager is blerry missing!");
