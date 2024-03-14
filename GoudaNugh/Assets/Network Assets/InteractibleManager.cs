@@ -19,6 +19,7 @@ public class InteractibleManager : NetworkBehaviour {
     public void OnSceneLoad2() {
         //if (SceneManager.GetActiveScene().name == "BetaSceneNetworkTest") {
             var networkManager = NetworkManager.Singleton;
+            Debug.Log("Loading Objects");
             if (networkManager == null) {
                 Debug.LogError("NetworkManager is blerry missing!");
                 return;
