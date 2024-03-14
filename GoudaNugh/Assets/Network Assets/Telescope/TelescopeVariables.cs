@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class TelescopeVariables : NetworkBehaviour
+public class TelescopeVariables : Variables
 {
 
     public NetworkVariable<bool> isSolved = new NetworkVariable<bool>(false);
