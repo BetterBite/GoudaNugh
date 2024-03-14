@@ -10,22 +10,14 @@ public abstract class PastObject : MonoBehaviour
     [SerializeField]
     private ulong objectID;
     // Cached reference to the network object
-    private NetworkObject networkObject;
+    public NetworkObject networkObject;
     private XRGrabInteractable grabInteractable;
-    private readonly InteractibleManager InteractableManager = InteractibleManager.instance;
+    private readonly InteractibleManager InteractableManager = InteractibleManager.Instance;
 
     // Note: objectID field is not yet initialized (probably) when Awakening so networkObjectID is used to transfer ownership
     private void Awake() {
         grabInteractable = GetComponent<XRGrabInteractable>();
-        networkObject = InteractableManager.GetWholeObjectByID(objectID).networkObject;
-
-        if (networkObject = null) {
-            Debug.LogError("NetworkObject not found for this object");
-        } else {
-            InteractableManager.TransferOwnerServerRPC(networkObject.NetworkObjectId, NetworkManager.Singleton.LocalClientId);
-        }
         grabInteractable.selectExited.AddListener(OnSelectExited);
-        // TODO - Have PastObject register itself with InstanceManager and have InstanceManager find related FutureObject and NetworkObject at start
     }
 
     // Update NetworkObject transform on select exit
@@ -34,6 +26,5 @@ public abstract class PastObject : MonoBehaviour
     private void OnSelectExited(SelectExitEventArgs args) {
         networkObject.transform.position = transform.position;
         networkObject.transform.rotation = transform.rotation;
-        InteractableManager.UpdateFutureObject(objectID);
     }
 }

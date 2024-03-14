@@ -10,9 +10,11 @@ public abstract class FutureObject : MonoBehaviour
     [SerializeField]
     private uint objectID;
 
+    public NetworkObject networkObject;
+    [SerializeField]
     private bool hasMoved = false;
     public XRGrabInteractable grabInteractable;
-    private readonly InteractibleManager InstanceManager = InteractibleManager.instance;
+    private readonly InteractibleManager InstanceManager = InteractibleManager.Instance;
 
     public void Awake() {
         hasMoved = false;
@@ -20,9 +22,21 @@ public abstract class FutureObject : MonoBehaviour
         grabInteractable.selectEntered.AddListener(OnSelectEntered);
     }
 
+    // Setup any listeners to the network variables
+    public virtual void Setup() {
+        networkObject.gameObject.GetComponent<Variables>().HasMoved.OnValueChanged += OnHasMovedChanged;
+    }
+
+    public void OnHasMovedChanged(bool previousValue, bool newValue) {
+        if (hasMoved) {
+            return;
+        }
+        transform.position = networkObject.transform.position;
+        transform.rotation = networkObject.transform.rotation;
+    }
     public void OnSelectEntered(SelectEnterEventArgs args) {
         if (!hasMoved) {
-            InstanceManager.LogMovementServerRPC(objectID);
+            Debug.Log("Future object has been moved");
             hasMoved = true;
         }
     }
