@@ -36,6 +36,7 @@ public class NetworkPlayer : NetworkBehaviour
             isPast = false;
             Debug.Log("isPast: false");
         }
+        VRRigReferences.Singleton.SpawnObjects(isPast);
     }
     
     // Start is called before the first frame update
