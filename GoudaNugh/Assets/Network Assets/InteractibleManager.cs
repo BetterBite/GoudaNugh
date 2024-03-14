@@ -12,12 +12,13 @@ public class InteractibleManager : NetworkBehaviour {
     public void Awake() {
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
-        //SceneManager.sceneLoaded += OnSceneLoad;
+        SceneManager.sceneLoaded += OnSceneLoad;
     }
 
     // I love "if's as guards"
-    public void OnSceneLoad2() {
+    private void OnSceneLoad(Scene scene, LoadSceneMode mode) {
         //if (SceneManager.GetActiveScene().name == "BetaSceneNetworkTest") {
+        if (!IsServer) { 
             var networkManager = NetworkManager.Singleton;
             Debug.Log("Loading Objects");
             if (networkManager == null) {
@@ -37,7 +38,7 @@ public class InteractibleManager : NetworkBehaviour {
                 InstantiateFutureObjectRPC(networkInstance.NetworkObjectId);
 
             }
-       // }
+        }
     }
     /* DEPRECATED
     public NetworkObject GetNetworkObjectByTag(string tag) {
