@@ -23,10 +23,10 @@ public abstract class Variables : NetworkBehaviour
     // Check if the prefabs are set. Important!
     public void Awake() {
         if (pastObjectPrefab == null) {
-            Debug.LogError("PastObject prefab not set for this GameObject!");
+            Debug.LogError("PastObject prefab not set for this GameObject! Name: " + gameObject.name);
         }
         if (futureObjectPrefab == null) {
-            Debug.LogError("FutureObject prefab not set for this GameObject!");
+            Debug.LogError("FutureObject prefab not set for this GameObject! Name: " + gameObject.name);
         }
     }
 
