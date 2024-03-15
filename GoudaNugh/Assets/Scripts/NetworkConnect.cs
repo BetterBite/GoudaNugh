@@ -30,8 +30,7 @@ public class NetworkConnect : MonoBehaviour
     public async void Create()
     {
 
-        // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
-        SceneManager.LoadScene("BetaSceneMain");
+
 
 
         Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnection);
@@ -46,13 +45,14 @@ public class NetworkConnect : MonoBehaviour
 
         rig.position = p1Pos.position;
 
+        // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
+        SceneManager.LoadScene("BetaSceneNetworkTest");
+
     }
 
     public async void Join()
     {
 
-        // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
-        SceneManager.LoadScene("BetaSceneMain");
 
 
         JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
@@ -64,7 +64,8 @@ public class NetworkConnect : MonoBehaviour
 
         rig.position = p2Pos.position;
 
-        
+        // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
+        SceneManager.LoadScene("BetaSceneNetworkTest");
     }
 }
 

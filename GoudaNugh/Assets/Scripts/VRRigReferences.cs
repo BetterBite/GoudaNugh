@@ -20,13 +20,13 @@ public class VRRigReferences : MonoBehaviour
 
     public void SpawnObjects(bool isPast)
     {
-        if (isPast)
-        {
-            pastObjects.SetActive(true);
-        } else
-        {
-            futureObjects.SetActive(true);
-        }
+        //if (isPast)
+        //{
+        //    pastObjects.SetActive(true);
+        //} else
+        //{
+        //    futureObjects.SetActive(true);
+        //}
     }
 
     

@@ -44,8 +44,6 @@ public class FutureTelescope : FutureObject
         door.SetActive(false);
     }
 
-
-
     // Update is called once per frame
     void Update()
     {
