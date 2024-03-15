@@ -46,11 +46,5 @@ public class PastTelescope : PastObject
     private void NextCode()
     {
         vars.NextCode();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+     }
 }
