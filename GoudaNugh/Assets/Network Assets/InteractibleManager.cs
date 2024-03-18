@@ -13,9 +13,18 @@ public class InteractibleManager : NetworkBehaviour {
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
         //SceneManager.sceneLoaded += OnSceneLoad;
+       
     }
 
     // I love "if's as guards"
+
+    public void CheckSceneEvent(SceneEvent sceneEvent)
+    {
+        if (sceneEvent.SceneEventType == SceneEventType.LoadComplete) {
+            OnSceneLoad();
+        }
+    }
+
     public void OnSceneLoad() {
         //if (SceneManager.GetActiveScene().name == "BetaSceneNetworkTest") {
         if (IsServer) { 

@@ -8,6 +8,7 @@ using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine.SceneManagement;
+using System;
 
 public class NetworkConnect : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class NetworkConnect : MonoBehaviour
              allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData);
 
         NetworkManager.Singleton.StartHost();
-
+        NetworkManager.Singleton.SceneManager.OnSceneEvent += InteractibleManager.Instance.CheckSceneEvent;
         // display Start Game button
         uiHandler.SetState(2);
 
@@ -84,7 +85,7 @@ public class NetworkConnect : MonoBehaviour
         //SceneManager.LoadScene("BetaSceneNetworkTest");
     }
 
-    public async void StartGame() 
+    public void StartGame() 
     {
         // TODO: Implement starting the game
         // This method is called by the Host when clicking the "Start Game" button in the lobby.
@@ -92,7 +93,17 @@ public class NetworkConnect : MonoBehaviour
         // SceneManager.LoadScene("BetaSceneMain");
         Debug.Log("Starting Game");
         NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneNetworkTest", LoadSceneMode.Single);
-        InteractibleManager.Instance.OnSceneLoad();
+
+
+
+        //InteractibleManager.Instance.OnSceneLoad();
+
+        //NetworkSceneManager.OnSceneEvent.
+        
+
     }
+
+
+
 }
 
