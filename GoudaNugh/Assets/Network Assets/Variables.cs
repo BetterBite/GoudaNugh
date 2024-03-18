@@ -8,9 +8,9 @@ public abstract class Variables : NetworkBehaviour
     // Prefabs for the past and future objects, make sure to set these in the inspector
     // These are NOT to be set at runtime. Each asset needs to have a prefab for the past and future object and it needs to be assigned here
     [SerializeField]
-    private readonly GameObject pastObjectPrefab;
+    private GameObject pastObjectPrefab;
     [SerializeField]
-    private readonly GameObject futureObjectPrefab;
+    private GameObject futureObjectPrefab;
 
     // Getters for the prefabs
     public GameObject PastObjectPrefab => pastObjectPrefab;

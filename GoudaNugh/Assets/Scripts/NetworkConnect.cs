@@ -84,15 +84,15 @@ public class NetworkConnect : MonoBehaviour
         //SceneManager.LoadScene("BetaSceneNetworkTest");
     }
 
-    public async void Start() 
+    public async void StartGame() 
     {
         // TODO: Implement starting the game
         // This method is called by the Host when clicking the "Start Game" button in the lobby.
 
         // SceneManager.LoadScene("BetaSceneMain");
-
-        NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneNetworkTest", LoadSceneMode.Additive);
-        
+        Debug.Log("Starting Game");
+        NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneNetworkTest", LoadSceneMode.Single);
+        InteractibleManager.Instance.OnSceneLoad();
     }
 }
 

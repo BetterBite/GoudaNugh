@@ -16,9 +16,9 @@ public class InteractibleManager : NetworkBehaviour {
     }
 
     // I love "if's as guards"
-    private void OnSceneLoad(Scene scene, LoadSceneMode mode) {
+    public void OnSceneLoad() {
         //if (SceneManager.GetActiveScene().name == "BetaSceneNetworkTest") {
-        if (!IsServer) { 
+        if (IsServer) { 
             var networkManager = NetworkManager.Singleton;
             Debug.Log("Loading Objects");
             if (networkManager == null) {
@@ -27,6 +27,7 @@ public class InteractibleManager : NetworkBehaviour {
             }
             // Read https://docs-multiplayer.unity3d.com/netcode/current/basics/object-spawning/
             foreach (GameObject NetworkObject in ObjectsToSpawn) {
+                Debug.Log("Spawning: " + NetworkObject.name);
                 var instance = Instantiate(NetworkObject);
                 var networkInstance = instance.GetComponent<NetworkObject>();
                 if (networkInstance == null) {
