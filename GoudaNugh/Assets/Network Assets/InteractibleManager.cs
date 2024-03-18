@@ -20,7 +20,7 @@ public class InteractibleManager : NetworkBehaviour {
 
     public void CheckSceneEvent(SceneEvent sceneEvent)
     {
-        if (sceneEvent.SceneEventType == SceneEventType.LoadComplete) {
+        if (sceneEvent.SceneEventType == SceneEventType.LoadEventCompleted) {
             OnSceneLoad();
         }
     }
@@ -139,6 +139,7 @@ public class InteractibleManager : NetworkBehaviour {
 
     [Rpc(SendTo.ClientsAndHost)]
     public void InstantiateFutureObjectRPC(ulong networkobjectid) {
+
         // TODO - Add transforms to all Instantiate calls 
         if (!IsServer) { //Check if you are the future player here
             NetworkObject networkObject = FindNetworkObject(networkobjectid);
