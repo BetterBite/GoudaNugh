@@ -12,7 +12,7 @@ public class InteractibleManager : NetworkBehaviour {
     public void Awake() {
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
-        SceneManager.sceneLoaded += OnSceneLoad;
+        //SceneManager.sceneLoaded += OnSceneLoad;
     }
 
     // I love "if's as guards"

@@ -54,7 +54,7 @@ public class NetworkConnect : MonoBehaviour
         // rig.position = p1Pos.position;
 
         // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
-        SceneManager.LoadScene("BetaSceneNetworkTest");
+        //SceneManager.LoadScene("BetaSceneNetworkTest");
 
     }
 
@@ -81,7 +81,7 @@ public class NetworkConnect : MonoBehaviour
         // rig.position = p2Pos.position;
 
         // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
-        SceneManager.LoadScene("BetaSceneNetworkTest");
+        //SceneManager.LoadScene("BetaSceneNetworkTest");
     }
 
     public async void Start() 
@@ -90,6 +90,9 @@ public class NetworkConnect : MonoBehaviour
         // This method is called by the Host when clicking the "Start Game" button in the lobby.
 
         // SceneManager.LoadScene("BetaSceneMain");
+
+        NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneNetworkTest", LoadSceneMode.Additive);
+        
     }
 }
 
