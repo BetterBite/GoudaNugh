@@ -8,20 +8,19 @@ using System;
 
 public class InteractibleManager : NetworkBehaviour {
     public static InteractibleManager Instance { get; private set; }
-    public List<GameObject> ObjectsToSpawn;
+    public NetworkPrefabsList ObjectsToSpawn;
 
     public void Awake() {
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // I love "if's as guards"
+    // NetworkConnect.cs subscribes this method to OnSceneEvent. https://docs-multiplayer.unity3d.com/netcode/current/basics/scenemanagement/scene-events/
     public void CheckSceneEvent(SceneEvent sceneEvent) {
-        if (sceneEvent.SceneEventType == SceneEventType.LoadEventCompleted) OnSceneLoad();
+        if (sceneEvent.SceneEventType == SceneEventType.LoadEventCompleted) OnSceneLoad();          // We check that the event received is LoadEventCompleted and then call OnSceneLoad
     }
 
     public void OnSceneLoad() {
-        //if (SceneManager.GetActiveScene().name == "BetaSceneNetworkTest") {
         if (IsServer) { 
             var networkManager = NetworkManager.Singleton;
             Debug.Log("Loading Objects");
@@ -30,19 +29,13 @@ public class InteractibleManager : NetworkBehaviour {
                 return;
             }
             // Read https://docs-multiplayer.unity3d.com/netcode/current/basics/object-spawning/
-            foreach (GameObject NetworkObject in ObjectsToSpawn) {
-                Debug.Log("Spawning: " + NetworkObject.name);
-                var instance = Instantiate(NetworkObject);
+            foreach (NetworkPrefab NetworkPrefab in ObjectsToSpawn.PrefabList) {
+                var instance = Instantiate(NetworkPrefab.Prefab);
                 var networkInstance = instance.GetComponent<NetworkObject>();
-                if (networkInstance == null) {
-                    Debug.LogError("NetworkObject is blerry missing for " + NetworkObject.name);
-                    return;
-                }
                 networkInstance.Spawn();
                 NetworkObjectReference objectReference = new NetworkObjectReference(networkInstance);
                 InstantiatePastObjectRPC(objectReference);
                 InstantiateFutureObjectRPC(objectReference);
-
             }
         }
     }
@@ -65,7 +58,7 @@ public class InteractibleManager : NetworkBehaviour {
             objectReference.TryGet(out NetworkObject networkObject);
             GameObject Object = Instantiate(networkObject.gameObject.GetComponent<Variables>().PastObjectPrefab);
             Object.GetComponent<PastObject>().networkObject = networkObject;
-            Object.GetComponent<FutureObject>().Setup();
+            Object.GetComponent<PastObject>().Setup();
             TransferOwnerServerRPC(objectReference, NetworkManager.Singleton.LocalClientId);
         }
     }
