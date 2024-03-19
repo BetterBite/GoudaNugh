@@ -9,11 +9,11 @@ using System;
 public class InteractibleManager : NetworkBehaviour {
     public static InteractibleManager Instance { get; private set; }
     public List<GameObject> ObjectsToSpawn;
-    private delegate GameObject InstantiateDelegate(Variables variables, NetworkObject networkObject);
-    private Dictionary<Type, InstantiateDelegate> instantiateObject = new Dictionary<Type, InstantiateDelegate> {
-        { typeof(TelescopeVariables), InstantiateTelescope },
-        { typeof(RadioVariables), InstantiateRadio },
-        { typeof(SafeVariables), InstantiateSafe }
+    // Idea of using a delegate to cut on massive if-else statements was suggested by GitHub Copilot Chat. Thanks GitHub Copilot Chat
+    private delegate GameObject InstantiateDelegate(PastObject pastObject, NetworkObject networkObject);
+    private readonly Dictionary<Type, InstantiateDelegate> instantiateObject = new Dictionary<Type, InstantiateDelegate> {
+        { typeof(PastObject), InstantiatePastObject },
+        { typeof(FutureObject), InstantiateFutureObject },
     };
 
 
@@ -102,7 +102,13 @@ public class InteractibleManager : NetworkBehaviour {
     }
     */
 
-    private static GameObject InstantiateTelescope(Variables variables, NetworkObject networkObject) {
+    private static GameObject InstantiatePastObject(PastObject pastObject, NetworkObject networkObject) {
+        return null;
+    }
+
+    private static GameObject InstantiateFutureObject()
+
+    private static GameObject InstantiatePastTelescope(PastObject pastObject, Variables variables, NetworkObject networkObject) {
         TelescopeVariables telescopeVariables = (TelescopeVariables)variables;
         GameObject Object = Instantiate(telescopeVariables.PastObjectPrefab);
         PastTelescope pastTelescope = Object.GetComponent<PastTelescope>();
@@ -110,7 +116,7 @@ public class InteractibleManager : NetworkBehaviour {
         return Object;
     }
 
-    private static GameObject InstantiateRadio(Variables variables, NetworkObject networkObject) {
+    private static GameObject InstantiateRadio(PastObject pastObject, Variables variables, NetworkObject networkObject) {
         RadioVariables radioVariables = (RadioVariables)variables;
         GameObject Object = Instantiate(radioVariables.PastObjectPrefab);
         PastRadio pastRadio = Object.GetComponent<PastRadio>();
@@ -118,7 +124,7 @@ public class InteractibleManager : NetworkBehaviour {
         return Object;
     }
 
-    private static GameObject InstantiateSafe(Variables variables, NetworkObject networkObject) {
+    private static GameObject InstantiateSafe(PastObject pastObject, Variables variables, NetworkObject networkObject) {
         SafeVariables safeVariables = (SafeVariables)variables;
         GameObject Object = Instantiate(safeVariables.PastObjectPrefab);
         PastSafe pastSafe = Object.GetComponent<PastSafe>();
@@ -142,28 +148,11 @@ public class InteractibleManager : NetworkBehaviour {
         // TODO - Add transforms to all Instantiate calls 
         if (IsServer) { //Check if you are the past player here
             // NetworkObject networkObject = FindNetworkObject(networkobjectid);
+
             objectReference.TryGet(out NetworkObject networkObject);
-            Variables variables = networkObject.gameObject.GetComponent<Variables>();
-            if (instantiateObject.TryGetValue(variables.GetType(), out InstantiateDelegate instantiateObjectFunc)) instantiateObjectFunc(variables, networkObject);
-            else Debug.LogError("Could not identify the type of object, real type is " + variables.GetType() + "\nMake sure a delegate function exists for this object.");            
-            if (variables is TelescopeVariables) {
-                TelescopeVariables telescopeVariables = (TelescopeVariables)variables;
-                GameObject Object = Instantiate(telescopeVariables.PastObjectPrefab);
-                PastTelescope pastTelescope = Object.GetComponent<PastTelescope>();
-                pastTelescope.networkObject = networkObject;
-            } else if (variables is RadioVariables) {
-                RadioVariables radioVariables = (RadioVariables)variables;
-                GameObject Object = Instantiate(radioVariables.PastObjectPrefab);
-                PastRadio pastRadio = Object.GetComponent<PastRadio>();
-                pastRadio.networkObject = networkObject;
-            } else if (variables is SafeVariables) {
-                SafeVariables safeVariables = (SafeVariables)variables;
-                GameObject Object = Instantiate(safeVariables.PastObjectPrefab);
-                PastSafe pastSafe = Object.GetComponent<PastSafe>();
-                pastSafe.networkObject = networkObject;
-            } else {
-                Debug.LogError("Could not identify the type of object, real type is " + variables.GetType());
-            }
+            GameObject Object = Instantiate(networkObject.gameObject.GetComponent<Variables>().PastObjectPrefab);
+            Object.GetComponent<PastObject>().networkObject = networkObject;
+            Object.Setup();
             TransferOwnerServerRPC(objectReference, NetworkManager.Singleton.LocalClientId);
         }
     }
@@ -173,29 +162,11 @@ public class InteractibleManager : NetworkBehaviour {
 
         // TODO - Add transforms to all Instantiate calls 
         if (!IsServer) { //Check if you are the future player here
-            Debug.Log(NetworkManager.Singleton.SpawnManager.SpawnedObjects);
-
-            // NetworkObject networkObject = FindNetworkObject(networkobjectid);
             objectReference.TryGet(out NetworkObject networkObject);
-            Variables variables = networkObject.gameObject.GetComponent<Variables>();
-            if (variables is TelescopeVariables) {
-                TelescopeVariables telescopeVariables = (TelescopeVariables)variables;
-                GameObject Object = Instantiate(telescopeVariables.FutureObjectPrefab);
-                FutureTelescope futureTelescope = Object.GetComponent<FutureTelescope>();
-                futureTelescope.networkObject = networkObject;
-            } else if (variables is RadioVariables) {
-                RadioVariables radioVariables = (RadioVariables)variables;
-                GameObject Object = Instantiate(radioVariables.FutureObjectPrefab);
-                FutureRadio futureRadio = Object.GetComponent<FutureRadio>();
-                futureRadio.networkObject = networkObject;
-            } else if (variables is SafeVariables) {
-                SafeVariables safeVariables = (SafeVariables)variables;
-                GameObject Object = Instantiate(safeVariables.FutureObjectPrefab);
-                FutureSafe futureSafe = Object.GetComponent<FutureSafe>();
-                futureSafe.networkObject = networkObject;
-            } else {
-                Debug.LogError("Could not identify the type of object, real type is " + variables.GetType());
-            }
+            GameObject Object = Instantiate(networkObject.gameObject.GetComponent<Variables>().FutureObjectPrefab);
+            Object.GetComponent<FutureObject>().networkObject = networkObject;
+            Object.Setup();
+            TransferOwnerServerRPC(objectReference, NetworkManager.Singleton.LocalClientId);
             TransferOwnerServerRPC(objectReference, NetworkManager.Singleton.LocalClientId);
         }
     }
