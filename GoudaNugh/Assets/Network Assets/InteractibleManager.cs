@@ -44,7 +44,7 @@ public class InteractibleManager : NetworkBehaviour {
                     return;
                 }
                 networkInstance.Spawn();
-                NetworkObjectReference objectReference = new NetworkObjectReference(NetworkObject);
+                NetworkObjectReference objectReference = new NetworkObjectReference(networkInstance);
                 InstantiatePastObjectRPC(objectReference);
                 InstantiateFutureObjectRPC(objectReference);
 
