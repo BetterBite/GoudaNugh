@@ -44,8 +44,9 @@ public class InteractibleManager : NetworkBehaviour {
                     return;
                 }
                 networkInstance.Spawn();
-                InstantiatePastObjectRPC(networkInstance.NetworkObjectId);
-                InstantiateFutureObjectRPC(networkInstance.NetworkObjectId);
+                NetworkObjectReference objectReference = new NetworkObjectReference(NetworkObject);
+                InstantiatePastObjectRPC(objectReference);
+                InstantiateFutureObjectRPC(objectReference);
 
             }
         }
@@ -110,10 +111,11 @@ public class InteractibleManager : NetworkBehaviour {
 
     // atm assume host is past player, client is future player
     [Rpc(SendTo.ClientsAndHost)]
-    public void InstantiatePastObjectRPC(ulong networkobjectid) {
+    public void InstantiatePastObjectRPC(NetworkObjectReference objectReference) {
         // TODO - Add transforms to all Instantiate calls 
         if (IsServer) { //Check if you are the past player here
-            NetworkObject networkObject = FindNetworkObject(networkobjectid);
+            // NetworkObject networkObject = FindNetworkObject(networkobjectid);
+            objectReference.TryGet(out NetworkObject networkObject);
             Variables variables = networkObject.gameObject.GetComponent<Variables>();
             if (variables is TelescopeVariables) {
                 TelescopeVariables telescopeVariables = (TelescopeVariables)variables;
@@ -133,16 +135,19 @@ public class InteractibleManager : NetworkBehaviour {
             } else {
                 Debug.LogError("Could not identify the type of object, real type is " + variables.GetType());
             }
-            TransferOwnerServerRPC(networkobjectid, NetworkManager.Singleton.LocalClientId);
+            TransferOwnerServerRPC(objectReference, NetworkManager.Singleton.LocalClientId);
         }
     }
 
     [Rpc(SendTo.ClientsAndHost)]
-    public void InstantiateFutureObjectRPC(ulong networkobjectid) {
+    public void InstantiateFutureObjectRPC(NetworkObjectReference objectReference) {
 
         // TODO - Add transforms to all Instantiate calls 
         if (!IsServer) { //Check if you are the future player here
-            NetworkObject networkObject = FindNetworkObject(networkobjectid);
+            Debug.Log(NetworkManager.Singleton.SpawnManager.SpawnedObjects);
+
+            // NetworkObject networkObject = FindNetworkObject(networkobjectid);
+            objectReference.TryGet(out NetworkObject networkObject);
             Variables variables = networkObject.gameObject.GetComponent<Variables>();
             if (variables is TelescopeVariables) {
                 TelescopeVariables telescopeVariables = (TelescopeVariables)variables;
@@ -162,12 +167,13 @@ public class InteractibleManager : NetworkBehaviour {
             } else {
                 Debug.LogError("Could not identify the type of object, real type is " + variables.GetType());
             }
-            TransferOwnerServerRPC(networkobjectid, NetworkManager.Singleton.LocalClientId);
+            TransferOwnerServerRPC(objectReference, NetworkManager.Singleton.LocalClientId);
         }
     }
 
     [Rpc(SendTo.Server)]
-    public void TransferOwnerServerRPC(ulong networkObjectId, ulong clientID) {
-        FindNetworkObject(networkObjectId).ChangeOwnership(clientID);
+    public void TransferOwnerServerRPC(NetworkObjectReference objectReference, ulong clientID) {
+        objectReference.TryGet(out NetworkObject networkObject);
+        networkObject.ChangeOwnership(clientID);
     }
 }
