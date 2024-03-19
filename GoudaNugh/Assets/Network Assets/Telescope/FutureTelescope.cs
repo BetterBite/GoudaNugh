@@ -6,7 +6,7 @@ using TMPro;
 public class FutureTelescope : FutureObject
 {
     public GameObject[] images;
-    private GameObject variables;
+    public GameObject variables;
     public GameObject door;
     // Start is called before the first frame update
     void Awake()
