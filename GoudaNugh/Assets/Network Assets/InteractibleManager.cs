@@ -4,10 +4,18 @@ using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using System;
 
 public class InteractibleManager : NetworkBehaviour {
     public static InteractibleManager Instance { get; private set; }
     public List<GameObject> ObjectsToSpawn;
+    private delegate GameObject InstantiateDelegate(Variables variables, NetworkObject networkObject);
+    private Dictionary<Type, InstantiateDelegate> instantiateObject = new Dictionary<Type, InstantiateDelegate> {
+        { typeof(TelescopeVariables), InstantiateTelescope },
+        { typeof(RadioVariables), InstantiateRadio },
+        { typeof(SafeVariables), InstantiateSafe }
+    };
+
 
     public void Awake() {
         Instance = this;
@@ -81,7 +89,7 @@ public class InteractibleManager : NetworkBehaviour {
         Debug.LogError("Unable to find NetworkObject with id " + networkObjectId);
         return null;
     }
-    */
+    
 
     // Given an ID, find the network object from that ID
     public NetworkObject FindNetworkObject(ulong networkObjectId) {
@@ -91,6 +99,31 @@ public class InteractibleManager : NetworkBehaviour {
         } else {
             return null;
         }
+    }
+    */
+
+    private static GameObject InstantiateTelescope(Variables variables, NetworkObject networkObject) {
+        TelescopeVariables telescopeVariables = (TelescopeVariables)variables;
+        GameObject Object = Instantiate(telescopeVariables.PastObjectPrefab);
+        PastTelescope pastTelescope = Object.GetComponent<PastTelescope>();
+        pastTelescope.networkObject = networkObject;
+        return Object;
+    }
+
+    private static GameObject InstantiateRadio(Variables variables, NetworkObject networkObject) {
+        RadioVariables radioVariables = (RadioVariables)variables;
+        GameObject Object = Instantiate(radioVariables.PastObjectPrefab);
+        PastRadio pastRadio = Object.GetComponent<PastRadio>();
+        pastRadio.networkObject = networkObject;
+        return Object;
+    }
+
+    private static GameObject InstantiateSafe(Variables variables, NetworkObject networkObject) {
+        SafeVariables safeVariables = (SafeVariables)variables;
+        GameObject Object = Instantiate(safeVariables.PastObjectPrefab);
+        PastSafe pastSafe = Object.GetComponent<PastSafe>();
+        pastSafe.networkObject = networkObject;
+        return Object;
     }
 
     /* 
@@ -111,6 +144,8 @@ public class InteractibleManager : NetworkBehaviour {
             // NetworkObject networkObject = FindNetworkObject(networkobjectid);
             objectReference.TryGet(out NetworkObject networkObject);
             Variables variables = networkObject.gameObject.GetComponent<Variables>();
+            if (instantiateObject.TryGetValue(variables.GetType(), out InstantiateDelegate instantiateObjectFunc)) instantiateObjectFunc(variables, networkObject);
+            else Debug.LogError("Could not identify the type of object, real type is " + variables.GetType() + "\nMake sure a delegate function exists for this object.");            
             if (variables is TelescopeVariables) {
                 TelescopeVariables telescopeVariables = (TelescopeVariables)variables;
                 GameObject Object = Instantiate(telescopeVariables.PastObjectPrefab);
