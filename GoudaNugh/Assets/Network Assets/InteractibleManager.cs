@@ -12,17 +12,11 @@ public class InteractibleManager : NetworkBehaviour {
     public void Awake() {
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
-        //SceneManager.sceneLoaded += OnSceneLoad;
-       
     }
 
     // I love "if's as guards"
-
-    public void CheckSceneEvent(SceneEvent sceneEvent)
-    {
-        if (sceneEvent.SceneEventType == SceneEventType.LoadEventCompleted) {
-            OnSceneLoad();
-        }
+    public void CheckSceneEvent(SceneEvent sceneEvent) {
+        if (sceneEvent.SceneEventType == SceneEventType.LoadEventCompleted) OnSceneLoad();
     }
 
     public void OnSceneLoad() {
