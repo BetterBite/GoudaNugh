@@ -20,10 +20,10 @@ public abstract class PastObject : MonoBehaviour
         variables = networkObject.gameObject.GetComponent<Variables>();
     }
     // Note: objectID field is not yet initialized (probably) when Awakening so networkObjectID is used to transfer ownership
-    private void Awake() {
-        grabInteractable = GetComponent<XRGrabInteractable>();
-        grabInteractable.selectExited.AddListener(OnSelectExited);
-    }
+    // private void Awake() {
+    //     grabInteractable = GetComponent<XRGrabInteractable>();
+    //     grabInteractable.selectExited.AddListener(OnSelectExited);
+    // }
 
     // Update NetworkObject transform on select exit
     // This only works assuming that the transform of the network object represents the transform of the future object, assuming it wasn't moved

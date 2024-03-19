@@ -21,9 +21,9 @@ public class FutureTelescope : FutureObject
 
     private void OnSolved(bool wasSolved, bool isSolved)
     {
-        if (!isSolved)
+        if (isSolved)
         {
-            Open();
+            // Open();
             Debug.Log("Solved on client side!");
         }
     }

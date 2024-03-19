@@ -17,15 +17,15 @@ public abstract class FutureObject : MonoBehaviour
     public XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InstanceManager = InteractibleManager.Instance;
 
-    public void Awake() {
-        hasMoved = false;
-        grabInteractable = GetComponent<XRGrabInteractable>();        
-        grabInteractable.selectEntered.AddListener(OnSelectEntered);
-    }
+    // public void Awake() {
+        // hasMoved = false;
+        // grabInteractable = GetComponent<XRGrabInteractable>();        
+        // grabInteractable.selectEntered.AddListener(OnSelectEntered);
+    // }
 
     // Setup any listeners to the network variables
     public virtual void Setup() {
-        variables = networkObject.gameObject.GetComponent<Variables>()
+        variables = networkObject.gameObject.GetComponent<Variables>();
         variables.HasMoved.OnValueChanged += OnHasMovedChanged;
     }
 
