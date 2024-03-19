@@ -6,15 +6,16 @@ using TMPro;
 public class FutureTelescope : FutureObject
 {
     public GameObject[] images;
-    public TelescopeVariables variables;
+    public TelescopeVariables telescopeVariables;
     public GameObject door;
-    // Start is called before the first frame update
 
     public override void Setup()
     {
-        //base.Setup();
-        variables.isSolved.OnValueChanged += OnSolved;
-        variables.solvedStatus.OnValueChanged += NextCode;
+        base.Setup();
+        telescopeVariables = (TelescopeVariables)variables;
+
+        telescopeVariables.isSolved.OnValueChanged += OnSolved;
+        telescopeVariables.solvedStatus.OnValueChanged += NextCode;
 
     }
 
@@ -45,11 +46,5 @@ public class FutureTelescope : FutureObject
     private void Open()
     {
         door.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

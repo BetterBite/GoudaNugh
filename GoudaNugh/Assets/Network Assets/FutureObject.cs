@@ -13,6 +13,7 @@ public abstract class FutureObject : MonoBehaviour
     public NetworkObject networkObject;
     [SerializeField]
     private bool hasMoved = false;
+    protected Variables variables;
     public XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InstanceManager = InteractibleManager.Instance;
 
@@ -24,7 +25,8 @@ public abstract class FutureObject : MonoBehaviour
 
     // Setup any listeners to the network variables
     public virtual void Setup() {
-        networkObject.gameObject.GetComponent<Variables>().HasMoved.OnValueChanged += OnHasMovedChanged;
+        variables = networkObject.gameObject.GetComponent<Variables>()
+        variables.HasMoved.OnValueChanged += OnHasMovedChanged;
     }
 
     public void OnHasMovedChanged(bool previousValue, bool newValue) {

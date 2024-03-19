@@ -11,12 +11,13 @@ public abstract class PastObject : MonoBehaviour
     private ulong objectID;
     // Cached reference to the network object
     public NetworkObject networkObject;
+    protected Variables variables;
     private XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InteractableManager = InteractibleManager.Instance;
 
     public virtual void Setup()
     {
-
+        variables = networkObject.gameObject.GetComponent<Variables>();
     }
     // Note: objectID field is not yet initialized (probably) when Awakening so networkObjectID is used to transfer ownership
     private void Awake() {

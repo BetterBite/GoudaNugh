@@ -5,7 +5,7 @@ using Unity.Netcode;
 
 public class PastTelescope : PastObject
 {
-    public TelescopeVariables variables;
+    public TelescopeVariables telescopeVariables;
     public GameObject[] lenses;
     private float[] code;
     public int solved;
@@ -13,7 +13,8 @@ public class PastTelescope : PastObject
 
     public override void Setup()
     {
-        variables = networkObject.GetComponent<TelescopeVariables>();
+        base.Setup();
+        telescopeVariables = (TelescopeVariables)variables;
         code = new float[] { 245, 165, 190 };
     }
 
@@ -41,11 +42,11 @@ public class PastTelescope : PastObject
 
     public void Solve()
     {
-        variables.Solve();
+        telescopeVariables.Solve();
     }
 
     private void NextCode()
     {
-        variables.NextCode();
+        telescopeVariables.NextCode();
      }
 }
