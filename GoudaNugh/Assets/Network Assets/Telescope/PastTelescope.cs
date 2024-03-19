@@ -36,6 +36,7 @@ public class PastTelescope : PastObject
             Solve();
         }
         solved = 0;
+        Solve();
     }
 
     private void Solve()
