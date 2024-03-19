@@ -65,7 +65,7 @@ public class InteractibleManager : NetworkBehaviour {
             objectReference.TryGet(out NetworkObject networkObject);
             GameObject Object = Instantiate(networkObject.gameObject.GetComponent<Variables>().PastObjectPrefab);
             Object.GetComponent<PastObject>().networkObject = networkObject;
-            Object.Setup();
+            Object.GetComponent<FutureObject>().Setup();
             TransferOwnerServerRPC(objectReference, NetworkManager.Singleton.LocalClientId);
         }
     }
@@ -77,7 +77,7 @@ public class InteractibleManager : NetworkBehaviour {
             objectReference.TryGet(out NetworkObject networkObject);
             GameObject Object = Instantiate(networkObject.gameObject.GetComponent<Variables>().FutureObjectPrefab);
             Object.GetComponent<FutureObject>().networkObject = networkObject;
-            Object.Setup();
+            Object.GetComponent<FutureObject>().Setup();
             TransferOwnerServerRPC(objectReference, NetworkManager.Singleton.LocalClientId);
         }
     }
