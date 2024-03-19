@@ -6,14 +6,16 @@ using TMPro;
 public class FutureTelescope : FutureObject
 {
     public GameObject[] images;
-    public GameObject variables;
+    public TelescopeVariables variables;
     public GameObject door;
     // Start is called before the first frame update
-    void Awake()
+
+    public override void Setup()
     {
-        var script = variables.GetComponent<TelescopeVariables>();
-        script.isSolved.OnValueChanged += OnSolved;
-        script.solvedStatus.OnValueChanged += NextCode;
+        //base.Setup();
+        variables.isSolved.OnValueChanged += OnSolved;
+        variables.solvedStatus.OnValueChanged += NextCode;
+
     }
 
     private void OnSolved(bool wasSolved, bool isSolved)
