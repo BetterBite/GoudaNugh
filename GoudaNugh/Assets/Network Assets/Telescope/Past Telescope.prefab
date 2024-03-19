@@ -1341,7 +1341,7 @@ MonoBehaviour:
   objectID: 0
   networkObject: {fileID: 5134731325123478076, guid: 6206d5d7e61799c41a65249f30ea6973, type: 3}
   TelescopeVariables: {fileID: 5134731325123478076, guid: 6206d5d7e61799c41a65249f30ea6973, type: 3}
-  vars: {fileID: 0}
+  variables: {fileID: 0}
   lenses: []
   solved: 0
 --- !u!54 &2081874700575800474
@@ -1366,7 +1366,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1427,7 +1427,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -7043711553082416137}
         m_TargetAssemblyTypeName: PastTelescope, Assembly-CSharp
-        m_MethodName: CheckLenses
+        m_MethodName: Solve
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

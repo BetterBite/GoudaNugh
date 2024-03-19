@@ -14,6 +14,10 @@ public abstract class PastObject : MonoBehaviour
     private XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InteractableManager = InteractibleManager.Instance;
 
+    public virtual void Setup()
+    {
+
+    }
     // Note: objectID field is not yet initialized (probably) when Awakening so networkObjectID is used to transfer ownership
     private void Awake() {
         grabInteractable = GetComponent<XRGrabInteractable>();
