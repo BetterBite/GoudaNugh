@@ -16,10 +16,12 @@ public abstract class Variables : NetworkBehaviour
     public GameObject PastObjectPrefab => pastObjectPrefab;
     public GameObject FutureObjectPrefab => futureObjectPrefab;
 
-    // NetworkVariables for the gameObject
+    /* Example NetworkVariable for noting movement
+    
     [SerializeField]
     private NetworkVariable<bool> _hasMoved = new NetworkVariable<bool>(false);
-
+    
+     */
     // Check if the prefabs are set. Important!
     public void Awake() {
         if (pastObjectPrefab == null) {
@@ -31,9 +33,10 @@ public abstract class Variables : NetworkBehaviour
     }
 
 
-    // VS generated encapsulation for _hasMoved, copy paste this for any other NetworkVariable you add
+    /* VS generated encapsulation for _hasMoved, copy paste this for any other NetworkVariable you add
+    
     public NetworkVariable<bool> HasMoved { get => _hasMoved; set => _hasMoved = value; }
 
-    // If you want either the FutureObject or PastObject to do something when these variables change, you can add an event here using OnValueChanged
-
+    If you want either the FutureObject or PastObject to do something when these variables change, you can add an event here using OnValueChanged
+    */
 }

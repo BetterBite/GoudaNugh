@@ -11,15 +11,12 @@ public class PastTelescope : PastObject
     public int solved;
     // Start is called before the first frame update
 
-    public override void Setup()
-    {
-        base.Setup();
-        telescopeVariables = (TelescopeVariables)variables;
+    public override void Setup() {
+        telescopeVariables = networkObject.GetComponent<TelescopeVariables>();
         code = new float[] { 245, 165, 190 };
     }
 
-    public void CheckLenses()
-    {
+    public void CheckLenses() {
        
         //for (int i = 0; i < 3; i++)
         //{
@@ -40,13 +37,11 @@ public class PastTelescope : PastObject
         //Solve();
     }
 
-    public void Solve()
-    {
+    public void Solve() {
         telescopeVariables.Solve();
     }
 
-    private void NextCode()
-    {
+    private void NextCode() {
         telescopeVariables.NextCode();
      }
 }
