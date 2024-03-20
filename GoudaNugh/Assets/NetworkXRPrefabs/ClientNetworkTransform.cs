@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace Unity.Multiplayer.Samples.Utilities.ClientAuthority
     [DisallowMultipleComponent]
     public class ClientNetworkTransform : NetworkTransform
     {
+
         /// <summary>
         /// Used to determine who can write to this transform. Owner client only.
         /// This imposes state to the server. This is putting trust on your clients. Make sure no security-sensitive features use this transform.
@@ -17,6 +19,18 @@ namespace Unity.Multiplayer.Samples.Utilities.ClientAuthority
         protected override bool OnIsServerAuthoritative()
         {
             return false;
+        }
+
+        public void ClientChangeOwnership()
+        {
+            ChangeOwnershipServerRpc(NetworkManager.Singleton.LocalClientId);
+        }
+        
+
+        [ServerRpc]
+        private void ChangeOwnershipServerRpc(ulong clientID)
+        {
+            GetComponent<NetworkObject>().ChangeOwnership(clientID);
         }
     }
 }
