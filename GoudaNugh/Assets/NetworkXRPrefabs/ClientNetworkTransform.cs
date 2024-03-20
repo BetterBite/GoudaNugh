@@ -27,7 +27,7 @@ namespace Unity.Multiplayer.Samples.Utilities.ClientAuthority
         }
         
 
-        [ServerRpc]
+        [Rpc(SendTo.Server)]
         private void ChangeOwnershipServerRpc(ulong clientID)
         {
             GetComponent<NetworkObject>().ChangeOwnership(clientID);
