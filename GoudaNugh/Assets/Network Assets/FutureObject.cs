@@ -7,8 +7,11 @@ using Unity.Netcode;
 public abstract class FutureObject : MonoBehaviour
 {
     public NetworkObject networkObject;
+    /*
+     * Cached local reference
     [SerializeField]
     private bool hasMoved = false;
+    */
     //public XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InstanceManager = InteractibleManager.Instance;
 
