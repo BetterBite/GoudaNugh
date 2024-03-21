@@ -21,7 +21,7 @@ public class NetworkConnect : MonoBehaviour
     public Transform p2Pos;
     public Transform rig;
     public LobbyUIHandler uiHandler;
-    public TextMeshProUGUI myTextMeshProInputJoinCode;
+    public TMP_InputField myTextMeshProInputJoinCode;
 
     private async void Awake()
     {
@@ -33,6 +33,11 @@ public class NetworkConnect : MonoBehaviour
     public async void SetJoinCode()
     {
         joinCode = myTextMeshProInputJoinCode.text;
+        Debug.Log("Join code being used: " + joinCode);
+        joinCode = joinCode.Trim();
+        Debug.Log("Join code being used: " + joinCode);
+
+
     }
 
 
@@ -75,9 +80,22 @@ public class NetworkConnect : MonoBehaviour
         // SceneManager.LoadScene("BetaSceneMain");
         uiHandler.SetIsHost(false);
         uiHandler.SetState(1);
-        
 
-        JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+
+
+        Debug.Log("Join code being used: " + joinCode);
+
+        string joinCode2 = joinCode;
+
+        // Ensure joinCode is not null or empty
+        if (string.IsNullOrWhiteSpace(joinCode))
+        {
+            Debug.LogError("Join code is empty or null. Please set a valid join code.");
+            return; // Exit the method to avoid making a request with invalid join code
+        }
+
+
+        JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joinCode2);
 
         transport.SetClientRelayData(allocation.RelayServer.IpV4, (ushort)allocation.RelayServer.Port,
            allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData, allocation.HostConnectionData);

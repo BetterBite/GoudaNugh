@@ -503,17 +503,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3533549770413367874, guid: 8ce97d941cf2c3c4fbd58f10154234e9, type: 3}
   m_PrefabInstance: {fileID: 171322173}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &191316334 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3484128597883003591, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
-  m_PrefabInstance: {fileID: 1650649500}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &199086103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,7 +1779,7 @@ PrefabInstance:
     - target: {fileID: 6441408544769473660, guid: aab086e998681d04684eea939a0bd250, type: 3}
       propertyPath: myTextMeshProInputJoinCode
       value: 
-      objectReference: {fileID: 191316334}
+      objectReference: {fileID: 2039223193}
     - target: {fileID: 8877310079982420921, guid: aab086e998681d04684eea939a0bd250, type: 3}
       propertyPath: m_Name
       value: NetworkManager
@@ -11749,6 +11738,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c039f2b499be7c347ada94f7e7cee843, type: 3}
+--- !u!114 &2039223193 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3484128599267958350, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
+  m_PrefabInstance: {fileID: 1650649500}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
