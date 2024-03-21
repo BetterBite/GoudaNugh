@@ -9,6 +9,7 @@ using Unity.Services.Relay.Models;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine.SceneManagement;
 using System;
+using TMPro;
 
 public class NetworkConnect : MonoBehaviour
 {
@@ -20,12 +21,18 @@ public class NetworkConnect : MonoBehaviour
     public Transform p2Pos;
     public Transform rig;
     public LobbyUIHandler uiHandler;
+    public TextMeshProUGUI myTextMeshProInputJoinCode;
 
     private async void Awake()
     {
         await UnityServices.InitializeAsync();
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
 
+    }
+
+    public async void SetJoinCode()
+    {
+        joinCode = myTextMeshProInputJoinCode.text;
     }
 
 
