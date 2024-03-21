@@ -68,7 +68,7 @@ namespace Keyboard
         private bool isFirstKeyPress = true;
         private bool keyHasBeenPressed;
         private bool shiftActive;
-        private bool capsLockActive;
+        private bool capsLockActive = true;
         private bool specialCharactersActive;
         private float lastShiftClickTime;
         private float shiftDoubleClickDelay = 0.5f;
