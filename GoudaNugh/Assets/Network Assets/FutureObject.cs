@@ -14,7 +14,7 @@ public abstract class FutureObject : MonoBehaviour
     [SerializeField]
     private bool hasMoved = false;
     protected Variables variables;
-    public XRGrabInteractable grabInteractable;
+    //public XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InstanceManager = InteractibleManager.Instance;
 
     // public void Awake() {

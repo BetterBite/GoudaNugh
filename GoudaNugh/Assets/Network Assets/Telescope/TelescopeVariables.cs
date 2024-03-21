@@ -14,8 +14,8 @@ public class TelescopeVariables : Variables
         isSolved.Value = true;
     }
 
-    public void NextCode()
+    public void NextCode(int status)
     {
-        solvedStatus.Value++;
+        solvedStatus.Value = status;
     }
 }

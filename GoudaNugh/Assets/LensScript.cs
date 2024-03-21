@@ -5,23 +5,25 @@ using UnityEngine;
 public class LensScript : MonoBehaviour
 {
     public GameObject lever;
+    private ContinuousRotatableCheck leverCheck;
+    private bool solved = false;
     // Start is called before the first frame update
     void Awake()
     {
+        leverCheck = lever.GetComponent<ContinuousRotatableCheck>();
+    }
+
+    public void SolveLens()
+    {
+        solved = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lever.GetComponent<ContinuousRotatableCheck>().activated)
+        if (leverCheck.activated && !solved)
         {
             gameObject.transform.Rotate(new Vector3(0, 0, 0.5f));
         }
-        //Debug.Log(lever.activated);
-        //if (lever.activated)
-        //{
-        //    Debug.Log("turning");
-        //    gameObject.transform.Rotate(new Vector3(0, 0, 1));
-        //}
     }
 }

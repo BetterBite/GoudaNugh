@@ -8,7 +8,7 @@ public class PastTelescope : PastObject
     public TelescopeVariables telescopeVariables;
     public GameObject[] lenses;
     private float[] code;
-    public int solved;
+    public int solvedStatus;
     // Start is called before the first frame update
 
     public override void Setup()
@@ -20,24 +20,24 @@ public class PastTelescope : PastObject
 
     public void CheckLenses()
     {
-       
-        //for (int i = 0; i < 3; i++)
-        //{
-        //    float rot = lenses[i].transform.rotation.eulerAngles.z;
-        //    Debug.Log(lenses[1].transform.rotation.eulerAngles.z);
-        //    float answer = rot - code[i];
-        //    if ((answer > -10) && (answer < 10))
-        //    {
-        //        solved++;
-        //        NextCode();
-        //    }
-        //}
-        //if (solved > 2)
-        //{
-        //    Solve();
-        //}
-        //solved = 0;
-        //Solve();
+
+        for (int i = 0; i < 3; i++)
+        {
+            float rot = lenses[i].transform.rotation.eulerAngles.z;
+            float answer = rot - code[i];
+            if ((answer > -10) && (answer < 10))
+            {
+                solvedStatus++;
+                lenses[i].GetComponent<LensScript>().SolveLens();
+                NextCode(solvedStatus);
+                Debug.Log("solved: " + i);
+            }
+        }
+        if (solvedStatus > 2)
+        {
+            Solve();
+        }
+        solvedStatus = 0;
     }
 
     public void Solve()
@@ -45,8 +45,8 @@ public class PastTelescope : PastObject
         telescopeVariables.Solve();
     }
 
-    private void NextCode()
+    private void NextCode(int status)
     {
-        telescopeVariables.NextCode();
+        telescopeVariables.NextCode(status);
      }
 }

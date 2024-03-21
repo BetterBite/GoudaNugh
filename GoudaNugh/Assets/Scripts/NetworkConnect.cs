@@ -50,6 +50,7 @@ public class NetworkConnect : MonoBehaviour
         NetworkManager.Singleton.SceneManager.OnSceneEvent += InteractibleManager.Instance.CheckSceneEvent;
         // display Start Game button
         uiHandler.SetState(2);
+        InteractibleManager.Instance.OnSceneLoad();
 
         // We don't want to move the player on create.
         // rig.position = p1Pos.position;

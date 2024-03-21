@@ -1337,10 +1337,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectID: 0
-  networkObject: {fileID: 5134731325123478076, guid: 6206d5d7e61799c41a65249f30ea6973, type: 3}
+  networkObject: {fileID: 0}
   telescopeVariables: {fileID: 0}
-  lenses: []
-  solved: 0
+  lenses:
+  - {fileID: 4679753121968014818}
+  - {fileID: 5628714227540117205}
+  - {fileID: 1758246769830475030}
+  solvedStatus: 0
 --- !u!1 &4411357621084978425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,6 +2098,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7440075418939312765}
         m_TargetAssemblyTypeName: ContinuousRotatableCheck, Assembly-CSharp
         m_MethodName: OnUngrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -7043711553082416137}
+        m_TargetAssemblyTypeName: PastTelescope, Assembly-CSharp
+        m_MethodName: CheckLenses
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2950,6 +2965,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -7043711553082416137}
+        m_TargetAssemblyTypeName: PastTelescope, Assembly-CSharp
+        m_MethodName: CheckLenses
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -3750,6 +3777,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1598306176881068130}
         m_TargetAssemblyTypeName: ContinuousRotatableCheck, Assembly-CSharp
         m_MethodName: OnUngrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -7043711553082416137}
+        m_TargetAssemblyTypeName: PastTelescope, Assembly-CSharp
+        m_MethodName: CheckLenses
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
