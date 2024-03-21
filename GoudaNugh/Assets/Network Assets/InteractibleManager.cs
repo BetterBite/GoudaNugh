@@ -66,7 +66,8 @@ public class InteractibleManager : NetworkBehaviour {
     [Rpc(SendTo.ClientsAndHost)]
     public void InstantiateFutureObjectRPC(NetworkObjectReference objectReference) {
         // TODO - Add transforms to all Instantiate calls 
-        if (!IsServer) { //Check if you are the future player here
+        if (IsServer) { //this line is uncommented when testing on one device
+        //if (!IsServer) { //Check if you are the future player here
             objectReference.TryGet(out NetworkObject networkObject);
             GameObject Object = Instantiate(networkObject.gameObject.GetComponent<Variables>().FutureObjectPrefab);
             Object.GetComponent<FutureObject>().networkObject = networkObject;
