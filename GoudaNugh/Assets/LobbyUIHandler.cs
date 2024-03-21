@@ -12,17 +12,29 @@ public class LobbyUIHandler : MonoBehaviour
         public GameObject page2Client;
         public GameObject page3Host;
         public GameObject page3Client;
+        public GameObject pageTypeInCode;
     }
     public Pages pages;
     public bool isHost = false;
     private bool unknownHost = true;
     public string joinCodeForDisplay;
     private GameObject activePage;
+    public GameObject keyboard;
     public TextMeshProUGUI myTextMeshPro;
 
     void Start() {
         activePage = pages.page1;
 
+    }
+
+    public void OpenKeyboard()
+    {
+        keyboard.SetActive(true);
+    }
+
+    public void CloseKeyboard()
+    {
+        keyboard.SetActive(false);
     }
 
     public void SetIsHost(bool host) {

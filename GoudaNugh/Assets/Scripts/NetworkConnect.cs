@@ -22,6 +22,7 @@ public class NetworkConnect : MonoBehaviour
     public Transform rig;
     public LobbyUIHandler uiHandler;
     public TMP_InputField myTextMeshProInputJoinCode;
+    
 
     private async void Awake()
     {
@@ -33,10 +34,7 @@ public class NetworkConnect : MonoBehaviour
     public async void SetJoinCode()
     {
         joinCode = myTextMeshProInputJoinCode.text;
-        Debug.Log("Join code being used: " + joinCode);
-        joinCode = joinCode.Trim();
-        Debug.Log("Join code being used: " + joinCode);
-
+        //joinCode = joinCode.Trim();
 
     }
 
@@ -73,7 +71,8 @@ public class NetworkConnect : MonoBehaviour
 
     }
 
-    public async void Join()
+
+        public async void Join()
     {
         // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
         // We don't want to load scene on join
@@ -85,8 +84,6 @@ public class NetworkConnect : MonoBehaviour
 
         Debug.Log("Join code being used: " + joinCode);
 
-        string joinCode2 = joinCode;
-
         // Ensure joinCode is not null or empty
         if (string.IsNullOrWhiteSpace(joinCode))
         {
@@ -95,7 +92,7 @@ public class NetworkConnect : MonoBehaviour
         }
 
 
-        JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joinCode2);
+        JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
 
         transport.SetClientRelayData(allocation.RelayServer.IpV4, (ushort)allocation.RelayServer.Port,
            allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData, allocation.HostConnectionData);
