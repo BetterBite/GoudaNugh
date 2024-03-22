@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LobbyUIHandler : MonoBehaviour
 {
@@ -11,19 +12,39 @@ public class LobbyUIHandler : MonoBehaviour
         public GameObject page2Client;
         public GameObject page3Host;
         public GameObject page3Client;
+        public GameObject pageTypeInCode;
     }
     public Pages pages;
     public bool isHost = false;
     private bool unknownHost = true;
+    public string joinCodeForDisplay;
     private GameObject activePage;
+    public GameObject keyboard;
+    public TextMeshProUGUI myTextMeshPro;
 
     void Start() {
         activePage = pages.page1;
+
+    }
+
+    public void OpenKeyboard()
+    {
+        keyboard.SetActive(true);
+    }
+
+    public void CloseKeyboard()
+    {
+        keyboard.SetActive(false);
     }
 
     public void SetIsHost(bool host) {
         isHost = host;
         unknownHost = false;
+    }
+
+    public void SetJoinCodeForDisplay(string joinCode)
+    {
+        joinCodeForDisplay = joinCode;
     }
 
     public void SetState(int newState) {
@@ -51,6 +72,8 @@ public class LobbyUIHandler : MonoBehaviour
             if (isHost) {
                 // show start game button
                 activePage = pages.page3Host;
+                // myTextMeshPro = GetComponent<TextMeshProUGUI>();
+                myTextMeshPro.text = "JOIN CODE: " + joinCodeForDisplay + "\n\nSTART GAME";
             } else {
                 // show waiting for host to start game
                 activePage = pages.page3Client;
