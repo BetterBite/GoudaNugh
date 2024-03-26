@@ -6,28 +6,31 @@ using Unity.Netcode;
 
 public abstract class FutureObject : MonoBehaviour
 {
-    // Same as network object ID
-    [SerializeField]
-    private uint objectID;
-
     public NetworkObject networkObject;
+    /*
+     * Cached local reference
     [SerializeField]
     private bool hasMoved = false;
-    public XRGrabInteractable grabInteractable;
+    */
+    //public XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InstanceManager = InteractibleManager.Instance;
 
+    public abstract void Setup();
+
+    /* 
+     * Example code of how to setup the listener for movement
     public void Awake() {
         hasMoved = false;
         grabInteractable = GetComponent<XRGrabInteractable>();        
         grabInteractable.selectEntered.AddListener(OnSelectEntered);
+    } 
+
+    public void Setup() {
+        variables = networkObject.gameObject.GetComponent<Variables>();
+        variables.HasMoved.OnValueChanged += OnHasMovedChanged;
     }
 
-    // Setup any listeners to the network variables
-    public virtual void Setup() {
-        networkObject.gameObject.GetComponent<Variables>().HasMoved.OnValueChanged += OnHasMovedChanged;
-    }
-
-    public void OnHasMovedChanged(bool previousValue, bool newValue) {
+/    public void OnHasMovedChanged(bool previousValue, bool newValue) {
         if (hasMoved) {
             return;
         }
@@ -40,4 +43,5 @@ public abstract class FutureObject : MonoBehaviour
             hasMoved = true;
         }
     }
+    */
 }
