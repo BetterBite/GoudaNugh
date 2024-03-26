@@ -4586,6 +4586,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144bdf92faadc644687c73196dd62524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 0
+  networkObject: {fileID: 0}
+  hasMoved: 0
+  grabInteractable: {fileID: 0}
+  images: []
+  variables: {fileID: 5732735838385686571, guid: 6206d5d7e61799c41a65249f30ea6973, type: 3}
+  door: {fileID: 0}
 --- !u!1 &8651413278534379071
 GameObject:
   m_ObjectHideFlags: 0
