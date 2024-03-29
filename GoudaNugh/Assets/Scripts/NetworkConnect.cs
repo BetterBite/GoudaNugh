@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Unity.Netcode;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
@@ -22,12 +23,25 @@ public class NetworkConnect : MonoBehaviour
     public Transform rig;
     public LobbyUIHandler uiHandler;
     public TMP_InputField myTextMeshProInputJoinCode;
-    
+
+    [SerializeField]
+    private Toggle VoiceToggle;
+
+
 
     private async void Awake()
     {
         await UnityServices.InitializeAsync();
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
+
+        VoiceToggle.onValueChanged.AddListener(delegate 
+            { VivoxToggle(VoiceToggle); });
+
+    }
+
+    void VivoxToggle(Toggle voiceToggle)
+    {
+        Debug.Log("Voice " + voiceToggle.isOn);
 
     }
 
