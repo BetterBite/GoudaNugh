@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.UI;
 
 public class NetworkPlayer : NetworkBehaviour
 {
@@ -37,6 +38,15 @@ public class NetworkPlayer : NetworkBehaviour
             Debug.Log("isPast: false");
         }
         VRRigReferences.Singleton.SpawnObjects(isPast);
+
+
+        //Vivox
+        var vTog = GameObject.Find("Toggle").GetComponent<Toggle>();
+        if (vTog.isOn)
+        {
+            GameObject.Find("Network Manager").GetComponent<VivoxPlayer>().SignIntoVivox();
+        }
+
     }
     
     // Start is called before the first frame update
