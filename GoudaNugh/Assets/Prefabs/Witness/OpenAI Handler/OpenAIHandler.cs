@@ -31,7 +31,17 @@ public class OpenAIHandler : MonoBehaviour
     }
 }
 
-public abstract class MonoBehaviourWithOpenAI : MonoBehaviour
+public class MonoBehaviourWithOpenAI : MonoBehaviour
 {
-    public abstract void SetAPI(OpenAIAPI apiFromHandler);
+    public OpenAIHandler openAiHandler;
+    protected OpenAIAPI api = null;
+    void Start()
+    {
+        openAiHandler.Subscribe(this);
+    }
+
+    public virtual void SetAPI(OpenAIAPI apiFromHandler)
+    {
+        api = apiFromHandler;
+    }
 }
