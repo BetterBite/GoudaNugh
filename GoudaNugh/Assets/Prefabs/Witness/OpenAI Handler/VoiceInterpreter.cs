@@ -7,18 +7,13 @@ using OpenAI_API;
 
 public class VoiceInterpreter : MonoBehaviourWithOpenAI
 {
-    public OpenAIHandler openAiHandler;
     public string microphoneName = "Default Microphone";
-    private OpenAIAPI api = null;
-    void Start()
-    {
-        openAiHandler.Subscribe(this);
-    }
+
 
     public override void SetAPI(OpenAIAPI apiFromHandler)
     {
-        api = apiFromHandler;
-        GetTextFromAudioStream();
+        base.SetAPI(apiFromHandler);
+        // GetTextFromAudioStream();
     }
 
     public async void GetTextFromAudioStream() {
