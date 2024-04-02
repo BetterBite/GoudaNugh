@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &98582510607227429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7727699505399962459}
+  - component: {fileID: 8821390022601959825}
+  m_Layer: 0
+  m_Name: Microphone Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7727699505399962459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98582510607227429}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1305762179876318636}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8821390022601959825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98582510607227429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29522b1d6d4f4ce458f14d694a4a94f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  microphoneName: 
+  recordLength: 5
+  loopRecord: 1
+  sampleRate: 44100
+  voiceInterpreter: {fileID: 4903851456869271446}
+  debugAudioSource: {fileID: 0}
 --- !u!1 &1026653163235614953
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openAiHandler: {fileID: 6949157775079327581}
-  microphoneName: Realtek(R) Audio
+  chatGPTManager: {fileID: 8388122284591478329}
 --- !u!1 &1454623093644212845
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +193,7 @@ MonoBehaviour:
     are currently in that antique shop. Your role is to answer questions about the
     murder to the detective. Keep your response short and to the point.
   ttsManager: {fileID: 464362998577710216}
+  DebugPrompt: Are you the murderer?
 --- !u!1 &5697348087912465773
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,6 +227,7 @@ Transform:
   - {fileID: 1320698693891719766}
   - {fileID: 4787226943458160012}
   - {fileID: 719062897423884495}
+  - {fileID: 7727699505399962459}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6949157775079327581

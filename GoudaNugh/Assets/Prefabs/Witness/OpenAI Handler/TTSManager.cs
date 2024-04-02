@@ -51,9 +51,10 @@ public class TTSManager : MonoBehaviourWithOpenAI
             Input = text,
             ResponseFormat = TextToSpeechRequest.ResponseFormats.MP3,
             Model = Model.DefaultTTSModel,
-            Voice = "nova",
-            Speed = 0.9
+            Voice = "onyx",
+            Speed = 1.1
         };
+        // TODO: Implement using GetSpeechAsStreamAsync to avoid the need for file handling
         await api.TextToSpeech.SaveSpeechToFileAsync(request, "testTTS.mp3");
         StartCoroutine(GetAudioClip("testTTS.mp3"));
         
@@ -61,14 +62,12 @@ public class TTSManager : MonoBehaviourWithOpenAI
 
     IEnumerator GetAudioClip(string path)
     {
+        // TODO: fix the absolute filepaths
         using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip($"file://C:/Users/jacob/Documents/GoudaNugh/GoudaNugh/{path}", AudioType.MPEG))
         {
             yield return www.SendWebRequest();
 
-            if (www.result == UnityWebRequest.Result.ConnectionError)
-            {
-                Debug.Log(www.error);
-            }
+            if (www.result == UnityWebRequest.Result.ConnectionError) Debug.Log(www.error);
             else
             {
                 AudioClip myClip = DownloadHandlerAudioClip.GetContent(www);
@@ -77,7 +76,7 @@ public class TTSManager : MonoBehaviourWithOpenAI
 
                 // for benchmarking
                 stopWatch.Stop();
-                Debug.Log(stopWatch.Elapsed.TotalMilliseconds);
+                Debug.Log("Time to convert response to speech: " + stopWatch.Elapsed.TotalMilliseconds);
             }
         }
     }

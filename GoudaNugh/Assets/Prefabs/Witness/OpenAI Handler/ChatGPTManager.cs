@@ -11,33 +11,38 @@ public class ChatGPTManager : MonoBehaviourWithOpenAI
     public string SystemPrompt;
     private Conversation chat = null;
     public TTSManager ttsManager;
+    public string DebugPrompt = "Are you the murderer?";
 
     private System.Diagnostics.Stopwatch stopWatch;
 
     public override void SetAPI(OpenAIAPI apiFromHandler) {
         base.SetAPI(apiFromHandler);
 
-        stopWatch = new System.Diagnostics.Stopwatch();
-        stopWatch.Start();
-
         SetupChat();
-        GetResponseFromPrompt("Hello, who are you?");
+
+        // start benchmarking after setup because realistically the setup isn't what we're optimising.
+        // stopWatch = new System.Diagnostics.Stopwatch();
+        // stopWatch.Start();
+
+        // GetResponseFromPrompt(DebugPrompt);
         // ttsManager.ConvertTextToSpeech("I am a witness to the murder");
     }
 
     private void SetupChat() {
         chat = api.Chat.CreateConversation();
         // chat.Model = Model.GPT4_Turbo;
-        chat.Model = Model.ChatGPTTurbo;
+        chat.Model = Model.ChatGPTTurbo;    // Quicker model?
         chat.RequestParameters.Temperature = 0;
         chat.AppendSystemMessage(SystemPrompt); // give chat the system prompt
     }
 
     public async void GetResponseFromPrompt(string prompt) {
         if (chat == null) {
-            // throw error
+            // TODO: throw error
             return;
         }
+        stopWatch = new System.Diagnostics.Stopwatch();
+        stopWatch.Start();
 
         chat.AppendUserInput(prompt);
 
@@ -46,7 +51,7 @@ public class ChatGPTManager : MonoBehaviourWithOpenAI
 
         // for benchmarking
         stopWatch.Stop();
-        Debug.Log(stopWatch.Elapsed.TotalMilliseconds);
+        Debug.Log("Time to process transcription with gpt: " + stopWatch.Elapsed.TotalMilliseconds);
 
         // convert this response to speech
         ttsManager.ConvertTextToSpeech(response);
