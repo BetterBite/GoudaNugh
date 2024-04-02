@@ -7,24 +7,25 @@ using OpenAI_API;
 
 public class OpenAIHandler : MonoBehaviour
 {
-    public int NumberOfDependentManagers = 1;
+    public int NumberOfDependentManagers = 3;
     private OpenAIAPI api = null;
+    // this list could probably be implemented as a FSM as well. VoiceInterpreter -> ChatGPTManager -> TTSManager. Alternatively we just do await TTS(await GPT(await Whisper(input)));
     private List<MonoBehaviourWithOpenAI> subscribers = new List<MonoBehaviourWithOpenAI>();
     void Start()
     {
         api = new OpenAIAPI(Environment.GetEnvironmentVariable("OPENAI_API_KEY", EnvironmentVariableTarget.User));
-        if (subscribers.Count == NumberOfDependentManagers && api != null) Broadcast();
+        if (subscribers.Count == NumberOfDependentManagers && api != null) Publish();
     }
 
-    
+    // I'm trying to avoid some synchronisation problems here that i think we just don't get because authenticating with the api will naturally take longer than other local classes subscribing to this class.
     public void Subscribe(MonoBehaviourWithOpenAI obj) {
         if (!subscribers.Contains(obj)) subscribers.Add(obj); // if object is not currently subscribed, add as a suscriber
 
-        // if (subscribers.Count == NumberOfDependentManagers && api != null) Broadcast();
+        // if (subscribers.Count == NumberOfDependentManagers && api != null) Publish();
 
     }
 
-    private void Broadcast() {
+    private void Publish() {
         foreach (MonoBehaviourWithOpenAI subscriber in subscribers) {
             subscriber.SetAPI(api);
         }
