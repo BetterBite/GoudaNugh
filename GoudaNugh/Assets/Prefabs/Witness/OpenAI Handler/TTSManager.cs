@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -12,8 +13,11 @@ using OpenAI_API.Models;
 
 public class TTSManager : MonoBehaviourWithOpenAI
 {
+    [Header("Text-to-Speech Settings")]
     public string voice = TextToSpeechRequest.Voices.Nova;
     public AudioSource audioSource;
+    // [Header("Events")]
+    public event Action TextConverted;
 
     private System.Diagnostics.Stopwatch stopWatch;
 
@@ -24,28 +28,6 @@ public class TTSManager : MonoBehaviourWithOpenAI
         stopWatch = new System.Diagnostics.Stopwatch();
         stopWatch.Start();
 
-        // using (Stream result = await api.TextToSpeech.GetSpeechAsStreamAsync(text, "nova"))
-        // using (StreamReader reader = new StreamReader(result))
-        // {
-        //     byte[] bytes = Encoding.UTF8.GetBytes(reader.ReadToEnd());
-
-        //     // float[] samples = new float[bytes.Length / 2];
-
-        //     // for (int i = 0; i < bytes.Length / 2; i++)
-        //     //     samples[i] = System.BitConverter.ToSingle(bytes, i * 2);
-
-        //     float[] samples = new float[bytes.Length / 2]; //size of a float is 4 bytes
-        //     System.Buffer.BlockCopy(bytes, 0, samples, 0, bytes.Length);
-            
-        //     int channels = 1; //Assuming audio is mono because microphone input usually is
-        //     int sampleRate = 24000; //Assuming your samplerate is 44100 or change to 48000 or whatever is appropriate
-            
-        //     AudioClip clip = AudioClip.Create("SpeechFromTTS", samples.Length, channels, sampleRate, false);
-        //     clip.SetData(samples, 0);
-
-        //     audioSource.clip = clip;
-        // }
-
         var request = new TextToSpeechRequest()
         {
             Input = text,
@@ -54,7 +36,7 @@ public class TTSManager : MonoBehaviourWithOpenAI
             Voice = "onyx",
             Speed = 1.1
         };
-        // TODO: Implement using GetSpeechAsStreamAsync to avoid the need for file handling
+        // TODO: Implement using GetSpeechAsStreamAsync to avoid the need for file handling (to be honest I think this maybe save a handful of milliseconds. Making API calls is the limiting factor by far)
         await api.TextToSpeech.SaveSpeechToFileAsync(request, "testTTS.mp3");
         StartCoroutine(GetAudioClip("testTTS.mp3"));
         
@@ -71,6 +53,8 @@ public class TTSManager : MonoBehaviourWithOpenAI
             else
             {
                 AudioClip myClip = DownloadHandlerAudioClip.GetContent(www);
+                TextConverted?.Invoke();
+
                 audioSource.clip = myClip;
                 audioSource.Play();
 
