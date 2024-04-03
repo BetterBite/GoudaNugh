@@ -3,32 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// please read https://www.nuget.org/packages/OpenAI/ for the documentation of this wrapper class
 using OpenAI_API;
 
 public class OpenAIHandler : MonoBehaviour
 {
-    public int NumberOfDependentManagers = 3;
     private OpenAIAPI api = null;
-    // this list could probably be implemented as a FSM as well. VoiceInterpreter -> ChatGPTManager -> TTSManager. Alternatively we just do await TTS(await GPT(await Whisper(input)));
-    private List<MonoBehaviourWithOpenAI> subscribers = new List<MonoBehaviourWithOpenAI>();
     void Start()
     {
         api = new OpenAIAPI(Environment.GetEnvironmentVariable("OPENAI_API_KEY", EnvironmentVariableTarget.User));
-        if (subscribers.Count == NumberOfDependentManagers && api != null) Publish();
     }
-
-    // I'm trying to avoid some synchronisation problems here that i think we just don't get because authenticating with the api will naturally take longer than other local classes subscribing to this class.
-    public void Subscribe(MonoBehaviourWithOpenAI obj) {
-        if (!subscribers.Contains(obj)) subscribers.Add(obj); // if object is not currently subscribed, add as a suscriber
-
-        // if (subscribers.Count == NumberOfDependentManagers && api != null) Publish();
-
-    }
-
-    private void Publish() {
-        foreach (MonoBehaviourWithOpenAI subscriber in subscribers) {
-            subscriber.SetAPI(api);
-        }
+    public IEnumerator APIWrapperCallback(MonoBehaviourWithOpenAI obj) {
+        while (api == null) yield return null;  // wait for api wrapper to be returned by OpenAI
+        obj.SetAPI(api);                        // give this to the MonoBehaviourWithOpenAI
     }
 }
 
@@ -38,11 +25,12 @@ public class MonoBehaviourWithOpenAI : MonoBehaviour
     protected OpenAIAPI api = null;
     void Start()
     {
-        openAiHandler.Subscribe(this);
+        StartCoroutine(openAiHandler.APIWrapperCallback(this));
     }
 
-    public virtual void SetAPI(OpenAIAPI apiFromHandler)
-    {
-        api = apiFromHandler;
-    }
+    /**
+    *<summary>This is called by the OpenAIHandler to give the object the OpenAIAPI wrapper. Any setup by the object related to OpenAI's API should be placed here.</summary>
+    **/
+    public virtual void SetAPI(OpenAIAPI apiFromHandler) { api = apiFromHandler; }
+    public bool IsConnected() { return api != null; }
 }

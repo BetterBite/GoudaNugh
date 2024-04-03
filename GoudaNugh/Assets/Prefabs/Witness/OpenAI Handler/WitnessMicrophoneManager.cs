@@ -6,23 +6,26 @@ using UnityEngine;
 
 public class WitnessMicrophoneManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public string microphoneName;
+    // https://docs.unity3d.com/ScriptReference/Microphone.html for Microphone docs
+    [Header("Microphone Settings")]
+    private string microphoneName;
     public int recordLength = 5;
     public bool loopRecord = true;
     public int sampleRate = 44100;
-    public VoiceInterpreter voiceInterpreter;
-    public AudioSource debugAudioSource;
+    public float thresholdSilenceTime = 0.1f;
+
+    // [Header("Events")]
+    public event Action<string> RecordingSaved;
+    public event Action RecordingStarted;
+    public event Action RecordingStopped;
 
     private bool isRecording = false;
     private AudioClip clip = null;
     private float lastTime = 0f;
 
-    private System.Diagnostics.Stopwatch stopWatch;
     void Start()
     {
-        microphoneName = Microphone.devices[0];
-        StartRecording();
+        microphoneName = Microphone.devices[0]; // select first available microphone
     }
 
     public void StartRecording() {
@@ -30,47 +33,34 @@ public class WitnessMicrophoneManager : MonoBehaviour
         clip = Microphone.Start(microphoneName, loopRecord, recordLength, sampleRate);
         isRecording = true;
         lastTime = Time.time;
+
+        RecordingStarted?.Invoke(); // invoke relevant event
     }
 
     public void StopRecording() {
-        if (!isRecording) return;
+        if (!isRecording) return;   // Can't stop recording if not already recording.
 
         Microphone.End(null);
         isRecording = false;
-        // debugAudioSource.clip = clip;
-        // debugAudioSource.Play();
-        Debug.Log("Stopped Recording. Saving...");
+
+        RecordingStopped?.Invoke(); // invoke relevant event
+        
+        Debug.Log("Stopped Recording.");
         SaveRecording();
     }
 
     private void SaveRecording() {
-        stopWatch = new System.Diagnostics.Stopwatch();
-        stopWatch.Start();
-
         SaveWav.Save("C:/Users/jacob/Documents/GoudaNugh/GoudaNugh/speech.wav", clip);
-
-        stopWatch.Stop();
-        Debug.Log("Time to save recording: " + stopWatch.Elapsed.TotalMilliseconds);
-
-        // TODO: Publish file to subscribers
-        voiceInterpreter.GetTranscriptionFromFile("speech.wav");
+        RecordingSaved?.Invoke("speech.wav");
     } 
 
     void Update()
     {
-        if (isRecording)
-        {
-            if (clip != null && Microphone.GetPosition(null) > 0 && IsSilent())
-            {
-                if (Time.time - lastTime > 0.5f)
-                {
-                    StopRecording();
-                }
+        if (isRecording) {
+            if (clip != null && Microphone.GetPosition(null) > 0 && IsSilent()) {   // check if quiet enough to end recording
+                if (Time.time - lastTime > thresholdSilenceTime) StopRecording();                   // ensure it has been quiet for threshold time
             }
-            else
-            {
-                lastTime = Time.time;
-            }
+            else lastTime = Time.time;                                              // if it's not quiet enough, reset threshold time
         }
     }
 
@@ -108,7 +98,6 @@ public static class SaveWav
         clip.GetData(samples, 0);
         var waveData = ConvertAndWrite(samples, clip.channels, clip.frequency);
         WriteHeader(filepath, waveData, clip.channels, clip.frequency);
-        Debug.Log("Save done");
         return true;
     }
     static byte[] ConvertAndWrite(float[] samples, int channels, int frequency)
