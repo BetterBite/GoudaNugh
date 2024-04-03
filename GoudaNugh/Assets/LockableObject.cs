@@ -53,7 +53,7 @@ public class LockableObject : MonoBehaviour
 
         body.constraints = RigidbodyConstraints.None;
         isLocked = false;
-        body.AddForce(Vector3.forward*600000);
+        body.AddForce(Vector3.forward*20);
 
     }
 

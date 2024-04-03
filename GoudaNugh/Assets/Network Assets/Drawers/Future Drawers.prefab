@@ -182,7 +182,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.0022159757, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.6331325, y: 0.6186855, z: 5.145222}
+  m_ConnectedAnchor: {x: -0.05642022, y: 1.1811264, z: 0.22449926}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -671,7 +671,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.0022159757, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.6331325, y: 0.6198962, z: 5.5097203}
+  m_ConnectedAnchor: {x: -0.05642022, y: 1.2581878, z: 0.22449926}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -1152,6 +1152,7 @@ GameObject:
   - component: {fileID: 5111770112904740271}
   - component: {fileID: 6872719124534263509}
   - component: {fileID: 2983690087764638356}
+  - component: {fileID: -6767152785542278329}
   m_Layer: 0
   m_Name: Future Drawers
   m_TagString: Untagged
@@ -1167,9 +1168,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727684506695483608}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 1.2917547, y: 1.1819826, z: 0.27073604}
-  m_LocalScale: {x: 0.2854123, y: 0.28541228, z: 0.28541228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 0, z: 6}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3805426522780964676}
@@ -1185,7 +1186,7 @@ Transform:
   - {fileID: 3894088209867874798}
   - {fileID: 952569540257576091}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2903952211972926096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1203,7 +1204,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.12892672, y: 0.12692207, z: 0.13846353}
   m_Center: {x: 0.1524954, y: 0.60676396, z: 0.02161371}
@@ -1235,7 +1236,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727684506695483608}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3f99a748a53a2a468feef38f55b5cbc, type: 3}
   m_Name: 
@@ -1321,6 +1322,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.038878683, y: 0.45060748, z: 0.39048153}
   m_Center: {x: -0.42381787, y: 0.27469912, z: 0.0030742686}
+--- !u!114 &-6767152785542278329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727684506695483608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76728df7023b0ba4793e2ff7687ca5d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkObject: {fileID: 0}
+  drawersVars: {fileID: 0}
+  lockedDrawer: {fileID: 2051447482335389203}
 --- !u!1 &1772780135277616867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,7 +1554,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.0022159757, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.6194108, y: 0.9237995, z: 4.777251}
+  m_ConnectedAnchor: {x: -0.06041599, y: 1.1017817, z: 0.15999608}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -1976,7 +1992,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.0022159757, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.6331325, y: 0.6174567, z: 4.7753243}
+  m_ConnectedAnchor: {x: -0.05642022, y: 1.1029234, z: 0.22449926}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -2590,7 +2606,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.0022159757, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.6331325, y: 0.9249947, z: 5.508707}
+  m_ConnectedAnchor: {x: -0.05642022, y: 1.2581878, z: 0.15999608}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -3098,7 +3114,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.0022159757, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.6331325, y: 0.923784, z: 5.144209}
+  m_ConnectedAnchor: {x: -0.05642022, y: 1.1811264, z: 0.15999608}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0

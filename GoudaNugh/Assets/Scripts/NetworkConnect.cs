@@ -61,13 +61,14 @@ public class NetworkConnect : MonoBehaviour
         // display Start Game button
         uiHandler.SetJoinCodeForDisplay(newJoinCode);
         uiHandler.SetState(2);
-       
+
 
         // We don't want to move the player on create.
         // rig.position = p1Pos.position;
 
         // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
         //SceneManager.LoadScene("BetaSceneNetworkTest");
+        StartGame();
 
     }
 
@@ -116,11 +117,11 @@ public class NetworkConnect : MonoBehaviour
 
         // SceneManager.LoadScene("BetaSceneMain");
         Debug.Log("Starting Game");
-        NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneNetworkTest", LoadSceneMode.Single);
+        //NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneNetworkTest", LoadSceneMode.Single);
 
 
 
-        //InteractibleManager.Instance.OnSceneLoad();
+        InteractibleManager.Instance.OnSceneLoad();
 
         //NetworkSceneManager.OnSceneEvent.
         
