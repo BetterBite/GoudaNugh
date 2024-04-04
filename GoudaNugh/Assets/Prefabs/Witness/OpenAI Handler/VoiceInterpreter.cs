@@ -8,7 +8,6 @@ using OpenAI_API;
 
 public class VoiceInterpreter : MonoBehaviourWithOpenAI
 {
-    // [Header("Events")]
     public event Action<string> FileTranscribed;
     private System.Diagnostics.Stopwatch stopWatch;
 

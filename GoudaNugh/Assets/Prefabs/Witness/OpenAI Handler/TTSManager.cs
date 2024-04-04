@@ -20,7 +20,8 @@ public class TTSManager : MonoBehaviourWithOpenAI
 
     private System.Diagnostics.Stopwatch stopWatch;
 
-    void Start() {
+    public override void SetAPI(OpenAIAPI apiFromHandler) {
+        base.SetAPI(apiFromHandler);
         audioSource = GetComponentInChildren<AudioSource>();
     }
 
@@ -47,7 +48,6 @@ public class TTSManager : MonoBehaviourWithOpenAI
 
     IEnumerator GetAudioClip(string path)
     {
-        // TODO: fix the absolute filepaths
         using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip($"file://{Application.persistentDataPath}/{path}", AudioType.MPEG))
         {
             yield return www.SendWebRequest();
