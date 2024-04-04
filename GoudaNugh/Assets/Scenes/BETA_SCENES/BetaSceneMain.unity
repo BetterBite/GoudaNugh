@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -243,6 +243,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 921294577}
+    - target: {fileID: 4599608590688084487, guid: 0c8df3352d11d014a960d291b15d4af0, type: 3}
+      propertyPath: fadeScreen
+      value: 
+      objectReference: {fileID: 2141681155}
     - target: {fileID: 4654656536155960817, guid: 0c8df3352d11d014a960d291b15d4af0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -303,6 +307,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 921294577}
+    - target: {fileID: 5963356433937545621, guid: 0c8df3352d11d014a960d291b15d4af0, type: 3}
+      propertyPath: fadeScreen
+      value: 
+      objectReference: {fileID: 2141681155}
     - target: {fileID: 7300160434312326898, guid: 0c8df3352d11d014a960d291b15d4af0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -16304,6 +16312,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130532125}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2141681155 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4992451769285071982, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+  m_PrefabInstance: {fileID: 921294575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6906f1881dacfe2488c6e18e7e9a0ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5927209217277064114
 PrefabInstance:
   m_ObjectHideFlags: 0
