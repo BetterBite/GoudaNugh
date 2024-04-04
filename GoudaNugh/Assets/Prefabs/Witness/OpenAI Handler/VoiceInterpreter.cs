@@ -16,10 +16,11 @@ public class VoiceInterpreter : MonoBehaviourWithOpenAI
         stopWatch = new System.Diagnostics.Stopwatch();
         stopWatch.Start();
 
-        string resultText = await api.Transcriptions.GetTextAsync(filename);
+        string resultText = await api.Transcriptions.GetTextAsync($"{Application.persistentDataPath}/{filename}");
 
         stopWatch.Stop();
         Debug.Log("Time to transcribe input: " + stopWatch.Elapsed.TotalMilliseconds);
+        Debug.Log("Transcription: "+resultText);
 
         FileTranscribed?.Invoke(resultText);    // Invoke relevant event
     }

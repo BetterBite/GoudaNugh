@@ -11,13 +11,10 @@ public class ChatGPTManager : MonoBehaviourWithOpenAI
 {
     [Header("Chat GPT Settings")]
     public string SystemPrompt;
-
-    // [Header("Events")]
+    
     public event Action<string> ResponseReceived;
-
     private Conversation chat = null;
     private bool setup = false;
-
     private System.Diagnostics.Stopwatch stopWatch;
 
     public override void SetAPI(OpenAIAPI apiFromHandler) {

@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class WitnessManager : MonoBehaviour
 {
-    public WitnessMicrophoneManager witnessMicrophoneManager;
-    public VoiceInterpreter voiceInterpreter;
-    public ChatGPTManager chatGPTManager;
-    public TTSManager ttsManager;
+    private WitnessMicrophoneManager witnessMicrophoneManager;
+    private VoiceInterpreter voiceInterpreter;
+    private ChatGPTManager chatGPTManager;
+    private TTSManager ttsManager;
 
     private bool InProgress = false;
+
+    void Start() {
+        witnessMicrophoneManager = GetComponentInChildren<WitnessMicrophoneManager>();
+        voiceInterpreter = GetComponentInChildren<VoiceInterpreter>();
+        chatGPTManager = GetComponentInChildren<ChatGPTManager>();
+        ttsManager = GetComponentInChildren<TTSManager>();
+    }
     public void StartWitnessQuery() {
         if (!voiceInterpreter.IsConnected()) throw new System.InvalidOperationException("Cannot start a witness query as the voice interpreter is not yet connected to OpenAI");
         if (!chatGPTManager.IsConnected()) throw new System.InvalidOperationException("Cannot start a witness query as the chat GPT manager is not yet connected to OpenAI");
@@ -27,6 +34,7 @@ public class WitnessManager : MonoBehaviour
     private void OnRecordingSaved(string filename) {
         witnessMicrophoneManager.RecordingSaved -= OnRecordingSaved;
 
+        // InProgress = false;
         voiceInterpreter.FileTranscribed += OnFileTranscribed;
         voiceInterpreter.GetTranscriptionFromFile(filename);
     }

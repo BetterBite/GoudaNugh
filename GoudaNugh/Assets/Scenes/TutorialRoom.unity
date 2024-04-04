@@ -390,6 +390,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141869224}
   m_CullTransparentMesh: 1
+--- !u!1 &239403023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 411182729749577240, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
+  m_PrefabInstance: {fileID: 722979181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &244689253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -468,11 +473,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 799531123}
   m_SourcePrefab: {fileID: 100100000, guid: 40b22b544ce15804981fc6daa3c8f649, type: 3}
---- !u!82 &341374268 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4788785741499054676, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-  m_PrefabInstance: {fileID: 6225443963725714013}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &411950405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -930,12 +930,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4859350502448463659, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859350502448463659, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859350502448463659, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1898560864}
+      objectReference: {fileID: 1651703169}
+    - target: {fileID: 4859350502448463659, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 239403023}
     - target: {fileID: 4859350502448463659, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Join
+      value: StartWitnessQuery
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859350502448463659, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WitnessManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859350502448463659, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859350502448463659, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859350502448463659, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7471729547485507575, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1211,15 +1239,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1413357330345051476, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.553
       objectReference: {fileID: 0}
     - target: {fileID: 1413357330345051476, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 1413357330345051476, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.953
       objectReference: {fileID: 0}
     - target: {fileID: 1413357330345051476, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2032,6 +2060,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1818443298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1651703169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1118272051392635803, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+  m_PrefabInstance: {fileID: 2543223359458868341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a717b53f914c254f8500e7f4c7fc4e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1797983221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,6 +2580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OnWallUI (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4413007966011910819, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4663377929188772268, guid: e5a769cb2ad42604f9bef36b2f7efe56, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2744,6 +2787,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 443723744}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &2543223359458868341
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2227648783883446245, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: m_Name
+      value: Witness Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131254314877030727, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: SystemPrompt
+      value: You are a witness to a murder of the owner of an antique shop. You are
+        currently in that antique shop. Your role is to answer questions about the
+        murder to the detective. Keep your response short and to the point.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217122772304760913, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217122772304760913, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217122772304760913, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217122772304760913, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217122772304760913, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217122772304760913, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217122772304760913, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217122772304760913, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217122772304760913, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217122772304760913, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
 --- !u!1001 &5927209217277064114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2813,71 +2919,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3460142549015176449, guid: f449d516a340af24e85d30e30d635f4b, type: 3}
   m_PrefabInstance: {fileID: 5927209217277064114}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6225443963725714013
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1305762179876318636, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305762179876318636, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305762179876318636, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305762179876318636, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305762179876318636, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305762179876318636, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305762179876318636, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305762179876318636, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305762179876318636, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305762179876318636, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5697348087912465773, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: m_Name
-      value: OpenAI Handler
-      objectReference: {fileID: 0}
-    - target: {fileID: 8388122284591478329, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: DebugPrompt
-      value: Do you know who the murderer could be?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821390022601959825, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
-      propertyPath: debugAudioSource
-      value: 
-      objectReference: {fileID: 341374268}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1ed41603f3e17964ca9e07c07ca51e31, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2893,4 +2934,4 @@ SceneRoots:
   - {fileID: 926289712}
   - {fileID: 722979181}
   - {fileID: 2027901841}
-  - {fileID: 6225443963725714013}
+  - {fileID: 2543223359458868341}

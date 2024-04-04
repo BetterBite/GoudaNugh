@@ -14,12 +14,15 @@ using OpenAI_API.Models;
 public class TTSManager : MonoBehaviourWithOpenAI
 {
     [Header("Text-to-Speech Settings")]
-    public string voice = TextToSpeechRequest.Voices.Nova;
-    public AudioSource audioSource;
-    // [Header("Events")]
+    public string voice = TextToSpeechRequest.Voices.Onyx;
+    private AudioSource audioSource;
     public event Action TextConverted;
 
     private System.Diagnostics.Stopwatch stopWatch;
+
+    void Start() {
+        audioSource = GetComponentInChildren<AudioSource>();
+    }
 
     public async void ConvertTextToSpeech(string text) {
         Debug.Log("Converting prompt to speech: "+text);
@@ -32,12 +35,12 @@ public class TTSManager : MonoBehaviourWithOpenAI
         {
             Input = text,
             ResponseFormat = TextToSpeechRequest.ResponseFormats.MP3,
-            Model = Model.DefaultTTSModel,
-            Voice = "onyx",
+            Model = Model.TTS_Speed,
+            Voice = voice,
             Speed = 1.1
         };
-        // TODO: Implement using GetSpeechAsStreamAsync to avoid the need for file handling (to be honest I think this maybe save a handful of milliseconds. Making API calls is the limiting factor by far)
-        await api.TextToSpeech.SaveSpeechToFileAsync(request, "testTTS.mp3");
+        // Possibly implement using GetSpeechAsStreamAsync to avoid the need for file handling (to be honest I think this maybe save a handful of milliseconds. Making API calls is the limiting factor by far)
+        await api.TextToSpeech.SaveSpeechToFileAsync(request, $"{Application.persistentDataPath}/testTTS.mp3");
         StartCoroutine(GetAudioClip("testTTS.mp3"));
         
     }
@@ -45,7 +48,7 @@ public class TTSManager : MonoBehaviourWithOpenAI
     IEnumerator GetAudioClip(string path)
     {
         // TODO: fix the absolute filepaths
-        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip($"file://C:/Users/jacob/Documents/GoudaNugh/GoudaNugh/{path}", AudioType.MPEG))
+        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip($"file://{Application.persistentDataPath}/{path}", AudioType.MPEG))
         {
             yield return www.SendWebRequest();
 
