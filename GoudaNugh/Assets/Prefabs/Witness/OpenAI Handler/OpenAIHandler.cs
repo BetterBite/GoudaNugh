@@ -11,6 +11,7 @@ public class OpenAIHandler : MonoBehaviour
     private OpenAIAPI api = null;
     void Start()
     {
+        // The OpenAI api key must be stored in the OPENAI_API_KEY environment variable.
         api = new OpenAIAPI(Environment.GetEnvironmentVariable("OPENAI_API_KEY", EnvironmentVariableTarget.User));
     }
     public IEnumerator APIWrapperCallback(MonoBehaviourWithOpenAI obj) {
@@ -21,11 +22,12 @@ public class OpenAIHandler : MonoBehaviour
 
 public class MonoBehaviourWithOpenAI : MonoBehaviour
 {
+    [Header("OpenAI Wrapper")]
     public OpenAIHandler openAiHandler;
     protected OpenAIAPI api = null;
     void Start()
     {
-        StartCoroutine(openAiHandler.APIWrapperCallback(this));
+        StartCoroutine(openAiHandler.APIWrapperCallback(this)); // on start this class should make a request to the distributor for the openAI wrapper
     }
 
     /**
