@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.UI;
+using Unity.Services.Vivox;
 
 public class NetworkPlayer : NetworkBehaviour
 {
@@ -44,7 +45,8 @@ public class NetworkPlayer : NetworkBehaviour
         var vTog = GameObject.Find("Toggle").GetComponent<Toggle>();
         if (vTog.isOn)
         {
-            GameObject.Find("Network Manager").GetComponent<VivoxPlayer>().SignIntoVivox();
+            Debug.Log("Toggle found");
+            GameObject.Find("NetworkManager").GetComponent<VivoxPlayer>().SignIntoVivox();
         }
 
     }
