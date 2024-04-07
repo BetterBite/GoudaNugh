@@ -46,7 +46,7 @@ public class AttachableCheck : MonoBehaviour
     private void Attach()
     {
         ghost.SetActive(false);
-        solid.SetActive(true);
+        if (solid != null) solid.SetActive(true);
         GetComponent<Collider>().enabled = false;
         if (intersecting != null)
         {
