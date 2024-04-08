@@ -5,7 +5,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class RadioLever : MonoBehaviour
+public class RadioLever : NetworkBehaviour
 {
 
     private HingeJoint joint;
