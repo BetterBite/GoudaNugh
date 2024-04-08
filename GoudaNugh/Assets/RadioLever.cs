@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Oculus.VoiceSDK.UX;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -48,6 +50,7 @@ public class RadioLever : MonoBehaviour
             }
             if(!isPast)
             {
+                UpdateFrequencyServerRpc();
                 wave.frequency = Mathf.Lerp(0, 20, interpolatedAngle);
             }
             
@@ -56,4 +59,12 @@ public class RadioLever : MonoBehaviour
         //Debug.Log("Angle: " + angle);
         Debug.Log("interpolated value: " + interpolatedAngle);
     }
+
+    [Rpc(SendTo.Server)]
+    void UpdateFrequencyServerRpc()
+    {
+        Debug.Log("LoL");
+    }
 }
+
+
