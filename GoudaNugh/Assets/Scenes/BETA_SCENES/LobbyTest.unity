@@ -2398,6 +2398,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 673703079438609367, guid: 64951f9c745476c468691218bd6e7083, type: 3}
   m_PrefabInstance: {fileID: 1497989098}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1211517534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4648291320363745652, guid: 64951f9c745476c468691218bd6e7083, type: 3}
+  m_PrefabInstance: {fileID: 1497989098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211517532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e890b6c7e9baa34c8c2d8f06896f65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1211517541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7179,6 +7190,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1201014677173462430, guid: f0b588f697445af4ca4eb2b66470db1a, type: 3}
+      propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201014677173462430, guid: f0b588f697445af4ca4eb2b66470db1a, type: 3}
+      propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1211517534}
+    - target: {fileID: 1201014677173462430, guid: f0b588f697445af4ca4eb2b66470db1a, type: 3}
+      propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateFrequencyServerRpc
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201014677173462430, guid: f0b588f697445af4ca4eb2b66470db1a, type: 3}
+      propertyPath: onPress.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RadioLever, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2394042087501948508, guid: f0b588f697445af4ca4eb2b66470db1a, type: 3}
       propertyPath: m_Name
       value: Interface
