@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7641237283065244645}
   - component: {fileID: 8931012006308160953}
   - component: {fileID: 6557669644448645450}
+  - component: {fileID: 7257793795273492026}
   m_Layer: 0
   m_Name: Sine Wave
   m_TagString: Untagged
@@ -238,6 +239,27 @@ MonoBehaviour:
   frequency: 8
   speed: 1
   limits: {x: 0, y: 0.5}
+--- !u!114 &7257793795273492026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306903213037472637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3100041085
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &512082891896182988
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +359,7 @@ GameObject:
   - component: {fileID: 4249754498135567797}
   - component: {fileID: 4793509725156809661}
   - component: {fileID: 4648291320363745652}
+  - component: {fileID: 4617258354817167014}
   m_Layer: 0
   m_Name: Future Radio Lever
   m_TagString: Untagged
@@ -353,7 +376,7 @@ Transform:
   m_GameObject: {fileID: 673703079438609367}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: 0.00909, y: 0.02134946, z: 0.0266}
+  m_LocalPosition: {x: 0.00909, y: 0.02134946, z: 0.0253}
   m_LocalScale: {x: 0.0016656397, y: 0.008742579, z: 0.0016656395}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -672,6 +695,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave: {fileID: 6557669644448645450}
   isPast: 0
+--- !u!114 &4617258354817167014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673703079438609367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1739931347
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1944190503333526917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2900,6 +2944,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7002003076693006720}
+  - component: {fileID: 5785314763326080608}
   m_Layer: 0
   m_Name: Radio2
   m_TagString: Untagged
@@ -2930,3 +2975,24 @@ Transform:
   - {fileID: 2246465936569820374}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5785314763326080608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8529935465405927337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3735482475
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1

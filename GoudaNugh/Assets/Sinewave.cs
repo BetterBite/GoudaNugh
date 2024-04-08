@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class Sinewave : MonoBehaviour
+public class Sinewave : NetworkBehaviour
 {
 
     public LineRenderer lr;
