@@ -4,7 +4,22 @@ using UnityEngine;
 
 public class FutureRadio : FutureObject
 {
-    public override void Setup() {
-        
+    private RadioVariables vars;
+    public Sinewave wave;
+    public override void Setup()
+    {
+        vars = networkObject.GetComponent<RadioVariables>();
+        vars.amplitude.OnValueChanged += ReceiveUpdatedAmplitude;
     }
+
+    public void UpdateFrequency(float freq)
+    {
+        vars.UpdateFrequency(freq);
+    }
+
+    private void ReceiveUpdatedAmplitude(float prevAmp, float currAmp)
+    {
+        wave.amplitude = currAmp;
+    }
+    
 }

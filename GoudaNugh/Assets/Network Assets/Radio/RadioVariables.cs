@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
 public class RadioVariables : Variables
 {
     // Start is called before the first frame update
-    void Start()
+    public NetworkVariable<float> amplitude = new NetworkVariable<float>(0.05f);
+    public NetworkVariable<float> frequency = new NetworkVariable<float>(10f);
+
+    public void UpdateFrequency(float freq)
     {
-        
+        frequency.Value = freq;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateAmplitude(float amp)
     {
-        
-    }
+        amplitude.Value = amp;
+    } 
+
 }

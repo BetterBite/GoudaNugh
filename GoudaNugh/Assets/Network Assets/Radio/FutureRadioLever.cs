@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Oculus.VoiceSDK.UX;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class RadioLever : NetworkBehaviour
+public class FutureRadioLever : MonoBehaviour
 {
-
+    public FutureRadio radio;
     private HingeJoint joint;
     private int axis;
     public Sinewave wave;
@@ -16,9 +17,7 @@ public class RadioLever : NetworkBehaviour
     private float bottomAngle = 150;
     private float prevAngle;
 
-    public bool isPast;
-    
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,32 +39,17 @@ public class RadioLever : NetworkBehaviour
     {
         float interpolatedAngle = 0;
         float angle = transform.rotation.eulerAngles[axis];
-        if ( angle != prevAngle)
+        if (angle != prevAngle)
         {
             interpolatedAngle = (bottomAngle - angle) / (bottomAngle - topAngle);
-            
-            if (isPast)
-            {
-                wave.amplitude = Mathf.Lerp(0, 0.1f, interpolatedAngle);
-            }
-            if(!isPast)
-            {
-                UpdateFrequencyServerRpc(interpolatedAngle);
-                wave.frequency = Mathf.Lerp(0, 20, interpolatedAngle);
-            }
-            
+            float lerp = Mathf.Lerp(0, 30, interpolatedAngle);
+            wave.frequency = lerp;
+            radio.UpdateFrequency(lerp);
+
             prevAngle = angle;
         }
-        //Debug.Log("Angle: " + angle);
-        Debug.Log("interpolated value: " + interpolatedAngle);
     }
 
-    [Rpc(SendTo.Server)]
-    public void UpdateFrequencyServerRpc(float interpolatedAngle)
-    {
-        Debug.Log("LoL");
-        wave.frequency = Mathf.Lerp(0, 20, interpolatedAngle);
-    }
 }
 
 
