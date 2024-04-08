@@ -50,7 +50,7 @@ public class RadioLever : MonoBehaviour
             }
             if(!isPast)
             {
-                UpdateFrequencyServerRpc();
+                UpdateFrequencyServerRpc(interpolatedAngle);
                 wave.frequency = Mathf.Lerp(0, 20, interpolatedAngle);
             }
             
@@ -61,9 +61,10 @@ public class RadioLever : MonoBehaviour
     }
 
     [Rpc(SendTo.Server)]
-    void UpdateFrequencyServerRpc()
+    public void UpdateFrequencyServerRpc(float interpolatedAngle)
     {
         Debug.Log("LoL");
+        wave.frequency = Mathf.Lerp(0, 20, interpolatedAngle);
     }
 }
 
