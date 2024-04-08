@@ -20,6 +20,8 @@ public class Sinewave : MonoBehaviour
         lr = GetComponent<LineRenderer>();
     }
 
+
+
     void Draw()
     {
         float xStart = limits[0];
