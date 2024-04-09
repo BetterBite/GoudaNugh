@@ -9,6 +9,10 @@ using System;
 public class InteractibleManager : NetworkBehaviour {
     public static InteractibleManager Instance { get; private set; }
     public NetworkPrefabsList ObjectsToSpawn;
+    
+    //this bool can be ticked if you wish to test future and past objects in one game- it will trigger future objects spawning along 
+    //past objects when set to true.
+    public bool singleInstanceTestingMode;
 
     public void Awake() {
         Instance = this;
@@ -66,7 +70,7 @@ public class InteractibleManager : NetworkBehaviour {
     [Rpc(SendTo.ClientsAndHost)]
     public void InstantiateFutureObjectRPC(NetworkObjectReference objectReference) {
         // TODO - Add transforms to all Instantiate calls 
-        if (!IsServer) { //Check if you are the future player here
+        if (!IsServer || singleInstanceTestingMode) { //Check if you are the future player here
             objectReference.TryGet(out NetworkObject networkObject);
             GameObject Object = Instantiate(networkObject.gameObject.GetComponent<Variables>().FutureObjectPrefab);
             Object.GetComponent<FutureObject>().networkObject = networkObject;
