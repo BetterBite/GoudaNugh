@@ -19,6 +19,7 @@ public class FutureGlobeLever : MonoBehaviour
 
     public float velocity;
     public CounterMove counter;
+    public FutureGlobe globe;
 
     void Awake()
     {
@@ -64,15 +65,17 @@ public class FutureGlobeLever : MonoBehaviour
 
     // Update is called once per frame
 
-    private void applyVelocity(float angle)
+    private void Spin(float angle)
     {
 
         if (angle > 0.1 && angle < -0.1) velocity = 0f;
         else
         {
-            velocity = angle * 3;
+            velocity = angle * 5;
         }
-        counter.rotate(new Vector3(velocity, 0, 0));
+        Vector3 vec = new Vector3(velocity, 0, 0);
+        //counter.rotate(vec);
+        globe.FutureMove(vec);
 
 
     }
@@ -83,8 +86,8 @@ public class FutureGlobeLever : MonoBehaviour
         {
             float angle = transform.rotation[axis];
             //if (angle > 90) angle = -1 * angle + 180;
-            applyVelocity(angle);
-            //Debug.Log(transform.rotation[axis]);
+            Spin(angle);
+            Debug.Log(transform.rotation[axis]);
 
             activated = (transform.rotation.eulerAngles[axis] < triggerAngle);
             //Debug.Log(activated);

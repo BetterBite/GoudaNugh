@@ -19,6 +19,7 @@ public class PastGlobeLever : MonoBehaviour
 
     public float velocity;
     public CounterMove counter;
+    public PastGlobe globe;
 
     void Awake()
     {
@@ -64,15 +65,17 @@ public class PastGlobeLever : MonoBehaviour
 
     // Update is called once per frame
 
-    private void applyVelocity(float angle)
+    private void Spin(float angle)
     {
 
         if (angle > 0.1 && angle < -0.1) velocity = 0f;
         else
         {
-            velocity = angle*3;
+            velocity = angle * 3;
         }
-        counter.rotate(new Vector3(0,0,velocity));
+        Vector3 vec = new Vector3(0, 0, velocity);
+        //counter.rotate(vec);
+        globe.PastMove(vec);
 
 
     }
@@ -83,7 +86,8 @@ public class PastGlobeLever : MonoBehaviour
         {
             float angle = transform.rotation[axis];
             //if (angle > 90) angle = -1 * angle + 180;
-            applyVelocity(angle);
+            Spin(angle);
+
             //Debug.Log(transform.rotation[axis]);
 
             activated = (transform.rotation.eulerAngles[axis] < triggerAngle);
