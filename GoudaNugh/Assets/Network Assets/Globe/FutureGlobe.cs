@@ -9,8 +9,7 @@ public class FutureGlobe : FutureObject
     public override void Setup()
     {
         vars = networkObject.GetComponent<GlobeVariables>();
-        vars.pastRot.OnValueChanged += ReceivePastMove;
-        vars.futureRot.OnValueChanged += ReceiveFutureMove;
+        vars.rotation.OnValueChanged += UpdateRotation;
     }
 
     public void FutureMove(Vector3 vec)
@@ -18,14 +17,9 @@ public class FutureGlobe : FutureObject
         vars.FutureMoveServerRpc(vec);
     }
 
-    private void ReceiveFutureMove(Vector3 prevVec, Vector3 currVec)
+    private void UpdateRotation(Vector3 prevVec, Vector3 currVec) 
     {
-        counter.rotate(currVec);
-    }
-
-    private void ReceivePastMove(Vector3 prevVec, Vector3 currVec) 
-    {
-        counter.rotate(currVec);
+        counter.transform.rotation = Quaternion.Euler(currVec);
     }
 
 }

@@ -10,8 +10,7 @@ public class PastGlobe : PastObject
     public override void Setup()
     {
         vars = networkObject.GetComponent<GlobeVariables>();
-        vars.futureRot.OnValueChanged += ReceiveFutureMove;
-        vars.pastRot.OnValueChanged += ReceivePastMove;
+        vars.rotation.OnValueChanged += UpdateRotation;
     }
 
     public void PastMove(Vector3 vector)
@@ -19,14 +18,9 @@ public class PastGlobe : PastObject
         vars.PastMove(vector);
     }
 
-    public void ReceivePastMove(Vector3 prevVec, Vector3 currVec) 
-    { 
-        counter.rotate(currVec);
-    }
-
-    public void ReceiveFutureMove(Vector3 prevVec, Vector3 currVec)
+    public void UpdateRotation(Vector3 prevVec, Vector3 currVec)
     {
-        counter.rotate(currVec);
+        counter.transform.rotation = Quaternion.Euler(currVec);
     }
 
     
