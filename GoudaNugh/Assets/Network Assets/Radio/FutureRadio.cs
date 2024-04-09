@@ -14,7 +14,7 @@ public class FutureRadio : FutureObject
 
     public void UpdateFrequency(float freq)
     {
-        vars.UpdateFrequency(freq);
+        vars.UpdateFrequencyServerRpc(freq);
     }
 
     private void ReceiveUpdatedAmplitude(float prevAmp, float currAmp)

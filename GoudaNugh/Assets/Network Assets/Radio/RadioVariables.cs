@@ -9,7 +9,8 @@ public class RadioVariables : Variables
     public NetworkVariable<float> amplitude = new NetworkVariable<float>(0.05f);
     public NetworkVariable<float> frequency = new NetworkVariable<float>(10f);
 
-    public void UpdateFrequency(float freq)
+    [Rpc(SendTo.Server)]
+    public void UpdateFrequencyServerRpc(float freq)
     {
         frequency.Value = freq;
     }
