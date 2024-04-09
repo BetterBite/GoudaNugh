@@ -68,7 +68,7 @@ public class NetworkConnect : MonoBehaviour
 
         // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
         //SceneManager.LoadScene("BetaSceneNetworkTest");
-        StartGame();
+        //StartGame();
 
     }
 
