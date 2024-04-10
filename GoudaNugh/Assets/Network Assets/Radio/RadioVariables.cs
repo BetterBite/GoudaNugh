@@ -16,8 +16,17 @@ public class RadioVariables : Variables
     public NetworkVariable<bool> futureLeverGrabbed = new NetworkVariable<bool>(false);
     public NetworkVariable<bool> pastLeverGrabbed = new NetworkVariable<bool>(false);
 
-    public NetworkVariable<bool> radioOn = new(false);
-    public NetworkVariable<int> gameState = new(0);
+    public NetworkVariable<ScreenState> screenState = new(ScreenState.Off);
+
+    public enum ScreenState
+    {
+        Off,
+        SingleGrab,
+        EnterStation,
+        Game1,
+        Game2,
+        Game3,
+    }
 
     [Rpc(SendTo.Server)]
     public void UpdateFrequencyServerRpc(float freq, Quaternion rot)
@@ -47,14 +56,20 @@ public class RadioVariables : Variables
 
     private void toggleRadio()
     {
+        if (pastLeverGrabbed.Value ^ futureLeverGrabbed.Value)
+        {
+            screenState.Value = ScreenState.SingleGrab;
+        }
         if (pastLeverGrabbed.Value && futureLeverGrabbed.Value)
         {
-            radioOn.Value = true;
+            screenState.Value = ScreenState.EnterStation;
         } else
         {
-            radioOn.Value = false;
+            screenState.Value = ScreenState.Off;
         }
     }
+
+
 
 
 }

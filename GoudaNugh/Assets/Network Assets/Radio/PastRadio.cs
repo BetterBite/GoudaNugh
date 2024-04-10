@@ -9,12 +9,18 @@ public class PastRadio : PastObject
     public Sinewave wave;
     public GameObject leverRot;
     public GameObject ghostRot;
+    public GameObject Screen;
     public override void Setup()
     {
+        Screen.GetComponent<RadioScreen>().activeScreen = null;
         ghostRot.SetActive(false);
+        //wave.GetComponent<GameObject>().SetActive(false);
+        
         vars = networkObject.GetComponent<RadioVariables>();
         vars.frequency.OnValueChanged += ReceiveUpdatedFrequency;
         vars.futureLeverGrabbed.OnValueChanged += ReceiveLeverGrab;
+        vars.screenState.OnValueChanged += ChangeScreen;
+        
     }
 
     private void ReceiveUpdatedFrequency(float prevFreq, float currFreq) 
@@ -38,6 +44,14 @@ public class PastRadio : PastObject
     public void OnLeverGrab(bool isGrabbed)
     {
         vars.OnPastGrab(isGrabbed);
+    }
+
+    private void ChangeScreen(RadioVariables.ScreenState prevState, RadioVariables.ScreenState newState)
+    {
+        if (newState == RadioVariables.ScreenState.EnterStation)
+        {
+            Screen.SetActive(true);
+        }
     }
 
 

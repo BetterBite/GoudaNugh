@@ -5,25 +5,20 @@ using UnityEngine;
 public class FutureRadio : FutureObject
 {
     private RadioVariables vars;
+    public GameObject waveObject;
     public Sinewave wave;
     public GameObject leverRot;
     public GameObject ghostRot;
 
-    enum ScreenState
-    {
-        Off,
-        SingleGrab,
-        EnterStation,
-        Game1,
-        Game2,
-        Game3,
-    }
+
     public override void Setup()
     {
+
         ghostRot.SetActive(false);
         vars = networkObject.GetComponent<RadioVariables>();
         vars.amplitude.OnValueChanged += ReceiveUpdatedAmplitude;
         vars.pastLeverGrabbed.OnValueChanged += ReceiveLeverGrab;
+
     }
 
     public void UpdateFrequency(float freq)
