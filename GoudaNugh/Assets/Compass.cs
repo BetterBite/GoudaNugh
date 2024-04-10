@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Compass : MonoBehaviour
 {
+    float threshold = 0.05f;
     public Transform north;
     public GameObject needle;
     public Transform Base;
@@ -19,9 +20,9 @@ public class Compass : MonoBehaviour
     void Update()
     {
         Quaternion baseRot = Base.transform.rotation;
-        if(baseRot.x < 0.1 && baseRot.x > -0.1) 
+        if(baseRot.x < threshold && baseRot.x > -threshold) 
         {
-            if (baseRot.z < 0.1 && baseRot.z > -0.1)
+            if (baseRot.z < threshold && baseRot.z > -threshold)
             {
                 if (!isFlat)
                 {
@@ -39,9 +40,9 @@ public class Compass : MonoBehaviour
         {
             if (isFlat)
             {
-                //dummy.SetActive(true);
-                dummy.transform.rotation = needle.transform.rotation;
-                dummy.transform.position = needle.transform.position;
+                dummy.SetActive(true);
+               // dummy.transform.rotation = needle.transform.rotation;
+                //dummy.transform.position = needle.transform.position;
                 needle.SetActive(false);
                 isFlat = false;
             }
