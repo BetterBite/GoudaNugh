@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class Sinewave : NetworkBehaviour
+public class Sinewave : MonoBehaviour
 {
 
     public LineRenderer lr;

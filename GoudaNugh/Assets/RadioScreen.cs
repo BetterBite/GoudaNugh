@@ -2,36 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.Tutorials.Core.Editor;
 using UnityEngine;
 
 public class RadioScreen : MonoBehaviour
 {
+    
     public TMP_Text text;
-    public Canvas[] screens;
-    public Canvas activeScreen;
+    public GameObject[] screens;
+    public GameObject activeScreen;
     public List<int> code = new List<int>();
     // Start is called before the first frame update
     void Start()
     {
-
+        SetScreen(screens[0]);
     }
 
-    public void SetScreen(Canvas c)
+    public void SetScreen(GameObject c)
     {
-        foreach( Canvas screen in screens) { 
+        foreach( GameObject screen in screens) { 
             if (c !=  screen)
             {
-                screen.enabled = false;
+                screen.SetActive(false);
             }
         }
 
-        c.enabled = true;
+        c.SetActive(true);
         activeScreen = c;
     }
 
-    public void enterNumber(string number)
+    public void enterNumber(int number)
     {
-        code.Add(int.Parse(number));
+        if (activeScreen != screens[0]) return;
+        code.Add(number);
         if (code.Count > 2) checkStation();
         text.text = text.text + number;
         Debug.Log(code.Count);
@@ -40,26 +43,28 @@ public class RadioScreen : MonoBehaviour
     private void checkStation()
     {
         int[] answer = new int[] { 3, 1, 4 };
-        for (int i = 0; i < answer.Length; i++)
+        for (int i = 0; i < code.Count; i++)
         {
             if( code[i] != answer[i] )
             {
                 Debug.Log("code is wrong");
                 code.Clear();
-                invalidateStation();
+                StartCoroutine(InvalidateStation());
+                return;
                 
             }
         }
+        SetScreen(screens[2]);
     }
 
-    private IEnumerator invalidateStation()
+    public IEnumerator InvalidateStation()
     {
         Debug.Log("invalid station");
             // Show the GameObject
             SetScreen(screens[1]);
 
             // Wait for 3 seconds
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.5f);
 
             // Hide the GameObject
             SetScreen(screens[0]);
