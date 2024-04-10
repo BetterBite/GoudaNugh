@@ -40,7 +40,7 @@ public class Compass : MonoBehaviour
         {
             if (isFlat)
             {
-                dummy.SetActive(true);
+                //dummy.SetActive(true);
                // dummy.transform.rotation = needle.transform.rotation;
                 //dummy.transform.position = needle.transform.position;
                 needle.SetActive(false);
