@@ -8,6 +8,16 @@ public class FutureRadio : FutureObject
     public Sinewave wave;
     public GameObject leverRot;
     public GameObject ghostRot;
+
+    enum ScreenState
+    {
+        Off,
+        SingleGrab,
+        EnterStation,
+        Game1,
+        Game2,
+        Game3,
+    }
     public override void Setup()
     {
         ghostRot.SetActive(false);

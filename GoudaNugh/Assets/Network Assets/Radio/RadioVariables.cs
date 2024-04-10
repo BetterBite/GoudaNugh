@@ -17,6 +17,7 @@ public class RadioVariables : Variables
     public NetworkVariable<bool> pastLeverGrabbed = new NetworkVariable<bool>(false);
 
     public NetworkVariable<bool> radioOn = new(false);
+    public NetworkVariable<int> gameState = new(0);
 
     [Rpc(SendTo.Server)]
     public void UpdateFrequencyServerRpc(float freq, Quaternion rot)
