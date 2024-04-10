@@ -37,7 +37,7 @@ public class PastRadio : PastObject
 
     public void OnLeverGrab(bool isGrabbed)
     {
-        vars.OnFutureGrabServerRpc(isGrabbed);
+        vars.OnPastGrab(isGrabbed);
     }
 
 
