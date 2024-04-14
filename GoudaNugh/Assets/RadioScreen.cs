@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.Tutorials.Core.Editor;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RadioScreen : MonoBehaviour
@@ -11,6 +12,7 @@ public class RadioScreen : MonoBehaviour
     public TMP_Text text;
     public GameObject[] screens;
     public GameObject activeScreen;
+    public PastRadio radio;
     public List<int> code = new List<int>();
     // Start is called before the first frame update
     void Start()
@@ -54,7 +56,8 @@ public class RadioScreen : MonoBehaviour
                 
             }
         }
-        SetScreen(screens[2]);
+        StartGame();
+        
     }
 
     public IEnumerator InvalidateStation()
@@ -72,9 +75,9 @@ public class RadioScreen : MonoBehaviour
 
     }
 
-    private void validateStation()
+    private void StartGame()
     {
-
+        
     }
 
     // Update is called once per frame

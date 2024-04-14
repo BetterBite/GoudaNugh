@@ -7,9 +7,14 @@ public class PastRadio : PastObject
 
     private RadioVariables vars;
     public Sinewave wave;
+    public Sinewave targetWave;
     public GameObject leverRot;
     public GameObject ghostRot;
     public GameObject Screen;
+
+    public List<float> stationFreqs = new List<float>() { 1, 2, 3 };
+    public List<float> stationAmps = new List<float>() { 1, 2, 3 };
+    public int stationIndex = 0;
     public override void Setup()
     {
         Screen.GetComponent<RadioScreen>().activeScreen = null;
@@ -48,10 +53,23 @@ public class PastRadio : PastObject
 
     private void ChangeScreen(RadioVariables.ScreenState prevState, RadioVariables.ScreenState newState)
     {
+        if(newState == RadioVariables.ScreenState.SingleGrab)
+        {
+            
+        }
         if (newState == RadioVariables.ScreenState.EnterStation)
         {
             Screen.SetActive(true);
         }
+        if (newState == RadioVariables.ScreenState.Game1)
+        {
+            StartGame();
+        }
+    }
+
+    private void StartGame()
+    {
+        
     }
 
 

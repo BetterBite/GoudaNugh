@@ -18,6 +18,7 @@ public class RadioVariables : Variables
 
     public NetworkVariable<ScreenState> screenState = new(ScreenState.Off);
 
+    
     public enum ScreenState
     {
         Off,
@@ -45,16 +46,16 @@ public class RadioVariables : Variables
     public void OnFutureGrabServerRpc(bool isGrabbed)
     {
         futureLeverGrabbed.Value = isGrabbed;
-        toggleRadio();
+        ChangeStationOnGrab();
     }
 
     public void OnPastGrab(bool isGrabbed)
     {
         pastLeverGrabbed.Value = isGrabbed;
-        toggleRadio();
+        ChangeStationOnGrab();
     }
 
-    private void toggleRadio()
+    private void ChangeStationOnGrab()
     {
         if (pastLeverGrabbed.Value ^ futureLeverGrabbed.Value)
         {
@@ -67,6 +68,11 @@ public class RadioVariables : Variables
         {
             screenState.Value = ScreenState.Off;
         }
+    }
+
+    public void ChangeStation()
+    {
+
     }
 
 
