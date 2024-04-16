@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class AttachableCheck : MonoBehaviour
 {
     [SerializeField] private UnityEvent onAttach; 
-    public GameObject iwantthis;
+    public ClueLinker.Links iwantthis;
     public GameObject ghost;
     public GameObject solid;
     private BoxCollider box;
@@ -19,8 +19,9 @@ public class AttachableCheck : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == iwantthis)
-        {
+        Attachable attachable = other.gameObject.GetComponent<Attachable>();
+        if (attachable != null && attachable.link == iwantthis) { 
+        
             ghost.SetActive(true);
             intersecting = other.gameObject;
 

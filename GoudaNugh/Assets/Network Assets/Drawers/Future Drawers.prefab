@@ -1258,7 +1258,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  iwantthis: {fileID: 4576862209774571006}
+  iwantthis: 0
   ghost: {fileID: 490862511045702183}
   solid: {fileID: 4413884103209155412}
 --- !u!65 &5111770112904740271
@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
-  vectorToPush: {x: 0, y: 0, z: 0}
+  vectorToPush: {x: 0, y: 0, z: 20}
 --- !u!1 &2135969135932457543
 GameObject:
   m_ObjectHideFlags: 0

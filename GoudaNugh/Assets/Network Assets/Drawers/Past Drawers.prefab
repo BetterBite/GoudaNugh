@@ -455,6 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
+  vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &256931804395216859
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
+  vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &413404953116551598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,7 +1242,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  iwantthis: {fileID: 4576862209774571006}
+  iwantthis: 0
   ghost: {fileID: 490862511045702183}
   solid: {fileID: 4413884103209155412}
 --- !u!65 &2903952211972926096
@@ -1565,7 +1567,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.0022159757, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.6194108, y: 0.9237995, z: 4.777251}
+  m_ConnectedAnchor: {x: 1.562, y: 0.77599996, z: 5.5766406}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -1838,6 +1840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
+  vectorToPush: {x: 0, y: 0, z: 20}
 --- !u!1 &2135969135932457543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2276,6 +2279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
+  vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &2480995409394195520
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,6 +2894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
+  vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &3244267558311133749
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,6 +3403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
+  vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &4202804273984824626
 GameObject:
   m_ObjectHideFlags: 0
@@ -3658,6 +3664,7 @@ GameObject:
   - component: {fileID: 5459215279996793619}
   - component: {fileID: 4411951793712017875}
   - component: {fileID: 7053608017899217400}
+  - component: {fileID: 7071158833909313465}
   m_Layer: 0
   m_Name: Figurine
   m_TagString: Untagged
@@ -3837,9 +3844,9 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7747793115959007360}
-        m_TargetAssemblyTypeName: AttachableCheck, Assembly-CSharp
-        m_MethodName: objectReleased
+      - m_Target: {fileID: 7071158833909313465}
+        m_TargetAssemblyTypeName: Attachable, Assembly-CSharp
+        m_MethodName: OnSelectExited
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3964,6 +3971,19 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.25
   m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
+--- !u!114 &7071158833909313465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4576862209774571006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e0e5573986b1740b7dc2666f9fa0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  link: 0
 --- !u!1 &4739927889132828075
 GameObject:
   m_ObjectHideFlags: 0

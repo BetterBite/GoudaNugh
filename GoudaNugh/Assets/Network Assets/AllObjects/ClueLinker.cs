@@ -12,9 +12,11 @@ public class ClueLinker : MonoBehaviour
     }
     public enum Links
     {
+        Figurine,
         Moon,
         Sun,
         CabinetKey,
+        BookKey,
 
     }
 }
