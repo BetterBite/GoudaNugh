@@ -16,6 +16,9 @@ public class PastRadio : PastObject
     public GameObject screenObject;
     private RadioScreen screen;
 
+
+    public LockableObject door;
+
     private List<int> Code = new List<int>();
 
     public int stationIndex = 0;
@@ -31,7 +34,13 @@ public class PastRadio : PastObject
         vars.screenState.OnValueChanged += ChangeScreen;
         vars.targetAmp.OnValueChanged += ReceiveNewTargetAmp;
         vars.targetFreq.OnValueChanged += ReceiveNewTargetFreq;
-        
+        vars.waveIsValid.OnValueChanged += ReceiveWaveValidate;
+
+        vars.radioSolved.OnValueChanged += SolveRadio;
+
+        wave.lr.startColor = Color.red;
+        wave.lr.endColor = Color.red;
+
     }
 
     private void ReceiveUpdatedFrequency(float prevFreq, float currFreq) 
@@ -102,6 +111,31 @@ public class PastRadio : PastObject
             }
         }
         return true;
+    }
+
+    private void ReceiveWaveValidate(bool wasValid, bool isValid)
+    {
+        if (wasValid != isValid)
+        {
+            if (isValid)
+            {
+                wave.lr.startColor = Color.green;
+                wave.lr.endColor = Color.green;
+            }
+            else
+            {
+                wave.lr.startColor = Color.red;
+                wave.lr.endColor = Color.red;
+            }
+        }
+    }
+
+    private void SolveRadio(bool wasSolved, bool isSolved)
+    {
+        if (isSolved)
+        {
+            door.Unlock();
+        }
     }
 
 }

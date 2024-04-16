@@ -12,6 +12,11 @@ public class RadioVariables : Variables
     public NetworkVariable<float> targetAmp = new NetworkVariable<float>(0.05f);
     public NetworkVariable<float> targetFreq = new NetworkVariable<float>(10f);
 
+    public float ampThreshold = 0.01f;
+    public float freqThreshold = 0.5f;
+
+    public NetworkVariable<bool> waveIsValid = new NetworkVariable<bool>(false);
+
     //tracking the lever positions to display as ghosts for other player
     public NetworkVariable<Quaternion> pastRot = new NetworkVariable<Quaternion>();
     public NetworkVariable<Quaternion> futureRot = new NetworkVariable<Quaternion>();
@@ -20,13 +25,15 @@ public class RadioVariables : Variables
     public NetworkVariable<bool> pastLeverGrabbed = new NetworkVariable<bool>(false);
 
     public List<float> stationAmps = new List<float>() { 0.04f, 0.01f, 0.08f };
-    public List<float> stationFreqs = new List<float>() { 10, 2, 21 };
+    public List<float> stationFreqs = new List<float>() { 10, 10, 10 };
     
     private int stationIndex = 0;
     public NetworkVariable<bool> codeEntered = new NetworkVariable<bool>(false);
     public NetworkVariable<ScreenState> screenState = new(ScreenState.EnterStation);
 
-    
+    public NetworkVariable<bool> radioSolved = new NetworkVariable<bool>(false);
+
+
     public enum ScreenState
     {
         Off,
@@ -34,6 +41,7 @@ public class RadioVariables : Variables
         EnterStation,
         InvalidStation,
         MatchWaves,
+        Solved,
     }
 
     [Rpc(SendTo.Server)]
@@ -76,7 +84,13 @@ public class RadioVariables : Variables
         if (pastLeverGrabbed.Value || futureLeverGrabbed.Value)
         {
             if (!codeEntered.Value) screenState.Value = ScreenState.EnterStation;
-            else screenState.Value = ScreenState.MatchWaves;
+            else
+            {
+                screenState.Value = ScreenState.MatchWaves;
+                stationIndex = 0;
+                StartCoroutine(NewMatchingLevel(stationIndex));
+            } 
+                
         } 
         else 
         {
@@ -84,16 +98,47 @@ public class RadioVariables : Variables
         }
     }
 
-    private bool CheckTargetWave(float freq, float amp)
+    private bool CheckWave()
     {
-        if (amplitude.Value == targetAmp.Value && frequency.Value == targetFreq.Value) { return true; }
+        float ampDiff = amplitude.Value - targetAmp.Value;
+        float freqDiff = frequency.Value - targetFreq.Value;
+
+        if ((ampDiff > -ampThreshold && ampDiff < ampThreshold) && (freqDiff > -freqThreshold && freqDiff < freqThreshold))
+        {
+            return true;
+        }
+
+        else return false;
+    }
+
+    private bool CheckTargetWave()
+    {
+        //if (stationIndex > 2)
+        //{
+        //    SolveRadio();
+        //    return true;
+        //}
+
+        if (CheckWave())
+        {
+            return true;
+        }
+
         else return false;
     }
 
     private void AdvanceTargetWave(int index)
     {
+        if (index > 2)
+        {
+            screenState.Value = ScreenState.Solved;
+            SolveRadio();
+            return;
+        }
+
         targetAmp.Value = stationAmps[index];
         targetFreq.Value = stationFreqs[index];
+        StartCoroutine(NewMatchingLevel(index));
     }
 
     public void StartMatchingWaves()
@@ -106,19 +151,33 @@ public class RadioVariables : Variables
 
     public IEnumerator NewMatchingLevel(int index)
     {
-        Debug.Log("mathcing");
-        codeEntered.Value = true;
-        screenState.Value = ScreenState.MatchWaves;
+        Debug.Log("matching level: " + index.ToString());
+        //codeEntered.Value = true;
+        //screenState.Value = ScreenState.MatchWaves;
         // Wait for 3 seconds
-        yield return new WaitForSeconds(3f);
-        if (CheckTargetWave(frequency.Value, amplitude.Value))
+        yield return new WaitForSeconds(10f);
+        if (CheckTargetWave() && stationIndex <= 2)
         {
             stationIndex++;
+          
             AdvanceTargetWave(stationIndex);
-        } else
+        } else if (stationIndex <= 2)
         {
             stationIndex = 0;
+            AdvanceTargetWave(stationIndex);
         }
+    }
+
+    private void SolveRadio()
+    {
+        Debug.Log("Radio Solved!");
+        radioSolved.Value = true;
+    }
+
+    private void Update()
+    {
+        if (CheckWave()) waveIsValid.Value = true;
+        else waveIsValid.Value = false;
     }
 
 

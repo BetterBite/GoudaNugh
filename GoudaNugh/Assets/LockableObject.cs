@@ -9,6 +9,8 @@ public class LockableObject : MonoBehaviour
     private Vector3 startingPosition;
     private Quaternion startingRotation;
     public bool isLocked;
+
+    public Vector3 vectorToPush;
     // Start is called before the first frame update
     void Awake()
     {
@@ -53,7 +55,7 @@ public class LockableObject : MonoBehaviour
 
         body.constraints = RigidbodyConstraints.None;
         isLocked = false;
-        body.AddForce(Vector3.forward*20);
+        body.AddForce(vectorToPush);
 
     }
 

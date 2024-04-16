@@ -5,14 +5,18 @@ using UnityEngine;
 public class FutureRadio : FutureObject
 {
     private RadioVariables vars;
+
     public GameObject waveObject;
     public Sinewave wave;
+
     public Sinewave targetWave;
     public GameObject leverRot;
     public GameObject ghostRot;
 
     public GameObject screenObject;
     private RadioScreen screen;
+
+    public LockableObject door;
 
 
     public override void Setup()
@@ -26,6 +30,12 @@ public class FutureRadio : FutureObject
 
         vars.targetAmp.OnValueChanged += ReceiveNewTargetAmp;
         vars.targetFreq.OnValueChanged += ReceiveNewTargetFreq;
+        vars.waveIsValid.OnValueChanged += ReceiveWaveValidate;
+
+        vars.radioSolved.OnValueChanged += SolveRadio;
+
+        wave.lr.startColor = Color.red;
+        wave.lr.endColor = Color.red;
 
     }
 
@@ -69,9 +79,29 @@ public class FutureRadio : FutureObject
         screen.SetScreen(newState);
     }
 
-    public void StartGame()
+    private void ReceiveWaveValidate(bool wasValid, bool isValid)
     {
-        
+        if (wasValid != isValid)
+        {
+            if (isValid) 
+            {
+                wave.lr.startColor = Color.green;
+                wave.lr.endColor = Color.green;
+            } else
+            {
+                wave.lr.startColor = Color.red;
+                wave.lr.endColor = Color.red;
+            }
+        }
     }
+
+    private void SolveRadio(bool wasSolved, bool isSolved)
+    {
+        if (isSolved)
+        {
+            door.Unlock();
+        }
+    }
+
 
 }
