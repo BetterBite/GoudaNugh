@@ -6,6 +6,7 @@ public class FutureGlobe : FutureObject
 {
     private GlobeVariables vars;
     public CounterMove counter;
+    public Transform pastAxis;
     public override void Setup()
     {
         vars = networkObject.GetComponent<GlobeVariables>();
