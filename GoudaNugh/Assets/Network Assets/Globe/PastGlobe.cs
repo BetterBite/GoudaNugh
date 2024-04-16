@@ -11,6 +11,7 @@ public class PastGlobe : PastObject
     {
         vars = networkObject.GetComponent<GlobeVariables>();
         vars.rotation.OnValueChanged += UpdateRotation;
+        vars.rotation.Value = counter.transform.rotation.eulerAngles;
     }
 
     public void PastMove(Vector3 vector)

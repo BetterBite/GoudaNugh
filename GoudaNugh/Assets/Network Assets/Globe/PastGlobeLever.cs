@@ -73,7 +73,7 @@ public class PastGlobeLever : MonoBehaviour
         {
             velocity = angle * 3;
         }
-        Vector3 vec = new Vector3(0, 0, velocity);
+        Vector3 vec = new Vector3(0, velocity, 0);
         //counter.rotate(vec);
         globe.PastMove(vec);
 

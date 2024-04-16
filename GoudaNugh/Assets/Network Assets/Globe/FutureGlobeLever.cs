@@ -73,7 +73,7 @@ public class FutureGlobeLever : MonoBehaviour
         {
             velocity = angle * 5;
         }
-        Vector3 vec = new Vector3(velocity, 0, 0);
+        Vector3 vec = new Vector3(0, 0, velocity);
         //counter.rotate(vec);
         globe.FutureMove(vec);
 
