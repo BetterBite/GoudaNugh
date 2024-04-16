@@ -203,9 +203,9 @@ MonoBehaviour:
   onPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3573502068010635633}
-        m_TargetAssemblyTypeName: RadioScreen, Assembly-CSharp
-        m_MethodName: enterNumber
+      - m_Target: {fileID: 7785650260941059118}
+        m_TargetAssemblyTypeName: PastRadio, Assembly-CSharp
+        m_MethodName: EnterRadioNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -450,10 +450,11 @@ Transform:
   m_LocalScale: {x: 0.0013401755, y: 0.008461718, z: 0.016513772}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6847921761822842641}
   - {fileID: 8494178312416315288}
+  - {fileID: 6847921761822842641}
   - {fileID: 8086483925099416459}
   - {fileID: 4892227598908578748}
+  - {fileID: 6371679788605730248}
   m_Father: {fileID: 7542890141352930322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1095362885491964890
@@ -541,12 +542,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 5464009219196135557}
   screens:
+  - {fileID: 3128898667378789245}
+  - {fileID: 3128898667378789245}
   - {fileID: 3117041969977942207}
   - {fileID: 4166324052024283782}
   - {fileID: 5500823691960991881}
-  - {fileID: 5500823691960991881}
-  activeScreen: {fileID: 0}
-  code: 
+  activeScreen: 0
 --- !u!1 &298884748945503016
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,6 +899,161 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &466225444648350682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8711432164785081589}
+  - component: {fileID: 6250178209915515737}
+  - component: {fileID: 4690928002801590296}
+  m_Layer: 0
+  m_Name: Target Wave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8711432164785081589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466225444648350682}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 251.29839, y: 3.9377992, z: 17.670425}
+  m_LocalScale: {x: 1024.0282, y: 777.0279, z: 9574.612}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4892227598908578748}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!120 &6250178209915515737
+LineRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466225444648350682}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0.01}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.049769286
+        value: 0.009790063
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.9528302, g: 0.9180463, b: 0.23820755, a: 1}
+      key1: {r: 0.9528302, g: 0.9180463, b: 0.23820755, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MaskInteraction: 0
+  m_UseWorldSpace: 0
+  m_Loop: 0
+  m_ApplyActiveColorSpace: 1
+--- !u!114 &4690928002801590296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466225444648350682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1264183eee1ac4fb3bd5568999818e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lr: {fileID: 0}
+  points: 100
+  amplitude: 0.07
+  frequency: 8
+  speed: 1
+  limits: {x: 0, y: 0.5}
 --- !u!1 &543021866425702901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,9 +1340,9 @@ MonoBehaviour:
   onPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3573502068010635633}
-        m_TargetAssemblyTypeName: RadioScreen, Assembly-CSharp
-        m_MethodName: enterNumber
+      - m_Target: {fileID: 7785650260941059118}
+        m_TargetAssemblyTypeName: PastRadio, Assembly-CSharp
+        m_MethodName: EnterRadioNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1902,9 +2058,9 @@ MonoBehaviour:
   onPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3573502068010635633}
-        m_TargetAssemblyTypeName: RadioScreen, Assembly-CSharp
-        m_MethodName: enterNumber
+      - m_Target: {fileID: 7785650260941059118}
+        m_TargetAssemblyTypeName: PastRadio, Assembly-CSharp
+        m_MethodName: EnterRadioNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2493,13 +2649,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367098950477109863}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: 0.00909, y: 0.02134946, z: 0.0253}
-  m_LocalScale: {x: 0.0016656397, y: 0.008742579, z: 0.0016656395}
+  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: -0, w: 0}
+  m_LocalPosition: {x: 2.201202, y: -0.78004724, z: 0.8574661}
+  m_LocalScale: {x: 0.19684415, y: 6.5234585, z: 0.10086367}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6887511882961048222}
-  m_Father: {fileID: 7542890141352930322}
+  m_Father: {fileID: 6265222319330823017}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
 --- !u!33 &217928349631341256
 MeshFilter:
@@ -4006,9 +4162,9 @@ MonoBehaviour:
   onPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3573502068010635633}
-        m_TargetAssemblyTypeName: RadioScreen, Assembly-CSharp
-        m_MethodName: enterNumber
+      - m_Target: {fileID: 7785650260941059118}
+        m_TargetAssemblyTypeName: PastRadio, Assembly-CSharp
+        m_MethodName: EnterRadioNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6406,7 +6562,6 @@ Transform:
   - {fileID: 4601764268554066404}
   - {fileID: 6265222319330823017}
   - {fileID: 4206431173483530602}
-  - {fileID: 6371679788605730248}
   - {fileID: 4915196683987282985}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6424,9 +6579,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   networkObject: {fileID: 0}
   wave: {fileID: 2539079206811813260}
+  targetWave: {fileID: 4690928002801590296}
   leverRot: {fileID: 1937181873303130980}
   ghostRot: {fileID: 8413964885667389934}
-  Screen: {fileID: 249471056131559641}
+  screenObject: {fileID: 249471056131559641}
+  stationIndex: 0
 --- !u!1 &4282712983631628921
 GameObject:
   m_ObjectHideFlags: 0
@@ -7115,9 +7272,9 @@ MonoBehaviour:
   onPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3573502068010635633}
-        m_TargetAssemblyTypeName: RadioScreen, Assembly-CSharp
-        m_MethodName: enterNumber
+      - m_Target: {fileID: 7785650260941059118}
+        m_TargetAssemblyTypeName: PastRadio, Assembly-CSharp
+        m_MethodName: EnterRadioNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7883,6 +8040,7 @@ RectTransform:
   m_Children:
   - {fileID: 3219124639192983812}
   - {fileID: 2085302413041168951}
+  - {fileID: 8711432164785081589}
   m_Father: {fileID: 6265222319330823017}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8419,7 +8577,7 @@ GameObject:
   - component: {fileID: 3153107412494523575}
   - component: {fileID: 5236213092497233275}
   m_Layer: 0
-  m_Name: ButtonBase
+  m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8724,9 +8882,9 @@ MonoBehaviour:
   onPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3573502068010635633}
-        m_TargetAssemblyTypeName: RadioScreen, Assembly-CSharp
-        m_MethodName: enterNumber
+      - m_Target: {fileID: 7785650260941059118}
+        m_TargetAssemblyTypeName: PastRadio, Assembly-CSharp
+        m_MethodName: EnterRadioNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9565,9 +9723,9 @@ MonoBehaviour:
   onPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3573502068010635633}
-        m_TargetAssemblyTypeName: RadioScreen, Assembly-CSharp
-        m_MethodName: enterNumber
+      - m_Target: {fileID: 7785650260941059118}
+        m_TargetAssemblyTypeName: PastRadio, Assembly-CSharp
+        m_MethodName: EnterRadioNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10161,9 +10319,9 @@ MonoBehaviour:
   onPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3573502068010635633}
-        m_TargetAssemblyTypeName: RadioScreen, Assembly-CSharp
-        m_MethodName: enterNumber
+      - m_Target: {fileID: 7785650260941059118}
+        m_TargetAssemblyTypeName: PastRadio, Assembly-CSharp
+        m_MethodName: EnterRadioNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10495,9 +10653,9 @@ MonoBehaviour:
   onPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3573502068010635633}
-        m_TargetAssemblyTypeName: RadioScreen, Assembly-CSharp
-        m_MethodName: enterNumber
+      - m_Target: {fileID: 7785650260941059118}
+        m_TargetAssemblyTypeName: PastRadio, Assembly-CSharp
+        m_MethodName: EnterRadioNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11482,9 +11640,9 @@ MonoBehaviour:
   onPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3573502068010635633}
-        m_TargetAssemblyTypeName: RadioScreen, Assembly-CSharp
-        m_MethodName: enterNumber
+      - m_Target: {fileID: 7785650260941059118}
+        m_TargetAssemblyTypeName: PastRadio, Assembly-CSharp
+        m_MethodName: EnterRadioNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

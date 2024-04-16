@@ -10,17 +10,22 @@ public class FutureRadio : FutureObject
     public Sinewave targetWave;
     public GameObject leverRot;
     public GameObject ghostRot;
-    public GameObject Screen;
+
+    public GameObject screenObject;
+    private RadioScreen screen;
 
 
     public override void Setup()
     {
-
+        screen = screenObject.GetComponent<RadioScreen>();
         ghostRot.SetActive(false);
         vars = networkObject.GetComponent<RadioVariables>();
         vars.amplitude.OnValueChanged += ReceiveUpdatedAmplitude;
         vars.pastLeverGrabbed.OnValueChanged += ReceiveLeverGrab;
         vars.screenState.OnValueChanged += ChangeScreen;
+
+        vars.targetAmp.OnValueChanged += ReceiveNewTargetAmp;
+        vars.targetFreq.OnValueChanged += ReceiveNewTargetFreq;
 
     }
 
@@ -43,6 +48,17 @@ public class FutureRadio : FutureObject
 
     }
 
+    private void ReceiveNewTargetAmp(float prevAmp, float amp) 
+    {
+        targetWave.amplitude = amp;
+        
+    }
+
+    private void ReceiveNewTargetFreq(float prevFreq, float freq)
+    {
+        targetWave.frequency = freq;
+    }
+
     public void OnLeverGrab(bool isGrabbed)
     {
         vars.OnFutureGrabServerRpc(isGrabbed);
@@ -50,18 +66,7 @@ public class FutureRadio : FutureObject
 
     private void ChangeScreen(RadioVariables.ScreenState prevState, RadioVariables.ScreenState newState)
     {
-        if (newState == RadioVariables.ScreenState.SingleGrab)
-        {
-
-        }
-        if (newState == RadioVariables.ScreenState.EnterStation)
-        {
-            Screen.SetActive(true);
-        }
-        if (newState == RadioVariables.ScreenState.Game1)
-        {
-            StartGame();
-        }
+        screen.SetScreen(newState);
     }
 
     public void StartGame()

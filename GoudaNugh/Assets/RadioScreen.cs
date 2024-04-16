@@ -11,73 +11,58 @@ public class RadioScreen : MonoBehaviour
     
     public TMP_Text text;
     public GameObject[] screens;
-    public GameObject activeScreen;
-    public PastRadio radio;
-    public List<int> code = new List<int>();
+    public RadioVariables.ScreenState activeScreen;
+
     // Start is called before the first frame update
     void Start()
     {
-        SetScreen(screens[0]);
+        SetScreen(RadioVariables.ScreenState.EnterStation);
+        //radioScript = radio.GetComponent<PastRadio>();
     }
 
-    public void SetScreen(GameObject c)
-    {
-        foreach( GameObject screen in screens) { 
-            if (c !=  screen)
-            {
-                screen.SetActive(false);
-            }
-        }
 
-        c.SetActive(true);
-        activeScreen = c;
-    }
 
-    public void enterNumber(int number)
+    public void SetScreen(RadioVariables.ScreenState state)
     {
-        if (activeScreen != screens[0]) return;
-        code.Add(number);
-        if (code.Count > 2) checkStation();
-        text.text = text.text + number;
-        Debug.Log(code.Count);
-    }
-
-    private void checkStation()
-    {
-        int[] answer = new int[] { 3, 1, 4 };
-        for (int i = 0; i < code.Count; i++)
+        activeScreen = state;
+        foreach(GameObject screen in screens)
         {
-            if( code[i] != answer[i] )
-            {
-                Debug.Log("code is wrong");
-                code.Clear();
-                StartCoroutine(InvalidateStation());
-                return;
-                
-            }
+            screen.SetActive(false);
         }
-        StartGame();
-        
+        screens[(int)state].SetActive(true);
     }
+
+    public void DisplayEnteredNumber(int n)
+    {
+        if (activeScreen == RadioVariables.ScreenState.EnterStation)
+        {
+            text.text = text.text + n.ToString();
+        }
+
+    }
+
+    public void ResetScreenOnWrongCode()
+    {
+        if (activeScreen == RadioVariables.ScreenState.EnterStation)
+        {
+            text.text = "Enter Station: ";
+        }
+    }
+
 
     public IEnumerator InvalidateStation()
     {
         Debug.Log("invalid station");
             // Show the GameObject
-            SetScreen(screens[1]);
+            SetScreen(RadioVariables.ScreenState.InvalidStation);
 
             // Wait for 3 seconds
             yield return new WaitForSeconds(0.5f);
 
             // Hide the GameObject
-            SetScreen(screens[0]);
-            text.text = "Enter Station: ";
+            SetScreen(RadioVariables.ScreenState.EnterStation);
+            ResetScreenOnWrongCode();
 
-    }
-
-    private void StartGame()
-    {
-        
     }
 
     // Update is called once per frame

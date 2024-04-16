@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Mono.Cecil.Cil;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PastRadio : PastObject
@@ -10,14 +12,16 @@ public class PastRadio : PastObject
     public Sinewave targetWave;
     public GameObject leverRot;
     public GameObject ghostRot;
-    public GameObject Screen;
 
-    public List<float> stationFreqs = new List<float>() { 1, 2, 3 };
-    public List<float> stationAmps = new List<float>() { 1, 2, 3 };
+    public GameObject screenObject;
+    private RadioScreen screen;
+
+    private List<int> Code = new List<int>();
+
     public int stationIndex = 0;
     public override void Setup()
     {
-        Screen.GetComponent<RadioScreen>().activeScreen = null;
+        screen = screenObject.GetComponent<RadioScreen>();
         ghostRot.SetActive(false);
         //wave.GetComponent<GameObject>().SetActive(false);
         
@@ -25,6 +29,8 @@ public class PastRadio : PastObject
         vars.frequency.OnValueChanged += ReceiveUpdatedFrequency;
         vars.futureLeverGrabbed.OnValueChanged += ReceiveLeverGrab;
         vars.screenState.OnValueChanged += ChangeScreen;
+        vars.targetAmp.OnValueChanged += ReceiveNewTargetAmp;
+        vars.targetFreq.OnValueChanged += ReceiveNewTargetFreq;
         
     }
 
@@ -53,24 +59,49 @@ public class PastRadio : PastObject
 
     private void ChangeScreen(RadioVariables.ScreenState prevState, RadioVariables.ScreenState newState)
     {
-        if(newState == RadioVariables.ScreenState.SingleGrab)
-        {
-            
-        }
-        if (newState == RadioVariables.ScreenState.EnterStation)
-        {
-            Screen.SetActive(true);
-        }
-        if (newState == RadioVariables.ScreenState.Game1)
-        {
-            StartGame();
-        }
+        screen.SetScreen(newState);
     }
 
-    private void StartGame()
+    private void ReceiveNewTargetAmp(float prevAmp, float amp)
     {
-        
+        targetWave.amplitude = amp;
+
     }
 
+    private void ReceiveNewTargetFreq(float prevFreq, float freq)
+    {
+        targetWave.frequency = freq;
+    }
+
+    public void EnterRadioNumber(int n)
+    {
+        if (screen.activeScreen != RadioVariables.ScreenState.EnterStation) return;
+        screen.DisplayEnteredNumber(n);
+        Code.Add(n);
+        if (Code.Count > 2)
+        {
+            if (CheckStationCode())
+            {
+                vars.StartMatchingWaves();
+            }
+            else screen.ResetScreenOnWrongCode();
+        }
+    }
+
+    private bool CheckStationCode()
+    {
+        int[] answer = new int[] { 3, 1, 4 };
+        for (int i = 0; i < Code.Count; i++)
+        {
+            if (Code[i] != answer[i])
+            {
+                Debug.Log("code is wrong");
+                Code.Clear();
+                StartCoroutine(screen.InvalidateStation());
+                return false;
+            }
+        }
+        return true;
+    }
 
 }
