@@ -118,8 +118,8 @@ public class VivoxPlayer : MonoBehaviour
         {
             Debug.Log("Successfully connected to Vivox");
             Debug.Log("Joining voice channel: " + VoiceChannelName);
-            _vvm.JoinChannel(VoiceChannelName, ChannelType.NonPositional, VivoxVoiceManager.ChatCapability.AudioOnly);
-            //_vvm.JoinChannel(VoiceChannelName, ChannelType.Positional, VivoxVoiceManager.ChatCapability.AudioOnly);
+            //_vvm.JoinChannel(VoiceChannelName, ChannelType.NonPositional, VivoxVoiceManager.ChatCapability.AudioOnly);
+            _vvm.JoinChannel(VoiceChannelName, ChannelType.Positional, VivoxVoiceManager.ChatCapability.AudioOnly);
 
             var cid = new Channel(VoiceChannelName, ChannelType.Positional);
             _chan = _vvm.LoginSession.GetChannelSession(cid);
