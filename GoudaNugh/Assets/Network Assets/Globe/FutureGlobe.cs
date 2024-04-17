@@ -10,15 +10,15 @@ public class FutureGlobe : FutureObject
     public CounterMove counter;
     public Transform pastAxis;
 
-    public Quaternion targetHoriz;
-    public Quaternion targetVert;
+    //public Transform targetHoriz;
+    public Transform targetRot;
     private bool goingDown;
     private float timer = 0;
     public override void Setup()
     {
         vars = networkObject.GetComponent<GlobeVariables>();
         vars.rotation.OnValueChanged += UpdateRotation;
-        vars.targetHoriz.OnValueChanged += UpdateTarget;
+        vars.targetRot.OnValueChanged += UpdateTarget;
     }
 
     public void FutureMove(Vector3 vec)
@@ -31,10 +31,10 @@ public class FutureGlobe : FutureObject
         counter.transform.rotation = Quaternion.Euler(currVec);
     }
 
-    private void UpdateTarget(Quaternion prevRot, Quaternion rot)
+    private void UpdateTarget(Vector3 prevRot, Vector3 rot)
     {
-        targetHoriz = rot;
-        targetVert = vars.targetVert.Value;
+        targetRot.rotation = Quaternion.Euler(rot);
+        //targetVert.rotation = Quaternion.Euler(vars.targetVert.Value);
     }
 
     private void Update()
