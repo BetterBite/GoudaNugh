@@ -18,8 +18,9 @@ public class RadioVariables : Variables
     public NetworkVariable<bool> waveIsValid = new NetworkVariable<bool>(false);
 
     //tracking the lever positions to display as ghosts for other player
-    public NetworkVariable<Quaternion> pastRot = new NetworkVariable<Quaternion>();
-    public NetworkVariable<Quaternion> futureRot = new NetworkVariable<Quaternion>();
+    //Not renderable in Unity.
+    private NetworkVariable<Quaternion> pastRot = new NetworkVariable<Quaternion>();
+    private NetworkVariable<Quaternion> futureRot = new NetworkVariable<Quaternion>();
 
     public NetworkVariable<bool> futureLeverGrabbed = new NetworkVariable<bool>(false);
     public NetworkVariable<bool> pastLeverGrabbed = new NetworkVariable<bool>(false);
