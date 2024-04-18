@@ -6,7 +6,7 @@ using TMPro;
 public class SafeNumber : MonoBehaviour {
     public TMP_Text content;
     public int num;
-    public GameObject safeCode;
+    public SafeCode safeCode;
 
     void Start() {
         num = Random.Range(0, 10);
@@ -15,6 +15,6 @@ public class SafeNumber : MonoBehaviour {
     public void Poke() {
         num = (num + 1) % 10;
         content.text = num.ToString();
-        safeCode.GetComponent<SafeCode>().CheckCode();
+        safeCode.CheckCode();
     }
 }
