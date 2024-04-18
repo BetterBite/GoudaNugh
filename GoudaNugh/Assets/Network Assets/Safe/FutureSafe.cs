@@ -8,10 +8,9 @@ using UnityEngine.Assertions;
 public class FutureSafe : FutureObject {
 
     public LockableObject lockableObject;
-    public SafeCode safeCode;
+    // FutureSafe does NOT need a reference to SafeCode as it does not exist in the future
 
     public override void Setup() {
         Assert.IsNotNull(lockableObject, "Lockable object script has not been set for this instance of safe!");
-        Assert.IsNotNull(safeCode, "Safe code script has not been set for this instance of safe!");
     }
 }
