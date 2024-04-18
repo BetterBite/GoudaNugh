@@ -17,7 +17,8 @@ public class SafeCode : MonoBehaviour {
         Debug.Log("Code generated: " + code[0] + code[1] + code[2]);
     }
 
-    // Returns true if the code is correct
+    // Returns false if the code is correct
+    // Note: This function updates isLocked, hence, false is the value that is returned when the code is correct
     public bool CheckCode() {
         int count = 0;
         for (int i = 0; i < 3; i++) {
@@ -28,8 +29,8 @@ public class SafeCode : MonoBehaviour {
         if (count>2) {
             Debug.Log("correct code");
             hinge.open();
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 }
