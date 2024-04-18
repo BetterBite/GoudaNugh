@@ -30,6 +30,8 @@ public class SafeCode : MonoBehaviour {
         if (count>2) {
             Debug.Log("correct code");
             lockableObject.Unlock();
+            // This object is two deep in the hierarchy so this ugly mess is required to get the grandparent
+            gameObject.transform.parent.gameObject.transform.parent.GetComponent<PastSafe>().UnlockNetworkSafe();
             //hinge.open();
             return false;
         }

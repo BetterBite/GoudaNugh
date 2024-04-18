@@ -19,9 +19,7 @@ public class PastSafe : PastObject {
         // TODO - Possibly add some custom logic for the safe if it starts open (e.g. make it look sligtly open)
     }
 
-    public void Update() {
-        if (!lockableObject.isLocked) {
-            networkObject.GetComponent<SafeVariables>().isLocked.Value = false;
-        }
+    public void UnlockNetworkSafe() {
+        networkObject.GetComponent<SafeVariables>().isLocked.Value = false;
     }
 }
