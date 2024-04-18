@@ -8,7 +8,8 @@ using Random = UnityEngine.Random;
 public class SafeCode : MonoBehaviour {
     public int[] code = { 0, 0, 0};
     public TMP_Text[] content;
-    public Hinge hinge;
+    public LockableObject lockableObject;
+    //public Hinge hinge;
 
     void Start() {
         code[0] = Random.Range(0, 10);
@@ -28,7 +29,8 @@ public class SafeCode : MonoBehaviour {
         }
         if (count>2) {
             Debug.Log("correct code");
-            hinge.open();
+            lockableObject.Unlock();
+            //hinge.open();
             return false;
         }
         return true;

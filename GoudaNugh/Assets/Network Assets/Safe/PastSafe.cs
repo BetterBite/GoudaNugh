@@ -11,6 +11,7 @@ public class PastSafe : PastObject {
     public override void Setup() {
         Assert.IsNotNull(lockableObject, "Lockable object script has not been set for this instance of safe!");
         Assert.IsNotNull(safeCode, "Safe code script has not been set for this instance of safe!");
+        safeCode.lockableObject = lockableObject;
 
         // Check code incase it spawns unlocked
         networkObject.GetComponent<SafeVariables>().isLocked.Value = safeCode.CheckCode();
@@ -19,9 +20,8 @@ public class PastSafe : PastObject {
     }
 
     public void Update() {
-        if (!safeCode.CheckCode()) { 
+        if (!lockableObject.isLocked) {
             networkObject.GetComponent<SafeVariables>().isLocked.Value = false;
-            lockableObject.Unlock();
         }
     }
 }
