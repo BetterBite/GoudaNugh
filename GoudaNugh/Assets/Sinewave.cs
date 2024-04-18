@@ -38,9 +38,6 @@ public class Sinewave : MonoBehaviour
             float y = amplitude * Mathf.Sin((x * Tau * frequency)+(Time.timeSinceLevelLoad * speed));
             lr.SetPosition(currentPoint, new Vector3(x, y, 0));
         }
-
-
-
     }
 
     // Update is called once per frame
