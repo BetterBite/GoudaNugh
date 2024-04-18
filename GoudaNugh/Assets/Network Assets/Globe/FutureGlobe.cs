@@ -21,6 +21,11 @@ public class FutureGlobe : FutureObject
         vars.targetRot.OnValueChanged += UpdateTarget;
     }
 
+    public void ActivateMoon()
+    {
+
+    }
+
     public void FutureMove(Vector3 vec)
     {
         vars.FutureMoveServerRpc(vec);

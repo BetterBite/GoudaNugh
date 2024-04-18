@@ -10,6 +10,15 @@ public class GlobeVariables : Variables
     public NetworkVariable<Vector3> targetRot = new NetworkVariable<Vector3>();   
     public NetworkVariable<bool> globeOn = new NetworkVariable<bool>(false);
 
+    public NetworkVariable<GlobeStates> globeState = new NetworkVariable<GlobeStates>();
+
+    public enum GlobeStates
+    {
+        Unactivated,
+        SingleActivated,
+        Activated
+    }
+
     public void PastMove(Vector3 vec)
     {
         rotation.Value += vec;
