@@ -3,41 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Random = UnityEngine.Random;
 
-public class SafeCode : MonoBehaviour
-{
-    bool Locked = true;
-    public int[] code = { 1, 0, 0};
+public class SafeCode : MonoBehaviour {
+    public int[] code = { 0, 0, 0};
     public TMP_Text[] content;
-    public GameObject hinge;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    // Important! Lockable object only gets set if the safe is spawned by the manager, otherwise you will get a NullReferenceException!
+    public LockableObject lockableObject;
+    //public Hinge hinge;
+
+    void Start() {
+        InteractibleManager IManager = InteractibleManager.Singleton;
+        code[0] = IManager.SafeCode[0];
+        code[1] = IManager.SafeCode[1];
+        code[2] = IManager.SafeCode[2];
+        Debug.Log("Code generated: " + code[0] + code[1] + code[2]);
     }
 
-    public void CheckCode()
-    {
+    // Returns false if the code is correct
+    // Note: This function updates isLocked, hence, false is the value that is returned when the code is correct
+    public bool CheckCode() {
         int count = 0;
-        for (int i = 0; i < 3; i++)
-        {
-            if (code[i] == Int32.Parse(content[i].text))
-            {
+        for (int i = 0; i < 3; i++) {
+            if (code[i] == Int32.Parse(content[i].text)) {
                 count++;
             } 
         }
-        if (count>2)
-        {
+        if (count>2) {
             Debug.Log("correct code");
-            hinge.GetComponent<Hinge>().open();
+            lockableObject.Unlock();
+            // This object is two deep in the hierarchy so this ugly mess is required to get the grandparent
+            gameObject.transform.parent.gameObject.transform.parent.GetComponent<PastSafe>().UnlockNetworkSafe();
+            //hinge.open();
+            return false;
         }
-       
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return true;
     }
 }
