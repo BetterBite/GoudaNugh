@@ -13,9 +13,10 @@ public class SafeCode : MonoBehaviour {
     //public Hinge hinge;
 
     void Start() {
-        code[0] = Random.Range(0, 10);
-        code[1] = Random.Range(0, 10);
-        code[2] = Random.Range(0, 10);
+        InteractibleManager IManager = InteractibleManager.Singleton;
+        code[0] = IManager.SafeCode[0];
+        code[1] = IManager.SafeCode[1];
+        code[2] = IManager.SafeCode[2];
         Debug.Log("Code generated: " + code[0] + code[1] + code[2]);
     }
 
