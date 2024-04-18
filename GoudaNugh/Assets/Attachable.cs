@@ -8,7 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Attachable : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    [SerializeField] private UnityEvent onAttach;
     public ClueLinker.Links link;
     private BoxCollider box;
     private AttachableCheck attachableBase;
@@ -21,14 +21,16 @@ public class Attachable : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         attachableBase = other.gameObject.GetComponent<AttachableCheck>();
-
+        
     }
+
 
     public void OnSelectExited()
     {
         if (attachableBase != null && attachableBase.iwantthis == link) 
         {
             attachableBase.objectReleased();
+            onAttach.Invoke();
         }
     }
 }
