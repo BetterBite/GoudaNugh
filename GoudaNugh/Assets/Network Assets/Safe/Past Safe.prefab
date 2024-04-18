@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: {fileID: 3990645687398417344}
   num: 0
-  safeCode: {fileID: 2457303861836961337}
+  safeCode: {fileID: 8978917521031458894}
 --- !u!114 &2483061017853018487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ MonoBehaviour:
   - {fileID: 1084614878423373770}
   - {fileID: 1641436298957446428}
   - {fileID: 3990645687398417344}
-  hinge: {fileID: 7427914387791505055}
+  lockableObject: {fileID: 0}
 --- !u!1 &3052868666764268036
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,7 +875,7 @@ Transform:
   m_GameObject: {fileID: 5140760705421580048}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1016, y: -0.04, z: -12.175}
+  m_LocalPosition: {x: -3.1016, y: -0.04, z: 5.33}
   m_LocalScale: {x: 40.491455, y: 40.491455, z: 40.491455}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: {fileID: 1641436298957446428}
   num: 0
-  safeCode: {fileID: 2457303861836961337}
+  safeCode: {fileID: 8978917521031458894}
 --- !u!114 &2757777712295442660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: {fileID: 1084614878423373770}
   num: 0
-  safeCode: {fileID: 2457303861836961337}
+  safeCode: {fileID: 8978917521031458894}
 --- !u!114 &6675850967252959187
 MonoBehaviour:
   m_ObjectHideFlags: 0
