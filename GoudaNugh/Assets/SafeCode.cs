@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 public class SafeCode : MonoBehaviour {
     public int[] code = { 0, 0, 0};
     public TMP_Text[] content;
+    // Important! Lockable object only gets set if the safe is spawned by the manager, otherwise you will get a NullReferenceException!
     public LockableObject lockableObject;
     //public Hinge hinge;
 
