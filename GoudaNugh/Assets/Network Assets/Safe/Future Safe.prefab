@@ -895,6 +895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed5a4bf8187bad49b8bdb139f0aa00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkObject: {fileID: 0}
+  lockableObject: {fileID: 783494329021262211}
+  safeCode: {fileID: 8978917521031458894}
 --- !u!1 &6214983446141823581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,6 +1591,7 @@ GameObject:
   - component: {fileID: 1799760234527050909}
   - component: {fileID: 8729051620222982707}
   - component: {fileID: 8179034282601435601}
+  - component: {fileID: 783494329021262211}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -1899,6 +1903,20 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &783494329021262211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7392372172707845071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21a5af21e4faf240b0ee2c84ae68034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 0
+  vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &7393233864953803301
 GameObject:
   m_ObjectHideFlags: 0

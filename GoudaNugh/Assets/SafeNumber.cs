@@ -11,6 +11,8 @@ public class SafeNumber : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        num = Random.Range(0, 10);
+        content.text = num.ToString();
     }
 
     public void Poke()

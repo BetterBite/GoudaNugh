@@ -9,9 +9,7 @@ public class LockableObject : MonoBehaviour
     private Vector3 startingPosition;
     private Quaternion startingRotation;
     public bool isLocked;
-
     public Vector3 vectorToPush;
-    // Start is called before the first frame update
     void Awake()
     {
         //isLocked = false;
@@ -24,7 +22,6 @@ public class LockableObject : MonoBehaviour
             Unlock();
         
     }
-
     public void ToggleLock()
     {
         if (isLocked)
@@ -40,7 +37,6 @@ public class LockableObject : MonoBehaviour
             isLocked = true;
         }
     }
-
     public void Lock()
     {
 
@@ -49,7 +45,6 @@ public class LockableObject : MonoBehaviour
         body.constraints = RigidbodyConstraints.FreezeAll;
         isLocked = true;
     }
-
     public void Unlock()
     {
 
@@ -57,11 +52,5 @@ public class LockableObject : MonoBehaviour
         isLocked = false;
         body.AddForce(vectorToPush);
 
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

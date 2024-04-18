@@ -15,6 +15,8 @@ public abstract class FutureObject : MonoBehaviour
     //public XRGrabInteractable grabInteractable;
     private readonly InteractibleManager InstanceManager = InteractibleManager.Instance;
 
+    // Note to self: Don't forget that this is a custom function!
+    // This function gets called when the object is instantiated through the InteractibleManager
     public abstract void Setup();
 
     /* 

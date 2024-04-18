@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Random = UnityEngine.Random;
 
 public class SafeCode : MonoBehaviour
 {
     bool Locked = true;
-    public int[] code = { 1, 0, 0};
+    public int[] code = { Random.Range(0,10), Random.Range(0,10), Random.Range(0,10)};
     public TMP_Text[] content;
     public GameObject hinge;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Code generated: " + code[0] + code[1] + code[2]);
     }
 
     public void CheckCode()
