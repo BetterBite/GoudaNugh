@@ -475,7 +475,7 @@ MonoBehaviour:
   - {fileID: 1084614878423373770}
   - {fileID: 1641436298957446428}
   - {fileID: 3990645687398417344}
-  hinge: {fileID: 7427914387791505055}
+  lockableObject: {fileID: 0}
 --- !u!1 &3052868666764268036
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +897,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   networkObject: {fileID: 0}
   lockableObject: {fileID: 783494329021262211}
-  safeCode: {fileID: 8978917521031458894}
 --- !u!1 &6214983446141823581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1915,7 +1914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21a5af21e4faf240b0ee2c84ae68034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 0
+  isLocked: 1
   vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &7393233864953803301
 GameObject:
