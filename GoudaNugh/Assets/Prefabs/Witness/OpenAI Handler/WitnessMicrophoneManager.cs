@@ -23,7 +23,8 @@ public class WitnessMicrophoneManager : MonoBehaviour
     private float lastTime = 0f;
 
     void Start() {
-        microphoneName = Microphone.devices[1]; // select first available microphone
+        microphoneName = Microphone.devices[0]; // select first available microphone
+        Debug.Log(Microphone.devices);
     }
 
     public void StartRecording() {
