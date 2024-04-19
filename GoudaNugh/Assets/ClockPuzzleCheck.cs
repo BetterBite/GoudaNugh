@@ -4,7 +4,7 @@ using UnityEngine;
 public class ClockPuzzleCheck : MonoBehaviour
 {
 
-    public PastClock clock;
+    //public PastClock clock;
     // ===== PUBLIC PARAMETERS =====
     public Transform hour_transform;
     public Transform minute_transform;
@@ -39,7 +39,7 @@ public class ClockPuzzleCheck : MonoBehaviour
 
             Debug.Log("Correct config");
             correct_feedback.Play();
-            clock.Solve();
+            //clock.Solve();
         } else {
             // Hands not in correct place
 

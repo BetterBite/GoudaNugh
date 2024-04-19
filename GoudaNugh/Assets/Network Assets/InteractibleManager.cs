@@ -5,13 +5,18 @@ using Unity.Netcode;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using System;
+using Random = UnityEngine.Random;
 
 public class InteractibleManager : NetworkBehaviour {
-    public static InteractibleManager Instance { get; private set; }
+    public static InteractibleManager Singleton { get; private set; }
     public NetworkPrefabsList ObjectsToSpawn;
-
+    public int[] SafeCode;
     public void Awake() {
-        Instance = this;
+        Singleton = this;
+        SafeCode = new int[3];
+        SafeCode[0] = 2;//Random.Range(0, 10);
+        SafeCode[1] = 0;// Random.Range(0, 10);
+        SafeCode[2] = 8; // Random.Range(0, 10);
         DontDestroyOnLoad(this.gameObject);
     }
 

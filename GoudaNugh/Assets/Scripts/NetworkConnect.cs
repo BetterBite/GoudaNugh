@@ -74,7 +74,7 @@ public class NetworkConnect : MonoBehaviour
              allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData);
 
         NetworkManager.Singleton.StartHost();
-        NetworkManager.Singleton.SceneManager.OnSceneEvent += InteractibleManager.Instance.CheckSceneEvent;
+        NetworkManager.Singleton.SceneManager.OnSceneEvent += InteractibleManager.Singleton.CheckSceneEvent;
         // display Start Game button
         uiHandler.SetJoinCodeForDisplay(newJoinCode);
         uiHandler.SetState(2);
@@ -133,7 +133,7 @@ public class NetworkConnect : MonoBehaviour
 
         // SceneManager.LoadScene("BetaSceneMain");
         Debug.Log("Starting Game");
-        NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneNetworkTest", LoadSceneMode.Single);
+        NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneMainTilo", LoadSceneMode.Single);
 
 
 
