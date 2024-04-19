@@ -16,14 +16,14 @@ public class WitnessMicrophoneManager : MonoBehaviour
     public event Action RecordingStarted;
     public event Action RecordingStopped;
 
-    private string microphoneName;
+    public string microphoneName;
 
     private bool isRecording = false;
     private AudioClip clip = null;
     private float lastTime = 0f;
 
     void Start() {
-        microphoneName = Microphone.devices[0]; // select first available microphone
+        microphoneName = Microphone.devices[1]; // select first available microphone
     }
 
     public void StartRecording() {
