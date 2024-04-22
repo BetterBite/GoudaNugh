@@ -34,7 +34,6 @@ public class RadioVariables : Variables
 
     public NetworkVariable<bool> radioSolved = new NetworkVariable<bool>(false);
 
-
     public enum ScreenState
     {
         Off,
