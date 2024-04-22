@@ -5,14 +5,26 @@ using Unity.Netcode;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using System;
+using Random = UnityEngine.Random;
 
 public class InteractibleManager : NetworkBehaviour {
-    public static InteractibleManager Instance { get; private set; }
+    public static InteractibleManager Singleton { get; private set; }
     public NetworkPrefabsList ObjectsToSpawn;
 
+    public int[] SafeCode { get; private set; }
+    
+    //this bool can be ticked if you wish to test future and past objects in one game- it will trigger future objects spawning along 
+    //past objects when set to true.
+    public bool singleInstanceTestingMode;
+
     public void Awake() {
-        Instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        Singleton = this;
+        DontDestroyOnLoad(gameObject);
+        SafeCode = new int[3];
+        SafeCode[0] = Random.Range(0,10);
+        SafeCode[1] = Random.Range(0,10);
+        SafeCode[2] = Random.Range(0,10);
+        Debug.Log("Safe code generated: " + SafeCode[0] + SafeCode[1] + SafeCode[2]);
     }
 
     // NetworkConnect.cs subscribes this method to OnSceneEvent. https://docs-multiplayer.unity3d.com/netcode/current/basics/scenemanagement/scene-events/
@@ -66,7 +78,7 @@ public class InteractibleManager : NetworkBehaviour {
     [Rpc(SendTo.ClientsAndHost)]
     public void InstantiateFutureObjectRPC(NetworkObjectReference objectReference) {
         // TODO - Add transforms to all Instantiate calls 
-        if (!IsServer) { //Check if you are the future player here
+        if (!IsServer || singleInstanceTestingMode) { //Check if you are the future player here
             objectReference.TryGet(out NetworkObject networkObject);
             GameObject Object = Instantiate(networkObject.gameObject.GetComponent<Variables>().FutureObjectPrefab);
             Object.GetComponent<FutureObject>().networkObject = networkObject;

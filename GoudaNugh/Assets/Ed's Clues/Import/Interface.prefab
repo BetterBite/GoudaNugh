@@ -1348,6 +1348,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f99a748a53a2a468feef38f55b5cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAttach:
+    m_PersistentCalls:
+      m_Calls: []
   iwantthis: {fileID: 1558317324103926935}
   ghost: {fileID: 4530880108595517534}
   solid: {fileID: 277369314023283413}
