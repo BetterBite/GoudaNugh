@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using Random = UnityEngine.Random;
+using UnityEngine.Assertions;
 
 public class SafeCode : MonoBehaviour {
     public int[] code = { 0, 0, 0};
@@ -14,6 +15,7 @@ public class SafeCode : MonoBehaviour {
 
     void Start() {
         InteractibleManager IManager = InteractibleManager.Singleton;
+        Assert.IsNotNull(IManager, "Interactible Manager not found! Make sure it has been added to the scene!");
         code[0] = IManager.SafeCode[0];
         code[1] = IManager.SafeCode[1];
         code[2] = IManager.SafeCode[2];
