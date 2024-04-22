@@ -29,7 +29,7 @@ public class WitnessMicrophoneManager : MonoBehaviour
 
     public void StartRecording() {
         Debug.Log("Started Recording! " + microphoneName);
-        clip = Microphone.Start(microphoneName, loopRecord, recordLength, sampleRate);
+        clip = Microphone.Start(microphoneName, loopRecord, recordLength, sampleRate);  // game buffers when microphone is started. do this on a separate thread?
         isRecording = true;
         lastTime = Time.time;
 

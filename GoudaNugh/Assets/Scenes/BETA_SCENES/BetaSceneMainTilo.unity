@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5715,6 +5715,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4134505312059479865, guid: db230c0ff74f2e84480bf0d8aa889154, type: 3}
   m_PrefabInstance: {fileID: 452463679}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &466715639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6874117271501615836, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
+  m_PrefabInstance: {fileID: 865604303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &474019428
 GameObject:
   m_ObjectHideFlags: 0
@@ -7869,10 +7874,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1194097358}
     m_Modifications:
+    - target: {fileID: 224086329837415819, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 282222595470017696, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 990198946972423012, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
       propertyPath: Voice
       value: 
-      objectReference: {fileID: 865604304}
+      objectReference: {fileID: 0}
+    - target: {fileID: 990198946972423012, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
+      propertyPath: onMultiValueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712646968390049658, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3221060075071280444, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
       propertyPath: mainCamera
       value: 
@@ -7880,7 +7901,32 @@ PrefabInstance:
     - target: {fileID: 6183041727750280653, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
       propertyPath: Voice
       value: 
-      objectReference: {fileID: 865604304}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183041727750280653, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
+      propertyPath: onMultiValueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306912789272337435, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
+      propertyPath: SystemPrompt
+      value: "You are a witness to a murder of the owner of an antique shop. You
+        are currently in that antique shop. Your role is to answer questions about
+        the murder to the detective. Your name is Alberto.  Keep your response short
+        and to the point.  Three potential suspects: Lurni Kipp: A scientist studying
+        subatomic particles. He once knew Barnabas in College. Barnabas originally
+        borrowed Lurni\u2019s time machine, telling him that he wanted to try and
+        save his marriage, but in reality, he took it so he could start his pineapple
+        business. Lurni was falsely arrested by the time police when the time machine
+        was discovered as being used for illicit activities. Thomas Clark: A businessman
+        running the criminal streets of British Hong Kong. He is trying to use Barnabas\u2019
+        pineapples to smuggle opium into the 20th century where he can distribute
+        it. Recently Barnabas is starting to get cold feet and claims shadowy figures
+        are stalking him Walters: caretaker who was employed by Lurni to get the
+        silicon chip. But he really wanted to plant Clark\u2019s fingerprint on the
+        crime scene and implicate him in Barnabas\u2019 murder, so he could take
+        over the business  If asked for help point the detective in the direction
+        of the figurine and drawers as well as the book that needs a key. Once they
+        have explored these items stop suggesting them."
+      objectReference: {fileID: 0}
     - target: {fileID: 6874117271501615836, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
       propertyPath: m_Name
       value: witness prefab
@@ -7904,6 +7950,10 @@ PrefabInstance:
     - target: {fileID: 7412681515122204620, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
       propertyPath: m_Center.z
       value: -0.1622796
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131545680498288944, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
+      propertyPath: voice
+      value: onyx
       objectReference: {fileID: 0}
     - target: {fileID: 8841869982052928109, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
       propertyPath: m_LocalScale.x
@@ -7957,27 +8007,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7617037905377625274, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6874117271501615836, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 865604308}
   m_SourcePrefab: {fileID: 100100000, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
---- !u!114 &865604304 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3297727796952093338, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
-  m_PrefabInstance: {fileID: 865604303}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28779cfed47441a42a6cd4fb49c8dc89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &865604305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8841869982052928109, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
   m_PrefabInstance: {fileID: 865604303}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &865604308
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466715639}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.73010004, y: 1.6200701, z: 0.6253489}
+  m_Center: {x: 0.06822654, y: 0.31003475, z: -0.011678648}
 --- !u!1001 &921294575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15347,6 +15411,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2134521101924571811, guid: aab086e998681d04684eea939a0bd250, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5125067617897355456, guid: aab086e998681d04684eea939a0bd250, type: 3}
       propertyPath: m_ProtocolType
       value: 1
@@ -15414,6 +15482,10 @@ PrefabInstance:
     - target: {fileID: 8877310079982420921, guid: aab086e998681d04684eea939a0bd250, type: 3}
       propertyPath: m_Name
       value: NetworkManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8877310079982420921, guid: aab086e998681d04684eea939a0bd250, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
