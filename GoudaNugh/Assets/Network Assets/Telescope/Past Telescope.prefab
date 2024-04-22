@@ -1317,7 +1317,7 @@ Transform:
   m_GameObject: {fileID: 4397495353536523172}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.084193796, y: 0.853, z: 7.2289147}
+  m_LocalPosition: {x: -1.169, y: 3.863, z: 1.162}
   m_LocalScale: {x: 4.73, y: 4.73, z: 4.73}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1338,10 +1338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ea4693e1b37484da63e67bffc7180e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 0
   networkObject: {fileID: 5134731325123478076, guid: 6206d5d7e61799c41a65249f30ea6973, type: 3}
-  TelescopeVariables: {fileID: 5134731325123478076, guid: 6206d5d7e61799c41a65249f30ea6973, type: 3}
-  variables: {fileID: 0}
+  telescopeVariables: {fileID: 0}
   lenses: []
   solved: 0
 --- !u!54 &2081874700575800474

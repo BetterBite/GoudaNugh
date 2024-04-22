@@ -1,7 +1,10 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class ClockPuzzleCheck : MonoBehaviour
 {
+
+    //public PastClock clock;
     // ===== PUBLIC PARAMETERS =====
     public Transform hour_transform;
     public Transform minute_transform;
@@ -23,6 +26,7 @@ public class ClockPuzzleCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         target_hour_rotation = TargetToQuaternion(hour_target);
         target_minute_rotation = TargetToQuaternion(minute_target);
 
@@ -35,6 +39,7 @@ public class ClockPuzzleCheck : MonoBehaviour
 
             Debug.Log("Correct config");
             correct_feedback.Play();
+            //clock.Solve();
         } else {
             // Hands not in correct place
 
@@ -46,6 +51,7 @@ public class ClockPuzzleCheck : MonoBehaviour
 
     // Returns True if the hand_rotation is close enough (defined by leniency parameter) to the target rotation.
     bool WithinLimit(Quaternion hand_rotation, Quaternion target, int leniency) {
+
         return Quaternion.Angle(hand_rotation, target) - leniency < 0;
     }
 

@@ -2407,7 +2407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &363359732713859485
 Transform:
   m_ObjectHideFlags: 0
@@ -4564,7 +4564,7 @@ Transform:
   m_GameObject: {fileID: 8623048385944236560}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.308, y: 1.22, z: 7.2289147}
+  m_LocalPosition: {x: -1.101, y: 3.681, z: 1.181}
   m_LocalScale: {x: 4.73, y: 4.73, z: 4.73}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4586,12 +4586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144bdf92faadc644687c73196dd62524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 0
   networkObject: {fileID: 0}
-  hasMoved: 0
-  grabInteractable: {fileID: 0}
   images: []
-  variables: {fileID: 5732735838385686571, guid: 6206d5d7e61799c41a65249f30ea6973, type: 3}
+  telescopeVariables: {fileID: 0}
   door: {fileID: 0}
 --- !u!1 &8651413278534379071
 GameObject:
