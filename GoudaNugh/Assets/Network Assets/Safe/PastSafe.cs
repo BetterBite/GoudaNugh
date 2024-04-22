@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Assertions;
 
 public class PastSafe : PastObject {
-
     public LockableObject lockableObject;
     public SafeCode safeCode;
 
