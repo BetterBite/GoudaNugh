@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8194623752300079067}
+  - component: {fileID: 97599125739246770}
   m_Layer: 0
   m_Name: numbers
   m_TagString: Untagged
@@ -29,7 +30,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4799380624283654472}
   - {fileID: 3080984708633520760}
   - {fileID: 2841007525747922052}
   - {fileID: 7794682592027255661}
@@ -41,8 +41,21 @@ Transform:
   - {fileID: 2376367868418084614}
   - {fileID: 3592496768488853100}
   - {fileID: 6258374940791337274}
+  - {fileID: 4799380624283654472}
   m_Father: {fileID: 5065868246306473231}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &97599125739246770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85424456262204371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f41aa359bd38c642bf77c004d8d24a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &572600698468489600
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,7 +2748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5fe1bd8a17face04dbc2f50fe96f181e, type: 3}
       propertyPath: m_Name
-      value: Alarm_Clock 2
+      value: PastClock
       objectReference: {fileID: 0}
     - target: {fileID: 1112900551682180293, guid: 5fe1bd8a17face04dbc2f50fe96f181e, type: 3}
       propertyPath: m_Layer
