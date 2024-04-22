@@ -13,7 +13,7 @@ public abstract class FutureObject : MonoBehaviour
     private bool hasMoved = false;
     */
     //public XRGrabInteractable grabInteractable;
-    private readonly InteractibleManager InstanceManager = InteractibleManager.Singleton;
+    private readonly InteractibleManager InstanceManager = InteractibleManager.Instance;
 
     public abstract void Setup();
 

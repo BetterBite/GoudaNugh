@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Netcode;
 
-public class SafeVariables : Variables {
+public class SafeVariables : Variables
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
-    public NetworkVariable<bool> _isLocked = new NetworkVariable<bool>(true);
-
-    public NetworkVariable<bool> isLocked { get => _isLocked; set => _isLocked = value; }
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
