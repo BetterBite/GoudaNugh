@@ -2,34 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Assertions;
 
-public class SafeNumber : MonoBehaviour {
+public class SafeNumber : MonoBehaviour
+{
     public TMP_Text content;
     public int num;
-    public SafeCode safeCode;
-
-    void Start() {
-        Assert.IsNotNull(safeCode, "Safe code script not found!");
-        num = Random.Range(0, 10);
-        content.text = num.ToString();
+    public GameObject safeCode;
+    // Start is called before the first frame update
+    void Start()
+    {
     }
-    public void Poke(bool up) {
 
-        if (up)
-        {
-            num = (num + 1) % 10;
-        }
-        else {
-            if (num == 0) num = 9;
-            else num = num - 1;
-        }
+    public void Poke()
+    {
+        num = (num + 1) % 10;
+        content.text = num.ToString();
+        safeCode.GetComponent<SafeCode>().CheckCode();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         
-        Debug.Log(num);
-        content.text = num.ToString();
-        safeCode.CheckCode();
     }
-
-
-
 }
