@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Unity.Netcode;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Relay;
+using Unity.Services.Vivox;
 using Unity.Services.Relay.Models;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine.SceneManagement;
@@ -22,12 +24,27 @@ public class NetworkConnect : MonoBehaviour
     public Transform rig;
     public LobbyUIHandler uiHandler;
     public TMP_InputField myTextMeshProInputJoinCode;
-    
+
+    [SerializeField]
+    private Toggle VoiceToggle;
+
+
 
     private async void Awake()
     {
         await UnityServices.InitializeAsync();
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
+
+        //
+
+        VoiceToggle.onValueChanged.AddListener(delegate 
+            { VivoxToggle(VoiceToggle); });
+
+    }
+
+    void VivoxToggle(Toggle voiceToggle)
+    {
+        Debug.Log("Voice " + voiceToggle.isOn);
 
     }
 
@@ -57,17 +74,18 @@ public class NetworkConnect : MonoBehaviour
              allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData);
 
         NetworkManager.Singleton.StartHost();
-        NetworkManager.Singleton.SceneManager.OnSceneEvent += InteractibleManager.Instance.CheckSceneEvent;
+        NetworkManager.Singleton.SceneManager.OnSceneEvent += InteractibleManager.Singleton.CheckSceneEvent;
         // display Start Game button
         uiHandler.SetJoinCodeForDisplay(newJoinCode);
         uiHandler.SetState(2);
-       
+
 
         // We don't want to move the player on create.
         // rig.position = p1Pos.position;
 
         // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
         //SceneManager.LoadScene("BetaSceneNetworkTest");
+        //StartGame();
 
     }
 
@@ -116,11 +134,11 @@ public class NetworkConnect : MonoBehaviour
 
         // SceneManager.LoadScene("BetaSceneMain");
         Debug.Log("Starting Game");
-        NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneNetworkTest", LoadSceneMode.Single);
+        //NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneNetworkTest", LoadSceneMode.Single);
 
 
 
-        //InteractibleManager.Instance.OnSceneLoad();
+        InteractibleManager.Singleton.OnSceneLoad();
 
         //NetworkSceneManager.OnSceneEvent.
         
