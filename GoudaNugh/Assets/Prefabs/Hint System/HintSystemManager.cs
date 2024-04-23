@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // is this class even necessary? Oh this class collides with Hintable triggers. This assumes that the Hintables have a trigger collider attached (i think). Can't remeber which way round it is
+// do we attach this to the hands?
 public class HintSystemManager : MonoBehaviour
 {
-    public float time = 2.0f;
+    public float SecondsBuffer = 2.0f;
     private Dictionary<Hintable, float> hintableDict = new Dictionary<Hintable, float>();
     public void OnTriggerEnter(Collider collider) {
         Hintable hintable = collider.gameObject.GetComponent<Hintable>();
@@ -20,7 +21,7 @@ public class HintSystemManager : MonoBehaviour
         if (hintable == null) return;
 
         hintableDict.TryGetValue(hintable, out float start_time);
-        if (System.DateTime.Now.Millisecond > start_time + time*1000) {
+        if (System.DateTime.Now.Millisecond > start_time + SecondsBuffer*1000) {
             hintable.TriggerHint();         // if collider has triggered for longer than interval then trigger hint
             hintableDict.Remove(hintable);
         }
