@@ -8,6 +8,8 @@ using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine.SceneManagement;
+using System;
+using TMPro;
 
 public class NetworkConnect : MonoBehaviour
 {
@@ -19,11 +21,20 @@ public class NetworkConnect : MonoBehaviour
     public Transform p2Pos;
     public Transform rig;
     public LobbyUIHandler uiHandler;
+    public TMP_InputField myTextMeshProInputJoinCode;
+    
 
     private async void Awake()
     {
         await UnityServices.InitializeAsync();
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
+
+    }
+
+    public async void SetJoinCode()
+    {
+        joinCode = myTextMeshProInputJoinCode.text;
+        //joinCode = joinCode.Trim();
 
     }
 
@@ -46,26 +57,40 @@ public class NetworkConnect : MonoBehaviour
              allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData);
 
         NetworkManager.Singleton.StartHost();
-
+        NetworkManager.Singleton.SceneManager.OnSceneEvent += InteractibleManager.Instance.CheckSceneEvent;
         // display Start Game button
+        uiHandler.SetJoinCodeForDisplay(newJoinCode);
         uiHandler.SetState(2);
+       
 
         // We don't want to move the player on create.
         // rig.position = p1Pos.position;
 
         // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
-        SceneManager.LoadScene("BetaSceneNetworkTest");
+        //SceneManager.LoadScene("BetaSceneNetworkTest");
 
     }
 
-    public async void Join()
+
+        public async void Join()
     {
         // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
         // We don't want to load scene on join
         // SceneManager.LoadScene("BetaSceneMain");
         uiHandler.SetIsHost(false);
         uiHandler.SetState(1);
-        
+
+
+
+        Debug.Log("Join code being used: " + joinCode);
+
+        // Ensure joinCode is not null or empty
+        if (string.IsNullOrWhiteSpace(joinCode))
+        {
+            Debug.LogError("Join code is empty or null. Please set a valid join code.");
+            return; // Exit the method to avoid making a request with invalid join code
+        }
+
 
         JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
 
@@ -81,15 +106,28 @@ public class NetworkConnect : MonoBehaviour
         // rig.position = p2Pos.position;
 
         // File -> Build Settings -> Scenes in Build -> assign to the function below a numer of a scene to get player to
-        SceneManager.LoadScene("BetaSceneNetworkTest");
+        //SceneManager.LoadScene("BetaSceneNetworkTest");
     }
 
-    public async void Start() 
+    public void StartGame() 
     {
         // TODO: Implement starting the game
         // This method is called by the Host when clicking the "Start Game" button in the lobby.
 
         // SceneManager.LoadScene("BetaSceneMain");
+        Debug.Log("Starting Game");
+        NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneNetworkTest", LoadSceneMode.Single);
+
+
+
+        //InteractibleManager.Instance.OnSceneLoad();
+
+        //NetworkSceneManager.OnSceneEvent.
+        
+
     }
+
+
+
 }
 

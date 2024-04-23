@@ -9644,6 +9644,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1878013001474413703, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 184961362
+      objectReference: {fileID: 0}
     - target: {fileID: 3000128591236267353, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9691,6 +9695,10 @@ PrefabInstance:
     - target: {fileID: 8425194787289381474, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: m_Name
       value: InteractibleManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425194787289381474, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14681,6 +14689,10 @@ PrefabInstance:
     - target: {fileID: 8877310079982420921, guid: aab086e998681d04684eea939a0bd250, type: 3}
       propertyPath: m_Name
       value: NetworkManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8877310079982420921, guid: aab086e998681d04684eea939a0bd250, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
