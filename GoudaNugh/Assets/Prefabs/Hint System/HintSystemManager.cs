@@ -7,21 +7,22 @@ using UnityEngine;
 public class HintSystemManager : MonoBehaviour
 {
     public float SecondsBuffer = 2.0f;
-    private Dictionary<Hintable, float> hintableDict = new Dictionary<Hintable, float>();
+    private Dictionary<Hintable, long> hintableDict = new Dictionary<Hintable, long>();
+    private const int TICKS_PER_SECOND = 10000000;
     public void OnTriggerEnter(Collider collider) {
         Hintable hintable = collider.gameObject.GetComponent<Hintable>();
         if (hintable == null) return;
 
         // add hintable to dictionary for checking if hintable is in range for long enough
-        hintableDict.Add(hintable, System.DateTime.Now.Millisecond);
+        hintableDict.Add(hintable, System.DateTime.Now.Ticks);
     }
 
     public void OnTriggerStay(Collider collider) {
         Hintable hintable = collider.gameObject.GetComponent<Hintable>();
         if (hintable == null) return;
 
-        hintableDict.TryGetValue(hintable, out float start_time);
-        if (System.DateTime.Now.Millisecond > start_time + SecondsBuffer*1000) {
+        if (!hintableDict.TryGetValue(hintable, out long start_time)) return;
+        if (System.DateTime.Now.Ticks - start_time > SecondsBuffer*TICKS_PER_SECOND) {
             hintable.TriggerHint();         // if collider has triggered for longer than interval then trigger hint
             hintableDict.Remove(hintable);
         }
