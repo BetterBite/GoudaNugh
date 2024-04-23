@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class OutlineHint : Hint
 {
-    private OutlineHint outline;
+    private Outline outline;
     [Header("Outline Settings")]
     public Color OutlineColor = Color.white;
     public float OutlineThickness = 5f;
     void Awake() {
-        outline = gameobject.AddComponent<Outline>();
+        outline = gameObject.AddComponent<Outline>();
 
         outline.OutlineMode = Outline.Mode.OutlineAll;
         outline.OutlineColor = OutlineColor;
