@@ -56,6 +56,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f41aa359bd38c642bf77c004d8d24a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  numbers:
+  - {fileID: 572600698468489600}
+  - {fileID: 8983849554779786241}
+  - {fileID: 8118574611709814162}
+  - {fileID: 7242304142438435883}
+  - {fileID: 6116176966363719401}
+  - {fileID: 8042749518455241665}
+  - {fileID: 1602716612224931404}
+  - {fileID: 1326925811061285407}
+  - {fileID: 5039021054390723774}
+  - {fileID: 2420813928299722479}
+  - {fileID: 5392981659620669543}
+  - {fileID: 2288780597236312516}
 --- !u!1 &572600698468489600
 GameObject:
   m_ObjectHideFlags: 0
@@ -3238,7 +3252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f704ca34ca2f3bc42b4e4f91b5d8972a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clock: {fileID: 4243668485343867057}
+  clock: {fileID: 0}
   hour_transform: {fileID: 4702109438436569676}
   minute_transform: {fileID: 3634339416231031241}
   hour_target: 150
