@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Assertions;
 
 public class SetNumbers : MonoBehaviour {
     public TMP_Text[] numbers;
 
     void Start() {
         int[] safeCode = InteractibleManager.Singleton.SafeCode;
+        foreach (var number in numbers) {
+            Assert.IsNotNull(number, "One or more of the numbers for the alarm clock is not assigned!");
+        }
         for (int i = 0; i < numbers.Length; i++) {
-            if (i >= 9) {
-                // Throws a null reference exception for no reason?? Still works and no actual errors can be identified
-                numbers[i].text = i >= 9 ? safeCode[i - 9].ToString() : Random.Range(0, 10).ToString();
-            }
+            numbers[i].text = i >= 9 ? safeCode[i-9].ToString() : Random.Range(0,10).ToString();
         }
     }
 }
