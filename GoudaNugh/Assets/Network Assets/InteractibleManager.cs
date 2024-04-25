@@ -52,7 +52,7 @@ public class InteractibleManager : NetworkBehaviour {
                 InstantiatePastObjectRPC(objectReference);
                 InstantiateFutureObjectRPC(objectReference);
             }
-            SpawnWitnessPlease();
+            SpawnWitnessPleaseRPC();
         }
 
         
@@ -74,7 +74,7 @@ public class InteractibleManager : NetworkBehaviour {
     // atm assume host is past player, client is future player
 
     [Rpc(SendTo.NotMe)]
-    public void SpawnWitnessPlease() {
+    public void SpawnWitnessPleaseRPC() {
             foreach (GameObject futureObject in LocalFutureObjects)
             {
                 Instantiate(futureObject);

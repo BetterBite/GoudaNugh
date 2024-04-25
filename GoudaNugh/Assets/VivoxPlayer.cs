@@ -14,7 +14,7 @@ public class VivoxPlayer : MonoBehaviour
     public string VoiceChannelName = "GoudaNughChannel";
     float _nextUpdate = 0;
 
-    private Transform xrCam; //position of our Main Camera
+    public Transform xrCam; //position of our Main Camera
 
     // Start is called before the first frame update
     void Start()
@@ -144,6 +144,9 @@ public class VivoxPlayer : MonoBehaviour
 
         if (_chan == null)
             return;
+
+        //This line is to be tested for positional voice chat
+        xrCam = GameObject.Find("Main Camera").transform;
 
         if (_chan.ChannelState.ToString() == "Connected")
         {
