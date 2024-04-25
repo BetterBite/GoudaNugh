@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1948,6 +1948,38 @@ PrefabInstance:
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: ObjectsToSpawn.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 2532569489995933871, guid: 82cf3d0f0017c1f4c8728f9235dba522, type: 3}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 6874117271501615836, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[6]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7470232761140357027, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -7185,6 +7217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72045876f918b71438dfb9cd2dec5308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VoiceChannelName: GoudaNughChannel
 --- !u!1 &1768621079
 GameObject:
   m_ObjectHideFlags: 0
