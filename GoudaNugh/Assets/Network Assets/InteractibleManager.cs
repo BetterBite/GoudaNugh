@@ -52,17 +52,14 @@ public class InteractibleManager : NetworkBehaviour {
                 InstantiatePastObjectRPC(objectReference);
                 InstantiateFutureObjectRPC(objectReference);
             }
+            SpawnWitnessPlease();
         }
-        if (!IsServer)
-        {
-            foreach (GameObject futureObject in LocalFutureObjects)
-            {
-                Instantiate(futureObject);
-            }
-        }
+
         
 
     }
+
+    
 
     /* 
     RPC Calls here. Make sure each has an attribute specifying to whom it is sent to
@@ -75,6 +72,15 @@ public class InteractibleManager : NetworkBehaviour {
      */
 
     // atm assume host is past player, client is future player
+
+    [Rpc(SendTo.NotMe)]
+    public void SpawnWitnessPlease() {
+            foreach (GameObject futureObject in LocalFutureObjects)
+            {
+                Instantiate(futureObject);
+            }
+        }
+
     [Rpc(SendTo.ClientsAndHost)]
     public void InstantiatePastObjectRPC(NetworkObjectReference objectReference) {
         // TODO - Add transforms to all Instantiate calls 

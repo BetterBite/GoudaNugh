@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5559,17 +5559,9 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3312963799696491362, guid: fbe15b381741b2f45939de3c67132685, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5568056116877363870, guid: fbe15b381741b2f45939de3c67132685, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1778033194}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbe15b381741b2f45939de3c67132685, type: 3}
---- !u!4 &430795388 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5568056116877363870, guid: fbe15b381741b2f45939de3c67132685, type: 3}
-  m_PrefabInstance: {fileID: 430795387}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &437949241
 GameObject:
   m_ObjectHideFlags: 0
@@ -12261,40 +12253,6 @@ MonoBehaviour:
   _characterController: {fileID: 921294578}
   pushBackStrength: 1
   _blackScreenFade: {fileID: 491512573}
---- !u!1001 &1778033193
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 430795388}
-    m_Modifications:
-    - target: {fileID: 393032082492922925, guid: 26efa2243d31cd44f84d219e3c9be2e9, type: 3}
-      propertyPath: m_Name
-      value: Future Radio
-      objectReference: {fileID: 0}
-    - target: {fileID: 2619020000997267171, guid: 26efa2243d31cd44f84d219e3c9be2e9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2619020000997267171, guid: 26efa2243d31cd44f84d219e3c9be2e9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2619020000997267171, guid: 26efa2243d31cd44f84d219e3c9be2e9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 26efa2243d31cd44f84d219e3c9be2e9, type: 3}
---- !u!4 &1778033194 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2619020000997267171, guid: 26efa2243d31cd44f84d219e3c9be2e9, type: 3}
-  m_PrefabInstance: {fileID: 1778033193}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1780331284
 PrefabInstance:
   m_ObjectHideFlags: 0
