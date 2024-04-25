@@ -72,3 +72,33 @@ MonoBehaviour:
     m_InternalValue: 0.05
   frequency:
     m_InternalValue: 10
+  targetAmp:
+    m_InternalValue: 0.05
+  targetFreq:
+    m_InternalValue: 10
+  ampThreshold: 0.01
+  freqThreshold: 0.5
+  waveIsValid:
+    m_InternalValue: 0
+  pastRot:
+    m_InternalValue: {x: 0, y: 0, z: 0, w: 0}
+  futureRot:
+    m_InternalValue: {x: 0, y: 0, z: 0, w: 0}
+  futureLeverGrabbed:
+    m_InternalValue: 0
+  pastLeverGrabbed:
+    m_InternalValue: 0
+  stationAmps:
+  - 0.04
+  - 0.01
+  - 0.08
+  stationFreqs:
+  - 10
+  - 5
+  - 25
+  codeEntered:
+    m_InternalValue: 0
+  screenState:
+    m_InternalValue: 2
+  radioSolved:
+    m_InternalValue: 0
