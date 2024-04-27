@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 public class InteractibleManager : NetworkBehaviour {
     public static InteractibleManager Singleton { get; private set; }
     public NetworkPrefabsList ObjectsToSpawn;
-
+    public GameObject[] LocalFutureObjects;
     public int[] SafeCode { get; private set; }
     
     //this bool can be ticked if you wish to test future and past objects in one game- it will trigger future objects spawning along 
@@ -25,6 +25,9 @@ public class InteractibleManager : NetworkBehaviour {
         SafeCode[1] = Random.Range(0,10);
         SafeCode[2] = Random.Range(0,10);
         Debug.Log("Safe code generated: " + SafeCode[0] + SafeCode[1] + SafeCode[2]);
+
+
+
     }
 
     // NetworkConnect.cs subscribes this method to OnSceneEvent. https://docs-multiplayer.unity3d.com/netcode/current/basics/scenemanagement/scene-events/
@@ -49,8 +52,14 @@ public class InteractibleManager : NetworkBehaviour {
                 InstantiatePastObjectRPC(objectReference);
                 InstantiateFutureObjectRPC(objectReference);
             }
+            SpawnWitnessPleaseRPC();
         }
+
+        
+
     }
+
+    
 
     /* 
     RPC Calls here. Make sure each has an attribute specifying to whom it is sent to
@@ -63,6 +72,15 @@ public class InteractibleManager : NetworkBehaviour {
      */
 
     // atm assume host is past player, client is future player
+
+    [Rpc(SendTo.NotMe)]
+    public void SpawnWitnessPleaseRPC() {
+            foreach (GameObject futureObject in LocalFutureObjects)
+            {
+                Instantiate(futureObject);
+            }
+        }
+
     [Rpc(SendTo.ClientsAndHost)]
     public void InstantiatePastObjectRPC(NetworkObjectReference objectReference) {
         // TODO - Add transforms to all Instantiate calls 

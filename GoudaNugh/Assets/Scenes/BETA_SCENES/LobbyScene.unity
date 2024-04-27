@@ -865,6 +865,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3909156968060383364, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4605878202121083456, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_Name
       value: Final XR Rig
@@ -1949,6 +1953,38 @@ PrefabInstance:
       propertyPath: ObjectsToSpawn.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 2532569489995933871, guid: 82cf3d0f0017c1f4c8728f9235dba522, type: 3}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 6874117271501615836, guid: 0dca6b979a56f214390f6987113b8cad, type: 3}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
+      propertyPath: LocalFutureObjects.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7470232761140357027, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3854855303
@@ -2058,6 +2094,10 @@ PrefabInstance:
       propertyPath: newPosition
       value: 
       objectReference: {fileID: 1170450167}
+    - target: {fileID: 6441408544769473660, guid: aab086e998681d04684eea939a0bd250, type: 3}
+      propertyPath: maxConnection
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6441408544769473660, guid: aab086e998681d04684eea939a0bd250, type: 3}
       propertyPath: myTextMeshProInputJoinCode
       value: 
@@ -7185,6 +7225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72045876f918b71438dfb9cd2dec5308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VoiceChannelName: GoudaNughChannel
 --- !u!1 &1768621079
 GameObject:
   m_ObjectHideFlags: 0
@@ -7372,7 +7413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

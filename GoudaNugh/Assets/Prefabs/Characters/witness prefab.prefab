@@ -633,9 +633,9 @@ GameObject:
   - component: {fileID: 4919146709500771180}
   - component: {fileID: 7595355032680129834}
   - component: {fileID: 8030920265011286455}
-  - component: {fileID: 5062919157415362929}
   - component: {fileID: 4879844708664162113}
   - component: {fileID: 3221060075071280444}
+  - component: {fileID: 8369987980259791632}
   m_Layer: 0
   m_Name: ListeningIcon
   m_TagString: Untagged
@@ -711,23 +711,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &5062919157415362929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148387683346890910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!222 &4879844708664162113
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -749,6 +732,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
+--- !u!114 &8369987980259791632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148387683346890910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &1241157281425030800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,9 +3728,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4373875451961218490}
-        m_TargetAssemblyTypeName: WitnessMicrophoneManager, Assembly-CSharp
-        m_MethodName: StartRecording
+      - m_Target: {fileID: 942613608676781767}
+        m_TargetAssemblyTypeName: WitnessManager, Assembly-CSharp
+        m_MethodName: StartWitnessQuery
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4632,6 +4634,27 @@ PrefabInstance:
       propertyPath: loopRecord
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6131254314877030727, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: SystemPrompt
+      value: "You are a witness to a murder of the owner of an antique shop. You
+        are currently in that antique shop. Your role is to answer questions about
+        the murder to the detective. Your name is Alberto.  Keep your response short
+        and to the point.  Three potential suspects: Lurni Kipp: A scientist studying
+        subatomic particles. He once knew Barnabas in College. Barnabas originally
+        borrowed Lurni\u2019s time machine, telling him that he wanted to try and
+        save his marriage, but in reality, he took it so he could start his pineapple
+        business. Lurni was falsely arrested by the time police when the time machine
+        was discovered as being used for illicit activities. Thomas Clark: A businessman
+        running the criminal streets of British Hong Kong. He is trying to use Barnabas\u2019
+        pineapples to smuggle opium into the 20th century where he can distribute
+        it. Recently Barnabas is starting to get cold feet and claims shadowy figures
+        are stalking him Walters: caretaker who was employed by Lurni to get the
+        silicon chip. But he really wanted to plant Clark\u2019s fingerprint on the
+        crime scene and implicate him in Barnabas\u2019 murder, so he could take
+        over the business  If asked for help point the detective in the direction
+        of the figurine and drawers as well as the book that needs a key. Once they
+        have explored these items stop suggesting them."
+      objectReference: {fileID: 0}
     - target: {fileID: 6217122772304760913, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4672,11 +4695,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8235180610010211436, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+      propertyPath: voice
+      value: onyx
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+--- !u!114 &942613608676781767 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1118272051392635803, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}
+  m_PrefabInstance: {fileID: 184701000024690012}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a717b53f914c254f8500e7f4c7fc4e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4373875451961218490 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4477440149899352294, guid: 0f124913f96e5be4a93f1b78d3b9551d, type: 3}

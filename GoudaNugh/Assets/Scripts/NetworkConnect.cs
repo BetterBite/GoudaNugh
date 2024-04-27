@@ -134,7 +134,7 @@ public class NetworkConnect : MonoBehaviour
 
         // SceneManager.LoadScene("BetaSceneMain");
         Debug.Log("Starting Game");
-        NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneMain", LoadSceneMode.Single);
+        NetworkManager.Singleton.SceneManager.LoadScene("BetaSceneSchoolsDay", LoadSceneMode.Single);
 
 
 

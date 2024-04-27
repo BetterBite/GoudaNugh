@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21a5af21e4faf240b0ee2c84ae68034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &256931804395216859
 GameObject:
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21a5af21e4faf240b0ee2c84ae68034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &413404953116551598
 GameObject:
@@ -1170,9 +1170,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727684506695483608}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 6}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.898, y: 4.006, z: 0.534}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3805426522780964676}
@@ -1188,7 +1188,7 @@ Transform:
   - {fileID: 3894088209867874798}
   - {fileID: 952569540257576091}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &3691659172281518168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2278,7 +2278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21a5af21e4faf240b0ee2c84ae68034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &2480995409394195520
 GameObject:
@@ -2893,7 +2893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21a5af21e4faf240b0ee2c84ae68034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &3244267558311133749
 GameObject:
@@ -3402,7 +3402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21a5af21e4faf240b0ee2c84ae68034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   vectorToPush: {x: 0, y: 0, z: 0}
 --- !u!1 &4202804273984824626
 GameObject:
@@ -3681,7 +3681,7 @@ Transform:
   m_GameObject: {fileID: 4576862209774571006}
   serializedVersion: 2
   m_LocalRotation: {x: -0.49916878, y: -0.5008299, z: -0.49916878, w: 0.5008299}
-  m_LocalPosition: {x: 0.30931807, y: 0.5402899, z: 0.17185198}
+  m_LocalPosition: {x: 0.309, y: -0.006, z: 0.77}
   m_LocalScale: {x: 74.074066, y: 74.07408, z: 74.07408}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3983,6 +3983,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e0e5573986b1740b7dc2666f9fa0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAttach:
+    m_PersistentCalls:
+      m_Calls: []
   link: 0
 --- !u!1 &4739927889132828075
 GameObject:
