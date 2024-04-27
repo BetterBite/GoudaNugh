@@ -15,7 +15,15 @@ public class InteractibleManager : NetworkBehaviour {
     
     //this bool can be ticked if you wish to test future and past objects in one game- it will trigger future objects spawning along 
     //past objects when set to true.
-    public bool singleInstanceTestingMode;
+    public enum TestingMode
+    {
+        Normal,
+        SpawnBoth,
+        OnlySpawnPast,
+        OnlySpawnFuture,
+    }
+
+    public TestingMode testingMode;
 
     public void Awake() {
         Singleton = this;
@@ -52,11 +60,11 @@ public class InteractibleManager : NetworkBehaviour {
                 InstantiatePastObjectRPC(objectReference);
                 InstantiateFutureObjectRPC(objectReference);
             }
-            SpawnWitnessPleaseRPC();
+            
         }
 
-        
 
+       
     }
 
     
@@ -73,7 +81,7 @@ public class InteractibleManager : NetworkBehaviour {
 
     // atm assume host is past player, client is future player
 
-    [Rpc(SendTo.NotMe)]
+    [Rpc(SendTo.ClientsAndHost)]
     public void SpawnWitnessPleaseRPC() {
             foreach (GameObject futureObject in LocalFutureObjects)
             {
@@ -84,7 +92,8 @@ public class InteractibleManager : NetworkBehaviour {
     [Rpc(SendTo.ClientsAndHost)]
     public void InstantiatePastObjectRPC(NetworkObjectReference objectReference) {
         // TODO - Add transforms to all Instantiate calls 
-        if (IsServer) { //Check if you are the past player here
+        if (testingMode == TestingMode.OnlySpawnFuture) return;
+        if (IsServer || testingMode == TestingMode.SpawnBoth || testingMode == TestingMode.OnlySpawnPast) { //Check if you are the past player here
             objectReference.TryGet(out NetworkObject networkObject);
             GameObject Object = Instantiate(networkObject.gameObject.GetComponent<Variables>().PastObjectPrefab);
             Object.GetComponent<PastObject>().networkObject = networkObject;
@@ -96,12 +105,13 @@ public class InteractibleManager : NetworkBehaviour {
     [Rpc(SendTo.ClientsAndHost)]
     public void InstantiateFutureObjectRPC(NetworkObjectReference objectReference) {
         // TODO - Add transforms to all Instantiate calls 
-        if (!IsServer || singleInstanceTestingMode) { //Check if you are the future player here
+        if (!IsServer || testingMode == TestingMode.SpawnBoth || testingMode == TestingMode.OnlySpawnFuture) { //Check if you are the future player here
             objectReference.TryGet(out NetworkObject networkObject);
             GameObject Object = Instantiate(networkObject.gameObject.GetComponent<Variables>().FutureObjectPrefab);
             Object.GetComponent<FutureObject>().networkObject = networkObject;
             Object.GetComponent<FutureObject>().Setup();
             TransferOwnerServerRPC(objectReference, NetworkManager.Singleton.LocalClientId);
+            SpawnWitnessPleaseRPC();
         }
     }
 
