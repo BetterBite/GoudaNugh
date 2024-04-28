@@ -43,7 +43,7 @@ public class PastRadioLever : MonoBehaviour
         {
             interpolatedAngle = (bottomAngle - angle) / (bottomAngle - topAngle);
             float lerp = Mathf.Lerp(0, 0.1f, interpolatedAngle);
-            wave.amplitude = lerp;
+            //wave.amplitude = lerp;
             radio.UpdateAmplitude(lerp);
 
             prevAngle = angle;

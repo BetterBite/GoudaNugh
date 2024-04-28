@@ -77,25 +77,25 @@ public class RadioVariables : Variables
 
     private void ChangeStationOnGrab()
     {
-        if (pastLeverGrabbed.Value ^ futureLeverGrabbed.Value)
-        {
-            //screenState.Value = ScreenState.SingleGrab;
-        }
-        if (pastLeverGrabbed.Value || futureLeverGrabbed.Value)
-        {
-            if (!codeEntered.Value) screenState.Value = ScreenState.EnterStation;
-            else
-            {
-                screenState.Value = ScreenState.MatchWaves;
-                stationIndex = 0;
-                StartCoroutine(NewMatchingLevel(stationIndex));
-            } 
+        //if (pastLeverGrabbed.Value ^ futureLeverGrabbed.Value)
+        //{
+        //    //screenState.Value = ScreenState.SingleGrab;
+        //}
+        //if (pastLeverGrabbed.Value || futureLeverGrabbed.Value)
+        //{
+        //    if (!codeEntered.Value) screenState.Value = ScreenState.EnterStation;
+        //    else
+        //    {
+        //        screenState.Value = ScreenState.MatchWaves;
+        //        stationIndex = 0;
+        //        StartCoroutine(NewMatchingLevel(stationIndex));
+        //    } 
                 
-        } 
-        else 
-        {
-            //screenState.Value = ScreenState.Off;
-        }
+        //} 
+        //else 
+        //{
+        //    //screenState.Value = ScreenState.Off;
+        //}
     }
 
     private bool CheckWave()

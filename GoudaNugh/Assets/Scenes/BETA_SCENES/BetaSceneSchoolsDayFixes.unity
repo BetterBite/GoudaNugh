@@ -899,6 +899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio source
       objectReference: {fileID: 0}
+    - target: {fileID: 3359206455631528698, guid: b3c345f5d66844d6fab684b9bc1cb426, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5617994705733387162, guid: b3c345f5d66844d6fab684b9bc1cb426, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9323,7 +9327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

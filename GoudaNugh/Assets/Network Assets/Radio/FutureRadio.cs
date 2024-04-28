@@ -25,6 +25,9 @@ public class FutureRadio : FutureObject
         ghostRot.SetActive(false);
         vars = networkObject.GetComponent<RadioVariables>();
         vars.amplitude.OnValueChanged += ReceiveUpdatedAmplitude;
+        vars.frequency.OnValueChanged += ReceiveUpdatedFrequency;
+
+
         vars.pastLeverGrabbed.OnValueChanged += ReceiveLeverGrab;
         vars.screenState.OnValueChanged += ChangeScreen;
 
@@ -44,6 +47,13 @@ public class FutureRadio : FutureObject
         vars.UpdateFrequencyServerRpc(freq, leverRot.transform.rotation);
         
     }
+
+    private void ReceiveUpdatedFrequency(float prevFreq, float freq)
+    {
+        wave.frequency = freq;
+        
+    }
+
 
     private void ReceiveUpdatedAmplitude(float prevAmp, float currAmp)
     {
