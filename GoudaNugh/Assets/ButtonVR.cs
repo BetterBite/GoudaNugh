@@ -61,13 +61,13 @@ public class ButtonVR : MonoBehaviour
 
 
 
-    private void Pressed()
+    public void Pressed()
     {
         isPressed = true;
         onPress.Invoke();
     }
 
-    private void Released()
+    public void Released()
     {
         isPressed = false;
         onRelease.Invoke();

@@ -30,6 +30,8 @@ public class PastRadio : PastObject
         
         vars = networkObject.GetComponent<RadioVariables>();
         vars.frequency.OnValueChanged += ReceiveUpdatedFrequency;
+        vars.amplitude.OnValueChanged += ReceiveUpdatedAmplitude;
+
         vars.futureLeverGrabbed.OnValueChanged += ReceiveLeverGrab;
         vars.screenState.OnValueChanged += ChangeScreen;
         vars.targetAmp.OnValueChanged += ReceiveNewTargetAmp;
@@ -47,6 +49,11 @@ public class PastRadio : PastObject
     { 
         wave.frequency = currFreq;
         ghostRot.transform.rotation = vars.futureRot.Value;
+    }
+
+    private void ReceiveUpdatedAmplitude(float prevAmp, float amp)
+    {
+        wave.amplitude =  amp;
     }
 
     public void UpdateAmplitude(float amp)

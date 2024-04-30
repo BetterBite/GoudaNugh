@@ -43,7 +43,7 @@ public class FutureRadioLever : MonoBehaviour
         {
             interpolatedAngle = (bottomAngle - angle) / (bottomAngle - topAngle);
             float lerp = Mathf.Lerp(0, 30, interpolatedAngle);
-            wave.frequency = lerp;
+            //wave.frequency = lerp;
             radio.UpdateFrequency(lerp);
 
             prevAngle = angle;
