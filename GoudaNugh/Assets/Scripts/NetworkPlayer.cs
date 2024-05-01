@@ -31,24 +31,25 @@ public class NetworkPlayer : NetworkBehaviour
             {
                 item.enabled = false;
             }
-        }
 
-        if (IsHost)
-        {
-            isPast = true;
-            Debug.Log("isPast: true");
-            foreach (var item in ghostRenderers)
+
+            if (IsHost)
             {
-                item.material = futureMaterial;
+                isPast = true;
+                Debug.Log("isPast: true");
+                foreach (var item in ghostRenderers)
+                {
+                    item.material = futureMaterial;
+                }
             }
-        }
-        else
-        {
-            isPast = false;
-            Debug.Log("isPast: false");
-            foreach (var item in ghostRenderers)
+            else
             {
-                item.material = pastMaterial;
+                isPast = false;
+                Debug.Log("isPast: false");
+                foreach (var item in ghostRenderers)
+                {
+                    item.material = pastMaterial;
+                }
             }
         }
         VRRigReferences.Singleton.SpawnObjects(isPast);
