@@ -324,6 +324,8 @@ MonoBehaviour:
   - {fileID: 8891146023253426599}
   - {fileID: 5366192553257584728}
   particles:
+  - {fileID: 1764985902058414524}
+  - {fileID: 51401055842057247}
   - {fileID: 8354152480955202034}
   futureMaterial: {fileID: 2100000, guid: 4a746ddab91fd474a8f2f0b55842edd1, type: 2}
   pastMaterial: {fileID: 2100000, guid: 339eae670abe2c345a7c1e3ae1500b19, type: 2}
@@ -11581,16 +11583,8 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 19832148, guid: 2591e031258c3f544ba8e16e4fc8c0ee, type: 3}
-      propertyPath: ColorModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19832148, guid: 2591e031258c3f544ba8e16e4fc8c0ee, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 19832148, guid: 2591e031258c3f544ba8e16e4fc8c0ee, type: 3}
-      propertyPath: SizeBySpeedModule.enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19832148, guid: 2591e031258c3f544ba8e16e4fc8c0ee, type: 3}
       propertyPath: ShapeModule.radiusThickness
@@ -11650,7 +11644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19832148, guid: 2591e031258c3f544ba8e16e4fc8c0ee, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19832148, guid: 2591e031258c3f544ba8e16e4fc8c0ee, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.m_NumAlphaKeys
