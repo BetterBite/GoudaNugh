@@ -39,7 +39,7 @@ public class NetworkPlayer : NetworkBehaviour
             Debug.Log("isPast: true");
             foreach (var item in ghostRenderers)
             {
-                item.material = pastMaterial;
+                item.material = futureMaterial;
             }
         }
         else
@@ -48,7 +48,7 @@ public class NetworkPlayer : NetworkBehaviour
             Debug.Log("isPast: false");
             foreach (var item in ghostRenderers)
             {
-                item.material = futureMaterial;
+                item.material = pastMaterial;
             }
         }
         VRRigReferences.Singleton.SpawnObjects(isPast);
