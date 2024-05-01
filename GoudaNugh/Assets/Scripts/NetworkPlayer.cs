@@ -15,6 +15,11 @@ public class NetworkPlayer : NetworkBehaviour
 
     public Renderer[] meshToDisable;
 
+    public Renderer[] ghostRenderers;
+
+    public Material futureMaterial;
+    public Material pastMaterial;
+
     public bool isPast;
 
     public override void OnNetworkSpawn()
@@ -32,11 +37,19 @@ public class NetworkPlayer : NetworkBehaviour
         {
             isPast = true;
             Debug.Log("isPast: true");
+            foreach (var item in ghostRenderers)
+            {
+                item.material = pastMaterial;
+            }
         }
         else
         {
             isPast = false;
             Debug.Log("isPast: false");
+            foreach (var item in ghostRenderers)
+            {
+                item.material = futureMaterial;
+            }
         }
         VRRigReferences.Singleton.SpawnObjects(isPast);
 
