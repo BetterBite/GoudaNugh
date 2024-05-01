@@ -27,8 +27,7 @@ public class NetworkPlayer : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-        ParticleSystem.MainModule mainModule = particles[0].main;
-        mainModule.startColor = Color.red;
+        
         if (IsOwner)
         {
             foreach (var item in meshToDisable)
@@ -49,6 +48,11 @@ public class NetworkPlayer : NetworkBehaviour
             {
                 item.material = futureMaterial;
             }
+            foreach (ParticleSystem ps in particles)
+            {
+                ParticleSystem.MainModule mainModule = ps.main;
+                mainModule.startColor = Color.blue;
+            }
         }
         else
         {
@@ -57,6 +61,12 @@ public class NetworkPlayer : NetworkBehaviour
             foreach (var item in ghostRenderers)
             {
                 item.material = pastMaterial;
+            }
+
+            foreach (ParticleSystem ps in particles)
+            {
+                ParticleSystem.MainModule mainModule = ps.main;
+                mainModule.startColor = Color.red;
             }
         }
 
