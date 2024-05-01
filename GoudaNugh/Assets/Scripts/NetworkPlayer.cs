@@ -33,27 +33,30 @@ public class NetworkPlayer : NetworkBehaviour
             }
 
 
-            if (IsHost)
+            
+        }
+
+
+        if (IsHost)
+        {
+            isPast = true;
+            Debug.Log("isPast: true");
+            foreach (var item in ghostRenderers)
             {
-                isPast = true;
-                Debug.Log("isPast: true");
-                foreach (var item in ghostRenderers)
-                {
-                    item.material = futureMaterial;
-                }
-            }
-            else
-            {
-                isPast = false;
-                Debug.Log("isPast: false");
-                foreach (var item in ghostRenderers)
-                {
-                    item.material = pastMaterial;
-                }
+                item.material = futureMaterial;
             }
         }
-        VRRigReferences.Singleton.SpawnObjects(isPast);
+        else
+        {
+            isPast = false;
+            Debug.Log("isPast: false");
+            foreach (var item in ghostRenderers)
+            {
+                item.material = pastMaterial;
+            }
+        }
 
+ 
 
         ///
         var myID = transform.GetComponent<NetworkObject>().NetworkObjectId;
