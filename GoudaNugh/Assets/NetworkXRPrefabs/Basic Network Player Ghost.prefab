@@ -451,7 +451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 468624, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07
+      value: -0.041
       objectReference: {fileID: 0}
     - target: {fileID: 468624, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -716,7 +716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.018
+      value: 0.135
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -756,7 +756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
       propertyPath: lengthInSec
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
       propertyPath: simulationSpeed
@@ -784,11 +784,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.21176471
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -965,9 +969,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7333701770939225798, guid: 550475be19d46bc41a1ca2896cf297f2, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333701770939225798, guid: 550475be19d46bc41a1ca2896cf297f2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 339eae670abe2c345a7c1e3ae1500b19, type: 2}
+      objectReference: {fileID: 2100000, guid: 00dbbe4dbdfd93f409da766a8d370c93, type: 2}
     - target: {fileID: 7333701770939225798, guid: 550475be19d46bc41a1ca2896cf297f2, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -1175,12 +1183,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6077453980500949704, guid: 5313728887daba444a6f84ae42f73239, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6077453980500949704, guid: 5313728887daba444a6f84ae42f73239, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 339eae670abe2c345a7c1e3ae1500b19, type: 2}
+      objectReference: {fileID: 2100000, guid: 00dbbe4dbdfd93f409da766a8d370c93, type: 2}
     - target: {fileID: 6077453980500949704, guid: 5313728887daba444a6f84ae42f73239, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -1261,12 +1269,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8071438394632861963, guid: aa5bfdfd1f40c50459a730af392c0802, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8071438394632861963, guid: aa5bfdfd1f40c50459a730af392c0802, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 339eae670abe2c345a7c1e3ae1500b19, type: 2}
+      objectReference: {fileID: 2100000, guid: 00dbbe4dbdfd93f409da766a8d370c93, type: 2}
     - target: {fileID: 8071438394632861963, guid: aa5bfdfd1f40c50459a730af392c0802, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -1446,6 +1454,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19832148, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
+      propertyPath: cullingMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19832148, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
       propertyPath: lengthInSec
       value: 1
       objectReference: {fileID: 0}
@@ -1454,8 +1466,20 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 19832148, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
+      propertyPath: ShapeModule.type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19832148, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
       propertyPath: startDelay.scalar
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19832148, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
+      propertyPath: ColorModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19832148, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19832148, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
       propertyPath: startDelay.minScalar
@@ -1464,6 +1488,10 @@ PrefabInstance:
     - target: {fileID: 19832148, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
       propertyPath: ColorBySpeedModule.enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19832148, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19832148, guid: c83a45822d0d3f94991e76a87670125c, type: 3}
       propertyPath: InitialModule.maxNumParticles
