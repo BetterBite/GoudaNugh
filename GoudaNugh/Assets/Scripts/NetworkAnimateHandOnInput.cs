@@ -25,7 +25,7 @@ public class NetworkAnimateHandOnInput : NetworkBehaviour
         {
             float triggerValue = pinchAnimationAction.action.ReadValue<float>();
             handAnimator.SetFloat("Trigger", triggerValue);
-
+            Debug.Log("Network Animate");
             float gripValue = gripAnimationAction.action.ReadValue<float>();
             handAnimator.SetFloat("Grip", gripValue);
         }
