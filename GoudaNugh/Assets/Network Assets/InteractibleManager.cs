@@ -59,6 +59,7 @@ public class InteractibleManager : NetworkBehaviour {
                 NetworkObjectReference objectReference = new NetworkObjectReference(networkInstance);
                 InstantiatePastObjectRPC(objectReference);
                 InstantiateFutureObjectRPC(objectReference);
+                SpawnWitnessPleaseRPC();
             }
             
         }
@@ -86,7 +87,7 @@ public class InteractibleManager : NetworkBehaviour {
     public void SpawnWitnessPleaseRPC() {
             foreach (GameObject futureObject in LocalFutureObjects)
             {
-                Instantiate(futureObject);
+                if (!IsServer) Instantiate(futureObject);
             }
         }
 
@@ -113,7 +114,6 @@ public class InteractibleManager : NetworkBehaviour {
             Object.GetComponent<FutureObject>().networkObject = networkObject;
             Object.GetComponent<FutureObject>().Setup();
             TransferOwnerServerRPC(objectReference, NetworkManager.Singleton.LocalClientId);
-            SpawnWitnessPleaseRPC();
         }
     }
 
