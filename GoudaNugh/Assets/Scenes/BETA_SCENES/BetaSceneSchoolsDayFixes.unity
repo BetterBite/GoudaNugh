@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8495,9 +8495,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5694345718932813588, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+      propertyPath: pastMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 7075b5b35a1ea4e17a69c5e63ae13945, type: 2}
+    - target: {fileID: 5694345718932813588, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: futureObjects
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5694345718932813588, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+      propertyPath: futureMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: ea3736667f9cc6d4b80f0457fa0dd454, type: 2}
+    - target: {fileID: 5694345718932813588, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+      propertyPath: leftHandRenderer
+      value: 
+      objectReference: {fileID: 921294580}
+    - target: {fileID: 5694345718932813588, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+      propertyPath: rightHandRenderer
+      value: 
+      objectReference: {fileID: 921294579}
     - target: {fileID: 7035710502999825827, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_RequestedTrackingOriginMode
       value: 2
@@ -8570,6 +8586,16 @@ Transform:
 --- !u!143 &921294578 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 2848277190157475477, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+  m_PrefabInstance: {fileID: 921294575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &921294579 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1760462203317564661, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+  m_PrefabInstance: {fileID: 921294575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &921294580 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4882369212413293646, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
   m_PrefabInstance: {fileID: 921294575}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &926289711

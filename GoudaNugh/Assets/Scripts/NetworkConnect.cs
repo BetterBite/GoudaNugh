@@ -139,7 +139,7 @@ public class NetworkConnect : MonoBehaviour
 
 
         InteractibleManager.Singleton.OnSceneLoad();
-
+        
         //NetworkSceneManager.OnSceneEvent.
         
 

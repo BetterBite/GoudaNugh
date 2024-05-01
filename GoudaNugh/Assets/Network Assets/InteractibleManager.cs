@@ -67,6 +67,7 @@ public class InteractibleManager : NetworkBehaviour {
        
     }
 
+
     
 
     /* 
@@ -100,6 +101,7 @@ public class InteractibleManager : NetworkBehaviour {
             Object.GetComponent<PastObject>().Setup();
             TransferOwnerServerRPC(objectReference, NetworkManager.Singleton.LocalClientId);
         }
+       
     }
 
     [Rpc(SendTo.ClientsAndHost)]
