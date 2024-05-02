@@ -69,7 +69,10 @@ public class GlobeVariables : Variables
     private void Update()
     {
 
-        if (true)
+        Debug.Log("Counter: " + rotation.Value);
+        Debug.Log("Target" + targetRot.Value);
+
+        if (!true)
         {
             //targetHoriz.Value += new Vector3(0, 0.1f, 0);
             float prog = Mathf.Sin(Time.timeSinceLevelLoad) / 2 + 0.5f;
