@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class PastGlobe : PastObject
 {
+
+
+    public Transform counterTrans;
+    public Transform targetTrans;
+
     private GlobeVariables vars;
     public GameObject counter;
     public GameObject targetRot;
@@ -53,5 +58,9 @@ public class PastGlobe : PastObject
         //targetVert.rotation = Quaternion.Euler(vars.targetVert.Value);
     }
 
+    private void Update()
+    {
+        Debug.Log(Vector3.Distance(counterTrans.position, targetTrans.position));
+    }
 
 }
