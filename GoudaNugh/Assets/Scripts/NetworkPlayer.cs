@@ -19,6 +19,9 @@ public class NetworkPlayer : NetworkBehaviour
 
     public ParticleSystem[] particles;
 
+    public GameObject monocle;
+    public GameObject pipe;
+
     public Material futureMaterial;
     public Material pastMaterial;
 
@@ -53,6 +56,7 @@ public class NetworkPlayer : NetworkBehaviour
                 ParticleSystem.MainModule mainModule = ps.main;
                 mainModule.startColor = Color.blue;
             }
+            monocle.SetActive(true);
         }
         else
         {
@@ -68,6 +72,7 @@ public class NetworkPlayer : NetworkBehaviour
                 ParticleSystem.MainModule mainModule = ps.main;
                 mainModule.startColor = Color.red;
             }
+            pipe.SetActive(true);
         }
 
  
