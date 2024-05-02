@@ -23,7 +23,7 @@ public class PastGlobeLever : MonoBehaviour
 
     void Awake()
     {
-        startRot = transform.localRotation;
+        startRot = transform.rotation;
         activated = false;
         //threshold = 5;
         joint = GetComponent<HingeJoint>();

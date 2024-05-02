@@ -70,7 +70,7 @@ public class GlobeVariables : Variables
     {
 
         //Debug.Log(Quaternion.Angle(Quaternion.Euler(targetRot.Value), Quaternion.Euler(rotation.Value)));
-        targetRot.Value = new Vector3(0, targetRot.Value.y + 0.1f, 45);
+        targetRot.Value = new Vector3(0, 45, 45);
         if (!true)
         {
             //targetHoriz.Value += new Vector3(0, 0.1f, 0);
