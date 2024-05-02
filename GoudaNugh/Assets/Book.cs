@@ -17,7 +17,7 @@ public class Book : MonoBehaviour
         leftBody.isKinematic = true;
         rightBody.isKinematic = true;
         leftBody.constraints = RigidbodyConstraints.None;
-        rightBody.constraints = RigidbodyConstraints.None;
+        rightBody.constraints = RigidbodyConstraints.FreezeAll;
         leftBody.isKinematic = false;
         rightBody.isKinematic = false;
     }

@@ -316,6 +316,9 @@ MonoBehaviour:
   - {fileID: 1401481249590119392}
   - {fileID: 1870048822621706915}
   - {fileID: 3200017619191374446}
+  ghostRenderers: []
+  futureMaterial: {fileID: 0}
+  pastMaterial: {fileID: 0}
   isPast: 0
 --- !u!114 &5292158607460146990
 MonoBehaviour:
@@ -554,6 +557,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
       propertyPath: m_Name
       value: FX_Steam
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
       propertyPath: m_LocalScale.x

@@ -15,31 +15,62 @@ public class NetworkPlayer : NetworkBehaviour
 
     public Renderer[] meshToDisable;
 
+    public Renderer[] ghostRenderers;
+
+    public ParticleSystem[] particles;
+
+    public Material futureMaterial;
+    public Material pastMaterial;
+
     public bool isPast;
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
+        
         if (IsOwner)
         {
             foreach (var item in meshToDisable)
             {
                 item.enabled = false;
             }
+
+
+            
         }
+
 
         if (IsHost)
         {
             isPast = true;
             Debug.Log("isPast: true");
+            foreach (var item in ghostRenderers)
+            {
+                item.material = futureMaterial;
+            }
+            foreach (ParticleSystem ps in particles)
+            {
+                ParticleSystem.MainModule mainModule = ps.main;
+                mainModule.startColor = Color.blue;
+            }
         }
         else
         {
             isPast = false;
             Debug.Log("isPast: false");
-        }
-        VRRigReferences.Singleton.SpawnObjects(isPast);
+            foreach (var item in ghostRenderers)
+            {
+                item.material = pastMaterial;
+            }
 
+            foreach (ParticleSystem ps in particles)
+            {
+                ParticleSystem.MainModule mainModule = ps.main;
+                mainModule.startColor = Color.red;
+            }
+        }
+
+ 
 
         ///
         var myID = transform.GetComponent<NetworkObject>().NetworkObjectId;

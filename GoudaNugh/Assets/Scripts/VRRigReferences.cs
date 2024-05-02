@@ -10,23 +10,28 @@ public class VRRigReferences : MonoBehaviour
     public Transform leftHand;
     public Transform rightHand;
 
-    public GameObject pastObjects;
-    public GameObject futureObjects;
-    
+    public Renderer leftHandRenderer;
+    public Renderer rightHandRenderer;
+
+
+    public Material pastMaterial;
+    public Material futureMaterial;
     private void Awake() 
     {
         Singleton = this;
     }
 
-    public void SpawnObjects(bool isPast)
+    public void ChangeGloves (bool isPast)
     {
-        //if (isPast)
-        //{
-        //    pastObjects.SetActive(true);
-        //} else
-        //{
-        //    futureObjects.SetActive(true);
-        //}
+        if (isPast)
+        {
+            leftHandRenderer.material = pastMaterial;
+            rightHandRenderer.material = pastMaterial;
+        } else
+        {
+            rightHandRenderer.material = futureMaterial;
+            leftHandRenderer.material = futureMaterial;
+        }
     }
 
     
