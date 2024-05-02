@@ -87,7 +87,6 @@ public class FutureGlobeLever : MonoBehaviour
             float angle = transform.rotation[axis];
             //if (angle > 90) angle = -1 * angle + 180;
             Spin(angle);
-            Debug.Log(transform.rotation[axis]);
 
             activated = (transform.rotation.eulerAngles[axis] < triggerAngle);
             //Debug.Log(activated);

@@ -69,8 +69,7 @@ public class GlobeVariables : Variables
     private void Update()
     {
         targetRot.Value = new Vector3(0, 45, 0);
-        Debug.Log("Counter: " + rotation.Value);
-        Debug.Log("Target" + targetRot.Value);
+        Debug.Log(Quaternion.Angle(Quaternion.Euler(targetRot.Value), Quaternion.Euler(rotation.Value)));
 
         if (!true)
         {
