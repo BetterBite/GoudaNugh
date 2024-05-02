@@ -69,7 +69,7 @@ public class GlobeVariables : Variables
     private void Update()
     {
 
-        if (globeOn.Value)
+        if (true)
         {
             //targetHoriz.Value += new Vector3(0, 0.1f, 0);
             float prog = Mathf.Sin(Time.timeSinceLevelLoad) / 2 + 0.5f;
