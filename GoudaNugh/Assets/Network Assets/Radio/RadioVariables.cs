@@ -30,7 +30,7 @@ public class RadioVariables : Variables
     
     private int stationIndex = 0;
     public NetworkVariable<bool> codeEntered = new NetworkVariable<bool>(false);
-    public NetworkVariable<ScreenState> screenState = new(ScreenState.Off);
+    public NetworkVariable<ScreenState> screenState = new(ScreenState.EnterStation);
 
     public NetworkVariable<bool> radioSolved = new NetworkVariable<bool>(false);
 
