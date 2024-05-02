@@ -54,7 +54,9 @@ public class NetworkPlayer : NetworkBehaviour
             foreach (ParticleSystem ps in particles)
             {
                 ParticleSystem.MainModule mainModule = ps.main;
-                mainModule.startColor = Color.blue;
+                Color newCol = Color.blue;
+                newCol.a = 0.3f;
+                mainModule.startColor = newCol;
             }
             monocle.SetActive(true);
         }
@@ -70,7 +72,10 @@ public class NetworkPlayer : NetworkBehaviour
             foreach (ParticleSystem ps in particles)
             {
                 ParticleSystem.MainModule mainModule = ps.main;
-                mainModule.startColor = Color.red;
+                Color newCol = Color.red;
+                newCol.a = 0.3f;
+                mainModule.startColor = newCol;
+
             }
             pipe.SetActive(true);
         }
