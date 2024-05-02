@@ -19,7 +19,7 @@ public class PastGlobe : PastObject
         vars.globeOn.OnValueChanged = ToggleGlobe;
         vars.targetRot.OnValueChanged = UpdateTarget;
         vars.futureLeverGrabbed.OnValueChanged = ReceiveFutureGrab;
-        vars.globeOn.Value = false;
+        vars.globeOn.Value = true;
     }
 
     private void ToggleGlobe(bool wasActive, bool isActive)
@@ -42,12 +42,13 @@ public class PastGlobe : PastObject
 
     public void UpdateRotation(Vector3 prevVec, Vector3 currVec)
     {
+        ghostLever.transform.rotation = vars.futureRot.Value;
         counter.transform.rotation = Quaternion.Euler(currVec);
     }
 
     private void UpdateTarget(Vector3 prevRot, Vector3 rot)
     {
-        ghostLever.transform.rotation = vars.futureRot.Value;
+        
         targetRot.transform.rotation = Quaternion.Euler(rot);
         //targetVert.rotation = Quaternion.Euler(vars.targetVert.Value);
     }

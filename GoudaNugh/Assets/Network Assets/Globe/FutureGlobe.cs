@@ -53,15 +53,12 @@ public class FutureGlobe : FutureObject
 
     private void UpdateRotation(Vector3 prevVec, Vector3 currVec) 
     {
+        ghostLever.transform.rotation = vars.pastRot.Value;
         counter.transform.rotation = Quaternion.Euler(currVec);
     }
 
     private void UpdateTarget(Vector3 prevRot, Vector3 rot)
     {
-        if (vars.globeOn.Value) 
-        {
-            ghostLever.transform.rotation = Quaternion.Euler(prevRot);
-        }
         targetRot.transform.rotation = Quaternion.Euler(rot);
         //targetVert.rotation = Quaternion.Euler(vars.targetVert.Value);
     }

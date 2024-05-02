@@ -8,7 +8,7 @@ public class GlobeVariables : Variables
     public NetworkVariable<Vector3> rotation = new NetworkVariable<Vector3>();
     //public NetworkVariable<Vector3> targetHoriz = new NetworkVariable<Vector3>();
     public NetworkVariable<Vector3> targetRot = new NetworkVariable<Vector3>();   
-    public NetworkVariable<bool> globeOn = new NetworkVariable<bool>(false);
+    public NetworkVariable<bool> globeOn = new NetworkVariable<bool>(true);
 
     public NetworkVariable<bool> futureLeverGrabbed = new NetworkVariable<bool>(false);
     public NetworkVariable<bool> pastLeverGrabbed = new NetworkVariable<bool>(false);
@@ -68,7 +68,7 @@ public class GlobeVariables : Variables
 
     private void Update()
     {
-
+        targetRot.Value = new Vector3(0, 45, 0);
         Debug.Log("Counter: " + rotation.Value);
         Debug.Log("Target" + targetRot.Value);
 
