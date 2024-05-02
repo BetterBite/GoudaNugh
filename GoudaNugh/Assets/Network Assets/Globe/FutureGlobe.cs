@@ -8,7 +8,6 @@ public class FutureGlobe : FutureObject
 {
     private GlobeVariables vars;
     public GameObject counter;
-    public Transform pastAxis;
 
     public GameObject lever;
     public GameObject ghostLever;

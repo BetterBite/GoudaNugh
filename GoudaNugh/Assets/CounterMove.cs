@@ -5,7 +5,6 @@ using UnityEngine;
 public class CounterMove : MonoBehaviour
 {
     // Start is called before the first frame update
-    public PastGlobeLever lever;
     void Start()
     {
         
