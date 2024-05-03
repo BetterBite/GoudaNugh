@@ -12,7 +12,7 @@ public class PastGlobeLever : MonoBehaviour
     //public UnityEvent[] actions;
     private HingeJoint joint;
     private int axis;
-    private float rotation;
+    private float yAxisStart;
     public bool grabbed;
     public bool activated;
     private Quaternion startRot;
@@ -23,7 +23,9 @@ public class PastGlobeLever : MonoBehaviour
 
     void Awake()
     {
+
         startRot = transform.rotation;
+        yAxisStart = startRot[1];
         activated = false;
         //threshold = 5;
         joint = GetComponent<HingeJoint>();
@@ -84,13 +86,12 @@ public class PastGlobeLever : MonoBehaviour
     {
         if (grabbed)
         {
-            float angle = transform.rotation[axis];
-            //if (angle > 90) angle = -1 * angle + 180;
+            float angle = transform.rotation[1] - yAxisStart;
             Spin(angle);
 
-            //Debug.Log(transform.rotation[axis]);
+            //Debug.Log(angle);
 
-            activated = (transform.rotation.eulerAngles[axis] < triggerAngle);
+            //activated = (transform.rotation.eulerAngles[axis] < triggerAngle);
             //Debug.Log(activated);
 
         }
