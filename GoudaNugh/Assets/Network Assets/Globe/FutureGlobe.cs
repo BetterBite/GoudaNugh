@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -11,6 +12,9 @@ public class FutureGlobe : FutureObject
 
     public GameObject lever;
     public GameObject ghostLever;
+
+    public Renderer earthRend;
+    public Material[] transparentMaterials;
 
     //public Transform targetHoriz;
     public GameObject target;
@@ -31,8 +35,7 @@ public class FutureGlobe : FutureObject
         switch (state)
         {
             case GlobeVariables.GlobeStates.Activated:
-                counter.gameObject.SetActive(true);
-                target.SetActive(true);
+                StartGlobe();
                 break;
             case GlobeVariables.GlobeStates.Solved:
                 counter.gameObject.SetActive(false);
@@ -45,14 +48,22 @@ public class FutureGlobe : FutureObject
 
     }
 
+
     public void ActivateMoon()
     {
         lever.SetActive(true);
-        if (vars.globeState.Value == GlobeVariables.GlobeStates.Unactivated) vars.globeState.Value = GlobeVariables.GlobeStates.SingleActivated;
-        if (vars.globeState.Value == GlobeVariables.GlobeStates.SingleActivated) vars.globeState.Value = GlobeVariables.GlobeStates.Activated;
-
+        vars.AdvanceSunMoonServerRpc();
 
     }
+
+
+    public void StartGlobe()
+    {
+        earthRend.materials = transparentMaterials;
+        counter.gameObject.SetActive(true);
+        target.SetActive(true);
+    }
+
 
     public void OnGrab(bool grabbed)
     {

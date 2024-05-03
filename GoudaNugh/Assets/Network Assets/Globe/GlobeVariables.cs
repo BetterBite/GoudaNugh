@@ -12,7 +12,7 @@ public class GlobeVariables : Variables
     public NetworkVariable<bool> futureLeverGrabbed = new NetworkVariable<bool>(false);
     public NetworkVariable<bool> pastLeverGrabbed = new NetworkVariable<bool>(false);
 
-    public NetworkVariable<GlobeStates> globeState = new NetworkVariable<GlobeStates>();
+    public NetworkVariable<GlobeStates> globeState = new NetworkVariable<GlobeStates>(GlobeStates.Unactivated);
 
     public NetworkVariable<Quaternion> pastRot = new NetworkVariable<Quaternion>();
     public NetworkVariable<Quaternion> futureRot = new NetworkVariable<Quaternion>();
@@ -23,6 +23,18 @@ public class GlobeVariables : Variables
         SingleActivated,
         Activated,
         Solved,
+    }
+
+    [Rpc(SendTo.Server)]
+    public void ChangeStateServerRpc(GlobeStates state)
+    {
+        globeState.Value = state;
+    }
+
+    [Rpc(SendTo.Server)]
+    public void AdvanceSunMoonServerRpc()
+    {
+        globeState.Value ++;
     }
 
     public void PastMove(Vector3 vec, Quaternion rot)
@@ -61,8 +73,7 @@ public class GlobeVariables : Variables
     {
 
         //Debug.Log(Quaternion.Angle(Quaternion.Euler(targetRot.Value), Quaternion.Euler(rotation.Value)));
-        targetRot.Value = new Vector3(0, 45, 45);
-        if (!true)
+        if (true)
         {
             //targetHoriz.Value += new Vector3(0, 0.1f, 0);
             float prog = Mathf.Sin(Time.timeSinceLevelLoad) / 2 + 0.5f;

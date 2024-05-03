@@ -73,7 +73,7 @@ public class PastGlobeLever : MonoBehaviour
         if (angle > 0.1 && angle < -0.1) velocity = 0f;
         else
         {
-            velocity = angle * 3;
+            velocity = angle * 10;
         }
         Vector3 vec = new Vector3(0, velocity, 0);
         //counter.rotate(vec);

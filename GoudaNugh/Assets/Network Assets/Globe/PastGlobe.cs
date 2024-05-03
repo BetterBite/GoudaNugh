@@ -39,9 +39,8 @@ public class PastGlobe : PastObject
         switch (state)
         {
             case GlobeVariables.GlobeStates.Activated:
-                counter.gameObject.SetActive(true);
-                target.SetActive(true);
-                localGlobeActivated = true;
+                
+                StartGlobe();
                 break;
             case GlobeVariables.GlobeStates.Solved:
                 counter.gameObject.SetActive(false);
@@ -62,18 +61,17 @@ public class PastGlobe : PastObject
     public void ActivateSun()
     {
         lever.SetActive(true);
-        if (vars.globeState.Value == GlobeVariables.GlobeStates.Unactivated) vars.globeState.Value = GlobeVariables.GlobeStates.SingleActivated;
-        if (vars.globeState.Value == GlobeVariables.GlobeStates.SingleActivated) vars.globeState.Value = GlobeVariables.GlobeStates.Activated;
 
-
+        vars.AdvanceSunMoonServerRpc();
+        
     }
 
     public void StartGlobe()
     {
-        earthRend.materials[0] = transparentMaterials[0]; 
-            //= transparentMaterials[0];
-        earthRend.materials[1] = transparentMaterials[1];
-        Debug.Log(earthRend.materials[0]);
+        earthRend.materials = transparentMaterials;
+        counter.gameObject.SetActive(true);
+        target.SetActive(true);
+        localGlobeActivated = true;
     }
 
     private void ReceiveFutureGrab(bool wasGrabbed, bool isGrabbed)
@@ -105,7 +103,7 @@ public class PastGlobe : PastObject
 
         if (Vector3.Distance(counterTrans.position, targetTrans.position) < 0.05)
         {
-            //Debug.Log("Solved Globe!");
+            Debug.Log("Solved Globe!");
             //trigger solved behaviour
         }
     }
