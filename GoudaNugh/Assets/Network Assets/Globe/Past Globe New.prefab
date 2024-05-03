@@ -1217,9 +1217,13 @@ MonoBehaviour:
   counterTrans: {fileID: 8597779834864139473}
   targetTrans: {fileID: 5978323770905321789}
   counter: {fileID: 5910229032553598519}
-  targetRot: {fileID: 4729676051765994076}
+  target: {fileID: 4729676051765994076}
   lever: {fileID: 8061018282117327280}
   ghostLever: {fileID: 1718124248261926436}
+  earthRend: {fileID: 2348393412075748993}
+  transparentMaterials:
+  - {fileID: 2100000, guid: b1ca0710596c8184b8ff1e0c7595e5e2, type: 2}
+  - {fileID: 2100000, guid: 685e888bac80933468f0de54e24b0539, type: 2}
 --- !u!1 &6909077632646885349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,7 +1501,7 @@ MonoBehaviour:
   counter: {fileID: 0}
   lever: {fileID: 0}
   ghostLever: {fileID: 0}
-  targetRot: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &7990805382444952488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,17 +2136,17 @@ MonoBehaviour:
   onAttach:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8061018282117327280}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 4976525520108617569}
+        m_TargetAssemblyTypeName: PastGlobe, Assembly-CSharp
+        m_MethodName: ActivateSun
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 8207602365747095151}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -2156,7 +2160,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  iwantthis: 0
+  iwantthis: 2
   ghost: {fileID: 2602923421043936765}
   solid: {fileID: 0}
 --- !u!65 &4894112194129979836
@@ -2343,6 +2347,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2703431338463808366}
   m_SourcePrefab: {fileID: 100100000, guid: 1885272d02befb3429e46bfb5a828167, type: 3}
+--- !u!23 &2348393412075748993 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23036671090306138, guid: 1885272d02befb3429e46bfb5a828167, type: 3}
+  m_PrefabInstance: {fileID: 2361853125188473563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2360758482386853407 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1659934759046340, guid: 1885272d02befb3429e46bfb5a828167, type: 3}

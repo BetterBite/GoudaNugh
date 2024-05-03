@@ -50,6 +50,8 @@ public class GlobeVariables : Variables
         rotation.Value += vec;
     }
 
+
+
     public void SolveGlobe()
     {
         globeState.Value = GlobeStates.Solved;

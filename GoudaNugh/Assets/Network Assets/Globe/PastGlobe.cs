@@ -16,6 +16,10 @@ public class PastGlobe : PastObject
 
     public GameObject lever;
     public GameObject ghostLever;
+
+
+    public Renderer earthRend;
+    public Material[] transparentMaterials;
     public override void Setup()
     {
         vars = networkObject.GetComponent<GlobeVariables>();
@@ -62,6 +66,14 @@ public class PastGlobe : PastObject
         if (vars.globeState.Value == GlobeVariables.GlobeStates.SingleActivated) vars.globeState.Value = GlobeVariables.GlobeStates.Activated;
 
 
+    }
+
+    public void StartGlobe()
+    {
+        earthRend.materials[0] = transparentMaterials[0]; 
+            //= transparentMaterials[0];
+        earthRend.materials[1] = transparentMaterials[1];
+        Debug.Log(earthRend.materials[0]);
     }
 
     private void ReceiveFutureGrab(bool wasGrabbed, bool isGrabbed)
