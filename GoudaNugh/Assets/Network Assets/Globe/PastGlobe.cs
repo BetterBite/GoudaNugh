@@ -61,6 +61,12 @@ public class PastGlobe : PastObject
     private void Update()
     {
         Debug.Log(Vector3.Distance(counterTrans.position, targetTrans.position));
+
+        if (Vector3.Distance(counterTrans.position, targetTrans.position) < 0.05)
+        {
+            Debug.Log("Solved Globe!");
+            //trigger solved behaviour
+        }
     }
 
 }
