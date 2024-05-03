@@ -13,7 +13,10 @@ public class FutureGlobe : FutureObject
     public GameObject lever;
     public GameObject ghostLever;
 
-    public Renderer earthRend;
+    public GameObject earth;
+    public GameObject futureUnlocks;
+
+    Renderer earthRend;
     public Material[] transparentMaterials;
 
     //public Transform targetHoriz;
@@ -38,9 +41,7 @@ public class FutureGlobe : FutureObject
                 StartGlobe();
                 break;
             case GlobeVariables.GlobeStates.Solved:
-                counter.gameObject.SetActive(false);
-                target.SetActive(false);
-                lever.SetActive(false);
+                SolveGlobe();
                 break;
             default:
                 return;
@@ -62,6 +63,15 @@ public class FutureGlobe : FutureObject
         earthRend.materials = transparentMaterials;
         counter.gameObject.SetActive(true);
         target.SetActive(true);
+    }
+
+    public void SolveGlobe()
+    {
+        counter.gameObject.SetActive(false);
+        target.SetActive(false);
+        lever.SetActive(false);
+        earth.SetActive(false);
+        futureUnlocks.SetActive(true);
     }
 
 

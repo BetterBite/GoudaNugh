@@ -17,6 +17,8 @@ public class PastGlobe : PastObject
     public GameObject lever;
     public GameObject ghostLever;
 
+    public GameObject earth;
+    public GameObject pastUnlocks;
 
     public Renderer earthRend;
     public Material[] transparentMaterials;
@@ -39,13 +41,10 @@ public class PastGlobe : PastObject
         switch (state)
         {
             case GlobeVariables.GlobeStates.Activated:
-                
                 StartGlobe();
                 break;
             case GlobeVariables.GlobeStates.Solved:
-                counter.gameObject.SetActive(false);
-                target.SetActive(false);
-                lever.SetActive(false);
+                SolveGlobe();
                 break;
             default:
                 return;
@@ -72,6 +71,15 @@ public class PastGlobe : PastObject
         counter.gameObject.SetActive(true);
         target.SetActive(true);
         localGlobeActivated = true;
+    }
+
+    public void SolveGlobe()
+    {
+        counter.gameObject.SetActive(false);
+        target.SetActive(false);
+        lever.SetActive(false);
+        earth.SetActive(false);
+        pastUnlocks.SetActive(true);
     }
 
     private void ReceiveFutureGrab(bool wasGrabbed, bool isGrabbed)
@@ -101,9 +109,11 @@ public class PastGlobe : PastObject
     {
         //Debug.Log(Vector3.Distance(counterTrans.position, targetTrans.position));
 
-        if (Vector3.Distance(counterTrans.position, targetTrans.position) < 0.05)
+        if (localGlobeActivated && Vector3.Distance(counterTrans.position, targetTrans.position) < 0.05)
         {
             Debug.Log("Solved Globe!");
+            vars.ChangeStateServerRpc(GlobeVariables.GlobeStates.Solved);
+            localGlobeActivated = false;
             //trigger solved behaviour
         }
     }

@@ -41,12 +41,14 @@ public class PastGlobeLever : MonoBehaviour
     public void OnGrab()
     {
         grabbed = true;
+        globe.OnGrab(true);
     }
 
     public void OnUngrab()
     {
         grabbed = false;
         activated = false;
+        globe.OnGrab(false);
         transform.rotation = startRot;
     }
 
