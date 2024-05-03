@@ -13,37 +13,55 @@ public class FutureGlobe : FutureObject
     public GameObject ghostLever;
 
     //public Transform targetHoriz;
-    public GameObject targetRot;
+    public GameObject target;
     public override void Setup()
     {
         vars = networkObject.GetComponent<GlobeVariables>();
+
         vars.rotation.OnValueChanged += UpdateRotation;
         vars.targetRot.OnValueChanged += UpdateTarget;
-        vars.globeOn.OnValueChanged += ToggleGlobe;
+
         vars.pastLeverGrabbed.OnValueChanged += ReceivePastGrab;
+
+        vars.globeState.OnValueChanged = UpdateGlobe;
+    }
+
+    private void UpdateGlobe(GlobeVariables.GlobeStates prevState, GlobeVariables.GlobeStates state)
+    {
+        switch (state)
+        {
+            case GlobeVariables.GlobeStates.Activated:
+                counter.gameObject.SetActive(true);
+                target.SetActive(true);
+                break;
+            case GlobeVariables.GlobeStates.Solved:
+                counter.gameObject.SetActive(false);
+                target.SetActive(false);
+                lever.SetActive(false);
+                break;
+            default:
+                return;
+        }
+
     }
 
     public void ActivateMoon()
     {
         lever.SetActive(true);
+        if (vars.globeState.Value == GlobeVariables.GlobeStates.Unactivated) vars.globeState.Value = GlobeVariables.GlobeStates.SingleActivated;
+        if (vars.globeState.Value == GlobeVariables.GlobeStates.SingleActivated) vars.globeState.Value = GlobeVariables.GlobeStates.Activated;
+
+
     }
 
-    public void OnGrab()
+    public void OnGrab(bool grabbed)
     {
-        vars.LeverActivated();
+        vars.FutureLeverGrabbedServerRpc(grabbed);
     }
 
     private void ReceivePastGrab(bool wasGrabbed, bool isGrabbed)
     {
         ghostLever.SetActive(isGrabbed);
-    }
-
-    private void ToggleGlobe(bool wasActive, bool isActive)
-    {
-
-        counter.gameObject.SetActive(isActive);
-        targetRot.SetActive(isActive);
-        
     }
 
     public void FutureMove(Vector3 vec)
@@ -59,7 +77,7 @@ public class FutureGlobe : FutureObject
 
     private void UpdateTarget(Vector3 prevRot, Vector3 rot)
     {
-        targetRot.transform.rotation = Quaternion.Euler(rot);
+        target.transform.rotation = Quaternion.Euler(rot);
         //targetVert.rotation = Quaternion.Euler(vars.targetVert.Value);
     }
 

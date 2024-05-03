@@ -6,32 +6,61 @@ using UnityEngine;
 public class PastGlobe : PastObject
 {
 
-
+    private bool localGlobeActivated = false;
     public Transform counterTrans;
     public Transform targetTrans;
 
     private GlobeVariables vars;
     public GameObject counter;
-    public GameObject targetRot;
+    public GameObject target;
 
     public GameObject lever;
     public GameObject ghostLever;
     public override void Setup()
     {
         vars = networkObject.GetComponent<GlobeVariables>();
+
         vars.rotation.OnValueChanged += UpdateRotation;
-        vars.rotation.Value = counter.transform.rotation.eulerAngles;
-        vars.globeOn.OnValueChanged = ToggleGlobe;
+        
         vars.targetRot.OnValueChanged = UpdateTarget;
         vars.futureLeverGrabbed.OnValueChanged = ReceiveFutureGrab;
-        vars.globeOn.Value = true;
+
+        vars.rotation.Value = counter.transform.rotation.eulerAngles;
+
+        vars.globeState.OnValueChanged = UpdateGlobe;
     }
 
-    private void ToggleGlobe(bool wasActive, bool isActive)
+    private void UpdateGlobe(GlobeVariables.GlobeStates prevState, GlobeVariables.GlobeStates state)
     {
+        switch (state)
+        {
+            case GlobeVariables.GlobeStates.Activated:
+                counter.gameObject.SetActive(true);
+                target.SetActive(true);
+                localGlobeActivated = true;
+                break;
+            case GlobeVariables.GlobeStates.Solved:
+                counter.gameObject.SetActive(false);
+                target.SetActive(false);
+                lever.SetActive(false);
+                break;
+            default:
+                return;
+        }
 
-        counter.gameObject.SetActive(isActive);
-        targetRot.SetActive(isActive);
+    }
+
+    public void OnGrab(bool grabbed)
+    {
+        vars.PastLeverGrabbed(grabbed);
+    }
+
+    public void ActivateSun()
+    {
+        lever.SetActive(true);
+        if (vars.globeState.Value == GlobeVariables.GlobeStates.Unactivated) vars.globeState.Value = GlobeVariables.GlobeStates.SingleActivated;
+        if (vars.globeState.Value == GlobeVariables.GlobeStates.SingleActivated) vars.globeState.Value = GlobeVariables.GlobeStates.Activated;
+
 
     }
 
@@ -54,7 +83,7 @@ public class PastGlobe : PastObject
     private void UpdateTarget(Vector3 prevRot, Vector3 rot)
     {
         
-        targetRot.transform.rotation = Quaternion.Euler(rot);
+        target.transform.rotation = Quaternion.Euler(rot);
         //targetVert.rotation = Quaternion.Euler(vars.targetVert.Value);
     }
 

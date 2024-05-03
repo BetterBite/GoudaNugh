@@ -7,8 +7,7 @@ public class GlobeVariables : Variables
 {
     public NetworkVariable<Vector3> rotation = new NetworkVariable<Vector3>();
     //public NetworkVariable<Vector3> targetHoriz = new NetworkVariable<Vector3>();
-    public NetworkVariable<Vector3> targetRot = new NetworkVariable<Vector3>();   
-    public NetworkVariable<bool> globeOn = new NetworkVariable<bool>(true);
+    public NetworkVariable<Vector3> targetRot = new NetworkVariable<Vector3>();  
 
     public NetworkVariable<bool> futureLeverGrabbed = new NetworkVariable<bool>(false);
     public NetworkVariable<bool> pastLeverGrabbed = new NetworkVariable<bool>(false);
@@ -22,7 +21,8 @@ public class GlobeVariables : Variables
     {
         Unactivated,
         SingleActivated,
-        Activated
+        Activated,
+        Solved,
     }
 
     public void PastMove(Vector3 vec, Quaternion rot)
@@ -50,20 +50,9 @@ public class GlobeVariables : Variables
         rotation.Value += vec;
     }
 
-    public void GlobeOn()
+    public void SolveGlobe()
     {
-        globeOn.Value = true;
-    }
-
-    public void LeverActivated()
-    {
-        if (futureLeverGrabbed.Value && pastLeverGrabbed.Value)
-        {
-            globeOn.Value = true;
-        } else
-        {
-            globeOn.Value= false;
-        }
+        globeState.Value = GlobeStates.Solved;
     }
 
     private void Update()
