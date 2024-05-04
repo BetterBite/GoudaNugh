@@ -17,24 +17,24 @@ public class PastTelescope : PastObject
     }
 
     public void CheckLenses() {
-       
-        //for (int i = 0; i < 3; i++)
-        //{
-        //    float rot = lenses[i].transform.rotation.eulerAngles.z;
-        //    Debug.Log(lenses[1].transform.rotation.eulerAngles.z);
-        //    float answer = rot - code[i];
-        //    if ((answer > -10) && (answer < 10))
-        //    {
-        //        solved++;
-        //        NextCode();
-        //    }
-        //}
-        //if (solved > 2)
-        //{
-        //    Solve();
-        //}
-        //solved = 0;
-        //Solve();
+
+        for (int i = 0; i < 3; i++)
+        {
+            float rot = lenses[i].transform.rotation.eulerAngles.z;
+            Debug.Log(lenses[1].transform.rotation.eulerAngles.z);
+            float answer = rot - code[i];
+            if ((answer > -10) && (answer < 10))
+            {
+                solved++;
+                NextCode();
+            }
+        }
+        if (solved > 2)
+        {
+            Solve();
+        }
+        solved = 0;
+        Solve();
     }
 
     public void Solve() {
