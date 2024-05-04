@@ -3160,11 +3160,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1721380f6f5154888ac7eea6cb3297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 10
+  time: 0
   Fill:
   - {fileID: 7973732268120084082}
   - {fileID: 2396617865578383}
   - {fileID: 7445848146035343791}
+  numbers:
+  - {fileID: 8705316463839679105}
+  - {fileID: 4468556061847883068}
+  - {fileID: 8018084339928253537}
   Max: 10
 --- !u!1 &1625721199299072450
 GameObject:
@@ -4895,7 +4899,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -7544,6 +7548,7 @@ MonoBehaviour:
   leverRot: {fileID: 1937181873303130980}
   ghostRot: {fileID: 8413964885667389934}
   screenObject: {fileID: 249471056131559641}
+  timer: {fileID: 886517571179216964}
   door: {fileID: 1491411938883922527}
   stationIndex: 0
 --- !u!1 &4282712983631628921
@@ -7976,7 +7981,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4629132837547093959}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00034888228}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.58464223, y: 0.43432003, z: 0.43432003}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7984,7 +7989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -69.6, y: 102.4}
+  m_AnchoredPosition: {x: -69.60007, y: 102.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3696691181451551154
@@ -8020,7 +8025,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -13674,7 +13679,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

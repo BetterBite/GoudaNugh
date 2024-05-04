@@ -33,7 +33,7 @@ public class RadioVariables : Variables
     public List<float> stationAmps = new List<float>() { 0.05f, 0.1f, 0.01f };
     public List<float> stationFreqs = new List<float>() { 10, 10, 10 };
     
-    public NetworkVariable<int> matchingLevel = new NetworkVariable<int>(0);
+    public NetworkVariable<int> matchingLevel = new NetworkVariable<int>(-1);
     public NetworkVariable<bool> codeEntered = new NetworkVariable<bool>(false);
     public NetworkVariable<ScreenState> screenState = new(ScreenState.EnterStation);
 
@@ -151,6 +151,7 @@ public class RadioVariables : Variables
     {
         codeEntered.Value = true;
         screenState.Value = ScreenState.MatchWaves;
+        matchingLevel.Value = -1;
         matchingLevel.Value = 0;
         StartCoroutine(NewMatchingLevel(matchingLevel.Value));
     }
@@ -169,6 +170,7 @@ public class RadioVariables : Variables
             AdvanceTargetWave(matchingLevel.Value);
         } else if (matchingLevel.Value <= 2)
         {
+            matchingLevel.Value = -1;
             matchingLevel.Value = 0;
             AdvanceTargetWave(matchingLevel.Value);
         }
