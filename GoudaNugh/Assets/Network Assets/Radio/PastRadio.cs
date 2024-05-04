@@ -34,8 +34,10 @@ public class PastRadio : PastObject
 
         vars.futureLeverGrabbed.OnValueChanged += ReceiveLeverGrab;
         vars.screenState.OnValueChanged += ChangeScreen;
+
         vars.targetAmp.OnValueChanged += ReceiveNewTargetAmp;
         vars.targetFreq.OnValueChanged += ReceiveNewTargetFreq;
+        vars.matchingLevel.OnValueChanged += UpdateMatchingLevel;
         vars.waveIsValid.OnValueChanged += ReceiveWaveValidate;
 
         vars.radioSolved.OnValueChanged += SolveRadio;
@@ -78,15 +80,22 @@ public class PastRadio : PastObject
         screen.SetScreen(newState);
     }
 
+    private void UpdateMatchingLevel(int prevLevel, int level)
+    {
+        if (level > 2) return;
+        targetWave.amplitude = vars.stationAmps[level];
+        targetWave.frequency = vars.stationFreqs[level];
+    }
+
     private void ReceiveNewTargetAmp(float prevAmp, float amp)
     {
-        targetWave.amplitude = amp;
+       // targetWave.amplitude = amp;
 
     }
 
     private void ReceiveNewTargetFreq(float prevFreq, float freq)
     {
-        targetWave.frequency = freq;
+       // targetWave.frequency = freq;
     }
 
     public void EnterRadioNumber(int n)

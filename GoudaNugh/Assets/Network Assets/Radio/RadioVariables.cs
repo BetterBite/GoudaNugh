@@ -25,10 +25,15 @@ public class RadioVariables : Variables
     public NetworkVariable<bool> futureLeverGrabbed = new NetworkVariable<bool>(false);
     public NetworkVariable<bool> pastLeverGrabbed = new NetworkVariable<bool>(false);
 
-    public List<float> stationAmps = new List<float>() { 0.04f, 0.01f, 0.08f };
+
+    //[SerializeField]
+    //public NetworkVariable<float[]> stationAmps = new NetworkVariable<float[]>(new float[] {0.05f, 0.05f, 0.05f} ) ;
+    //[SerializeField]
+    //public NetworkVariable<float[]> stationFreqs = new NetworkVariable<float[]>(new float[] {10,10,10});
+    public List<float> stationAmps = new List<float>() { 0.05f, 0.1f, 0.01f };
     public List<float> stationFreqs = new List<float>() { 10, 10, 10 };
     
-    private int stationIndex = 0;
+    public NetworkVariable<int> matchingLevel = new NetworkVariable<int>(0);
     public NetworkVariable<bool> codeEntered = new NetworkVariable<bool>(false);
     public NetworkVariable<ScreenState> screenState = new(ScreenState.EnterStation);
 
@@ -73,6 +78,7 @@ public class RadioVariables : Variables
     public void ChangeScreen(RadioVariables.ScreenState state)
     {
         screenState.Value = state;
+        if (state == RadioVariables.ScreenState.MatchWaves) StartMatchingWaves();
     }
 
     private void ChangeStationOnGrab()
@@ -145,8 +151,8 @@ public class RadioVariables : Variables
     {
         codeEntered.Value = true;
         screenState.Value = ScreenState.MatchWaves;
-        stationIndex = 0;
-        StartCoroutine(NewMatchingLevel(stationIndex));
+        matchingLevel.Value = 0;
+        StartCoroutine(NewMatchingLevel(matchingLevel.Value));
     }
 
     public IEnumerator NewMatchingLevel(int index)
@@ -156,15 +162,15 @@ public class RadioVariables : Variables
         //screenState.Value = ScreenState.MatchWaves;
         // Wait for 3 seconds
         yield return new WaitForSeconds(10f);
-        if (CheckTargetWave() && stationIndex <= 2)
+        if (CheckTargetWave() && matchingLevel.Value <= 2)
         {
-            stationIndex++;
+            matchingLevel.Value++;
           
-            AdvanceTargetWave(stationIndex);
-        } else if (stationIndex <= 2)
+            AdvanceTargetWave(matchingLevel.Value);
+        } else if (matchingLevel.Value <= 2)
         {
-            stationIndex = 0;
-            AdvanceTargetWave(stationIndex);
+            matchingLevel.Value = 0;
+            AdvanceTargetWave(matchingLevel.Value);
         }
     }
 
