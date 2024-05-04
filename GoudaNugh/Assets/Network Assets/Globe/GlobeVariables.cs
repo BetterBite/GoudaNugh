@@ -7,13 +7,12 @@ public class GlobeVariables : Variables
 {
     public NetworkVariable<Vector3> rotation = new NetworkVariable<Vector3>();
     //public NetworkVariable<Vector3> targetHoriz = new NetworkVariable<Vector3>();
-    public NetworkVariable<Vector3> targetRot = new NetworkVariable<Vector3>();   
-    public NetworkVariable<bool> globeOn = new NetworkVariable<bool>(false);
+    public NetworkVariable<Vector3> targetRot = new NetworkVariable<Vector3>();  
 
     public NetworkVariable<bool> futureLeverGrabbed = new NetworkVariable<bool>(false);
     public NetworkVariable<bool> pastLeverGrabbed = new NetworkVariable<bool>(false);
 
-    public NetworkVariable<GlobeStates> globeState = new NetworkVariable<GlobeStates>();
+    public NetworkVariable<GlobeStates> globeState = new NetworkVariable<GlobeStates>(GlobeStates.Unactivated);
 
     public NetworkVariable<Quaternion> pastRot = new NetworkVariable<Quaternion>();
     public NetworkVariable<Quaternion> futureRot = new NetworkVariable<Quaternion>();
@@ -22,7 +21,20 @@ public class GlobeVariables : Variables
     {
         Unactivated,
         SingleActivated,
-        Activated
+        Activated,
+        Solved,
+    }
+
+    [Rpc(SendTo.Server)]
+    public void ChangeStateServerRpc(GlobeStates state)
+    {
+        globeState.Value = state;
+    }
+
+    [Rpc(SendTo.Server)]
+    public void AdvanceSunMoonServerRpc()
+    {
+        globeState.Value ++;
     }
 
     public void PastMove(Vector3 vec, Quaternion rot)
@@ -50,26 +62,18 @@ public class GlobeVariables : Variables
         rotation.Value += vec;
     }
 
-    public void GlobeOn()
-    {
-        globeOn.Value = true;
-    }
 
-    public void LeverActivated()
+
+    public void SolveGlobe()
     {
-        if (futureLeverGrabbed.Value && pastLeverGrabbed.Value)
-        {
-            globeOn.Value = true;
-        } else
-        {
-            globeOn.Value= false;
-        }
+        globeState.Value = GlobeStates.Solved;
     }
 
     private void Update()
     {
 
-        if (globeOn.Value)
+        //Debug.Log(Quaternion.Angle(Quaternion.Euler(targetRot.Value), Quaternion.Euler(rotation.Value)));
+        if (true)
         {
             //targetHoriz.Value += new Vector3(0, 0.1f, 0);
             float prog = Mathf.Sin(Time.timeSinceLevelLoad) / 2 + 0.5f;

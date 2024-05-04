@@ -33,6 +33,8 @@ public class FutureRadio : FutureObject
 
         vars.targetAmp.OnValueChanged += ReceiveNewTargetAmp;
         vars.targetFreq.OnValueChanged += ReceiveNewTargetFreq;
+        vars.matchingLevel.OnValueChanged += UpdateMatchingLevel;
+
         vars.waveIsValid.OnValueChanged += ReceiveWaveValidate;
 
         vars.radioSolved.OnValueChanged += SolveRadio;
@@ -41,6 +43,7 @@ public class FutureRadio : FutureObject
         wave.lr.endColor = Color.red;
 
     }
+
 
     public void UpdateFrequency(float freq)
     {
@@ -68,15 +71,21 @@ public class FutureRadio : FutureObject
 
     }
 
+    private void UpdateMatchingLevel(int prevLevel, int level)
+    {
+        targetWave.amplitude = vars.stationAmps[level];
+        targetWave.frequency = vars.stationFreqs[level];
+    }
+
     private void ReceiveNewTargetAmp(float prevAmp, float amp) 
     {
-        targetWave.amplitude = amp;
+       // targetWave.amplitude = amp;
         
     }
 
     private void ReceiveNewTargetFreq(float prevFreq, float freq)
     {
-        targetWave.frequency = freq;
+        //targetWave.frequency = freq;
     }
 
     public void OnLeverGrab(bool isGrabbed)

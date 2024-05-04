@@ -16,7 +16,7 @@ public class PastRadio : PastObject
     public GameObject screenObject;
     private RadioScreen screen;
 
-
+    public RadioTimer timer;
     public LockableObject door;
 
     private List<int> Code = new List<int>();
@@ -34,14 +34,19 @@ public class PastRadio : PastObject
 
         vars.futureLeverGrabbed.OnValueChanged += ReceiveLeverGrab;
         vars.screenState.OnValueChanged += ChangeScreen;
+
         vars.targetAmp.OnValueChanged += ReceiveNewTargetAmp;
         vars.targetFreq.OnValueChanged += ReceiveNewTargetFreq;
+        vars.matchingLevel.OnValueChanged += UpdateMatchingLevel;
         vars.waveIsValid.OnValueChanged += ReceiveWaveValidate;
 
         vars.radioSolved.OnValueChanged += SolveRadio;
 
         wave.lr.startColor = Color.red;
         wave.lr.endColor = Color.red;
+
+        vars.matchingLevel.Value = -1;
+        timer.ResetTimers();
 
     }
 
@@ -78,6 +83,20 @@ public class PastRadio : PastObject
         screen.SetScreen(newState);
     }
 
+    private void UpdateMatchingLevel(int prevLevel, int level)
+    {
+        if (level == -1)
+        {
+            timer.ResetTimers();
+        }
+        if (level < 0 || level > 2) return;
+
+        //targetWave.amplitude = vars.stationAmps[level];
+        //targetWave.frequency = vars.stationFreqs[level];
+        Debug.Log("filling:" + level);
+        timer.NextNumber(level);
+    }
+
     private void ReceiveNewTargetAmp(float prevAmp, float amp)
     {
         targetWave.amplitude = amp;
@@ -86,7 +105,7 @@ public class PastRadio : PastObject
 
     private void ReceiveNewTargetFreq(float prevFreq, float freq)
     {
-        targetWave.frequency = freq;
+       targetWave.frequency = freq;
     }
 
     public void EnterRadioNumber(int n)

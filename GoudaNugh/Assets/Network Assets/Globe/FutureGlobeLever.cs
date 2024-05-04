@@ -39,12 +39,14 @@ public class FutureGlobeLever : MonoBehaviour
     public void OnGrab()
     {
         grabbed = true;
+        globe.OnGrab(true);
     }
 
     public void OnUngrab()
     {
         grabbed = false;
         activated = false;
+        globe.OnGrab(false);
         transform.rotation = startRot;
     }
 
@@ -87,7 +89,6 @@ public class FutureGlobeLever : MonoBehaviour
             float angle = transform.rotation[axis];
             //if (angle > 90) angle = -1 * angle + 180;
             Spin(angle);
-            Debug.Log(transform.rotation[axis]);
 
             activated = (transform.rotation.eulerAngles[axis] < triggerAngle);
             //Debug.Log(activated);
