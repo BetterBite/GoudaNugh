@@ -12,10 +12,8 @@ public class Clock : MonoBehaviour {
             Assert.IsNotNull(c, "One or more code references in Clock object are missing!");
         }
     }
-    public void Solve()
-    {
-        for (int i = 0; i < code.Length; i++)
-        {
+    public void Solve() {
+        for (int i = 0; i < code.Length; i++) {
             code[i].color = Color.green;
         }
     }

@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class ClockPuzzleCheck : MonoBehaviour {
     public Clock clock;
@@ -16,6 +17,10 @@ public class ClockPuzzleCheck : MonoBehaviour {
     private Quaternion target_minute_rotation;
 
     private bool already_within_limit = false;  // this locks the conditional in Update so the 'true' segment is only ran once until the hands are removed and replaced into the correct limits.
+
+    private void Awake() {
+        Assert.IsNotNull(clock, "Clock prefab reference not assigned for the Clock Puzzle script!");
+    }
 
     void Update() { 
         target_hour_rotation = TargetToQuaternion(hour_target);
