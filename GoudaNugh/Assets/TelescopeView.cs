@@ -10,17 +10,17 @@ public class TelescopeView : MonoBehaviour
     public int imageindex;
 
     public Image[] blockScreen;
-    //public Camera camera;
-
+    public Camera mainCamera;
+    public Camera telescopeCamera;
     void Start()
     {
-        imageindex = 0;
-        //Color color = blockScreen.color;
-        //color.a = 1;
-        for (int i = 0; i < 3; i++ )
-        {
-            blockScreen[i].CrossFadeAlpha(0, 0f, true);
-        }
+        //imageindex = 0;
+        ////Color color = blockScreen.color;
+        ////color.a = 1;
+        //for (int i = 0; i < 3; i++ )
+        //{
+        //    blockScreen[i].CrossFadeAlpha(0, 0f, true);
+        //}
         
     }
 
@@ -50,4 +50,21 @@ public class TelescopeView : MonoBehaviour
         blockScreen[i].CrossFadeAlpha(0, 0.5f, false);
         yield return new WaitForSeconds(0.5f);
     }
+
+    public void TelescoprView()
+    {
+        mainCamera.enabled = false;
+        telescopeCamera.enabled = true;
+    }
+
+    public void MainCameraView()
+    {
+        telescopeCamera.enabled = false;
+        mainCamera.enabled = true;
+    }
+
+    private void Update()
+    {
+    }
+
 }
