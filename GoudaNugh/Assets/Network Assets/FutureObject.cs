@@ -13,7 +13,7 @@ public abstract class FutureObject : MonoBehaviour
     private bool hasMoved = false;
     */
     //public XRGrabInteractable grabInteractable;
-    private readonly InteractibleManager InstanceManager = InteractibleManager.Singleton;
+    private readonly Spawner Spawner = Spawner.Singleton;
 
     // Note to self: Don't forget that this is a custom function!
     // This function gets called when the object is instantiated through the InteractibleManager

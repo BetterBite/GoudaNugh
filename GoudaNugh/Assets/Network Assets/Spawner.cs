@@ -7,8 +7,8 @@ using Unity.VisualScripting;
 using System;
 using Random = UnityEngine.Random;
 
-public class InteractibleManager : NetworkBehaviour {
-    public static InteractibleManager Singleton { get; private set; }
+public class Spawner : NetworkBehaviour {
+    public static Spawner Singleton { get; private set; }
     public NetworkPrefabsList ObjectsToSpawn;
     public GameObject[] LocalFutureObjects;
     public int[] SafeCode { get; private set; }

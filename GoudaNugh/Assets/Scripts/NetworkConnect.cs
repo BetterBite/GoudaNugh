@@ -54,7 +54,7 @@ public class NetworkConnect : MonoBehaviour {
              allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData);
 
         NetworkManager.Singleton.StartHost();
-        NetworkManager.Singleton.SceneManager.OnSceneEvent += InteractibleManager.Singleton.CheckSceneEvent;
+        NetworkManager.Singleton.SceneManager.OnSceneEvent += Spawner.Singleton.CheckSceneEvent;
         // display Start Game button
         uiHandler.SetJoinCodeForDisplay(newJoinCode);
         uiHandler.SetState(2);
