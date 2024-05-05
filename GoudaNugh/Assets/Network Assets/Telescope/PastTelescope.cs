@@ -42,6 +42,6 @@ public class PastTelescope : PastObject
     }
 
     private void NextCode() {
-        telescopeVariables.NextCode();
+        //telescopeVariables.NextCode();
      }
 }

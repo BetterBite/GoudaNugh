@@ -13,6 +13,8 @@ public class VRRigReferences : MonoBehaviour
     public Renderer leftHandRenderer;
     public Renderer rightHandRenderer;
 
+    public Camera mainCamera;
+
 
     public Material pastMaterial;
     public Material futureMaterial;
