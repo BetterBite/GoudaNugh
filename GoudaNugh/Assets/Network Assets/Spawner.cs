@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using System;
 using Random = UnityEngine.Random;
+using UnityEngine.Rendering.Universal;
 
 public class Spawner : NetworkBehaviour {
     public static Spawner Singleton { get; private set; }
     public NetworkPrefabsList ObjectsToSpawn;
     public GameObject[] LocalFutureObjects;
+    public GameObject[] LocalPastObjects;
     public int[] SafeCode { get; private set; }
 
     // Used for testing in TestingSuite, toggle it to force network spawning (Does not use RelayServices)
@@ -91,8 +93,10 @@ public class Spawner : NetworkBehaviour {
                 NetworkObjectReference objectReference = new NetworkObjectReference(networkInstance);
                 InstantiatePastObjectRPC(objectReference);
                 InstantiateFutureObjectRPC(objectReference);
-                SpawnWitnessPleaseRPC();
-            }   
+                
+            }
+            SpawnWitnessPleaseRPC();
+            SpawnLocalPastObjects();
         }
     }
     /* 
@@ -114,6 +118,15 @@ public class Spawner : NetworkBehaviour {
                 if (!IsServer) Instantiate(futureObject);
             }
         }
+
+    public void SpawnLocalPastObjects()
+    {
+        Debug.Log("Spawning past local objects");
+        foreach (GameObject pastObject in LocalPastObjects)
+        {
+            if (IsServer) Instantiate(pastObject);
+        }
+    }
 
     [Rpc(SendTo.ClientsAndHost)]
     public void InstantiatePastObjectRPC(NetworkObjectReference objectReference) {
