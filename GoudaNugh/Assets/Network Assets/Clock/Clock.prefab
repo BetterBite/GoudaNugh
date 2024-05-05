@@ -2761,7 +2761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5fe1bd8a17face04dbc2f50fe96f181e, type: 3}
       propertyPath: m_Name
-      value: FutureClock
+      value: Clock
       objectReference: {fileID: 0}
     - target: {fileID: 1112900551682180293, guid: 5fe1bd8a17face04dbc2f50fe96f181e, type: 3}
       propertyPath: m_Layer
@@ -3251,7 +3251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f6d8b4b9ea6784586980b3b6733e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  networkObject: {fileID: 0}
   code:
   - {fileID: 2756847237586943045}
   - {fileID: 7098508401838731994}
@@ -3268,10 +3267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f704ca34ca2f3bc42b4e4f91b5d8972a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clock: {fileID: 0}
-  hour_transform: {fileID: 0}
-  minute_transform: {fileID: 0}
-  hour_target: 0
+  clock: {fileID: 4243668485343867057}
+  hour_transform: {fileID: 4702109438436569676}
+  minute_transform: {fileID: 3634339416231031241}
+  hour_target: 240
   minute_target: 0
   leniency: 10
   correct_feedback: {fileID: 0}
