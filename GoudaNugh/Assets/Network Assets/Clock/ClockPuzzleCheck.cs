@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -11,6 +12,7 @@ public class ClockPuzzleCheck : MonoBehaviour {
     public int minute_target_rotation;
     public int leniency = 10; // The degrees that the user can be 'off' by and still get the visual and audio feedback
 
+    public AudioSource audioSource;
     public AudioClip correct_feedback;    // The AudioClip to be played on completion
 
     private bool already_within_limit = false;  // this locks the conditional in Update so the 'true' segment is only ran once until the hands are removed and replaced into the correct limits.
@@ -20,7 +22,7 @@ public class ClockPuzzleCheck : MonoBehaviour {
 
     private void Awake() {
         Assert.IsNotNull(clock, "Clock prefab reference not assigned for the Clock Puzzle script!");
-
+        audioSource.clip = correct_feedback;
     }
 
     public void OnValidate() {
@@ -44,10 +46,19 @@ public class ClockPuzzleCheck : MonoBehaviour {
             // Hands in correct place!
             already_within_limit = true;
             Debug.Log("Correct config");
-            //correct_feedback.Play();
+            GetComponent<AudioSource>().Play();
+            StartCoroutine(StopPlaying());
             clock.Solve();
         } else {
             return;
         }
     }
+
+    private IEnumerator StopPlaying()
+    {
+        yield return new WaitForSeconds(5);
+        audioSource.Stop();
+    }
+
+
 }
