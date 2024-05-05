@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Assertions;
 
-public class PastClock : PastObject {
+public class Clock : MonoBehaviour {
     public TMP_Text[] code;
 
-    public override void Setup() {
-        return;
+    public void Awake() {
+        foreach (var c in code) {
+            Assert.IsNotNull(c, "One or more code references in Clock object are missing!");
+        }
     }
     public void Solve()
     {
