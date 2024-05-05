@@ -62,7 +62,7 @@ public class ContinuousRotatableCheck : MonoBehaviour
     {
         if (grabbed)
         {
-            Debug.Log(transform.rotation.eulerAngles[axis]);
+            //Debug.Log(transform.rotation.eulerAngles[axis]);
 
             activated = (transform.rotation.eulerAngles[axis] < triggerAngle);
             //Debug.Log(activated);

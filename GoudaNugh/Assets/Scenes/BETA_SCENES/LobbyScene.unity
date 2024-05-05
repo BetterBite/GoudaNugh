@@ -885,6 +885,10 @@ PrefabInstance:
       propertyPath: fade
       value: 
       objectReference: {fileID: 1160531750}
+    - target: {fileID: 5694345718932813588, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 294590147}
     - target: {fileID: 8212373262783087998, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -996,6 +1000,11 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!20 &294590147 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8212373262783087992, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
+  m_PrefabInstance: {fileID: 294590141}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &334048656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1963,7 +1972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: testingMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: ObjectsToSpawn.Array.size
