@@ -12,11 +12,14 @@ public class Spawner : NetworkBehaviour {
     public NetworkPrefabsList ObjectsToSpawn;
     public GameObject[] LocalFutureObjects;
     public int[] SafeCode { get; private set; }
+
+    // Used for testing
+    [SerializeField]
+    private bool ForceSpawn = false;
     
     //this bool can be ticked if you wish to test future and past objects in one game- it will trigger future objects spawning along 
     //past objects when set to true.
-    public enum TestingMode
-    {
+    public enum TestingMode {
         Normal,
         SpawnBoth,
         OnlySpawnPast,
@@ -24,6 +27,39 @@ public class Spawner : NetworkBehaviour {
     }
 
     public TestingMode testingMode;
+
+    public void OnValidate() {
+        if (ForceSpawn) {
+            Debug.Log("Forcing object spawns");
+            NetworkManager.Singleton.StartHost();
+            forceObjectSpawn();
+            ForceSpawn = false;
+        }
+    }
+
+    private void forceObjectSpawn() {
+        if (SceneManager.GetActiveScene().name != "TestingSuite") { Debug.LogError("I refuse to load in an invalid scene"); return; }
+        if (NetworkManager == null) {
+            Debug.LogError("NetworkManager is blerry missing!");
+            return;
+        }
+        Vector3 origin = Vector3.zero;
+        Quaternion rotation = Quaternion.Euler(0, 90, 0);
+        // Read https://docs-multiplayer.unity3d.com/netcode/current/basics/object-spawning/
+        foreach (NetworkPrefab NetworkPrefab in ObjectsToSpawn.PrefabList) {
+            var instance = Instantiate(NetworkPrefab.Prefab);
+            var networkInstance = instance.GetComponent<NetworkObject>();
+            networkInstance.Spawn();
+            PastObject pastObject = Instantiate(networkInstance.gameObject.GetComponent<Variables>().PastObjectPrefab, origin, rotation).GetComponent<PastObject>();
+            origin.z += 2;
+            FutureObject futureObject = Instantiate(networkInstance.gameObject.GetComponent<Variables>().FutureObjectPrefab, origin, rotation).GetComponent<FutureObject>();
+            origin.z += 2;
+            pastObject.networkObject = networkInstance;
+            futureObject.networkObject = networkInstance;
+            pastObject.Setup();
+            futureObject.Setup();
+        }
+    }
 
     public void Awake() {
         Singleton = this;
@@ -33,9 +69,6 @@ public class Spawner : NetworkBehaviour {
         SafeCode[1] = Random.Range(0,10);
         SafeCode[2] = Random.Range(0,10);
         Debug.Log("Safe code generated: " + SafeCode[0] + SafeCode[1] + SafeCode[2]);
-
-
-
     }
 
     // NetworkConnect.cs subscribes this method to OnSceneEvent. https://docs-multiplayer.unity3d.com/netcode/current/basics/scenemanagement/scene-events/
@@ -60,17 +93,9 @@ public class Spawner : NetworkBehaviour {
                 InstantiatePastObjectRPC(objectReference);
                 InstantiateFutureObjectRPC(objectReference);
                 SpawnWitnessPleaseRPC();
-            }
-            
+            }   
         }
-
-
-       
     }
-
-
-    
-
     /* 
     RPC Calls here. Make sure each has an attribute specifying to whom it is sent to
     See this Unity doc for all valid attributes https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.8/api/Unity.Netcode.SendTo.html
