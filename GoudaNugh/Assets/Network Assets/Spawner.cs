@@ -13,7 +13,7 @@ public class Spawner : NetworkBehaviour {
     public GameObject[] LocalFutureObjects;
     public int[] SafeCode { get; private set; }
 
-    // Used for testing
+    // Used for testing in TestingSuite, toggle it to force network spawning (Does not use RelayServices)
     [SerializeField]
     private bool ForceSpawn = false;
     
@@ -30,7 +30,7 @@ public class Spawner : NetworkBehaviour {
 
     public void OnValidate() {
         if (ForceSpawn) {
-            Debug.Log("Forcing object spawns");
+            if (SceneManager.GetActiveScene().name != "TestingSuite") { Debug.LogError("I refuse to load in an invalid scene"); ForceSpawn = false; return; }
             NetworkManager.Singleton.StartHost();
             forceObjectSpawn();
             ForceSpawn = false;
@@ -38,7 +38,6 @@ public class Spawner : NetworkBehaviour {
     }
 
     private void forceObjectSpawn() {
-        if (SceneManager.GetActiveScene().name != "TestingSuite") { Debug.LogError("I refuse to load in an invalid scene"); return; }
         if (NetworkManager == null) {
             Debug.LogError("NetworkManager is blerry missing!");
             return;
