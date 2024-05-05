@@ -11,7 +11,7 @@ public class ClockPuzzleCheck : MonoBehaviour {
     public int minute_target_rotation;
     public int leniency = 10; // The degrees that the user can be 'off' by and still get the visual and audio feedback
 
-    public AudioSource correct_feedback;    // The AudioSource to be played on completion
+    public AudioClip correct_feedback;    // The AudioClip to be played on completion
 
     private bool already_within_limit = false;  // this locks the conditional in Update so the 'true' segment is only ran once until the hands are removed and replaced into the correct limits.
 
