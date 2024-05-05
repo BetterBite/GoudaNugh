@@ -24,6 +24,8 @@ public class FutureGlobe : FutureObject
     public override void Setup()
     {
         vars = networkObject.GetComponent<GlobeVariables>();
+        earthRend = earth.GetComponent<Renderer>(); 
+
 
         vars.rotation.OnValueChanged += UpdateRotation;
         vars.targetRot.OnValueChanged += UpdateTarget;
@@ -31,6 +33,8 @@ public class FutureGlobe : FutureObject
         vars.pastLeverGrabbed.OnValueChanged += ReceivePastGrab;
 
         vars.globeState.OnValueChanged = UpdateGlobe;
+
+
     }
 
     private void UpdateGlobe(GlobeVariables.GlobeStates prevState, GlobeVariables.GlobeStates state)

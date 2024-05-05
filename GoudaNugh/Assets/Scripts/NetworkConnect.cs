@@ -68,7 +68,7 @@ public class NetworkConnect : MonoBehaviour
         Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnection);
         string newJoinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
-        Debug.LogError(newJoinCode);
+        Debug.Log("JOIN CODE: " + newJoinCode);
 
         transport.SetHostRelayData(allocation.RelayServer.IpV4, (ushort)allocation.RelayServer.Port,
              allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData);
