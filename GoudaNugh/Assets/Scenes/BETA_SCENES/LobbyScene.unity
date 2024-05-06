@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -867,7 +867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909156968060383364, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4605878202121083456, guid: 1cd99ca2231f2fb498c47b70eb268cd5, type: 3}
       propertyPath: m_Name
@@ -1972,7 +1972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: testingMode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: ObjectsToSpawn.Array.size
@@ -2020,7 +2020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8425194787289381474, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: m_Name
-      value: InteractibleManager
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7470232761140357027, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
@@ -2231,6 +2231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitle: {fileID: 510113886796600745, guid: 689bd16c9d11e1a4780d9bb33fa283aa, type: 3}
   offset: {x: 1, y: 0, z: 0}
+  subtitleText: Hello
 --- !u!1 &1076689581
 GameObject:
   m_ObjectHideFlags: 0
@@ -7482,7 +7483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
