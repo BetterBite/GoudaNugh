@@ -7,6 +7,11 @@ public class LookAtPlayer : MonoBehaviour
     // Start is called before the first frame update
     public Camera mainCamera;
 
+    private void Awake()
+    {
+        mainCamera = VRRigReferences.Singleton.mainCamera;
+    }
+
     // Update is called once per frame
     void Update()
     {
