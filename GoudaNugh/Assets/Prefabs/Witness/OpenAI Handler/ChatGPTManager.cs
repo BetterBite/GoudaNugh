@@ -10,6 +10,7 @@ using OpenAI_API.Models;
 public class ChatGPTManager : MonoBehaviourWithOpenAI
 {
     [Header("Chat GPT Settings")]
+    [TextArea(10,4)]
     public string SystemPrompt;
     
     public event Action<string> ResponseReceived;
