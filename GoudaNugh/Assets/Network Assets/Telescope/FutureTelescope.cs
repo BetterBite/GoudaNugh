@@ -26,7 +26,7 @@ public class FutureTelescope : FutureObject
 
     private void OnSolved(bool wasSolved, bool isSolved) {
         if (isSolved) {
-            // Open();
+            Open();
             Debug.Log("Solved on client side!");
         }
     }
@@ -42,8 +42,7 @@ public class FutureTelescope : FutureObject
 
         } else
         {
-            vars.SolveTelescopeServerRpc();
-            Open();
+            
         }
         //if(statusNow > statusBefore)
         //{

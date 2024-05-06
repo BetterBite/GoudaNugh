@@ -53,7 +53,7 @@ public class PastTelescope : PastObject
 
     private void NextCode(int prevStatus, int status) {
         lensRends[prevStatus].material.color = Color.red;
-        if (status > 2) { return; }
+        if (status > 2) { vars.SolveTelescopeServerRpc(); }
         awakenStars(status);
         
     }
