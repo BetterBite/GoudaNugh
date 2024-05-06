@@ -9,7 +9,7 @@ public abstract class PastObject : MonoBehaviour
     // Cached reference to the network object
     public NetworkObject networkObject;
     //private XRGrabInteractable grabInteractable;
-    private readonly InteractibleManager InteractableManager = InteractibleManager.Singleton;
+    private readonly Spawner Spawner = Spawner.Singleton;
 
     public abstract void Setup();
     /*

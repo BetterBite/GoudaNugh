@@ -34,6 +34,7 @@ public class PastGlobe : PastObject
         vars.rotation.Value = counter.transform.rotation.eulerAngles;
 
         vars.globeState.OnValueChanged = UpdateGlobe;
+        Debug.Log("Setup complete");
     }
 
     private void UpdateGlobe(GlobeVariables.GlobeStates prevState, GlobeVariables.GlobeStates state)
@@ -67,6 +68,7 @@ public class PastGlobe : PastObject
 
     public void StartGlobe()
     {
+        Debug.Log("past globe starting game");
         earthRend.materials = transparentMaterials;
         counter.gameObject.SetActive(true);
         target.SetActive(true);

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class OutlineHint : Hint
 {
     private Outline outline;
@@ -17,7 +18,14 @@ public class OutlineHint : Hint
         outline.enabled = false;
     }
     public override void DisplayHint() {
+        StartCoroutine(ShowAndHideOutline());
+    }
+
+    IEnumerator ShowAndHideOutline() {
         outline.enabled = true;
-        // wait 5 seconds then hide?
+
+        yield return new WaitForSeconds(5);
+
+        outline.enabled = false;
     }
 }

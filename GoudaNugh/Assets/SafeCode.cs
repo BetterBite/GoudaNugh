@@ -14,11 +14,11 @@ public class SafeCode : MonoBehaviour {
     //public Hinge hinge;
 
     void Start() {
-        InteractibleManager IManager = InteractibleManager.Singleton;
-        Assert.IsNotNull(IManager, "Interactible Manager not found! Make sure it has been added to the scene!"); 
-        code[0] = IManager.SafeCode[0];
-        code[1] = IManager.SafeCode[1];
-        code[2] = IManager.SafeCode[2];
+        Spawner Spawner = Spawner.Singleton;
+        Assert.IsNotNull(Spawner, "Spawner not found! Make sure it has been added to the scene!"); 
+        code[0] = Spawner.SafeCode[0];
+        code[1] = Spawner.SafeCode[1];
+        code[2] = Spawner.SafeCode[2];
         Debug.Log("Code generated: " + code[0] + code[1] + code[2]);
     }
 

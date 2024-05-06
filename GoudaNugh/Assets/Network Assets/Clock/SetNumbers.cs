@@ -8,7 +8,7 @@ public class SetNumbers : MonoBehaviour {
     public TMP_Text[] numbers;
 
     void Start() {
-        int[] safeCode = InteractibleManager.Singleton.SafeCode;
+        int[] safeCode = Spawner.Singleton.SafeCode;
         foreach (var number in numbers) {
             Assert.IsNotNull(number, "One or more of the numbers for the alarm clock is not assigned!");
         }

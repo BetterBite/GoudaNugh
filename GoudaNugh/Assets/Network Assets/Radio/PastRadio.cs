@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Mono.Cecil.Cil;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PastRadio : PastObject
 {
@@ -18,6 +19,8 @@ public class PastRadio : PastObject
 
     public RadioTimer timer;
     public LockableObject door;
+
+    public UnityEvent solvedRadio;
 
     private List<int> Code = new List<int>();
 
@@ -160,6 +163,7 @@ public class PastRadio : PastObject
     {
         if (isSolved)
         {
+            solvedRadio.Invoke();
             door.Unlock();
         }
     }

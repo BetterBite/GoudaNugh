@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FutureRadio : FutureObject
 {
@@ -17,6 +18,7 @@ public class FutureRadio : FutureObject
     private RadioScreen screen;
 
     public LockableObject door;
+    public UnityEvent solvedRadio;
 
 
     public override void Setup()
@@ -118,6 +120,7 @@ public class FutureRadio : FutureObject
     {
         if (isSolved)
         {
+            solvedRadio.Invoke();
             door.Unlock();
         }
     }

@@ -2,46 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.UI;
+using System.Xml.Serialization;
+using Meta.WitAi.Requests;
 
 public class PastTelescope : PastObject
 {
-    public TelescopeVariables telescopeVariables;
-    public GameObject[] lenses;
+    public TelescopeVariables vars;
+    public Image[] stars;
     private float[] code;
     public int solved;
+
+    public LockableObject door;
+    public GameObject telescopeUnlocks;
+
+    public Renderer[] lensRends;
     // Start is called before the first frame update
 
     public override void Setup() {
-        telescopeVariables = networkObject.GetComponent<TelescopeVariables>();
-        code = new float[] { 245, 165, 190 };
+        vars = networkObject.GetComponent<TelescopeVariables>();
+        vars.solvedStatus.OnValueChanged = NextCode;
+        vars.isSolved.OnValueChanged = Solve;
+        //code = new float[] { 245, 165, 190 };
+        awakenStars(0);
     }
 
-    public void CheckLenses() {
-       
-        //for (int i = 0; i < 3; i++)
-        //{
-        //    float rot = lenses[i].transform.rotation.eulerAngles.z;
-        //    Debug.Log(lenses[1].transform.rotation.eulerAngles.z);
-        //    float answer = rot - code[i];
-        //    if ((answer > -10) && (answer < 10))
-        //    {
-        //        solved++;
-        //        NextCode();
-        //    }
-        //}
-        //if (solved > 2)
-        //{
-        //    Solve();
-        //}
-        //solved = 0;
-        //Solve();
+    private void awakenStars(int i)
+    {
+        
+        foreach (var item in stars)
+        {
+            if(i < 3)
+            {
+                item.enabled = false;
+                stars[i].enabled = true;
+            }
+
+        }
     }
 
-    public void Solve() {
-        telescopeVariables.Solve();
+    private void Solve(bool wasSolved, bool solved)
+    {
+        if (solved)
+        {
+            door.Unlock();
+            telescopeUnlocks.SetActive(true);
+
+        }
     }
 
-    private void NextCode() {
-        telescopeVariables.NextCode();
-     }
+    private void NextCode(int prevStatus, int status) {
+        lensRends[prevStatus].material.color = Color.red;
+        if (status > 2) { return; }
+        awakenStars(status);
+        
+    }
 }

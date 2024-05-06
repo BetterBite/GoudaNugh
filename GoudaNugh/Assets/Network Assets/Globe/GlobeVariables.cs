@@ -25,13 +25,13 @@ public class GlobeVariables : Variables
         Solved,
     }
 
-    [Rpc(SendTo.Server)]
+    [Rpc(SendTo.ClientsAndHost)]
     public void ChangeStateServerRpc(GlobeStates state)
     {
         globeState.Value = state;
     }
 
-    [Rpc(SendTo.Server)]
+    [Rpc(SendTo.ClientsAndHost)]
     public void AdvanceSunMoonServerRpc()
     {
         globeState.Value ++;
@@ -43,7 +43,7 @@ public class GlobeVariables : Variables
         rotation.Value += vec;
     }
 
-    [Rpc(SendTo.Server)]
+    [Rpc(SendTo.ClientsAndHost)]
     public void FutureLeverGrabbedServerRpc(bool isGrabbed)
     {
         
@@ -55,7 +55,7 @@ public class GlobeVariables : Variables
         pastLeverGrabbed.Value = isGrabbed;
     }
 
-    [Rpc(SendTo.Server)]
+    [Rpc(SendTo.ClientsAndHost)]
     public void FutureMoveServerRpc(Vector3 vec, Quaternion rot) 
     {
         futureRot.Value = rot;

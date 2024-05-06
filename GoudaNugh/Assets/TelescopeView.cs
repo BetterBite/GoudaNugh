@@ -10,44 +10,42 @@ public class TelescopeView : MonoBehaviour
     public int imageindex;
 
     public Image[] blockScreen;
-    //public Camera camera;
-
+    private Camera mainCamera;
+    public Camera telescopeCamera;
+    public FadeScreen fadeScreen;
     void Start()
     {
-        imageindex = 0;
-        //Color color = blockScreen.color;
-        //color.a = 1;
-        for (int i = 0; i < 3; i++ )
-        {
-            blockScreen[i].CrossFadeAlpha(0, 0f, true);
-        }
+
+        mainCamera = VRRigReferences.Singleton.mainCamera;
+        fadeScreen = mainCamera.GetComponentInChildren<FadeScreen>();
+        //imageindex = 0;
+        ////Color color = blockScreen.color;
+        ////color.a = 1;
+        //for (int i = 0; i < 3; i++ )
+        //{
+        //    blockScreen[i].CrossFadeAlpha(0, 0f, true);
+        //}
         
     }
 
-    public void ShowImage()
+    public void TelescopeCameraView()
     {
-        
-        // check that camera can fade to black
-        // fade to black
-        Debug.Log("In method");
-        StartCoroutine(showCoroutine(imageindex));
+        fadeScreen.Fade(0,1);
+        mainCamera.enabled = false;
+        telescopeCamera.enabled = true;
+        fadeScreen.Fade(1, 0);
     }
 
-    public void FadeImage()
+    public void MainCameraView()
     {
-        StartCoroutine(fadeCoroutine(imageindex));
+        fadeScreen.Fade(0, 1);
+        telescopeCamera.enabled = false;
+        mainCamera.enabled = true;
+        fadeScreen.Fade(1, 0);
     }
 
-    IEnumerator showCoroutine(int i)
+    private void Update()
     {
-        blockScreen[i].CrossFadeAlpha(1, 0.5f, false);
-        yield return new WaitForSeconds(0.5f);
-
     }
 
-    IEnumerator fadeCoroutine(int i)
-    {
-        blockScreen[i].CrossFadeAlpha(0, 0.5f, false);
-        yield return new WaitForSeconds(0.5f);
-    }
 }

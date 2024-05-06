@@ -5,14 +5,23 @@ using TMPro;
 
 public class FutureTelescope : FutureObject
 {
-    public GameObject[] images;
-    public TelescopeVariables telescopeVariables;
-    public GameObject door;
+    public TelescopeVariables vars;
+    public GameObject telescopeUnlocks;
+    public LockableObject door;
+    public int[] angles = { 235, 170, 185 };
+    public LensScript[] lenses;
 
     public override void Setup() {
-        telescopeVariables = networkObject.GetComponent<TelescopeVariables>();
-        telescopeVariables.isSolved.OnValueChanged += OnSolved;
-        telescopeVariables.solvedStatus.OnValueChanged += NextCode;
+        vars = networkObject.GetComponent<TelescopeVariables>();
+        vars.isSolved.OnValueChanged += OnSolved;
+
+
+        foreach (var s in lenses) { 
+            s.rotatable = false;
+        }
+        lenses[vars.solvedStatus.Value].rotatable = true;
+
+        //telescopeVariables.solvedStatus.OnValueChanged += NextCode;
     }
 
     private void OnSolved(bool wasSolved, bool isSolved) {
@@ -22,17 +31,31 @@ public class FutureTelescope : FutureObject
         }
     }
 
-    private void NextCode(int statusBefore, int statusNow) {
-        if(statusNow > statusBefore)
+    public void NextCode() {
+        vars.NextCodeServerRpc();
+        if (vars.solvedStatus.Value < 3)
         {
-            for (int i = 0; i < 3; i++)
-            {
-                images[i].SetActive(false);
-            }
-            images[statusNow].SetActive(true);
+
+            Debug.Log("solvedStatus:" + vars.solvedStatus.Value);
+
+            lenses[vars.solvedStatus.Value].rotatable = true;
+
+        } else
+        {
+            vars.SolveTelescopeServerRpc();
+            Open();
         }
+        //if(statusNow > statusBefore)
+        //{
+        //    for (int i = 0; i < 3; i++)
+        //    {
+        //        images[i].SetActive(false);
+        //    }
+        //    images[statusNow].SetActive(true);
+        //}
     }
     private void Open() {
-        door.SetActive(false);
+        door.Unlock();
+        telescopeUnlocks.SetActive(true);
     }
 }
