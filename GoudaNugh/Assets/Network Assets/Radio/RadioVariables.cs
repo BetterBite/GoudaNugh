@@ -49,7 +49,7 @@ public class RadioVariables : Variables
         Solved,
     }
 
-    [Rpc(SendTo.Server)]
+    [Rpc(SendTo.ClientsAndHost)]
     public void UpdateFrequencyServerRpc(float freq, Quaternion rot)
     {
         futureRot.Value = rot;
@@ -62,7 +62,7 @@ public class RadioVariables : Variables
         amplitude.Value = amp;
     }
 
-    [Rpc(SendTo.Server)]
+    [Rpc(SendTo.ClientsAndHost)]
     public void OnFutureGrabServerRpc(bool isGrabbed)
     {
         futureLeverGrabbed.Value = isGrabbed;

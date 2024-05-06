@@ -13,14 +13,14 @@ public class TelescopeVariables : Variables
     {
         isFixed.Value = true;
     }
-    [Rpc(SendTo.Server)]
+    [Rpc(SendTo.ClientsAndHost)]
     public void SolveTelescopeServerRpc()
     {
         isSolved.Value = true;
         Debug.Log("Telescope Solved");
     }
 
-    [Rpc(SendTo.Server)]
+    [Rpc(SendTo.ClientsAndHost)]
     public void NextCodeServerRpc()
     {
         solvedStatus.Value++;
