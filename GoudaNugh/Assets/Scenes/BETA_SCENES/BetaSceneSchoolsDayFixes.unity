@@ -11078,6 +11078,47 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175220740}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1183073689
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1592346557185340492, guid: b55e253ffe74d924ab143716bce47713, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592346557185340492, guid: b55e253ffe74d924ab143716bce47713, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592346557185340492, guid: b55e253ffe74d924ab143716bce47713, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239733201935413832, guid: b55e253ffe74d924ab143716bce47713, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0011
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239733201935413832, guid: b55e253ffe74d924ab143716bce47713, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0301
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163209666793310716, guid: b55e253ffe74d924ab143716bce47713, type: 3}
+      propertyPath: m_Name
+      value: MoonCompass
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283543303180541118, guid: b55e253ffe74d924ab143716bce47713, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b55e253ffe74d924ab143716bce47713, type: 3}
 --- !u!1001 &1194097357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13417,6 +13458,39 @@ Transform:
   - {fileID: 1290851047}
   m_Father: {fileID: 1776215511}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1530574012
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6106687363830958687, guid: 3d3765d8ca4c0944985a3a1ebf0a0555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106687363830958687, guid: 3d3765d8ca4c0944985a3a1ebf0a0555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106687363830958687, guid: 3d3765d8ca4c0944985a3a1ebf0a0555, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414176134547797718, guid: 3d3765d8ca4c0944985a3a1ebf0a0555, type: 3}
+      propertyPath: m_Name
+      value: SunCompass
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367644824574163204, guid: 3d3765d8ca4c0944985a3a1ebf0a0555, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d3765d8ca4c0944985a3a1ebf0a0555, type: 3}
 --- !u!1 &1540940466
 GameObject:
   m_ObjectHideFlags: 0
@@ -19118,3 +19192,5 @@ SceneRoots:
   - {fileID: 430795387}
   - {fileID: 941961300}
   - {fileID: 1434817719}
+  - {fileID: 1530574012}
+  - {fileID: 1183073689}
