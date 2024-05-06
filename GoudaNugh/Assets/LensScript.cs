@@ -38,7 +38,7 @@ public class LensScript : MonoBehaviour
     void Update()
     {
         //Debug.Log(transform.rotation.eulerAngles);
-        if (rotatable && leverRotator.activated)
+        if (leverRotator.activated)
         {
             gameObject.transform.Rotate(new Vector3(0, 0, 0.5f));
             
