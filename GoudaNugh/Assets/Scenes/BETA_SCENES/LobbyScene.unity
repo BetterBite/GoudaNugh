@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 19ea8493e4e08d244ada1d0b6389a530, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1972,7 +1972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: testingMode
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: ObjectsToSpawn.Array.size
