@@ -17,6 +17,7 @@ public class FutureRadio : FutureObject
     public GameObject screenObject;
     private RadioScreen screen;
 
+    public RadioTimer timer;
     public LockableObject door;
     public UnityEvent solvedRadio;
 
@@ -43,6 +44,7 @@ public class FutureRadio : FutureObject
 
         wave.lr.startColor = Color.red;
         wave.lr.endColor = Color.red;
+        timer.ResetTimers();
 
     }
 
@@ -75,19 +77,27 @@ public class FutureRadio : FutureObject
 
     private void UpdateMatchingLevel(int prevLevel, int level)
     {
-        targetWave.amplitude = vars.stationAmps[level];
-        targetWave.frequency = vars.stationFreqs[level];
+        if (level == -1)
+        {
+            timer.ResetTimers();
+        }
+        if (level < 0 || level > 2) return;
+
+        //targetWave.amplitude = vars.stationAmps[level];
+        //targetWave.frequency = vars.stationFreqs[level];
+        Debug.Log("filling:" + level);
+        timer.NextNumber(level);
     }
 
     private void ReceiveNewTargetAmp(float prevAmp, float amp) 
     {
-       // targetWave.amplitude = amp;
+        targetWave.amplitude = amp;
         
     }
 
     private void ReceiveNewTargetFreq(float prevFreq, float freq)
     {
-        //targetWave.frequency = freq;
+        targetWave.frequency = freq;
     }
 
     public void OnLeverGrab(bool isGrabbed)
