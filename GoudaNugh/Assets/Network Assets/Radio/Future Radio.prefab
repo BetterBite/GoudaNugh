@@ -58,6 +58,21 @@ MonoBehaviour:
   ghostRot: {fileID: 7592206551664889441}
   screenObject: {fileID: 6207708724588019701}
   door: {fileID: 7540109069584473763}
+  solvedRadio:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 721296798169264476}
+        m_TargetAssemblyTypeName: OutlineHint, Assembly-CSharp
+        m_MethodName: DisplayHint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &480816563448439715
 GameObject:
   m_ObjectHideFlags: 0
@@ -6390,6 +6405,7 @@ GameObject:
   - component: {fileID: 3566226852828465149}
   - component: {fileID: 8429307641200573595}
   - component: {fileID: 7540109069584473763}
+  - component: {fileID: 721296798169264476}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -6713,6 +6729,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 1
   vectorToPush: {x: 50, y: 0, z: 0}
+--- !u!114 &721296798169264476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9178833713231013630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b8760385b36c94b9165cd69d7c10bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+  OutlineThickness: 10
 --- !u!1001 &7492267307844610320
 PrefabInstance:
   m_ObjectHideFlags: 0

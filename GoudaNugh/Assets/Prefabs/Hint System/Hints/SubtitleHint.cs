@@ -8,10 +8,12 @@ public class SubtitleHint : Hint
     public GameObject subtitle;
     private Transform t;
     public Vector3 offset;
+    [TextArea(4,10)]
+    public string subtitleText = "Hello";
     public override void DisplayHint()
     {
         var sub = Instantiate(subtitle, transform.position + offset, Quaternion.identity, transform);
-        sub.GetComponent<TMP_Text>().text = "Hello";
+        sub.GetComponent<TMP_Text>().text = subtitleText;
         return;
     }
 

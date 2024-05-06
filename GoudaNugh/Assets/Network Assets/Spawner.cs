@@ -115,7 +115,7 @@ public class Spawner : NetworkBehaviour {
     public void SpawnWitnessPleaseRPC() {
             foreach (GameObject futureObject in LocalFutureObjects)
             {
-                if (!IsServer) Instantiate(futureObject);
+                if (!IsServer || testingMode == TestingMode.SpawnBoth || testingMode == TestingMode.OnlySpawnFuture) Instantiate(futureObject);
             }
         }
 
