@@ -31,7 +31,7 @@ public class RadioVariables : Variables
     //[SerializeField]
     //public NetworkVariable<float[]> stationFreqs = new NetworkVariable<float[]>(new float[] {10,10,10});
     public List<float> stationAmps = new List<float>() { 0.05f, 0.1f, 0.01f };
-    public List<float> stationFreqs = new List<float>() { 10, 10, 10 };
+    public List<float> stationFreqs = new List<float>() { 7, 3, 12 };
     
     public NetworkVariable<int> matchingLevel = new NetworkVariable<int>(-1);
     public NetworkVariable<bool> codeEntered = new NetworkVariable<bool>(false);
