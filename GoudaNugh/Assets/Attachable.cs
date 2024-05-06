@@ -12,10 +12,23 @@ public class Attachable : MonoBehaviour
     public ClueLinker.Links link;
     private BoxCollider box;
     private AttachableCheck attachableBase;
+    private XRGrabInteractable grab;
 
     void Start()
     {
         box = GetComponent<BoxCollider>();
+        grab = GetComponent<XRGrabInteractable>();
+
+        grab.selectExited.AddListener(OnSelectExited);
+    }
+
+    public void OnSelectExited(SelectExitEventArgs args)
+    {
+        if (attachableBase != null && attachableBase.iwantthis == link)
+        {
+            attachableBase.objectReleased();
+            onAttach.Invoke();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,13 +37,4 @@ public class Attachable : MonoBehaviour
         
     }
 
-
-    public void OnSelectExited()
-    {
-        if (attachableBase != null && attachableBase.iwantthis == link) 
-        {
-            attachableBase.objectReleased();
-            onAttach.Invoke();
-        }
-    }
 }

@@ -17,6 +17,8 @@ public class ClueLinker : MonoBehaviour
         Sun,
         CabinetKey,
         BookKey,
+        ClockKey,
+        TelescopeLens,
 
     }
 }

@@ -5,6 +5,8 @@ using TMPro;
 
 public class FutureTelescope : FutureObject
 {
+
+    public GameObject levers;
     public TelescopeVariables vars;
     public GameObject telescopeUnlocks;
     public LockableObject door;
@@ -15,13 +17,17 @@ public class FutureTelescope : FutureObject
         vars = networkObject.GetComponent<TelescopeVariables>();
         vars.isSolved.OnValueChanged += OnSolved;
 
-
-        foreach (var s in lenses) { 
+        foreach (var s in lenses) {
             s.rotatable = false;
         }
-        lenses[vars.solvedStatus.Value].rotatable = true;
+        //lenses[vars.solvedStatus.Value].rotatable = true;
 
         //telescopeVariables.solvedStatus.OnValueChanged += NextCode;
+    }
+
+    public void Fix()
+    {
+        lenses[vars.solvedStatus.Value].rotatable = true;
     }
 
     private void OnSolved(bool wasSolved, bool isSolved) {

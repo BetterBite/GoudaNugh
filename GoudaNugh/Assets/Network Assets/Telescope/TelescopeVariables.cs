@@ -9,10 +9,12 @@ public class TelescopeVariables : Variables
     public NetworkVariable<bool> isSolved = new NetworkVariable<bool>(false);
     public NetworkVariable<int> solvedStatus = new NetworkVariable<int>(0);
 
-    public void Fix()
+    [Rpc(SendTo.ClientsAndHost)]
+    public void FixRpc()
     {
         isFixed.Value = true;
     }
+
     [Rpc(SendTo.ClientsAndHost)]
     public void SolveTelescopeServerRpc()
     {

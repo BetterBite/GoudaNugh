@@ -1972,7 +1972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: testingMode
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: ObjectsToSpawn.Array.size
@@ -1980,11 +1980,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: LocalPastObjects.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: LocalFutureObjects.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: LocalPastObjects.Array.data[0]
@@ -2001,7 +2001,7 @@ PrefabInstance:
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: LocalFutureObjects.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5960980538024537568, guid: d82fe638a6d66d64f80b8d6aa956c25d, type: 3}
     - target: {fileID: 4077487109779705106, guid: b85cef068c376c940bd2d7b564fc13f1, type: 3}
       propertyPath: LocalFutureObjects.Array.data[3]
       value: 
