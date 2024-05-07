@@ -9349,9 +9349,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 476923383677761172, guid: fbe15b381741b2f45939de3c67132685, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 655743525492132545, guid: fbe15b381741b2f45939de3c67132685, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198879333271781030, guid: fbe15b381741b2f45939de3c67132685, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469709044925045763, guid: fbe15b381741b2f45939de3c67132685, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827106294411983655, guid: fbe15b381741b2f45939de3c67132685, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3090379929308731941, guid: fbe15b381741b2f45939de3c67132685, type: 3}
       propertyPath: player
@@ -9361,6 +9377,10 @@ PrefabInstance:
       propertyPath: fadeScreen
       value: 
       objectReference: {fileID: 2141681155}
+    - target: {fileID: 3400159560246546610, guid: fbe15b381741b2f45939de3c67132685, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3449944315899286341, guid: fbe15b381741b2f45939de3c67132685, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9401,6 +9421,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.123
       objectReference: {fileID: 0}
+    - target: {fileID: 4096115432498207368, guid: fbe15b381741b2f45939de3c67132685, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4657505293480277964, guid: fbe15b381741b2f45939de3c67132685, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9424,6 +9448,22 @@ PrefabInstance:
     - target: {fileID: 5568056116877363870, guid: fbe15b381741b2f45939de3c67132685, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630317233309455404, guid: fbe15b381741b2f45939de3c67132685, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6057414508781452658, guid: fbe15b381741b2f45939de3c67132685, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6283865024434121268, guid: fbe15b381741b2f45939de3c67132685, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072222608490922324, guid: fbe15b381741b2f45939de3c67132685, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8048856756006887175, guid: fbe15b381741b2f45939de3c67132685, type: 3}
       propertyPath: m_Enabled
@@ -11902,7 +11942,7 @@ PrefabInstance:
     - target: {fileID: 57668915512388067, guid: 21b97ac5ffc32514db204e4b347c7191, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -2224026566006088767, guid: dbf93cb58e70144f0a47cdf22cab3d56, type: 3}
+      objectReference: {fileID: -8067726398312463513, guid: 0af6ad76fbb120c46813730c504b2f5a, type: 3}
     - target: {fileID: 1582182854014326062, guid: 21b97ac5ffc32514db204e4b347c7191, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 1.1240721
@@ -31872,7 +31912,7 @@ PrefabInstance:
     - target: {fileID: 23037726606662894, guid: 4737cade184983e44b580bdebbea33a6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -2224026566006088767, guid: dbf93cb58e70144f0a47cdf22cab3d56, type: 3}
+      objectReference: {fileID: -8067726398312463513, guid: 6ebe6507acd8d1c4f97513fd18eb65ac, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
