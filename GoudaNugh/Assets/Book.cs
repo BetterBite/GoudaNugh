@@ -12,12 +12,17 @@ public class Book : MonoBehaviour
     public Transform compassSpawn;
     private bool isLocked = true;
 
+    private void Awake()
+    {
+        Unlock();
+    }
+
     public void Unlock()
     {
         leftBody.isKinematic = true;
         rightBody.isKinematic = true;
         leftBody.constraints = RigidbodyConstraints.None;
-        rightBody.constraints = RigidbodyConstraints.FreezeAll;
+        rightBody.constraints = RigidbodyConstraints.None;
         leftBody.isKinematic = false;
         rightBody.isKinematic = false;
     }
