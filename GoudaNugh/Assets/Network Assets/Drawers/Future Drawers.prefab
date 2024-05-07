@@ -1309,6 +1309,7 @@ MonoBehaviour:
   networkObject: {fileID: 0}
   drawersVars: {fileID: 0}
   lockedDrawer: {fileID: 2051447482335389203}
+  drawerUnlocks: {fileID: 2223321313076931118}
 --- !u!1 &1772780135277616867
 GameObject:
   m_ObjectHideFlags: 0
@@ -5935,7 +5936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5130793854616963519, guid: a2c2e3f7bf68f1f40b4064680caacce3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.046
       objectReference: {fileID: 0}
     - target: {fileID: 5130793854616963519, guid: a2c2e3f7bf68f1f40b4064680caacce3, type: 3}
       propertyPath: m_LocalPosition.z
