@@ -5,7 +5,7 @@ using UnityEngine;
 public class Compass : MonoBehaviour
 {
     float threshold = 0.05f;
-    public Transform north;
+    public Vector3 north;
     public GameObject needle;
     public Transform Base;
     public GameObject dummy;
@@ -30,7 +30,7 @@ public class Compass : MonoBehaviour
                     dummy.SetActive(false);
                 }
                 
-                Vector3 direction = north.transform.position - transform.position;
+                Vector3 direction = north - transform.position;
                 direction.y = 0;
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = targetRotation;
