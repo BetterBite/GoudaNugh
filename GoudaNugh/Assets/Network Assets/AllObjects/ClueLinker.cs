@@ -19,6 +19,8 @@ public class ClueLinker : MonoBehaviour
         BookKey,
         ClockKey,
         TelescopeLens,
+        MemoryChip,
+        Gun,
 
     }
 }
