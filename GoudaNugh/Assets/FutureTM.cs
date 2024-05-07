@@ -6,6 +6,7 @@ public class FutureTM : FutureObject
 {
     private TMVariables vars;
     public GameObject disc;
+    public GameObject confession;
     public override void Setup()
     {
         vars = networkObject.GetComponent<TMVariables>();
@@ -21,7 +22,7 @@ public class FutureTM : FutureObject
 
     private void Solve(bool wasSolved, bool solved)
     {
-
+        StartCoroutine(Confess());
     }
 
     public void Charge()
@@ -30,14 +31,13 @@ public class FutureTM : FutureObject
     }
 
     // Start is called before the first frame update
-    void Start()
+
+
+    private IEnumerator Confess()
     {
-        
+        yield return new WaitForSeconds(5f);
+        confession.SetActive(true);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
