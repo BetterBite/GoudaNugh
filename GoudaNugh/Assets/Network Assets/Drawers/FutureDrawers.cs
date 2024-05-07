@@ -6,6 +6,7 @@ public class FutureDrawers : FutureObject
 {
     public DrawersVariables drawersVars;
     public GameObject lockedDrawer;
+    public GameObject drawerUnlocks;
     public override void Setup()
     {
        drawersVars = networkObject.GetComponent<DrawersVariables>();
@@ -17,6 +18,7 @@ public class FutureDrawers : FutureObject
         //GetComponentInChildren<LockableObject>().Unlock();
         var script = lockedDrawer.GetComponent<LockableObject>();
         script.Unlock();
+        drawerUnlocks.SetActive(true);
     }
 
 

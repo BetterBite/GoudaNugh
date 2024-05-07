@@ -124,7 +124,7 @@ public class Spawner : NetworkBehaviour {
         Debug.Log("Spawning past local objects");
         foreach (GameObject pastObject in LocalPastObjects)
         {
-            if (IsServer) Instantiate(pastObject);
+            if (testingMode == TestingMode.Normal || testingMode == TestingMode.OnlySpawnPast) Instantiate(pastObject);
         }
     }
 
