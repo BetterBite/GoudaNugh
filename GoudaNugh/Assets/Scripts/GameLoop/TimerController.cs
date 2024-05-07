@@ -38,7 +38,7 @@ public class TimerController : MonoBehaviour
         if (gameTimeInSeconds<=0)
         {
             Debug.Log("Loading Lobby");
-            NetworkManager.Singleton.SceneManager.LoadScene("LobbyScene", LoadSceneMode.Single);
+            NetworkManager.Singleton.SceneManager.LoadScene("LobbyForGameFinished", LoadSceneMode.Single);
         }
     }
 }
