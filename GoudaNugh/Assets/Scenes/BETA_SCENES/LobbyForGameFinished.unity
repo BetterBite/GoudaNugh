@@ -6031,7 +6031,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 409483038}
         m_TargetAssemblyTypeName: WinnerLooserScript, Assembly-CSharp
-        m_MethodName: LoadLooserScene
+        m_MethodName: LoadWinnerScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6701,7 +6701,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 409483038}
         m_TargetAssemblyTypeName: WinnerLooserScript, Assembly-CSharp
-        m_MethodName: LoadWinnerScene
+        m_MethodName: LoadLooserScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
