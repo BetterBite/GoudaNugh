@@ -11,6 +11,7 @@ public class SafeCode : MonoBehaviour {
     public TMP_Text[] content;
     // Important! Lockable object only gets set if the safe is spawned by the manager, otherwise you will get a NullReferenceException!
     public LockableObject lockableObject;
+    public GameObject safeUnlocks;
     //public Hinge hinge;
 
     void Start() {
@@ -36,6 +37,7 @@ public class SafeCode : MonoBehaviour {
             lockableObject.Unlock();
             // This object is two deep in the hierarchy so this ugly mess is required to get the grandparent
             gameObject.transform.parent.gameObject.transform.parent.GetComponent<PastSafe>().UnlockNetworkSafe();
+            safeUnlocks.SetActive(true);
             //hinge.open();
             return false;
         }
