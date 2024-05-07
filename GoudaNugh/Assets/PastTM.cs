@@ -17,7 +17,7 @@ public class PastTM : PastObject
 
     public void AddDisc()
     {
-        vars.AddDisc();
+        vars.AddDiscRpc();
     }
 
     private void Charge(bool wasCharged, bool Charged)

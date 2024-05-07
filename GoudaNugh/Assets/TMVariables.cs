@@ -9,8 +9,8 @@ public class TMVariables : Variables
     public NetworkVariable<bool> isCharged = new NetworkVariable<bool>(false);
     public NetworkVariable<bool> hasDisc = new NetworkVariable<bool>(false);
 
-
-    public void AddDisc()
+    [Rpc(SendTo.ClientsAndHost)]
+    public void AddDiscRpc()
     {
         hasDisc.Value = true;
         if (isCharged.Value) 
