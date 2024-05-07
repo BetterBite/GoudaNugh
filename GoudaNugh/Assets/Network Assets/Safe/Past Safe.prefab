@@ -488,10 +488,10 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6173256731040650740}
-        m_TargetAssemblyTypeName: ButtonVR, Assembly-CSharp
-        m_MethodName: Grabbed
-        m_Mode: 1
+      - m_Target: {fileID: 3179591400329993847}
+        m_TargetAssemblyTypeName: SafeNumber, Assembly-CSharp
+        m_MethodName: Poke
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -905,10 +905,10 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4774457205597232255}
-        m_TargetAssemblyTypeName: ButtonVR, Assembly-CSharp
-        m_MethodName: Grabbed
-        m_Mode: 1
+      - m_Target: {fileID: 2069916979930546142}
+        m_TargetAssemblyTypeName: SafeNumber, Assembly-CSharp
+        m_MethodName: Poke
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1663,7 +1663,7 @@ MonoBehaviour:
   - {fileID: 1641436298957446428}
   - {fileID: 3990645687398417344}
   lockableObject: {fileID: 1894162362572677998}
-  safeUnlocks: {fileID: 0}
+  safeUnlocks: {fileID: 3164409382926309607}
 --- !u!1 &2664004800319576874
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,10 +2505,10 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5576040710620171002}
-        m_TargetAssemblyTypeName: ButtonVR, Assembly-CSharp
-        m_MethodName: Grabbed
-        m_Mode: 1
+      - m_Target: {fileID: 3061501627160538206}
+        m_TargetAssemblyTypeName: SafeNumber, Assembly-CSharp
+        m_MethodName: Poke
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3167,7 +3167,7 @@ Transform:
   m_GameObject: {fileID: 5140760705421580048}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 4.826, z: -1.033}
+  m_LocalPosition: {x: -0.08, y: 4.865, z: -1.033}
   m_LocalScale: {x: 11.783378, y: 11.783378, z: 11.783378}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5926,17 +5926,17 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3796894925212612889}
-        m_TargetAssemblyTypeName: ButtonVR, Assembly-CSharp
-        m_MethodName: Grabbed
-        m_Mode: 1
+      - m_Target: {fileID: 3179591400329993847}
+        m_TargetAssemblyTypeName: SafeNumber, Assembly-CSharp
+        m_MethodName: Poke
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
@@ -6631,17 +6631,17 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8483304307315780859}
-        m_TargetAssemblyTypeName: ButtonVR, Assembly-CSharp
-        m_MethodName: Grabbed
-        m_Mode: 1
+      - m_Target: {fileID: 3061501627160538206}
+        m_TargetAssemblyTypeName: SafeNumber, Assembly-CSharp
+        m_MethodName: Poke
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
@@ -6965,17 +6965,17 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4265076745355346448}
-        m_TargetAssemblyTypeName: ButtonVR, Assembly-CSharp
-        m_MethodName: Grabbed
-        m_Mode: 1
+      - m_Target: {fileID: 2069916979930546142}
+        m_TargetAssemblyTypeName: SafeNumber, Assembly-CSharp
+        m_MethodName: Poke
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
